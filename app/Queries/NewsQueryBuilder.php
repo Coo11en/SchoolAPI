@@ -31,6 +31,7 @@ class NewsQueryBuilder extends QueryBuilder
 
     public function getAll(): Collection
     {
-        return $this->getModel()->with('categories')->get();
+        return $this->getModel()->get();
+//        return $this->getModel()->with('categories')->get();
     }
 }

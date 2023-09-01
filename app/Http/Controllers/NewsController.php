@@ -11,10 +11,10 @@ use Illuminate\View\View;
 
 class NewsController extends Controller
 {
-    public function index (NewsQueryBuilder $newsQueryBuilder, CategoriesQueryBuilder $categoriesQueryBuilder): View
+    public function index (NewsQueryBuilder $newsQueryBuilder): View
     {
         return view('news.index', [
-            'news' => $newsQueryBuilder->getActiveNews(),
+            'news' => $newsQueryBuilder->getAll(),
 //            'categories' => $categoriesQueryBuilder->getAll()
         ]);
     }

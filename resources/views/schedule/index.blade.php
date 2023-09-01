@@ -14,73 +14,75 @@
 {{--        </div>--}}
 {{--    </section>--}}
 {{--    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">--}}
+
+    <div class="accordion" id="accordionExample">
         @forelse ($schedule as $key => $scheduleItem)
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading{!! $key !!}">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{!! $key !!}" aria-expanded="true" aria-controls="collapse{!! $key !!}">
-                            {{ $key }}
-                        </button>
-                    </h2>
-                    <div id="collapse{!! $key !!}" class="accordion-collapse collapse" aria-labelledby="heading{!! $key !!}" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{!! $key !!}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{!! $key !!}" aria-expanded="false" aria-controls="collapse{!! $key !!}">
+                    {{ $key }}
+                </button>
+            </h2>
+            <div id="collapse{!! $key !!}" class="accordion-collapse collapse" aria-labelledby="heading{!! $key !!}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+{{--                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.--}}
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Понедельник</th>
+                                <th>Вторник</th>
+                                <th>Среда</th>
+                                <th>Четверг</th>
+                                <th>Пятница</th>
+                            </tr>
+                            @for($lesson = 0; $lesson<6;$lesson++)
+                                <tr>
+                                    @if(key($scheduleItem['monday']))
+                                        <td>{{key($scheduleItem['monday'])}}-{{ $scheduleItem['monday'][key($scheduleItem['monday'])]}} </td>
+                                        @php(next($scheduleItem['monday']))
+                                    @else
+                                        <td></td>
+                                    @endif
+                                    @if(key($scheduleItem['tuesday']))
+                                         <td>{{key($scheduleItem['tuesday'])}}-{{ $scheduleItem['tuesday'][key($scheduleItem['tuesday'])]}} </td>
+                                            @php(next($scheduleItem['tuesday']))
+                                    @else
+                                         <td></td>
+                                    @endif
+                                    @if(key($scheduleItem['wednesday']))
+                                        <td>{{key($scheduleItem['wednesday'])}}-{{ $scheduleItem['wednesday'][key($scheduleItem['wednesday'])]}} </td>
+                                            @php(next($scheduleItem['wednesday']))
+                                    @else
+                                         <td></td>
+                                    @endif
+                                    @if(key($scheduleItem['thursday']))
+                                        <td>{{key($scheduleItem['thursday'])}}-{{ $scheduleItem['thursday'][key($scheduleItem['thursday'])]}} </td>
+                                            @php(next($scheduleItem['thursday']))
+                                    @else
+                                        <td></td>
+                                    @endif
+                                    @if(key($scheduleItem['friday']))
+                                        <td>{{key($scheduleItem['friday'])}}-{{ $scheduleItem['friday'][key($scheduleItem['friday'])]}} </td>
+                                            @php(next($scheduleItem['friday']))
+                                    @else
+                                        <td></td>
+                                    @endif
+                                </tr>
+
+                            @endfor
+
+                        </table>
+{{--                        {{ $newsList->links() }}--}}
                     </div>
+
                 </div>
-                <div class="accordion-item">
-{{--                    <h2 class="accordion-header" id="headingTwo">--}}
-{{--                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">--}}
-{{--                            Accordion Item #2--}}
-{{--                        </button>--}}
-{{--                    </h2>--}}
-{{--                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">--}}
-{{--                        <div class="accordion-body">--}}
-{{--                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="accordion-item">--}}
-{{--                    <h2 class="accordion-header" id="headingThree">--}}
-{{--                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">--}}
-{{--                            Accordion Item #3--}}
-{{--                        </button>--}}
-{{--                    </h2>--}}
-{{--                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">--}}
-{{--                        <div class="accordion-body">--}}
-{{--                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
-
-
-{{--        <div class="col">--}}
-{{--            <div class="card shadow-sm">--}}
-{{--                @if($newsItem->image == null)--}}
-{{--                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>--}}
-{{--                @elseif(current(explode('/', $newsItem->image)) === 'https:')--}}
-{{--                    <img src="{{ $newsItem->image }}"/>--}}
-{{--                @else--}}
-{{--                    <img src="{{ Storage::disk('public')->url($newsItem->image) }}"/>--}}
-{{--                @endif--}}
-{{--                <div class="card-body">--}}
-{{--                    <p>Рубрика: {{$newsItem->categories->map(fn($item) => $item->title)->implode('|')}}</p>--}}
-{{--                    <p><strong><a href="{{ route('news.show', ['news' => $newsItem->id]) }}"><h2>{{$newsItem->title}}</h2></a></strong></p>--}}
-{{--                    <p class="card-text">{!! $newsItem->description !!}</p>--}}
-{{--                    <div class="d-flex justify-content-between align-items-center">--}}
-{{--                        <div class="btn-group">--}}
-{{--                           <a href="{{ route('news.show', ['news' => $newsItem->id]) }}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>--}}
-{{--                        </div>--}}
-{{--                        <small class="text-muted">{{$newsItem->author}} ({{date('d.m.Y H:i:s', strtotime($newsItem->pubDate))}})</small>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        </div>
         @empty
             <p>Нет новостей</p>
         @endforelse
-{{--    </div>--}}
+    </div>
+
 </div>
 @endsection
 

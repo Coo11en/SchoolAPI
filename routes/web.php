@@ -24,5 +24,8 @@ Route::get('/', [HomeController::class, 'index'])
     ->name('index');
 Route::get('/news', [NewsController::class, 'index'])
     ->name('news.index');
+Route::get('/news/{news}', [NewsController::class, 'show'])
+    ->where('news', '\d+')
+    ->name('news.show');
 Route::get('/schedule', [ScheduleController::class, 'index'])
     ->name('schedule.index');

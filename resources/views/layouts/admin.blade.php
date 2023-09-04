@@ -34,7 +34,7 @@
 </head>
 <body>
 
-<x-header></x-header>
+<x-admin.header></x-admin.header>
 
 <main>
     <div class="album py-3 bg-light">

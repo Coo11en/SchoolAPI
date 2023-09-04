@@ -470,6 +470,16 @@ class Controller extends BaseController
 //    }
 //}';
         $jsonUserData = Storage::disk('local')->get('schedule.json');
+
         return  json_decode($jsonUserData, true);
+    }
+
+    protected function getClasses (): array
+    {
+        $arrayUserData = $this->getSchedule();
+        foreach ($arrayUserData as $key => $item) {
+            $arrayClasses[] = $key;
+        }
+       return $arrayClasses;
     }
 }

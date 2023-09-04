@@ -3,6 +3,9 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\Admin\ScheduleController as AdminScheduleController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\IndexController as AdminIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +32,23 @@ Route::get('/news/{news}', [NewsController::class, 'show'])
     ->name('news.show');
 Route::get('/schedule', [ScheduleController::class, 'index'])
     ->name('schedule.index');
-Route::get('/update', [ScheduleController::class, 'update'])
-    ->name('schedule.update');
+//Route::get('admin/schedule/edit', [AdminScheduleController::class, 'edit'])
+//    ->name('admin.schedule.edit');
+
+// Admin
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+//    'middleware' => 'check.admin',
+], static function () {
+    Route::get('/', AdminIndexController::class)
+        ->name('index');
+//    Route::resource('/categories', AdminCategoriesController::class);
+    Route::resource('/news', AdminNewsController::class);
+
+    Route::resource('/schedule', AdminScheduleController::class);
+
+//    Route::resource('/orders', AdminOrdersController::class);
+//    Route::resource('/users', AdminUsersController::class);
+});
+

@@ -9,15 +9,31 @@ class ScheduleController extends Controller
 {
     public function index (): View
     {
-//        dd($this->getSchedule());
+
+
+//        dd($this->getClasses(), $this->getSchedule());
         return view('schedule.index', [
             'schedule' => $this->getSchedule(),
+            'classes' => $this->getClasses()
         ]);
     }
 
-    public function update () {
-        return view('schedule.update', [
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(): View
+    {
+        return view('schedule.edit', [
             'schedule' => $this->getSchedule(),
+            'classes' => $this->getClasses()
         ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
     }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('title') Edit News @parent @stop
 @section('content')
+<div class="container">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Редактировать новость</h1>
     </div>
@@ -69,6 +70,7 @@
 
         <button type="submit" class="btn btn-success">Сохранить</button>
     </form>
+</div>
 @endsection
 @push('js')
 

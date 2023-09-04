@@ -14,7 +14,14 @@
 {{--        </div>--}}
 {{--    </section>--}}
 {{--    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">--}}
-
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Расписание занятий</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Добавить расписание</a>
+            </div>
+        </div>
+    </div>
     <div class="accordion" id="accordionExample">
         @forelse ($schedule as $key => $scheduleItem)
         <div class="accordion-item">

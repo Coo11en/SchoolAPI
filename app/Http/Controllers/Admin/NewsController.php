@@ -48,10 +48,12 @@ class NewsController extends Controller
      */
     public function create(): View
     {
-        return view('admin.news.create', [
-            'categories' => $this->categoriesQueryBuilder->getAll(),
-            'sources' => $this->sourcesQueryBuilder->getAll()
-        ]);
+        return view('admin.news.create',
+//            [
+//            'categories' => $this->categoriesQueryBuilder->getAll(),
+//            'sources' => $this->sourcesQueryBuilder->getAll()
+//        ]
+        );
     }
 
     /**
@@ -63,8 +65,8 @@ class NewsController extends Controller
         $news = News::create($request->validated());
         if ($news) {
 
-            $news->categories()->attach($request->getCategories());
-            $news->sources()->attach($request->getSources());
+//            $news->categories()->attach($request->getCategories());
+//            $news->sources()->attach($request->getSources());
 
             return \redirect()->route('admin.news.index')->with('success', __('News has been created'));
         }

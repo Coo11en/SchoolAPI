@@ -16,7 +16,7 @@ class DayResource extends JsonResource
     {
         return [
             'dayName' => $this->name,
-            'lessons' => LessonResource::newCollection($this->lessons)
+            'lessons' => ScheduleResource::collection($this->schedules)[0]
         ];
     }
 }

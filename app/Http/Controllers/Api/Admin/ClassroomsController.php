@@ -15,7 +15,7 @@ class ClassroomsController extends Controller
      */
     public function index()
     {
-        return ClassroomResource::collection(Classroom::all());
+        return ClassroomResource::collection(Classroom::with('schedules')->get());
     }
 
     /**
@@ -31,7 +31,8 @@ class ClassroomsController extends Controller
      */
     public function show(string $id)
     {
-        return new ClassroomResource(Classroom::with('days')->findOrFail($id));
+
+        return new ClassroomResource(Classroom::with('schedules')->findOrFail($id));
     }
 
     /**

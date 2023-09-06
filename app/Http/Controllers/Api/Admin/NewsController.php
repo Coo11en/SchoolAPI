@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\News\Store;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Illuminate\Database\Eloquent\Collection;
@@ -22,9 +23,11 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Store $request)
     {
-        //
+        $createdNews = News::create($request->validated());
+
+        return new NewsResource($createdNews);
     }
 
     /**

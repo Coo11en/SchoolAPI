@@ -5,15 +5,13 @@ namespace Database\Factories;
 use App\Models\Classroom;
 use App\Models\Day;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
 use JetBrains\PhpStorm\ArrayShape;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Day>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Schedule>
  */
-class DayFactory extends Factory
+class ScheduleFactory extends Factory
 {
-    protected $model = Day::class;
     /**
      * Define the model's default state.
      *
@@ -22,7 +20,12 @@ class DayFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Monday',
+            'lesson1' => $this->faker->word(),
+            'lesson2' => $this->faker->word(),
+            'lesson3' => $this->faker->word(),
+            'lesson4' => $this->faker->word(),
+            'lesson5' => $this->faker->word(),
+            'day_id' => Day::factory(),
             'classroom_id' => Classroom::first()->id
         ];
     }

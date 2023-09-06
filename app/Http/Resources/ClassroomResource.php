@@ -17,7 +17,7 @@ class ClassroomResource extends JsonResource
         return [
             'classId' => $this->id,
             'className' => $this->name,
-            'days' => DayResource::collection($this->days)
+            'days' => DayResource::collection($this->days),
         ];
     }
 }

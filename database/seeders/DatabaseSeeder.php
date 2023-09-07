@@ -25,14 +25,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        Classroom::factory()->create();
-        // Create 5 records of lessons
-
-        Schedule::factory()->count(5)->create();
-//            ->each(function ($schedule) {
-//            $schedule->days()->associate(Day::factory()->create(['name' => 'Понедельник']));
-//        });
+        $this->call([
+            NewsSeeder::class,
+            SchedulesSeeder::class,
+            AlbumsSeeder::class,
+        ]);
 
     }
 }

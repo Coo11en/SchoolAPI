@@ -20,13 +20,7 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            'lesson1' => $this->faker->word(),
-            'lesson2' => $this->faker->word(),
-            'lesson3' => $this->faker->word(),
-            'lesson4' => $this->faker->word(),
-            'lesson5' => $this->faker->word(),
-            'day_id' => Day::factory(),
-            'classroom_id' => Classroom::first()->id
+         //
         ];
     }
 }

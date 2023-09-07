@@ -107,3 +107,251 @@ GET /api/news/{id_news}
     }
 }
 ```
+### Получить расписания для всех классов
+```http request
+GET /api/class_schedules
+```
+### Ответ
+```
+{
+    "data": [
+        {
+            "classId": 1,
+            "className": "1a",
+            "days": [
+                {
+                    "dayName": "Понедельник",
+                    "lessons": [
+                        "repudiandae",
+                        "id",
+                        "enim",
+                        "enim",
+                        "tempore"
+                    ]
+                },
+                {
+                    "dayName": "Вторник",
+                    "lessons": [
+                        "quis",
+                        "possimus",
+                        "accusantium",
+                        "ratione",
+                        "praesentium"
+                    ]
+                },
+                {
+                    "dayName": "Среда",
+                    "lessons": [
+                        "asperiores",
+                        "odit",
+                        "quod",
+                        "aut",
+                        "fugiat"
+                    ]
+                },
+                {
+                    "dayName": "Четверг",
+                    "lessons": [
+                        "et",
+                        "ullam",
+                        "debitis",
+                        "illo",
+                        "officia"
+                    ]
+                },
+                {
+                    "dayName": "Пятница",
+                    "lessons": [
+                        "nostrum",
+                        "necessitatibus",
+                        "eos",
+                        "placeat",
+                        "voluptas"
+                    ]
+                }
+            ]
+        },
+        {
+            "classId": 2,
+            "className": "2a",
+            "days": [
+                {
+                    "dayName": "Понедельник",
+                    "lessons": [
+                        "non",
+                        "ut",
+                        "doloremque",
+                        "et",
+                        "ipsa"
+                    ]
+                },
+                {
+                    "dayName": "Вторник",
+                    "lessons": [
+                        "asperiores",
+                        "odio",
+                        "mollitia",
+                        "harum",
+                        "aut"
+                    ]
+                },
+                {
+                    "dayName": "Среда",
+                    "lessons": [
+                        "amet",
+                        "omnis",
+                        "corporis",
+                        "et",
+                        "in"
+                    ]
+                },
+                {
+                    "dayName": "Четверг",
+                    "lessons": [
+                        "quam",
+                        "error",
+                        "natus",
+                        "eum",
+                        "maxime"
+                    ]
+                },
+                {
+                    "dayName": "Пятница",
+                    "lessons": [
+                        "ut",
+                        "numquam",
+                        "et",
+                        "culpa",
+                        "blanditiis"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+### Получить расписание для выбранного класса
+```http request
+GET /api/class_schedules/{id_class}
+```
+### Ответ
+```
+{
+    "data": {
+        "classId": 2,
+        "className": "2a",
+        "days": [
+            {
+                "dayName": "Понедельник",
+                "lessons": [
+                    "non",
+                    "ut",
+                    "doloremque",
+                    "et",
+                    "ipsa"
+                ]
+            },
+            {
+                "dayName": "Вторник",
+                "lessons": [
+                    "asperiores",
+                    "odio",
+                    "mollitia",
+                    "harum",
+                    "aut"
+                ]
+            },
+            {
+                "dayName": "Среда",
+                "lessons": [
+                    "amet",
+                    "omnis",
+                    "corporis",
+                    "et",
+                    "in"
+                ]
+            },
+            {
+                "dayName": "Четверг",
+                "lessons": [
+                    "quam",
+                    "error",
+                    "natus",
+                    "eum",
+                    "maxime"
+                ]
+            },
+            {
+                "dayName": "Пятница",
+                "lessons": [
+                    "ut",
+                    "numquam",
+                    "et",
+                    "culpa",
+                    "blanditiis"
+                ]
+            }
+        ]
+    }
+}
+```
+### Получить альбомы для фотогалереи
+```http request
+GET /api/albums
+```
+### Ответ
+```
+{
+    "data": [
+        {
+            "name": "Sed minima et voluptas enim ab ipsa ut.",
+            "nameEng": "neque",
+            "mainImage": "http://www.bergnaum.com/",
+            "images": [
+                "https://armstrong.com/vero-sint-magni-quod-dicta-ea-consequatur.html",
+                "http://www.gleason.com/",
+                "http://www.dicki.com/"
+            ]
+        },
+        {
+            "name": "Aut neque rerum facilis.",
+            "nameEng": "perspiciatis",
+            "mainImage": "http://cremin.net/quaerat-cum-assumenda-veniam-autem-consequuntur-vel.html",
+            "images": [
+                "http://haley.com/rerum-sit-optio-non-dolorem-neque-ad.html",
+                "http://www.cole.com/repudiandae-quisquam-quaerat-facilis-sit-et.html",
+                "http://www.tromp.biz/labore-error-eveniet-debitis-illum-distinctio-libero-sequi.html"
+            ]
+        },
+        {
+            "name": "Est provident sed deserunt id deserunt.",
+            "nameEng": "qui",
+            "mainImage": "https://wolf.info/dolor-ut-eum-sed-dolorem-velit-ex-perferendis.html",
+            "images": [
+                "https://osinski.com/iure-quam-consequatur-facere-error-fugiat.html",
+                "http://hills.net/reiciendis-veritatis-quia-dignissimos.html",
+                "http://kiehn.org/numquam-non-quas-necessitatibus-repudiandae-nostrum"
+            ]
+        }
+    ]
+}
+```
+### Получить конкретный альбом
+```http request
+GET /api/albums/{id_album}
+```
+### Ответ
+```
+{
+    "data": {
+        "name": "Aut neque rerum facilis.",
+        "nameEng": "perspiciatis",
+        "mainImage": "http://cremin.net/quaerat-cum-assumenda-veniam-autem-consequuntur-vel.html",
+        "images": [
+            "http://haley.com/rerum-sit-optio-non-dolorem-neque-ad.html",
+            "http://www.cole.com/repudiandae-quisquam-quaerat-facilis-sit-et.html",
+            "http://www.tromp.biz/labore-error-eveniet-debitis-illum-distinctio-libero-sequi.html"
+        ]
+    }
+}
+```

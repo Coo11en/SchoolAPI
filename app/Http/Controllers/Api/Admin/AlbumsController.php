@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ClassroomResource;
-use App\Http\Resources\DayResource;
-use App\Models\Classroom;
+use App\Http\Resources\AlbumResource;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
-class ClassroomsController extends Controller
+class AlbumsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return ClassroomResource::collection(Classroom::with('schedules')->get());
+        return AlbumResource::collection(Album::all());
     }
 
     /**
@@ -31,8 +30,7 @@ class ClassroomsController extends Controller
      */
     public function show(string $id)
     {
-
-        return new ClassroomResource(Classroom::with('schedules')->findOrFail($id));
+        return new AlbumResource(Album::findOrFail($id));
     }
 
     /**

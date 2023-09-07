@@ -22,8 +22,7 @@ class DayFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Monday',
-            'classroom_id' => Classroom::first()->id
+    //
         ];
     }
 }

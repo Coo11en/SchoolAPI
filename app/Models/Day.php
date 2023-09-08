@@ -21,7 +21,7 @@ class Day extends Model
     /* Relations */
     public function schedules()
     {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Schedule::class)->select('lesson1','lesson2','lesson3','lesson4','lesson5');
     }
 
     public function classrooms()

@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Classroom;
-use App\Models\Day;
-use App\Models\Schedule;
-//use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Database\Seeder;
 
 
@@ -28,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             NewsSeeder::class,
             SchedulesSeeder::class,
+            PhotosSeeder::class,
             AlbumsSeeder::class,
         ]);
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AlbumResource;
+use App\Http\Resources\PhotoResource;
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class AlbumsController extends Controller

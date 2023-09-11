@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\Admin\ClassroomsController;
+use App\Http\Controllers\Api\Admin\AlbumsController;
+use App\Http\Controllers\Api\Admin\ClassSchedulesController;
 use App\Http\Controllers\Api\Admin\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'news' => NewsController::class,
-    'classroom' => ClassroomsController::class
+    'class_schedules' => ClassSchedulesController::class,
+    'albums' => AlbumsController::class
 ]);

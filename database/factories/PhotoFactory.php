@@ -2,18 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Classroom;
-use App\Models\Day;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
-use JetBrains\PhpStorm\ArrayShape;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Day>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Photo>
  */
-class DayFactory extends Factory
+class PhotoFactory extends Factory
 {
-    protected $model = Day::class;
     /**
      * Define the model's default state.
      *
@@ -22,7 +17,7 @@ class DayFactory extends Factory
     public function definition(): array
     {
         return [
-    //
+            'img' => $this->faker->imageUrl(),
         ];
     }
 }

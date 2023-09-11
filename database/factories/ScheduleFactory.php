@@ -2,12 +2,15 @@
 
 namespace Database\Factories;
 
+use App\Models\Classroom;
+use App\Models\Day;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use JetBrains\PhpStorm\ArrayShape;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lesson>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Schedule>
  */
-class LessonFactory extends Factory
+class ScheduleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +20,7 @@ class LessonFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+         //
         ];
     }
 }

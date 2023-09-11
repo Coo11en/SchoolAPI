@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Classroom;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ClassroomFactory extends Factory
 {
+    protected $model = Classroom::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +19,7 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+          //
         ];
     }
 }

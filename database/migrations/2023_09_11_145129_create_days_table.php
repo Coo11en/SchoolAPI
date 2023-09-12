@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('days', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
-            $table->foreignId('classroom_id')->constrained();
+            $table->foreignUuid('classroom_id')->references('id')->on('classrooms');
             $table->timestamps();
         });
     }
@@ -27,3 +27,4 @@ return new class extends Migration
         Schema::dropIfExists('days');
     }
 };
+

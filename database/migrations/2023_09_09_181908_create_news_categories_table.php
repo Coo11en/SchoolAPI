@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->foreignId('main_img')->references('id')->on('photos');
+        Schema::create('news_categories', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name', 100);
+            $table->string('description', 3000)->nullable();
+            $table->string('image', 255)->nullable();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->dropColumn('main_img');
-        });
+        Schema::dropIfExists('news_categories');
     }
 };

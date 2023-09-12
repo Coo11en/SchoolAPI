@@ -18,8 +18,8 @@ class SchedulesSeeder extends Seeder
     public function run(): void
     {
         DB::table('classrooms')->insert($this->getClassroomsData());
-        DB::table('days')->insert($this->getDaysData());
-        DB::table('schedules')->insert($this->getSchedulesData());
+//        DB::table('days')->insert($this->getDaysData());
+//        DB::table('schedules')->insert($this->getSchedulesData());
     }
 
     public function getClassroomsData(): array
@@ -40,11 +40,11 @@ class SchedulesSeeder extends Seeder
             [ 'name' => 'Среда', 'classroom_id' => Classroom::first()->id],
             [ 'name' => 'Четверг', 'classroom_id' => Classroom::first()->id],
             [ 'name' => 'Пятница', 'classroom_id' => Classroom::first()->id],
-            [ 'name' => 'Понедельник', 'classroom_id' => Classroom::first()->id+1],
-            [ 'name' => 'Вторник', 'classroom_id' => Classroom::first()->id+1],
-            [ 'name' => 'Среда', 'classroom_id' => Classroom::first()->id+1],
-            [ 'name' => 'Четверг', 'classroom_id' => Classroom::first()->id+1],
-            [ 'name' => 'Пятница', 'classroom_id' => Classroom::first()->id+1],
+            [ 'name' => 'Понедельник', 'classroom_id' => Classroom::last()->id],
+            [ 'name' => 'Вторник', 'classroom_id' => Classroom::last()->id],
+            [ 'name' => 'Среда', 'classroom_id' => Classroom::last()->id],
+            [ 'name' => 'Четверг', 'classroom_id' => Classroom::last()->id],
+            [ 'name' => 'Пятница', 'classroom_id' => Classroom::last()->id],
         ];
     }
 
@@ -55,13 +55,9 @@ class SchedulesSeeder extends Seeder
         for ($i=0;$i<2;$i++) {
             for ($j = 0; $j < 5; $j++) {
                 $response[] = [
-                    'lesson1' => fake()->word(),
-                    'lesson2' => fake()->word(),
-                    'lesson3' => fake()->word(),
-                    'lesson4' => fake()->word(),
-                    'lesson5' => fake()->word(),
                     'day_id' => Day::first()->id + $j + $i*5,
-                    'classroom_id' => Classroom::first()->id + $i
+                    'classroom_id' => Classroom::first()->id + $i,
+                    'teacher_id' => Classroom::find(Classroom::first()->id + $i)->teacher_id
                 ];
             }
         }

@@ -22,7 +22,11 @@ class DayFactory extends Factory
     public function definition(): array
     {
         return [
-    //
+            'id' => $this->faker->uuid(),
+            'name' => $this->faker->dayOfWeek,
+            'classrooms_id' => Classroom::factory(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

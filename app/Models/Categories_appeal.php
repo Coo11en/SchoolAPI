@@ -6,23 +6,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Album extends Model
+class Categories_appeal  extends Model
 {
     use HasFactory;
 
-    protected  $table = 'albums';
+    protected  $table = 'categories_appeals';
     protected $fillable = [
         'name',
         'description',
     ];
 
-    public function album_photos()
+    public function appeals()
     {
-        return $this->hasMany(Album_photo::class);
-    }
+        return $this->hasMany(Appeal::class);
+}
 
-    public function news()
-    {
-        return $this->belongsTo(News::class);
-    }
 }

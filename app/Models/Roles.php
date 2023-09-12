@@ -6,23 +6,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
+class Roles extends Model
 {
     use HasFactory;
 
-    protected  $table = 'photos';
+    protected $table = 'roles';
+
     protected $fillable = [
-        'img',
+        'role_name',
     ];
 
     public function teachers()
     {
         return $this->hasOne(Teacher::class);
     }
-
-    public function album_photos()
-    {
-        return $this->belongsTo(Album_photo::class);
-    }
-
 }

@@ -2,17 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Classroom;
-use App\Models\News_categories;
-use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
  */
-class ClassroomFactory extends Factory
+class StudentFactory extends Factory
 {
-    protected $model = Classroom::class;
     /**
      * Define the model's default state.
      *
@@ -22,8 +19,9 @@ class ClassroomFactory extends Factory
     {
         return [
             'id' => $this->faker->uuid(),
-            'name' => fake()->text(5),
-            'teacher_id' => Teacher::factory(),
+            'username'=> fake()->text(20),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
         ];

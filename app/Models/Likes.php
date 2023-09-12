@@ -5,24 +5,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Album extends Model
+class Likes extends Model
 {
     use HasFactory;
 
-    protected  $table = 'albums';
+    protected $table = 'likes';
+
     protected $fillable = [
-        'name',
-        'description',
+        'news_id',
+        'user_idr',
+        'liked',
     ];
 
-    public function album_photos()
-    {
-        return $this->hasMany(Album_photo::class);
-    }
-
-    public function news()
+    public function news():BelongsTo
     {
         return $this->belongsTo(News::class);
     }
+
 }

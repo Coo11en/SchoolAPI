@@ -2,17 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Classroom;
-use App\Models\News_categories;
-use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ * @extends Factory
  */
-class ClassroomFactory extends Factory
+class Call_scheduleFactory extends Factory
 {
-    protected $model = Classroom::class;
     /**
      * Define the model's default state.
      *
@@ -22,8 +18,9 @@ class ClassroomFactory extends Factory
     {
         return [
             'id' => $this->faker->uuid(),
-            'name' => fake()->text(5),
-            'teacher_id' => Teacher::factory(),
+            'call_number' => $this->faker->numberBetween(1,8),
+            'start_time' => fake()->time,
+            'lesson_time' => '45',
             'created_at' => now(),
             'updated_at' => now(),
         ];

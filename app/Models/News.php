@@ -8,6 +8,9 @@ namespace App\Models;
 //use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 //use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class  News extends Model
@@ -24,12 +27,29 @@ class  News extends Model
     protected $fillable = [
         'title',
         'author',
-//        'status',
-        'description'
+        'description',
+//        'news_category_id',
+//        'album_id',
+        'status',
     ];
 
+    public function likes()
+    {
+        return $this->hasMany(Likes::class);
+    }
+
+    public function albums()
+    {
+        return $this->hasOne(Album::class);
+    }
+
+    public function news_categories():BelongsTo
+    {
+        return $this->belongsTo(News_categories::class, 'news_categories_id');
+    }
+
     /* Relations */
-//    public function categories(): BelongsToMany
+//, 'news_categories_id    public function categories(): BelongsToMany
 //    {
 //        return $this->belongsToMany(Category::class, 'category_has_news',
 //            'news_id', 'category_id');

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('album_photo', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('album_id')->constrained();
-            $table->foreignId('photo_id')->constrained();
+        Schema::create('parents_connection', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->foreignUuid('parent_id')->references('id')->on('parents');
+            $table->foreignUuid('student_id')->references('id')->on('students');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('album_photo');
+        Schema::dropIfExists('parents_connection');
     }
 };

@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 namespace App\Models;
@@ -8,26 +7,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Classroom extends Model
+class Call_schedule extends Model
 {
     use HasFactory;
-    protected  $table = 'classrooms';
+
+    protected $table = 'call_schedule';
+
     protected $fillable = [
-        'name',
-        'teachers_id',
+        'call_number',
+        'start_time',
+        'lesson_time',
     ];
 
-    /* Relations */
-    public function days(): HasMany
-    {
-        return $this->hasMany(Day::class,);
-    }
     public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
-    }
-    public function teachers()
-    {
-        return $this->hasOne(Teacher::class);
     }
 }

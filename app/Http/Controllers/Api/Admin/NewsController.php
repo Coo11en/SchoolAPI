@@ -31,6 +31,7 @@ class NewsController extends Controller
     public function store(Store $request): NewsResource
     {
         $createdNews = News::create($request->validated());
+//        $news->categories()->attach($request->getCategories());
 
         return new NewsResource($createdNews);
     }

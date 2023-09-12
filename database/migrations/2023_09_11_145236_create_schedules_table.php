@@ -12,15 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->id();
-            $table->string('lesson1')->nullable();
-            $table->string('lesson2')->nullable();
-            $table->string('lesson3')->nullable();
-            $table->string('lesson4')->nullable();
-            $table->string('lesson5')->nullable();
-            $table->string('lesson6')->nullable();
-            $table->foreignId('day_id')->constrained();
-            $table->foreignId('classroom_id')->constrained();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('subject_id')->references('id')->on('subjects');
+            $table->foreignUuid('teacher_id')->references('id')->on('teachers');
+            $table->string('week_day_name', 50);
+            $table->foreignUuid('classroom_id')->references('id')->on('classrooms');
+            $table->foreignUuid('call_schedule_id')->references('id')->on('call_schedule');
+            $table->foreignUuid('day_id')->references('id')->on('days');
             $table->timestamps();
         });
     }
@@ -33,3 +31,4 @@ return new class extends Migration
         Schema::dropIfExists('schedules');
     }
 };
+

@@ -17,9 +17,10 @@ class SchedulesSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('classrooms')->insert($this->getClassroomsData());
+//        DB::table('classrooms')->insert($this->getClassroomsData());
 //        DB::table('days')->insert($this->getDaysData());
 //        DB::table('schedules')->insert($this->getSchedulesData());
+
     }
 
     public function getClassroomsData(): array
@@ -27,6 +28,7 @@ class SchedulesSeeder extends Seeder
         $response = [];
         for ($i=1; $i<3; $i++) {
             $response[] = [
+                'id' => Faker->uuid(),
               'name' => $i.'a'
             ];
         }

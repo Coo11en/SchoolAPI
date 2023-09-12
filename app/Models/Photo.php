@@ -11,6 +11,9 @@ class Photo extends Model
     use HasFactory;
 
     protected  $table = 'photos';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'img',
     ];

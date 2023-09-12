@@ -15,6 +15,8 @@ class Teacher extends Model
 
     protected $table = 'teachers';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'username',
         'password',

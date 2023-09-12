@@ -11,6 +11,9 @@ class Album extends Model
     use HasFactory;
 
     protected  $table = 'albums';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'description',

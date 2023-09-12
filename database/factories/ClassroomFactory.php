@@ -22,7 +22,7 @@ class ClassroomFactory extends Factory
     {
         return [
             'id' => $this->faker->uuid(),
-            'name' => fake()->text(5),
+            'name' => fake()->name(),
             'teacher_id' => Teacher::factory(),
             'created_at' => now(),
             'updated_at' => now(),

@@ -12,6 +12,9 @@ class Classroom extends Model
 {
     use HasFactory;
     protected  $table = 'classrooms';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'teachers_id',

@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('album_photo', function (Blueprint $table) {
-            $table->uuid('id')->primary();
             $table->foreignUuid('photo_id')->references('id')->on('photos');
             $table->boolean('main_img')->default(false);
             $table->foreignUuid('album_id')->references('id')->on('albums');

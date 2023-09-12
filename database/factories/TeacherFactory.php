@@ -21,17 +21,17 @@ class TeacherFactory extends Factory
     {
         return [
             'id' => $this->faker->uuid(),
-            'username' => $this->faker->word(),
+            'username' => $this->faker->LastName(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'name' => fake()->text(20),
-            'surname' => fake()->text(20),
+            'name' => fake()->firstName(),
+            'surname' => fake()->lastName(),
             'patronymic' => fake()->text(20),
             'job_title' => fake()->text(250),
             'role_id' => Roles::factory(),
             'email' => fake()->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber,
             'birthday' => $this->faker->date,
-            'main_photo_id' => Photo::factory(),
+            'main_photo_id' => null,
             'token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),

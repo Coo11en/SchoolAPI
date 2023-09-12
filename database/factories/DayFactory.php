@@ -24,7 +24,7 @@ class DayFactory extends Factory
         return [
             'id' => $this->faker->uuid(),
             'name' => $this->faker->dayOfWeek,
-            'classrooms_id' => Classroom::factory(),
+            'classroom_id' => Classroom::factory(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

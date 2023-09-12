@@ -11,6 +11,9 @@ class Appeal extends Model
     use HasFactory;
 
     protected  $table = 'appeals';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'email',

@@ -14,6 +14,8 @@ class Parents extends Model
 
     protected $table = 'parents';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'username',
         'password',

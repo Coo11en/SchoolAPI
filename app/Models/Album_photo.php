@@ -11,6 +11,9 @@ class Album_photo extends Model
     use HasFactory;
 
     protected  $table = 'album_photo';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'photo_id',
         'album_id',

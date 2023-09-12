@@ -16,12 +16,13 @@ class DayResource extends JsonResource
     public function toArray(Request $request): array
     {
 
-        $schedules = ScheduleResource::collection($this->schedules);
-        $resultArr = $schedules[0] ;
+//        $schedules = ScheduleResource::collection($this->schedules);
+//        $resultArr = $schedules[0] ;
 
         return [
             'dayName' => $this->name,
-            'lessons' => $resultArr
+//            'lessons' => $resultArr
+                'lessons' => SubjectResource::collection($this->subjects)
         ];
     }
 }

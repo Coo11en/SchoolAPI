@@ -13,6 +13,8 @@ class Student extends Model
 
     protected $table = 'students';
 
+    public $incrementing = false;
+
     protected $fillable = [
       'username',
       'password',

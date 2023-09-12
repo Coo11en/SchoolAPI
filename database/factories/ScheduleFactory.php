@@ -23,12 +23,12 @@ class ScheduleFactory extends Factory
     {
         return [
             'id' => $this->faker->uuid(),
-            'subjects_id' => Subject::factory(),
-            'teachers_id' => Teacher::factory(),
+            'subject_id' => Subject::factory(),
+            'teacher_id' => Teacher::factory(),
             'week_day_name' => $this->faker->dayOfWeek,
             'classroom_id' => Classroom::factory(),
             'call_schedule_id' => Call_schedule::factory(),
-            'days_id' => Day::factory(),
+            'day_id' => Day::factory(),
             'created_at' => now(),
             'updated_at' => now(),
 

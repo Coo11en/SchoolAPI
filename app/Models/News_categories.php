@@ -14,6 +14,8 @@ class News_categories extends Model
 
     protected $table = 'news_categories';
 
+    public $incrementing = false;
+
     /**
      * The attributes that are mass assignable.
      *

@@ -15,6 +15,9 @@ class Day extends Model
     use HasFactory;
 
     protected  $table = 'days';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
     ];
@@ -23,10 +26,18 @@ class Day extends Model
     public function schedules()
     {
         return $this->hasMany(Schedule::class);
-}
+    }
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'schedules', 'day_id', 'subject_id');
+    }
+
+
+
 
     public function classrooms()
     {
         return $this->belongsTo(Classroom::class);
     }
+
 }

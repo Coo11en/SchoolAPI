@@ -11,6 +11,9 @@ class Categories_appeal  extends Model
     use HasFactory;
 
     protected  $table = 'categories_appeals';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'description',

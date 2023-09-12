@@ -13,14 +13,18 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Schedule extends Model
 {
     use HasFactory;
+
     protected  $table = 'schedules';
+
+    public $incrementing = false;
+
     protected $fillable = [
-        'subjects_id',
-        'teachers_id',
+        'subject_id',
+        'teacher_id',
         'week_day_name',
         'classroom_id',
         'call_schedule_id',
-        'days_id',
+        'day_id',
     ];
 
     /* Relations */

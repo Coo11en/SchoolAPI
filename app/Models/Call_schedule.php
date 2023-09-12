@@ -13,6 +13,8 @@ class Call_schedule extends Model
 
     protected $table = 'call_schedule';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'call_number',
         'start_time',

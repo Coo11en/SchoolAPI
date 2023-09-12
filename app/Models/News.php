@@ -19,6 +19,8 @@ class  News extends Model
 
     protected $table = 'news';
 
+    public $incrementing = false;
+
     /**
      * The attributes that are mass assignable.
      *

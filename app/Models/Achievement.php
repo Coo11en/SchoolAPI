@@ -11,6 +11,9 @@ class Achievement extends Model
     use HasFactory;
 
     protected  $table = 'achievements';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'value',

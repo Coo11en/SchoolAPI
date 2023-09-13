@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
@@ -14,14 +16,11 @@ class ScheduleResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-//        $array = [
-//
-//        ];
-//
-//        return    array_diff($array, array(''));
+        $call_schedule = new Call_scheduleResource($this->callSchedules);
         return [
-            'subject_id' => $this->subject_id,
-            'call_schedule_id' => $this->call_schedule_id
+            'nameSubject' => new SubjectResource($this->subjects),
+            'callNumber' => $call_schedule->call_number
+
         ];
     }
 }

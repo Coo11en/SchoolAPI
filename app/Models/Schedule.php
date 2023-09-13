@@ -37,13 +37,13 @@ class Schedule extends Model
     {
         return $this->belongsTo(Classroom::class);
     }
-    public function call_schedule(): BelongsTo
+    public function callSchedules(): BelongsTo
     {
-        return $this->belongsTo(Call_schedule::class);
+        return $this->belongsTo(Call_schedule::class, 'call_schedule_id');
     }
     public function subjects(): BelongsTo
     {
-        return $this->belongsTo(Subject::class);
+        return $this->belongsTo(Subject::class, 'subject_id');
     }
     public function teachers(): BelongsTo
     {

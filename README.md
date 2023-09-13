@@ -1,19 +1,56 @@
 # SchoolAPI
 Сайт Филипповской школы
 
+В первую очередь, необходимо сгенерировать docker контейнер:
+```bash
+docker compose build
+```
+
+Запускаем контейнер:
+```bash
+docker-compose up -d
+```
+
+Переходим в консоль контейнера
+```bash
+docker exec -it schoolapi-php-fpm-1 /bin/bash
+```
+
 После скачивания необходимо установить все зависимости командами:
+```bash
 npm install
 composer install
 composer update
+```
 
 Установить базу данных MYSQL
 
-Создать базу данных 
+Создать базу данных
 
 создать в корне проекта файл .env и скопировать в него все из .env.example
 
-в файле .env в настройках баззы данных прописать имя базы данных которое присвоили при создании базы данных, логин и пароль если добавляли
+в файле .env в настройках баззы данных прописать имя базы данных которое присвоили при создании базы данных, логин и пароль если добавляли, FRONTEND_URL
 
+Сгенерировать ключ:
+```bash
+php artisan key:generate
+```
+Сделать линк на storage:
+```bash
+php artisan storage:link
+```
+Запустить миграции:
+```bash
+php artisan migrate
+```
+
+На проде закэшировать:
+```bash
+php artisan config:cache
+php artisan event:cache
+php artisan route:cache
+php artisan view:cache
+```
 # API
 ### Получить список новостей
 ```http request

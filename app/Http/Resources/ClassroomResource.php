@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
@@ -18,7 +20,7 @@ class ClassroomResource extends JsonResource
         return [
             'classId' => $this->id,
             'className' => $this->name,
-            'days' => DayResource::collection($this->days)->sortBy('created_at'),
+            'days' => DayResource::collection($this->days)
         ];
     }
 }

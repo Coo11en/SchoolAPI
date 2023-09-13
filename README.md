@@ -1,7 +1,7 @@
 # SchoolAPI
 Сайт Филипповской школы
 
-<h1 align="center"> Кто использует Docker target="_blank">Daniil</a> 
+<h1 align="center"> Кто использует Docker!!!! 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 
 В первую очередь, необходимо сгенерировать docker контейнер:

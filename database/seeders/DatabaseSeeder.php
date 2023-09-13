@@ -49,11 +49,11 @@ class DatabaseSeeder extends Seeder
             Day::factory()->state(['name' => 'Пятница', 'classroom_id' => Classroom::all()[$i]->id])->create();
         }
 
-// Seed 8 Call_schedules
+// Seed 4 Call_schedules
         Call_schedule::factory()->state(['call_number' => 1, 'start_time' => '8:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 2, 'start_time' => '8:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 3, 'start_time' => '8:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 4, 'start_time' => '8:30', 'lesson_time' => 45])->create();
+        Call_schedule::factory()->state(['call_number' => 2, 'start_time' => '9:30', 'lesson_time' => 45])->create();
+        Call_schedule::factory()->state(['call_number' => 3, 'start_time' => '10:30', 'lesson_time' => 45])->create();
+        Call_schedule::factory()->state(['call_number' => 4, 'start_time' => '11:30', 'lesson_time' => 45])->create();
 // Seed 11 Subjects
         Subject::factory()->state(['name_subject' => 'Русский язык'])->create();
         Subject::factory()->state(['name_subject' => 'Литература'])->create();

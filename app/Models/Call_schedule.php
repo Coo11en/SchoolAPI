@@ -21,6 +21,11 @@ class Call_schedule extends Model
         'lesson_time',
     ];
 
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'schedules', 'call_schedule_id', 'subject_id');
+    }
+
     public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);

@@ -20,7 +20,8 @@ class ScheduleResource extends JsonResource
 //
 //        return    array_diff($array, array(''));
         return [
-            $this->subject_id
+            'subject_id' => $this->subject_id,
+            'call_schedule_id' => $this->call_schedule_id
         ];
     }
 }

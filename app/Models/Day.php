@@ -33,7 +33,10 @@ class Day extends Model
     }
 
 
-
+    public function call_schedules()
+    {
+        return $this->belongsToMany(Call_schedule::class, 'schedules', 'day_id', 'call_schedule_id');
+    }
 
     public function classrooms()
     {

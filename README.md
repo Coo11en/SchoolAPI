@@ -1,8 +1,8 @@
 # SchoolAPI
 <h1 align="center"> Сайт Филипповской школы</h1>
 
-<h2 align="center"> Кто использует Docker!!!! 
-<br>
+<h2 align="center"> Кто использует Docker!!!!</h2>
+
 В первую очередь, необходимо сгенерировать docker контейнер:
 ```bash
 docker compose build
@@ -18,7 +18,7 @@ docker-compose up -d
 docker exec -it schoolapi-php-fpm-1 /bin/bash
 ```
 
-<h2 align="center"> Далее касается Всех кто обходится без Docker и использует Docker!! 
+<h2 align="center"> Далее касается Всех кто обходится без Docker и использует Docker!!</h2>
 
 В первую очередь, необходимо сгенерировать docker контейнер:
 ```bash

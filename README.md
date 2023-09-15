@@ -177,6 +177,57 @@ GET /api/news/{id_news}
     }
 }
 ```
+### Получить расписания для звонков
+```http request
+GET /api/callSchedules
+```
+### Ответ
+```
+{
+  "callSchedules": [
+    {
+      "number": 1,
+      "start": "08:30",
+      "end": "09:15"
+    },
+    {
+      "number": 2,
+      "start": "09:30",
+      "end": "10:15"
+    },
+    {
+      "number": 3,
+      "start": "10:30",
+      "end": "11:15"
+    },
+    {
+      "number": 4,
+      "start": "11:30",
+      "end": "12:15"
+    },
+    {
+      "number": 5,
+      "start": "13:00",
+      "end": "13:45"
+    },
+    {
+      "number": 6,
+      "start": "14:00",
+      "end": "14:45"
+    },
+    {
+      "number": 7,
+      "start": "15:00",
+      "end": "15:45"
+    },
+    {
+      "number": 8,
+      "start": "16:00",
+      "end": "16:45"
+    }
+  ]
+}
+```
 ### Получить расписания для всех классов
 ```http request
 GET /api/class_schedules

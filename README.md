@@ -2,7 +2,6 @@
 <h1 align="center"> Сайт Филипповской школы</h1>
 
 <h2 align="center"> Кто использует Docker!!!! 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h2>
 
 В первую очередь, необходимо сгенерировать docker контейнер:
 ```bash
@@ -20,7 +19,6 @@ docker exec -it schoolapi-php-fpm-1 /bin/bash
 ```
 
 <h2 align="center"> Далее касается Всех кто обходится без Docker и использует Docker!! 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h2>
 
 В первую очередь, необходимо сгенерировать docker контейнер:
 ```bash
@@ -60,13 +58,10 @@ DB_PASSWORD=(пароль пользователя)
 DB_PORT=(порт для БД, стандартный "3306")
 DB_HOST=(адрес хоста, стандартный "localhost")
 ```
-
 Добавить из файла .env.example строку
-
 ```bash
 FRONTEND_URL=http://localhost:3000
 ```
-
 где прописывается адрес на котором запускается проект.
 
 Сгенерировать ключ:

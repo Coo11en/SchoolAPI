@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\News;
 
+use App\Enums\NewsStatus;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
+use JetBrains\PhpStorm\ArrayShape;
+
 //use App\Enums\NewsStatus;
 
 class Update extends FormRequest
@@ -21,17 +25,24 @@ class Update extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<ValidationRule|array|string>
      */
-    public function rules(): array
+    #[ArrayShape([
+        'news_categories' => "string[]",
+        'news_categories.*' => "string[]",
+        'title' => "string[]",
+        'author' => "string[]",
+        'image' => "string[]",
+        'description' => "string[]"
+    ])] public function rules(): ValidationRule|array|string
     {
         return [
-//            'categories' => ['required', 'array'],
-//            'categories.*' => ['exists:categories,id'],
+            'news_categories' => ['required', 'array'],
+            'news_categories.*' => ['exists:categories,id'],
             'title' => ['required', 'string', 'min:7', 'max:200'],
             'author' => ['nullable', 'string', 'min:2', 'max:50'],
             'image' => ['sometimes', 'image', 'mimes:jpg,bmp,png'],
-//            'status' => ['required', new Enum(NewsStatus::class)],
+            'status' => ['required', new Enum(NewsStatus::class)],
             'description' => ['nullable', 'string', 'max:3000'],
 //            'sources' => ['nullable', 'array'],
 //            'sources.*' => ['exists:sources,id'],
@@ -40,22 +51,32 @@ class Update extends FormRequest
 
     public function getCategories(): array
     {
-        return $this->validated('categories');
+        return $this->validated('news_categories');
     }
 
-    public function getSources(): array
-    {
-        return $this->validated('sources');
-    }
+//    public function getSources(): array
+//    {
+//        return $this->validated('sources');
+//    }
 
-    public function messages(): array
+    #[ArrayShape([
+        'required' => "string"
+    ])] public function messages(): array
     {
         return [
             'required' => 'Нужно заполнить поле :attribute',
         ];
     }
 
-    public function attributes(): array
+    #[ArrayShape([
+        'categories' => "string",
+        'title' => "string",
+        'author' => "string",
+        'image' => "string",
+        'status' => "string",
+        'description' => "string",
+        'sources' => "string"
+    ])] public function attributes(): array
     {
         return [
             'categories' => 'Категория',

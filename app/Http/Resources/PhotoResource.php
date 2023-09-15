@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
@@ -15,9 +17,7 @@ class PhotoResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'img' => $this->img,
-            'album' => $this->albums
+            $this->img,
         ];
     }
 }

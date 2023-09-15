@@ -4,40 +4,36 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Album extends Model
 {
     use HasFactory;
 
-    protected $hidden = ['pivot'];
-    protected $fillable = [
-      'name',
-      'nameEng',
-      'mainImage',
-      'images'
-    ];
+    protected  $table = 'albums';
 
-    protected function images(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
-            set: fn ($value) => json_encode($value),
-        );
-    }
+//    public $incrementing = false;
+
+    protected $fillable = [
+        'name',
+        'description',
+    ];
 
     public function photos(): BelongsToMany
     {
-        return $this->belongsToMany(Photo::class, 'album_photo', 'album_id', 'photo_id')
-            ->select('img');
+        return $this->belongsToMany(Photo::class);
     }
 
-    public function imgMain (): BelongsTo
+    public function news(): HasOne
     {
-        return $this->belongsTo(Photo::class,'main_img')->select('img');
+        return $this->hasOne(News::class, 'album_id');
+    }
+
+    public function mainImg(): BelongsToMany
+    {
+        return $this->belongsToMany(Photo::class)->wherePivot('main_img', 1);
     }
 }

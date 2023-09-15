@@ -22,6 +22,21 @@ docker exec -it schoolapi-php-fpm-1 /bin/bash
 <h2 align="center"> Далее касается Всех кто обходится без Docker и использует Docker!! 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h2>
 
+В первую очередь, необходимо сгенерировать docker контейнер:
+```bash
+docker compose build
+```
+
+Запускаем контейнер:
+```bash
+docker-compose up -d
+```
+
+Переходим в консоль контейнера
+```bash
+docker exec -it schoolapi-php-fpm-1 /bin/bash
+```
+
 После скачивания необходимо установить все зависимости командами:
 ```bash
 npm install
@@ -31,7 +46,7 @@ composer update
 
 Установить базу данных MYSQL
 
-Создать базу данных 
+Создать базу данных
 
 создать в корне проекта файл .env и скопировать в него все из .env.example
 
@@ -57,7 +72,6 @@ php artisan event:cache
 php artisan route:cache
 php artisan view:cache
 ```
-
 # API
 ### Получить список новостей
 ```http request

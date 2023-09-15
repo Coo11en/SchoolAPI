@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Category extends Model
+class News_category extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
+    protected $table = 'news_categories';
+
+    //public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -20,15 +22,18 @@ class Category extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
+        'name',
         'description'
     ];
 
-    /* Relations */
-    public function news(): BelongsToMany
+    /* Relations
+    public function news(): BelongsTo
     {
-        return $this->belongsToMany(News::class, 'category_has_news',
-            'category_id', 'news_id');
+        return $this->belongsTo(News::class);
+    }*/
+    public function news()
+    {
+        return $this->hasMany(News::class, 'news_category_id', 'id');
     }
 
 }

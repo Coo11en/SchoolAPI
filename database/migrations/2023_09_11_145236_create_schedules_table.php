@@ -13,14 +13,12 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('lesson1')->nullable();
-            $table->string('lesson2')->nullable();
-            $table->string('lesson3')->nullable();
-            $table->string('lesson4')->nullable();
-            $table->string('lesson5')->nullable();
-            $table->string('lesson6')->nullable();
-            $table->foreignId('day_id')->constrained();
-            $table->foreignId('classroom_id')->constrained();
+            $table->foreignId('subject_id')->references('id')->on('subjects');
+            $table->foreignId('teacher_id')->references('id')->on('teachers');
+            $table->string('week_day_name', 50);
+            $table->foreignId('classroom_id')->references('id')->on('classrooms');
+            $table->foreignId('call_schedule_id')->references('id')->on('call_schedules');
+            $table->foreignId('day_id')->references('id')->on('days');
             $table->timestamps();
         });
     }
@@ -33,3 +31,4 @@ return new class extends Migration
         Schema::dropIfExists('schedules');
     }
 };
+

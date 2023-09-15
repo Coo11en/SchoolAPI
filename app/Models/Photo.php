@@ -1,26 +1,31 @@
 <?php
-
 declare(strict_types=1);
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Photo extends Model
 {
     use HasFactory;
 
-    protected $hidden = ['pivot'];
+    protected  $table = 'photos';
+
+//    public $incrementing = false;
+
     protected $fillable = [
-        'img'
+        'img',
     ];
 
-    public function albums(): BelongsToMany
+    public function teachers()
     {
-        return $this->belongsToMany(Album::class, 'album_photo', 'photo_id', 'album_id');
+        return $this->hasOne(Teacher::class);
     }
 
+    public function albums()
+    {
+        return $this->belongsToMany(Album::class);
+    }
 
 }

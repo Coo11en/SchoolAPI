@@ -14,6 +14,10 @@ class Day extends Model
 {
     use HasFactory;
 
+    protected  $table = 'days';
+
+//    public $incrementing = false;
+
     protected $fillable = [
         'name',
     ];
@@ -21,11 +25,22 @@ class Day extends Model
     /* Relations */
     public function schedules()
     {
-        return $this->hasMany(Schedule::class)->select('lesson1','lesson2','lesson3','lesson4','lesson5');
+        return $this->hasMany(Schedule::class);
+    }
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'schedules', 'day_id', 'subject_id');
+    }
+
+
+    public function call_schedules()
+    {
+        return $this->belongsToMany(Call_schedule::class, 'schedules', 'day_id', 'call_schedule_id');
     }
 
     public function classrooms()
     {
         return $this->belongsTo(Classroom::class);
     }
+
 }

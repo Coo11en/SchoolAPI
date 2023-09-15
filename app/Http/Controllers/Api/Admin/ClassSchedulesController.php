@@ -8,6 +8,8 @@ use App\Http\Resources\DayResource;
 use App\Models\Classroom;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class ClassSchedulesController extends Controller
@@ -17,7 +19,37 @@ class ClassSchedulesController extends Controller
      */
     public function index()
     {
-        return ClassroomResource::collection(Classroom::all());
+// Приведение json к требуемому виду
+        $classrooms = ClassroomResource::collection(Classroom::all());
+//        dd($classrooms->all());
+//Перевод коллекции в массив
+        $arrClassrooms = json_decode($classrooms->toJson(), true);
+        $classSchedules = [];
+        foreach ($arrClassrooms as $classroom) {
+            $dayLessons = [];
+            foreach ($classroom['days'] as $item) {
+                $lessons = array_values(Arr::sort($item['schedules'], function (array $value) {
+                    return $value['callNumber'];
+                }));
+                $arrLessons = [];
+                foreach ($lessons as $lesson) {
+                    $arrLessons[] = $lesson['nameSubject'][0];
+                }
+                $dayLessons[] = (object)[
+                    'dayName' => $item['dayName'],
+                    'lessons' => $arrLessons
+                ];
+            }
+
+            $classSchedules[] = [
+                'classId' => $classroom['classId'],
+                'className' => $classroom['className'],
+                'days' => $dayLessons
+//                'days' => ClassroomResource::collection(Classroom::all())
+            ];
+        }
+
+        return $classSchedules;
     }
 
     /**
@@ -33,8 +65,34 @@ class ClassSchedulesController extends Controller
      */
     public function show(string $id)
     {
+// Приведение json к требуемому виду
+        $classroom = new ClassroomResource(Classroom::findOrFail($id));
+//Перевод коллекции в массив
+        $arrClassroom = json_decode($classroom->toJson(), true);
+        $classSchedules = [];
 
-        return new ClassroomResource(Classroom::findOrFail($id));
+        $dayLessons = [];
+        foreach ($arrClassroom['days'] as $item) {
+            $lessons = array_values(Arr::sort($item['schedules'], function (array $value) {
+                return $value['callNumber'];
+            }));
+            $arrLessons = [];
+            foreach ($lessons as $lesson) {
+                $arrLessons[] = $lesson['nameSubject'][0];
+            }
+            $dayLessons[] = (object)[
+                'dayName' => $item['dayName'],
+                'lessons' => $arrLessons
+            ];
+        }
+
+        $classSchedules[] = [
+            'classId' => $arrClassroom['classId'],
+            'className' => $arrClassroom['className'],
+            'days' => $dayLessons
+        ];
+
+        return $classSchedules;
     }
 
     /**

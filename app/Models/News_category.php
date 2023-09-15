@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class News_categories extends Model
+class News_category extends Model
 {
     use HasFactory;
 
     protected $table = 'news_categories';
 
-    public $incrementing = false;
+    //public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -33,7 +33,7 @@ class News_categories extends Model
     }*/
     public function news()
     {
-        return $this->hasMany(News::class, 'news_categories_id', 'id');
+        return $this->hasMany(News::class, 'news_category_id', 'id');
     }
 
 }

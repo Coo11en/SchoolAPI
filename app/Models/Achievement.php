@@ -12,7 +12,7 @@ class Achievement extends Model
 
     protected  $table = 'achievements';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name',

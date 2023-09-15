@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('albums', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name', 255);
             $table->string('description', 255)->nullable();
+            $table->string('nameEng', 255)->nullable();
+            $table->boolean('status')->default(true);
+            $table->boolean('relationship')->nullable();
             $table->timestamps();
         });
     }

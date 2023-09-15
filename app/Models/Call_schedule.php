@@ -11,9 +11,9 @@ class Call_schedule extends Model
 {
     use HasFactory;
 
-    protected $table = 'call_schedule';
+    protected $table = 'call_schedules';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'call_number',

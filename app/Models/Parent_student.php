@@ -6,10 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Parents_connection extends Model
+class Parent_student extends Model
 {
     use HasFactory;
-    protected  $table = 'parents_connection';
+    protected  $table = 'parent_student';
     protected $fillable = [
         'parent_id',
         'student_id',

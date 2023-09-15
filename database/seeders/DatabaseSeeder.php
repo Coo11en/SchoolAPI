@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Models\Album;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
-use App\Models\Categories_appeal;
+use App\Models\Appeals_category;
 use App\Models\Classroom;
 use App\Models\Day;
 use App\Models\News;
-use App\Models\News_categories;
+use App\Models\News_category;
 use App\Models\Parents;
 use App\Models\Photo;
 use App\Models\Roles;
@@ -29,17 +30,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-// Seed 10 Photo
-        Photo::factory(10)->create();
+// Seed 10 photo for 2 albums
+        for ($i=1;$i<3;$i++) {
+            $album = Album::factory()->state(['name' => 'Album '. $i])->create();
+            $photos = Photo::factory(10)->create();
+            $album->photos()->attach($photos);
+        }
+
 // Seed 3 Roles
         DB::table('roles')->insert($this->getRolesData());
+
 // Seed 2 Teachers
         Teacher::factory(2)
             ->state(['role_id' => Roles::where('role_name', '=', 'Учитель')->first()->id])
             ->create();
+
 // Seed 2 classrooms
         Classroom::factory()->state(['name' => '1a', 'teacher_id' => Teacher::all()[0]->id])->create();
         Classroom::factory()->state(['name' => '2a', 'teacher_id' => Teacher::all()[1]->id])->create();
+
 // Seed 10 Days
         for ($i=0; $i<2; $i++) {
             Day::factory()->state(['name' => 'Понедельник', 'classroom_id' => Classroom::all()[$i]->id])->create();
@@ -49,23 +58,51 @@ class DatabaseSeeder extends Seeder
             Day::factory()->state(['name' => 'Пятница', 'classroom_id' => Classroom::all()[$i]->id])->create();
         }
 
-// Seed 4 Call_schedules
-        Call_schedule::factory()->state(['call_number' => 1, 'start_time' => '8:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 2, 'start_time' => '9:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 3, 'start_time' => '10:30', 'lesson_time' => 45])->create();
-        Call_schedule::factory()->state(['call_number' => 4, 'start_time' => '11:30', 'lesson_time' => 45])->create();
-// Seed 11 Subjects
-        Subject::factory()->state(['name_subject' => 'Русский язык'])->create();
-        Subject::factory()->state(['name_subject' => 'Литература'])->create();
-        Subject::factory()->state(['name_subject' => 'История'])->create();
-        Subject::factory()->state(['name_subject' => 'Химия'])->create();
-        Subject::factory()->state(['name_subject' => 'Физическая культура'])->create();
-        Subject::factory()->state(['name_subject' => 'География'])->create();
-        Subject::factory()->state(['name_subject' => 'Физика'])->create();
-        Subject::factory()->state(['name_subject' => 'Иностранный язык'])->create();
-        Subject::factory()->state(['name_subject' => 'Начертательная геометрия'])->create();
-        Subject::factory()->state(['name_subject' => 'Биология'])->create();
-        Subject::factory()->state(['name_subject' => 'Рисование'])->create();
+// Seed Call_schedules
+        $call_schedules = [
+            ['call_number' => 1, 'start_time' => '8:30', 'lesson_time' => 45],
+            ['call_number' => 2, 'start_time' => '9:30', 'lesson_time' => 45],
+            ['call_number' => 3, 'start_time' => '10:30', 'lesson_time' => 45],
+            ['call_number' => 4, 'start_time' => '11:30', 'lesson_time' => 45],
+            ['call_number' => 5, 'start_time' => '13:00', 'lesson_time' => 45],
+            ['call_number' => 6, 'start_time' => '14:00', 'lesson_time' => 45],
+            ['call_number' => 7, 'start_time' => '15:00', 'lesson_time' => 45],
+            ['call_number' => 8, 'start_time' => '16:00', 'lesson_time' => 45],
+        ];
+        foreach ($call_schedules as $call_schedule)
+        Call_schedule::factory()->state([
+            'call_number' => $call_schedule['call_number'],
+            'start_time' => $call_schedule['start_time'],
+            'lesson_time' => $call_schedule['lesson_time']
+        ])->create();
+
+// Seed Subjects
+        $subjects = [
+            "Русский язык",
+            "Литературное чтение",
+            "Физическая культура",
+            "Лингвистический практикум по иностранному языку",
+            "Осмысленное чтение",
+            "Технология",
+            "Физика",
+            "Разговоры о важном",
+            "Немецкий язык",
+            "Основы безопасности жизнедеятельности",
+            "История России. Всеобщая история",
+            "Основы духуовно-нравственных культур народов России",
+            "Изобразительное искусство",
+            "Основы религиозных культур и светской этики",
+            "Литература",
+            "Английский язык",
+            "Математика",
+            "География",
+            "Химия",
+            "Обществознание"
+        ];
+        foreach ($subjects as $subject) {
+            Subject::factory()->state(['name_subject' => $subject])->create();
+        }
+
 // Seed 40 Schedules
         for ($i=0; $i<2;$i++) {
             for ($j = 1; $j < 5; $j++) {
@@ -131,9 +168,9 @@ class DatabaseSeeder extends Seeder
 // Seed 5 news and 1 category
         News::factory()
             ->count(5)
-            ->for(News_categories::factory()->state([
+            ->for(News_category::factory()->state([
                 'name' => 'School news',
-            ]), 'news_categories')
+            ]), 'newsCategories')
             ->create();
 
 //        Student::factory(5)

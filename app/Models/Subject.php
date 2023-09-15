@@ -13,7 +13,7 @@ class Subject extends Model
 
     protected $table = 'subjects';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name_subject',

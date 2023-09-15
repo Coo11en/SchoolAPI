@@ -9,9 +9,10 @@ class AlbumFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'name' => $this->faker->word(),
             'description' => fake()->text(100),
+            'nameEng' => fake()->word(),
+            'relationship' => false,
             'created_at' => now(),
             'updated_at' => now(),
         ];

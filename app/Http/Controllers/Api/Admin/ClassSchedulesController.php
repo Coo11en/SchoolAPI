@@ -21,6 +21,7 @@ class ClassSchedulesController extends Controller
     {
 // Приведение json к требуемому виду
         $classrooms = ClassroomResource::collection(Classroom::all());
+//        dd($classrooms->all());
 //Перевод коллекции в массив
         $arrClassrooms = json_decode($classrooms->toJson(), true);
         $classSchedules = [];
@@ -44,6 +45,7 @@ class ClassSchedulesController extends Controller
                 'classId' => $classroom['classId'],
                 'className' => $classroom['className'],
                 'days' => $dayLessons
+//                'days' => ClassroomResource::collection(Classroom::all())
             ];
         }
 

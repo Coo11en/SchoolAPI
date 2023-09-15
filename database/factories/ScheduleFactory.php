@@ -22,7 +22,6 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'subject_id' => Subject::factory(),
             'teacher_id' => Teacher::factory(),
             'week_day_name' => $this->faker->dayOfWeek,
@@ -31,9 +30,6 @@ class ScheduleFactory extends Factory
             'day_id' => Day::factory(),
             'created_at' => now(),
             'updated_at' => now(),
-
-
-            //'classroom_id' => Classroom::first()->id
         ];
     }
 }

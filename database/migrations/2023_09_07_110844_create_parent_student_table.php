@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('album_photo', function (Blueprint $table) {
-            $table->foreignId('photo_id')
+        Schema::create('parent_student', function (Blueprint $table) {
+            //$table->id();
+            $table->foreignId('parent_id')
                 ->references('id')
-                ->on('photos')
+                ->on('parents')
                 ->cascadeOnDelete();
-            $table->boolean('main_img')->default(false);
-            $table->foreignId('album_id')
+            $table->foreignId('student_id')
                 ->references('id')
-                ->on('albums')
+                ->on('students')
                 ->cascadeOnDelete();
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('album_photo');
+        Schema::dropIfExists('parent_student');
     }
 };

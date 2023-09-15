@@ -16,7 +16,7 @@ class Day extends Model
 
     protected  $table = 'days';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name',

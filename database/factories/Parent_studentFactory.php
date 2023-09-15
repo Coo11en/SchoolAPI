@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory
  */
-class Parents_connectionFactory extends Factory
+class Parent_studentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,7 +19,7 @@ class Parents_connectionFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
+            //'id' => $this->faker->uuid(),
             'parent_id' => Parents::factory(),
             'student_id' => Student::factory(),
             'created_at' => now(),

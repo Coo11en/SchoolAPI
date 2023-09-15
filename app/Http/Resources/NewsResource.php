@@ -19,10 +19,11 @@ class NewsResource extends JsonResource
         return [
           'id' => $this->id,
           'title' => $this->title,
-          'author' => $this->author,
-          'image' => $this->image,
+//          'author' => $this->author,
+//          'image' => $this->image,
           'description' => $this->description,
-           'created_at' => $this->created_at
+           'created_at' => $this->created_at,
+            'album' => new AlbumResource($this->albums)
         ];
     }
 }

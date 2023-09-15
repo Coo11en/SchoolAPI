@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('days', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name');
-            $table->foreignUuid('classroom_id')->references('id')->on('classrooms');
+           // $table->uuid('id')->primary();
+            $table->id();
+            $table->string('name', 50);
+            $table->foreignId('classroom_id')->references('id')->on('classrooms');
             $table->timestamps();
         });
     }

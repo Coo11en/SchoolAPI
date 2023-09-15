@@ -6,6 +6,7 @@ use     App\Http\Controllers\Controller;
 use App\Models\Call_schedule;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function App\Enums\all;
 
 class CallSchedulesController extends Controller
 {
@@ -14,15 +15,13 @@ class CallSchedulesController extends Controller
      */
     public function index()
     {
-        $callsSort = Call_schedule::all()->sortBy('call_number');
-        $arr = [];
-        foreach ($callsSort as $call) {
-            $arr[] = [
-                'number' => $call->call_number,
-                'start' => Carbon::parse($call->start_time)->format('H:i'),
-                'end' => Carbon::parse($call->start_time)->addMinutes($call->lesson_time)->format('H:i')
+        return ['callSchedules' =>   Call_schedule::all()->sortBy('call_number')->map(function ($item){
+            return (object)[
+                'number' => $item->call_number,
+                'start' => Carbon::parse($item->start_time)->format('H:i'),
+                'end' => Carbon::parse($item->start_time)->addMinutes($item->lesson_time)->format('H:i')
             ];
-        }
-        return ['callSchedules' => $arr];
+        })->flatten()->all()];
     }
+
 }

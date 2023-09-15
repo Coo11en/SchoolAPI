@@ -16,7 +16,7 @@ class Schedule extends Model
 
     protected  $table = 'schedules';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'subject_id',

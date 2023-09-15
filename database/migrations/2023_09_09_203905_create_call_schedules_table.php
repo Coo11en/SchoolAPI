@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('likes', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('news_id')->references('id')->on('news');
-            $table->foreignUuid('user_id')->references('id')->on('users');
-            $table->boolean('liked')->default(true);
+        Schema::create('call_schedules', function (Blueprint $table) {
+            // $table->uuid('id')->primary();
+            $table->id();
+            $table->integer('call_number');
+            $table->time('start_time');
+            $table->integer('lesson_time');
             $table->timestamps();
         });
     }
@@ -25,7 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('likes');
+        Schema::dropIfExists('call_schedules');
     }
 };
-

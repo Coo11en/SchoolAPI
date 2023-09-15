@@ -9,6 +9,8 @@ use App\Http\Requests\News\Store;
 use App\Http\Requests\News\Update;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
+use App\Queries\NewsQueryBuilder;
+use App\Queries\QueryBuilder;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Response;
@@ -17,12 +19,19 @@ use JetBrains\PhpStorm\Pure;
 
 class NewsController extends Controller
 {
+    protected QueryBuilder $newsQueryBuilder;
+    public function __construct(
+        NewsQueryBuilder $newsQueryBuilder,
+    )
+    {
+        $this->newsQueryBuilder = $newsQueryBuilder;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index(): AnonymousResourceCollection
     {
-        return NewsResource::collection(News::all());
+        return NewsResource::collection($this->newsQueryBuilder->getActiveNews());
     }
 
     /**

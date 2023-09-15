@@ -18,13 +18,12 @@ class AppealFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'name'=> fake()->text(200),
             'email' => fake()->unique()->safeEmail(),
             'description' => fake()->text(3000),
             'status' => false,
             'response' => fake()->text(255),
-            'category_id' => Categories_appeal::factory(),
+            'category_id' => Appeals_categoryFactory::factory(),
             'top_questions' => false,
             'date_completion' => null,
             'created_at' => now(),

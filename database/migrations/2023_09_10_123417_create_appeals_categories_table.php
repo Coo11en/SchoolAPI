@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parents_connection', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('parent_id')->references('id')->on('parents');
-            $table->foreignUuid('student_id')->references('id')->on('students');
+        Schema::create('appeals_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 200);
+            $table->string('description', 3000)->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parents_connection');
+        Schema::dropIfExists('appeals_categories');
     }
 };

@@ -12,7 +12,7 @@ class Appeal extends Model
 
     protected  $table = 'appeals';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name',
@@ -24,9 +24,9 @@ class Appeal extends Model
         'top_questions',
     ];
 
-    public function categories_appeals()
+    public function appealsCategories()
     {
-        return $this->belongsTo(Categories_appeal::class);
+        return $this->belongsTo(Appeals_category::class);
     }
 
 }

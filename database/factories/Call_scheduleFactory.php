@@ -17,7 +17,7 @@ class Call_scheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
+            //'id' => $this->faker->id(),
             'call_number' => $this->faker->numberBetween(1,8),
             'start_time' => fake()->time,
             'lesson_time' => '45',

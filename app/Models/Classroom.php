@@ -13,7 +13,7 @@ class Classroom extends Model
     use HasFactory;
     protected  $table = 'classrooms';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name',

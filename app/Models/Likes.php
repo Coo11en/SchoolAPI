@@ -13,11 +13,11 @@ class Likes extends Model
 
     protected $table = 'likes';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'news_id',
-        'user_idr',
+        'user_id',
         'liked',
     ];
 

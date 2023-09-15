@@ -14,7 +14,7 @@ class Parents extends Model
 
     protected $table = 'parents';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'username',
@@ -29,7 +29,7 @@ class Parents extends Model
 
     public function students()
     {
-        return $this->belongsToMany(Student::class, 'parents_connection', 'parent_id', 'student_id');
+        return $this->belongsToMany(Student::class, 'parent_student', 'parent_id', 'student_id');
     }
 
 

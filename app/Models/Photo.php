@@ -12,7 +12,7 @@ class Photo extends Model
 
     protected  $table = 'photos';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'img',
@@ -23,9 +23,9 @@ class Photo extends Model
         return $this->hasOne(Teacher::class);
     }
 
-    public function album_photos()
+    public function albums()
     {
-        return $this->belongsTo(Album_photo::class);
+        return $this->belongsToMany(Album::class);
     }
 
 }

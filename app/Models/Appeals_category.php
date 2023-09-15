@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Models;
@@ -6,13 +7,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categories_appeal  extends Model
+class Appeals_category  extends Model
 {
     use HasFactory;
 
-    protected  $table = 'categories_appeals';
+    protected  $table = 'appeal_categories';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'name',

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory
  */
-class Categories_appealFactory extends Factory
+class Appeals_categoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class Categories_appealFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'name'=> fake()->text(200),
-            'description' => fake()->text(1000),
+            'description' => fake()->text(100),
             'created_at' => now(),
             'updated_at' => now(),
         ];

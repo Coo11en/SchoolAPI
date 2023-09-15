@@ -12,20 +12,11 @@ class Album_photo extends Model
 
     protected  $table = 'album_photo';
 
-    public $incrementing = false;
+//    public $incrementing = false;
 
     protected $fillable = [
         'photo_id',
+        'main_img',
         'album_id',
     ];
-
-    public function photos()
-    {
-        return $this->hasMany(Photo::class);
-    }
-
-    public function albums()
-    {
-        return $this->belongsTo(Album::class);
-    }
 }

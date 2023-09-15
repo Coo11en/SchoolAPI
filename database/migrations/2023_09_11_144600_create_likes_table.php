@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories_appeals', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name', 200);
-            $table->string('description', 3000)->nullable();
+        Schema::create('likes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('news_id')->references('id')->on('news');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->boolean('liked')->default(true);
             $table->timestamps();
         });
     }
@@ -24,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories_appeals');
+        Schema::dropIfExists('likes');
     }
 };
+

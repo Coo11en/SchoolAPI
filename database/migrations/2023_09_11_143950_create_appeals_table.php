@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('appeals', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name', 200);
             $table->string('email', 255);
             $table->string('description', 3000);
             $table->boolean('status')->default(false);
             $table->string('response', 255)->nullable();
-            $table->foreignUuid('category_id')->references('id')->on('categories_appeals');
+            $table->foreignId('category_id')->references('id')->on('appeals_categories');
             $table->boolean('top_questions')->default(false);
             $table->dateTime('date_completion')->nullable();
             $table->timestamps();

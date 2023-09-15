@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Classroom;
-use App\Models\News_categories;
+use App\Models\News_category;
 use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,7 +21,6 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'name' => fake()->name(),
             'teacher_id' => Teacher::factory(),
             'created_at' => now(),

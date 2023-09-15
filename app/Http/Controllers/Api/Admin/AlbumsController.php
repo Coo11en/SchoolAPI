@@ -16,7 +16,7 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        return AlbumResource::collection(Album::all());
+        return Album::all();
     }
 
     /**

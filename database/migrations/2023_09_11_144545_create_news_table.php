@@ -14,12 +14,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('news', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('title', 255);
             $table->string('description', 3000)->nullable();
             $table->string('author', 100)->default('Admin');
-            $table->foreignUuid('news_categories_id')->references('id')->on('news_categories');
-            $table->foreignUuid('album_id')->references('id')->on('albums');
+            $table->foreignId('news_category_id')->references('id')->on('news_categories');
+            $table->foreignId('album_id')->references('id')->on('albums');
             $table->string('resource', 255)->nullable();
             $table->string('status',7)->nullable();
             $table->dateTime('pub_approve')->nullable();

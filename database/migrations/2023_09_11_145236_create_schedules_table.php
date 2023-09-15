@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('subject_id')->references('id')->on('subjects');
-            $table->foreignUuid('teacher_id')->references('id')->on('teachers');
+            $table->id();
+            $table->foreignId('subject_id')->references('id')->on('subjects');
+            $table->foreignId('teacher_id')->references('id')->on('teachers');
             $table->string('week_day_name', 50);
-            $table->foreignUuid('classroom_id')->references('id')->on('classrooms');
-            $table->foreignUuid('call_schedule_id')->references('id')->on('call_schedule');
-            $table->foreignUuid('day_id')->references('id')->on('days');
+            $table->foreignId('classroom_id')->references('id')->on('classrooms');
+            $table->foreignId('call_schedule_id')->references('id')->on('call_schedules');
+            $table->foreignId('day_id')->references('id')->on('days');
             $table->timestamps();
         });
     }

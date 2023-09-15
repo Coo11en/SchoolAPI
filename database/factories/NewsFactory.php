@@ -3,8 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Album;
-use App\Models\News_categories;
+use App\Models\News_category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Enums\NewsStatus;
 
 class NewsFactory extends Factory
 {
@@ -16,16 +17,13 @@ class NewsFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => $this->faker->uuid(),
             'title' => $this->faker->word(),
             'description' => fake()->text(100),
             'author' => fake()->userName(),
-            'news_categories_id' => News_categories::factory(),
-
-            'album_id' => Album::factory(),
-
+            'news_category_id' => News_category::factory(),
+            'album_id' => Album::first()->id,
             'resource' => fake()->text(100),
-            'status' => true,
+            'status' => NewsStatus::ACTIVE->value,
             'video' => fake()->imageUrl(),
             'created_at' => now(),
             'updated_at' => now(),

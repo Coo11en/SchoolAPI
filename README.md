@@ -2,7 +2,7 @@
 <h1 align="center"> Сайт Филипповской школы</h1>
 
 <h2 align="center"> Кто использует Docker!!!! 
-
+<br>
 В первую очередь, необходимо сгенерировать docker контейнер:
 ```bash
 docker compose build

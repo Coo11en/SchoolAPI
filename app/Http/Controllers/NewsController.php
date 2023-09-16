@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use App\Queries\CategoriesQueryBuilder;
 use App\Queries\NewsQueryBuilder;
 use Illuminate\View\View;
 

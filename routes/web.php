@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\Admin\ScheduleController as AdminScheduleController;
-use App\Http\Controllers\Admin\NewsController as AdminNewsController;
-use App\Http\Controllers\Admin\IndexController as AdminIndexController;
+//use App\Http\Controllers\HomeController;
+//use App\Http\Controllers\NewsController;
+//use App\Http\Controllers\ScheduleController;
+//use App\Http\Controllers\Admin\ScheduleController as AdminScheduleController;
+//use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+//use App\Http\Controllers\Admin\IndexController as AdminIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,17 +23,23 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [HomeController::class, 'index'])
-    ->name('index');
-Route::get('/news', [NewsController::class, 'index'])
-    ->name('news.index');
-Route::get('/news/{news}', [NewsController::class, 'show'])
-    ->where('news', '\d+')
-    ->name('news.show');
-Route::get('/schedule', [ScheduleController::class, 'index'])
-    ->name('schedule.index');
-//Route::get('admin/schedule/edit', [AdminScheduleController::class, 'edit'])
-//    ->name('admin.schedule.edit');
+Route::controller(NewsController::class)->group(function () {
+    Route::get('/news', 'index')
+        ->name('news.index');
+    Route::get('/news/{news}',  'show')
+        ->where('news', '\d+')
+        ->name('news.show');
+});
+
+Route::controller(ScheduleController::class)->group(function () {
+    Route::get('/schedule', 'index')
+        ->name('schedule.index');
+});
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')
+        ->name('index');
+});
 
 // Admin
 Route::group([
@@ -41,14 +47,10 @@ Route::group([
     'as' => 'admin.',
 //    'middleware' => 'check.admin',
 ], static function () {
-    Route::get('/', AdminIndexController::class)
+    Route::get('/', Admin\IndexController::class)
         ->name('index');
-//    Route::resource('/categories', AdminCategoriesController::class);
-    Route::resource('/news', AdminNewsController::class);
 
-    Route::resource('/schedule', AdminScheduleController::class);
-
-//    Route::resource('/orders', AdminOrdersController::class);
-//    Route::resource('/users', AdminUsersController::class);
+    Route::resource('/news', Admin\NewsController::class);
+    Route::resource('/schedule', Admin\ScheduleController::class);
 });
 

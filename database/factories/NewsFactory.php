@@ -21,7 +21,7 @@ class NewsFactory extends Factory
             'description' => fake()->text(100),
             'author' => fake()->userName(),
             'news_category_id' => News_category::factory(),
-            'album_id' => Album::first()->id,
+            'album_id' => Album::find(1)->id,
             'resource' => fake()->text(100),
             'status' => NewsStatus::ACTIVE->value,
             'video' => fake()->imageUrl(),

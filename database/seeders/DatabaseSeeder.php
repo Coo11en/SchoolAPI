@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Album;
+use App\Models\Album_photo;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
 use App\Models\Appeals_category;
@@ -31,13 +32,28 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 // Seed 10 photo for 2 albums
-        for ($i=1;$i<3;$i++) {
-            $album = Album::factory()->state(['name' => 'Album '. $i])->create();
-            $photos = Photo::factory(10)->create();
-            $album->photos()->attach($photos);
+//        for ($i=1;$i<3;$i++) {
+//            $album = Album::factory()->state(['name' => 'Album '. $i])->create();
+//            $photos = Photo::factory(10)->create();
+//            $album->photos()->attach($photos);
+//        }
+
+// Seed 20 Photo
+        Photo::factory(20)->create();
+
+// Seed 2 Album
+        Album::factory(2)->create();
+
+// Seed album_photo
+        for ($i = 1; $i < 21; $i++){
+            //$j = Album::all()->random()->id;
+                Album_photo::factory()->state([
+                    'photo_id' => Photo::find($i)->id,
+                    'main_img' => ($i > 2) ? 0 : 1,
+                    'album_id' => ($i > 2) ? Album::all()->random()->id : $i,
+                ])->create();
         }
 
-// Seed 3 Roles
         DB::table('roles')->insert($this->getRolesData());
 
 // Seed 2 Teachers
@@ -185,6 +201,10 @@ class DatabaseSeeder extends Seeder
                 'name' => 'School news',
             ]), 'newsCategories')
             ->create();
+
+
+
+
 
 //        Student::factory(5)
 //            ->has(Parents::factory()->count(2))

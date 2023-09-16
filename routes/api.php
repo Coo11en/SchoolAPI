@@ -20,11 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'news' => NewsController::class,
-    'class_schedules' => ClassSchedulesController::class,
+    'class-schedules' => ClassSchedulesController::class,
     'albums' => AlbumsController::class,
 ]);
 
 Route::controller(CallSchedulesController::class)->group(function () {
-    Route::get('/callSchedules', 'index');
+    Route::get('/call-schedules', 'index');
 });
 

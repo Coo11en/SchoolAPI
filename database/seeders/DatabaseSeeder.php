@@ -46,7 +46,6 @@ class DatabaseSeeder extends Seeder
 
 // Seed album_photo
         for ($i = 1; $i < 21; $i++){
-            //$j = Album::all()->random()->id;
                 Album_photo::factory()->state([
                     'photo_id' => Photo::find($i)->id,
                     'main_img' => ($i > 2) ? 0 : 1,

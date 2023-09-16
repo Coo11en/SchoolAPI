@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Api\Admin;
+namespace App\Http\Controllers\Api\V0;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\News\Store;

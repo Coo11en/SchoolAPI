@@ -54,7 +54,7 @@ php artisan view:cache
 # API
 ### Получить список новостей
 ```http request
-GET /api/news
+GET /api/V0/news
 ```
 ### Ответ
 ```
@@ -62,312 +62,373 @@ GET /api/news
     "data": [
         {
             "id": 1,
-            "title": "Новость 1",
-            "author": "Алексей",
-            "image": "https://via.placeholder.com/640x480.png/000011?text=labore",
-            "description": "Illo ducimus corrupti asperiores totam unde quidem laudantium. Aut similique eius et ex dolorem.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
+            "title": "accusantium",
+            "description": "Reprehenderit qui ea aut aut. Iure dolores dolor omnis praesentium est. Eum at qui explicabo vel.",
+            "created_at": "2023-09-15T10:48:48.000000Z",
+            "album": {
+                "id": 1,
+                "name": "Album 1",
+                "nameEng": "iste",
+                "mainImage": null,
+                "images": [
+                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
+                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
+                    "https://via.placeholder.com/640x480.png/004455?text=est",
+                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
+                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
+                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
+                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
+                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
+                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
+                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
+                ]
+            }
         },
         {
             "id": 2,
-            "title": "News#1",
-            "author": "sherman60",
-            "image": "https://via.placeholder.com/640x480.png/0055bb?text=nobis",
-            "description": "Sit error consequatur laudantium minus magnam sunt. Ipsa adipisci harum rerum nulla laborum.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
+            "title": "aliquam",
+            "description": "Eum enim illo eveniet quo. Id non non qui itaque fugit impedit aliquid.",
+            "created_at": "2023-09-15T10:48:48.000000Z",
+            "album": {
+                "id": 1,
+                "name": "Album 1",
+                "nameEng": "iste",
+                "mainImage": null,
+                "images": [
+                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
+                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
+                    "https://via.placeholder.com/640x480.png/004455?text=est",
+                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
+                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
+                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
+                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
+                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
+                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
+                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
+                ]
+            }
         },
         {
             "id": 3,
-            "title": "News#2",
-            "author": "ari01",
-            "image": "https://via.placeholder.com/640x480.png/00ee11?text=magni",
-            "description": "Quo quas et beatae quaerat est in dolores id. Ut a temporibus ut. Quae eum ea quia suscipit beatae.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
+            "title": "minus",
+            "description": "Voluptates perspiciatis est voluptate libero. Quasi sit quam ratione possimus.",
+            "created_at": "2023-09-15T10:48:48.000000Z",
+            "album": {
+                "id": 2,
+                "name": "Album 2",
+                "nameEng": "dolorem",
+                "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+                "images": [
+                    "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
+                    "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
+                    "https://via.placeholder.com/640x480.png/0044ee?text=quas",
+                    "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
+                    "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+                    "https://via.placeholder.com/640x480.png/00dddd?text=et",
+                    "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
+                    "https://via.placeholder.com/640x480.png/0022dd?text=rem",
+                    "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
+                    "https://via.placeholder.com/640x480.png/00ee00?text=nam"
+                ]
+            }
         },
         {
             "id": 4,
-            "title": "News#3",
-            "author": "wintheiser.corrine",
-            "image": "https://via.placeholder.com/640x480.png/0055ee?text=optio",
-            "description": "Ut quod voluptatem fugit dolorem deserunt. Et numquam dolore repellendus ullam magnam nesciunt.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
+            "title": "ducimus",
+            "description": "Temporibus dolores quis veritatis excepturi possimus qui. Rem aut neque eum modi adipisci.",
+            "created_at": "2023-09-15T10:48:48.000000Z",
+            "album": {
+                "id": 1,
+                "name": "Album 1",
+                "nameEng": "iste",
+                "mainImage": null,
+                "images": [
+                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
+                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
+                    "https://via.placeholder.com/640x480.png/004455?text=est",
+                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
+                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
+                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
+                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
+                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
+                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
+                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
+                ]
+            }
         },
         {
             "id": 5,
-            "title": "News#4",
-            "author": "oconnell.erick",
-            "image": "https://via.placeholder.com/640x480.png/004400?text=voluptatum",
-            "description": "Ut quos illum et error beatae aut. Necessitatibus et quas consequatur quidem.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
-        },
-        {
-            "id": 6,
-            "title": "News#5",
-            "author": "qdickinson",
-            "image": "https://via.placeholder.com/640x480.png/000033?text=in",
-            "description": "Atque incidunt veniam est ut nostrum voluptatem debitis. Tempore ut non quis. Cumque modi aut aut.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
-        },
-        {
-            "id": 7,
-            "title": "News#6",
-            "author": "koepp.brody",
-            "image": "https://via.placeholder.com/640x480.png/00ccaa?text=et",
-            "description": "Ullam ea in ad dolores aliquam sunt culpa. Quam quaerat quidem saepe fugiat eos blanditiis.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
-        },
-        {
-            "id": 8,
-            "title": "News#7",
-            "author": "cwunsch",
-            "image": "https://via.placeholder.com/640x480.png/004433?text=et",
-            "description": "Veniam rerum temporibus modi voluptatem. Sapiente vel voluptas molestiae ipsum recusandae.",
-            "created_at": "2023-09-01T15:58:01.000000Z"
+            "title": "voluptatem",
+            "description": "Consequatur porro porro repudiandae doloribus. Qui labore voluptates quam.",
+            "created_at": "2023-09-15T10:48:48.000000Z",
+            "album": {
+                "id": 1,
+                "name": "Album 1",
+                "nameEng": "iste",
+                "mainImage": null,
+                "images": [
+                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
+                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
+                    "https://via.placeholder.com/640x480.png/004455?text=est",
+                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
+                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
+                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
+                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
+                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
+                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
+                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
+                ]
+            }
         }
     ]
 }
 ```
 ### Получить конкретную новость
 ```http request
-GET /api/news/{id_news}
+GET /api/V0/news/{id_news}
 ```
 ### Ответ
 ```
 {
     "data": {
         "id": 3,
-        "title": "News#2",
-        "author": "ari01",
-        "image": "https://via.placeholder.com/640x480.png/00ee11?text=magni",
-        "description": "Quo quas et beatae quaerat est in dolores id. Ut a temporibus ut. Quae eum ea quia suscipit beatae.",
-        "created_at": "2023-09-01T15:58:01.000000Z"
+        "title": "minus",
+        "description": "Voluptates perspiciatis est voluptate libero. Quasi sit quam ratione possimus.",
+        "created_at": "2023-09-15T10:48:48.000000Z",
+        "album": {
+            "id": 2,
+            "name": "Album 2",
+            "nameEng": "dolorem",
+            "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+            "images": [
+                "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
+                "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
+                "https://via.placeholder.com/640x480.png/0044ee?text=quas",
+                "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
+                "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+                "https://via.placeholder.com/640x480.png/00dddd?text=et",
+                "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
+                "https://via.placeholder.com/640x480.png/0022dd?text=rem",
+                "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
+                "https://via.placeholder.com/640x480.png/00ee00?text=nam"
+            ]
+        }
     }
 }
 ```
 ### Получить расписания для всех классов
 ```http request
-GET /api/class_schedules
+GET /api/V0/class_schedules
 ```
 ### Ответ
 ```
-{
-    "data": [
-        {
-            "classId": 1,
-            "className": "1a",
-            "days": [
-                {
-                    "dayName": "Понедельник",
-                    "lessons": [
-                        "repudiandae",
-                        "id",
-                        "enim",
-                        "enim",
-                        "tempore"
-                    ]
-                },
-                {
-                    "dayName": "Вторник",
-                    "lessons": [
-                        "quis",
-                        "possimus",
-                        "accusantium",
-                        "ratione",
-                        "praesentium"
-                    ]
-                },
-                {
-                    "dayName": "Среда",
-                    "lessons": [
-                        "asperiores",
-                        "odit",
-                        "quod",
-                        "aut",
-                        "fugiat"
-                    ]
-                },
-                {
-                    "dayName": "Четверг",
-                    "lessons": [
-                        "et",
-                        "ullam",
-                        "debitis",
-                        "illo",
-                        "officia"
-                    ]
-                },
-                {
-                    "dayName": "Пятница",
-                    "lessons": [
-                        "nostrum",
-                        "necessitatibus",
-                        "eos",
-                        "placeat",
-                        "voluptas"
-                    ]
-                }
-            ]
-        },
-        {
-            "classId": 2,
-            "className": "2a",
-            "days": [
-                {
-                    "dayName": "Понедельник",
-                    "lessons": [
-                        "non",
-                        "ut",
-                        "doloremque",
-                        "et",
-                        "ipsa"
-                    ]
-                },
-                {
-                    "dayName": "Вторник",
-                    "lessons": [
-                        "asperiores",
-                        "odio",
-                        "mollitia",
-                        "harum",
-                        "aut"
-                    ]
-                },
-                {
-                    "dayName": "Среда",
-                    "lessons": [
-                        "amet",
-                        "omnis",
-                        "corporis",
-                        "et",
-                        "in"
-                    ]
-                },
-                {
-                    "dayName": "Четверг",
-                    "lessons": [
-                        "quam",
-                        "error",
-                        "natus",
-                        "eum",
-                        "maxime"
-                    ]
-                },
-                {
-                    "dayName": "Пятница",
-                    "lessons": [
-                        "ut",
-                        "numquam",
-                        "et",
-                        "culpa",
-                        "blanditiis"
-                    ]
-                }
-            ]
-        }
-    ]
-}
-```
-### Получить расписание для выбранного класса
-```http request
-GET /api/class_schedules/{id_class}
-```
-### Ответ
-```
-{
-    "data": {
+[
+    {
+        "classId": 1,
+        "className": "1a",
+        "days": [
+            {
+                "dayName": "Понедельник",
+                "lessons": [
+                    "Основы безопасности жизнедеятельности",
+                    "Английский язык",
+                    "Физическая культура",
+                    "Химия"
+                ]
+            },
+            {
+                "dayName": "Вторник",
+                "lessons": [
+                    "Физика",
+                    "Литературное чтение",
+                    "Химия",
+                    "Изобразительное искусство"
+                ]
+            },
+            {
+                "dayName": "Среда",
+                "lessons": [
+                    "Английский язык",
+                    "История России. Всеобщая история",
+                    "Физическая культура",
+                    "Основы религиозных культур и светской этики"
+                ]
+            },
+            {
+                "dayName": "Четверг",
+                "lessons": [
+                    "Немецкий язык",
+                    "Разговоры о важном",
+                    "Физическая культура",
+                    "Технология"
+                ]
+            },
+            {
+                "dayName": "Пятница",
+                "lessons": [
+                    "Химия",
+                    "Английский язык",
+                    "Литературное чтение",
+                    "Русский язык"
+                ]
+            }
+        ]
+    },
+    {
         "classId": 2,
         "className": "2a",
         "days": [
             {
                 "dayName": "Понедельник",
                 "lessons": [
-                    "non",
-                    "ut",
-                    "doloremque",
-                    "et",
-                    "ipsa"
+                    "Обществознание",
+                    "Немецкий язык",
+                    "Литература",
+                    "Химия"
                 ]
             },
             {
                 "dayName": "Вторник",
                 "lessons": [
-                    "asperiores",
-                    "odio",
-                    "mollitia",
-                    "harum",
-                    "aut"
+                    "Основы духуовно-нравственных культур народов России",
+                    "История России. Всеобщая история",
+                    "Основы безопасности жизнедеятельности",
+                    "Технология"
                 ]
             },
             {
                 "dayName": "Среда",
                 "lessons": [
-                    "amet",
-                    "omnis",
-                    "corporis",
-                    "et",
-                    "in"
+                    "История России. Всеобщая история",
+                    "Английский язык",
+                    "Разговоры о важном",
+                    "Физическая культура"
                 ]
             },
             {
                 "dayName": "Четверг",
                 "lessons": [
-                    "quam",
-                    "error",
-                    "natus",
-                    "eum",
-                    "maxime"
+                    "Обществознание",
+                    "Обществознание",
+                    "История России. Всеобщая история",
+                    "Лингвистический практикум по иностранному языку"
                 ]
             },
             {
                 "dayName": "Пятница",
                 "lessons": [
-                    "ut",
-                    "numquam",
-                    "et",
-                    "culpa",
-                    "blanditiis"
+                    "Английский язык",
+                    "Русский язык",
+                    "Лингвистический практикум по иностранному языку",
+                    "Математика"
                 ]
             }
         ]
     }
-}
+]
+```
+### Получить расписание для выбранного класса
+```http request
+GET /api/V0/class_schedules/{id_class}
+```
+### Ответ
+```
+[
+    {
+        "classId": 2,
+        "className": "2a",
+        "days": [
+            {
+                "dayName": "Понедельник",
+                "lessons": [
+                    "Обществознание",
+                    "Немецкий язык",
+                    "Литература",
+                    "Химия"
+                ]
+            },
+            {
+                "dayName": "Вторник",
+                "lessons": [
+                    "Основы духуовно-нравственных культур народов России",
+                    "История России. Всеобщая история",
+                    "Основы безопасности жизнедеятельности",
+                    "Технология"
+                ]
+            },
+            {
+                "dayName": "Среда",
+                "lessons": [
+                    "История России. Всеобщая история",
+                    "Английский язык",
+                    "Разговоры о важном",
+                    "Физическая культура"
+                ]
+            },
+            {
+                "dayName": "Четверг",
+                "lessons": [
+                    "Обществознание",
+                    "Обществознание",
+                    "История России. Всеобщая история",
+                    "Лингвистический практикум по иностранному языку"
+                ]
+            },
+            {
+                "dayName": "Пятница",
+                "lessons": [
+                    "Английский язык",
+                    "Русский язык",
+                    "Лингвистический практикум по иностранному языку",
+                    "Математика"
+                ]
+            }
+        ]
+    }
+]
 ```
 ### Получить альбомы для фотогалереи
 ```http request
-GET /api/albums
+GET /api/V0/albums
 ```
 ### Ответ
 ```
 {
     "data": [
         {
-            "name": "Sed minima et voluptas enim ab ipsa ut.",
-            "nameEng": "neque",
-            "mainImage": "http://www.bergnaum.com/",
+            "id": 1,
+            "name": "Album 1",
+            "nameEng": "iste",
+            "mainImage": null,
             "images": [
-                "https://armstrong.com/vero-sint-magni-quod-dicta-ea-consequatur.html",
-                "http://www.gleason.com/",
-                "http://www.dicki.com/"
+                "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
+                "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
+                "https://via.placeholder.com/640x480.png/004455?text=est",
+                "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
+                "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
+                "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
+                "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
+                "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
+                "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
+                "https://via.placeholder.com/640x480.png/008855?text=vitae"
             ]
         },
         {
-            "name": "Aut neque rerum facilis.",
-            "nameEng": "perspiciatis",
-            "mainImage": "http://cremin.net/quaerat-cum-assumenda-veniam-autem-consequuntur-vel.html",
+            "id": 2,
+            "name": "Album 2",
+            "nameEng": "dolorem",
+            "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
             "images": [
-                "http://haley.com/rerum-sit-optio-non-dolorem-neque-ad.html",
-                "http://www.cole.com/repudiandae-quisquam-quaerat-facilis-sit-et.html",
-                "http://www.tromp.biz/labore-error-eveniet-debitis-illum-distinctio-libero-sequi.html"
-            ]
-        },
-        {
-            "name": "Est provident sed deserunt id deserunt.",
-            "nameEng": "qui",
-            "mainImage": "https://wolf.info/dolor-ut-eum-sed-dolorem-velit-ex-perferendis.html",
-            "images": [
-                "https://osinski.com/iure-quam-consequatur-facere-error-fugiat.html",
-                "http://hills.net/reiciendis-veritatis-quia-dignissimos.html",
-                "http://kiehn.org/numquam-non-quas-necessitatibus-repudiandae-nostrum"
+                "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
+                "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
+                "https://via.placeholder.com/640x480.png/0044ee?text=quas",
+                "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
+                "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+                "https://via.placeholder.com/640x480.png/00dddd?text=et",
+                "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
+                "https://via.placeholder.com/640x480.png/0022dd?text=rem",
+                "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
+                "https://via.placeholder.com/640x480.png/00ee00?text=nam"
             ]
         }
     ]
@@ -375,20 +436,79 @@ GET /api/albums
 ```
 ### Получить конкретный альбом
 ```http request
-GET /api/albums/{id_album}
+GET /api/V0/albums/{id_album}
 ```
 ### Ответ
 ```
 {
     "data": {
-        "name": "Aut neque rerum facilis.",
-        "nameEng": "perspiciatis",
-        "mainImage": "http://cremin.net/quaerat-cum-assumenda-veniam-autem-consequuntur-vel.html",
+        "id": 2,
+        "name": "Album 2",
+        "nameEng": "dolorem",
+        "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
         "images": [
-            "http://haley.com/rerum-sit-optio-non-dolorem-neque-ad.html",
-            "http://www.cole.com/repudiandae-quisquam-quaerat-facilis-sit-et.html",
-            "http://www.tromp.biz/labore-error-eveniet-debitis-illum-distinctio-libero-sequi.html"
+            "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
+            "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
+            "https://via.placeholder.com/640x480.png/0044ee?text=quas",
+            "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
+            "https://via.placeholder.com/640x480.png/002288?text=suscipit",
+            "https://via.placeholder.com/640x480.png/00dddd?text=et",
+            "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
+            "https://via.placeholder.com/640x480.png/0022dd?text=rem",
+            "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
+            "https://via.placeholder.com/640x480.png/00ee00?text=nam"
         ]
     }
+}
+```
+### Получить расписание звонков
+```http request
+GET /api/V0/callSchedules
+```
+### Ответ
+```
+{
+    "callSchedules": [
+        {
+            "number": 1,
+            "start": "08:30",
+            "end": "09:15"
+        },
+        {
+            "number": 2,
+            "start": "09:30",
+            "end": "10:15"
+        },
+        {
+            "number": 3,
+            "start": "10:30",
+            "end": "11:15"
+        },
+        {
+            "number": 4,
+            "start": "11:30",
+            "end": "12:15"
+        },
+        {
+            "number": 5,
+            "start": "13:00",
+            "end": "13:45"
+        },
+        {
+            "number": 6,
+            "start": "14:00",
+            "end": "14:45"
+        },
+        {
+            "number": 7,
+            "start": "15:00",
+            "end": "15:45"
+        },
+        {
+            "number": 8,
+            "start": "16:00",
+            "end": "16:45"
+        }
+    ]
 }
 ```

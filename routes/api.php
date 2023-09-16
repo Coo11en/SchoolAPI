@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\Admin\AlbumsController;
-use App\Http\Controllers\Api\Admin\ClassSchedulesController;
-use App\Http\Controllers\Api\Admin\NewsController;
-use App\Http\Controllers\Api\CallSchedulesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +23,8 @@ Route::apiResources([
     'class_schedules' => ClassSchedulesController::class,
     'albums' => AlbumsController::class,
 ]);
-Route::get('/callSchedules', [CallSchedulesController::class, 'index']);
+
+Route::controller(CallSchedulesController::class)->group(function () {
+    Route::get('/callSchedules', 'index');
+});
+

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Admin;
+namespace App\Http\Controllers\Api\V0;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AlbumResource;
@@ -16,7 +16,7 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        return Album::all();
+        return AlbumResource::collection(Album::all());
     }
 
     /**

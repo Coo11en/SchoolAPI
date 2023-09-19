@@ -21,12 +21,14 @@ class NewsResource extends JsonResource
             'title' => $this->title,
 //          'author' => $this->author,
             'description' => $this->description,
+            'text' => $this->text,
             'created_at' => $this->created_at,
             'mainImg' => ($this->albums->mainImg->first()) ? $this->albums->mainImg->first()->img : null,
             'images' => PhotoResource::collection($this->albums->photos)->map(function ($item) {
                 return $item->img;
             }),
             'video' => $this->video,
+            'source' => $this->source
 
         ];
     }

@@ -22,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('days', function (Blueprint $table) {
-            $table->foreignId('classroom_id')->after('name')->references('id')->on('classrooms');
-        });
+        //
     }
 };

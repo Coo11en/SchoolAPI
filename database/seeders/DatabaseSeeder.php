@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Album;
+use App\Models\Album_photo;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
 use App\Models\Appeals_category;
@@ -36,18 +37,33 @@ class DatabaseSeeder extends Seeder
 //            $photos = Photo::factory(10)->create();
 //            $album->photos()->attach($photos);
 //        }
-//
-//// Seed 3 Roles
-//        DB::table('roles')->insert($this->getRolesData());
-//
-//// Seed 2 Teachers
-//        Teacher::factory(2)
-//            ->state(['role_id' => Roles::where('role_name', '=', 'Учитель')->first()->id])
-//            ->create();
-//
-//// Seed 2 classrooms
-//        Classroom::factory()->state(['name' => '1a', 'teacher_id' => Teacher::all()[0]->id])->create();
-//        Classroom::factory()->state(['name' => '2a', 'teacher_id' => Teacher::all()[1]->id])->create();
+
+// Seed 20 Photo
+        Photo::factory(20)->create();
+
+// Seed 2 Album
+        Album::factory(2)->create();
+
+// Seed album_photo
+        for ($i = 1; $i < 21; $i++){
+            Album_photo::factory()->state([
+                'photo_id' => Photo::find($i)->id,
+                'main_img' => ($i > 2) ? 0 : 1,
+                'album_id' => ($i > 2) ? Album::all()->random()->id : $i,
+            ])->create();
+        }
+
+// Seed 3 Roles
+        DB::table('roles')->insert($this->getRolesData());
+
+// Seed 2 Teachers
+        Teacher::factory(2)
+            ->state(['role_id' => Roles::where('role_name', '=', 'Учитель')->first()->id])
+            ->create();
+
+// Seed 2 classrooms
+        Classroom::factory()->state(['name' => '1a', 'teacher_id' => Teacher::all()[0]->id])->create();
+        Classroom::factory()->state(['name' => '2a', 'teacher_id' => Teacher::all()[1]->id])->create();
 
 // Seed 6 days
         $days = [
@@ -107,93 +123,21 @@ class DatabaseSeeder extends Seeder
             Subject::factory()->state(['name_subject' => $subject])->create();
         };
 
-//// Seed 40 Schedules
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Понедельник')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Понедельник')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Вторник')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Вторник')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Среда')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Среда')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Четверг')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Четверг')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Пятница')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Пятница')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-//        for ($i=0; $i<2;$i++) {
-//            for ($j = 1; $j < 5; $j++) {
-//                Schedule::factory()->state([
-//                    'subject_id' => Subject::all()->random()->id,
-//                    'teacher_id' => Teacher::all()[$i]->id,
-//                    'week_day_name' => Day::where('name', '=', 'Суббота')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->name,
-//                    'classroom_id' => Classroom::all()[$i]->id,
-//                    'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-//                    'day_id' => Day::where('name', '=', 'Суббота')->where('classroom_id', '=', Classroom::all()[$i]->id)->first()->id
-//                ])->create();
-//            }
-//        }
-            for ($i=0; $i<2;$i++) {
-                for ($k=1; $k<7; $k++) {
-                    for ($j = 1; $j < 5; $j++) {
-                        Schedule::factory()->state([
-                            'subject_id' => Subject::all()->random()->id,
-                            'teacher_id' => Teacher::all()[$i]->id,
-                            'week_day_name' => Day::find($k)->name,
-                            'classroom_id' => Classroom::all()[$i]->id,
-                            'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
-                            'day_id' => $k
-                        ])->create();
-                    }
+// Seed 4 lessons every day for 2 classrooms
+        for ($i=0; $i<2;$i++) {
+            for ($k=1; $k<7; $k++) {
+                for ($j = 1; $j < 5; $j++) {
+                    Schedule::factory()->state([
+                        'subject_id' => Subject::all()->random()->id,
+                        'teacher_id' => Teacher::all()[$i]->id,
+                        'week_day_name' => Day::find($k)->name,
+                        'classroom_id' => Classroom::all()[$i]->id,
+                        'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
+                        'day_id' => $k
+                    ])->create();
                 }
             }
+        }
 
 
 // Seed 5 news and 1 category
@@ -220,11 +164,6 @@ class DatabaseSeeder extends Seeder
 
 //        \App\Models\Parents_connection::factory(5)->create();
 
-
-//        $this->call([
-//            SchedulesSeeder::class,
-//
-//        ]);
 
     }
     public function getRolesData(): array

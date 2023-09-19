@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Api\V0;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\News\Store;
 use App\Http\Requests\News\Update;
+use App\Http\Resources\NewsListResource;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use App\Queries\NewsQueryBuilder;
@@ -31,7 +32,7 @@ class NewsController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return NewsResource::collection($this->newsQueryBuilder->getActiveNews());
+        return NewsListResource::collection($this->newsQueryBuilder->getActiveNews());
     }
 
     /**

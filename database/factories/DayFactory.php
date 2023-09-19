@@ -23,7 +23,7 @@ class DayFactory extends Factory
     {
         return [
             'name' => $this->faker->dayOfWeek,
-            'classroom_id' => Classroom::factory(),
+//            'classroom_id' => Classroom::factory(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

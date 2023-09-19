@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Call_schedule extends Model
@@ -21,7 +22,7 @@ class Call_schedule extends Model
         'lesson_time',
     ];
 
-    public function subjects()
+    public function subjects(): BelongsToMany
     {
         return $this->belongsToMany(Subject::class, 'schedules', 'call_schedule_id', 'subject_id');
     }

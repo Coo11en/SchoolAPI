@@ -7,7 +7,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class NewsResource extends JsonResource
+class NewsListResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,17 +17,12 @@ class NewsResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'title' => $this->title,
+          'id' => $this->id,
+          'title' => $this->title,
 //          'author' => $this->author,
-            'description' => $this->description,
-            'created_at' => $this->created_at,
+          'description' => $this->description,
+           'created_at' => $this->created_at,
             'mainImg' => ($this->albums->mainImg->first()) ? $this->albums->mainImg->first()->img : null,
-            'photos' => PhotoResource::collection($this->albums->photos)->map(function ($item) {
-                return $item->img;
-            }),
-            'video' => $this->video,
-
         ];
     }
 }

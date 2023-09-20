@@ -71,7 +71,7 @@ php artisan route:cache
 php artisan view:cache
 ```
 
-<h2 align="center">Для корректного применения миграций для изменений БД можно использовать</h2>
+<h2 align="center">Для корректного применения миграций для изменений БД можно использовать: </h2>
 ```bash
  php artisan migrate:fresh --seed
 ```

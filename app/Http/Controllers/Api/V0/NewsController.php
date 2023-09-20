@@ -7,12 +7,14 @@ namespace App\Http\Controllers\Api\V0;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\News\Store;
 use App\Http\Requests\News\Update;
+use App\Http\Resources\NewsListResource;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use App\Queries\NewsQueryBuilder;
 use App\Queries\QueryBuilder;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use JetBrains\PhpStorm\Pure;
@@ -29,11 +31,17 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection
     {
-        return NewsResource::collection($this->newsQueryBuilder->getActiveNews());
+        $limit = $request->get('limit');
+        if ($limit == null) {
+            return NewsListResource::collection($this->newsQueryBuilder->getActiveNews());
+        } elseif ((int)$limit) {
+            return NewsListResource::collection($this->newsQueryBuilder->getLastLimitNews((int)$limit));
+        } else {
+            dd('limit is not integer or 0');
+        }
     }
-
     /**
      * Store a newly created resource in storage.
      */

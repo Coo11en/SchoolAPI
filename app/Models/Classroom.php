@@ -6,6 +6,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Classroom extends Model
@@ -21,16 +23,16 @@ class Classroom extends Model
     ];
 
     /* Relations */
-    public function days(): HasMany
+    public function days(): BelongsToMany
     {
-        return $this->hasMany(Day::class,);
+        return $this->belongsToMany(Day::class, 'schedules', 'classroom_id', 'day_id');
     }
     public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
-    public function teachers()
+    public function teachers(): BelongsTo
     {
-        return $this->hasOne(Teacher::class);
+        return $this->belongsTo(Teacher::class);
     }
 }

@@ -29,11 +29,12 @@ class  News extends Model
         'title',
         'author',
         'description',
+        'text',
         'news_category_id',
         'album_id',
         'status',
         'pub_approve',
-        'video',
+        'video'
     ];
 
 

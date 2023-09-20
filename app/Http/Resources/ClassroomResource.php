@@ -32,11 +32,18 @@ class ClassroomResource extends JsonResource
         foreach ($schedules as $item) {
             $frontViewArr[$item->week_day][$item->call_schedule_id] = $item->name_subject;
         }
+        $finalView = [];
+        foreach ($frontViewArr as $key => $item) {
+            $finalView[] = [
+              'dayName' => $key,
+              'lessons' => $item
+            ];
+        }
 
         return [
             'classId' => $this->id,
             'className' => $this->name,
-            'days' => $frontViewArr
+            'days' => $finalView
         ];
     }
 }

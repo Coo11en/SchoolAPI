@@ -29,6 +29,11 @@ class NewsQueryBuilder extends QueryBuilder
         return $this->getModel()->with('categories')->paginate(15);
     }
 
+    public function getLastLimitNews(int $limit)
+    {
+        return $this->getModel()->active()->orderBy('created_at', 'desc')->limit($limit)->get();
+    }
+
     public function getAll(): Collection
     {
         return $this->getModel()->get();

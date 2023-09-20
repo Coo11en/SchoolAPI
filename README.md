@@ -62,123 +62,38 @@ GET /api/V0/news
     "data": [
         {
             "id": 1,
-            "title": "accusantium",
-            "description": "Reprehenderit qui ea aut aut. Iure dolores dolor omnis praesentium est. Eum at qui explicabo vel.",
-            "created_at": "2023-09-15T10:48:48.000000Z",
-            "album": {
-                "id": 1,
-                "name": "Album 1",
-                "nameEng": "iste",
-                "mainImage": null,
-                "images": [
-                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
-                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
-                    "https://via.placeholder.com/640x480.png/004455?text=est",
-                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
-                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
-                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
-                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
-                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
-                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
-                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
-                ]
-            }
+            "title": "qui",
+            "description": "Iste est quis quaerat. Eius nobis quam voluptates dicta veritatis quis enim amet.",
+            "created_at": "2023-09-19T16:11:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
         },
         {
             "id": 2,
-            "title": "aliquam",
-            "description": "Eum enim illo eveniet quo. Id non non qui itaque fugit impedit aliquid.",
-            "created_at": "2023-09-15T10:48:48.000000Z",
-            "album": {
-                "id": 1,
-                "name": "Album 1",
-                "nameEng": "iste",
-                "mainImage": null,
-                "images": [
-                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
-                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
-                    "https://via.placeholder.com/640x480.png/004455?text=est",
-                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
-                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
-                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
-                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
-                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
-                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
-                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
-                ]
-            }
+            "title": "cupiditate",
+            "description": "Assumenda consequatur consectetur itaque porro aut. Beatae fugiat voluptatem aut sint.",
+            "created_at": "2023-09-19T16:12:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
         },
         {
             "id": 3,
-            "title": "minus",
-            "description": "Voluptates perspiciatis est voluptate libero. Quasi sit quam ratione possimus.",
-            "created_at": "2023-09-15T10:48:48.000000Z",
-            "album": {
-                "id": 2,
-                "name": "Album 2",
-                "nameEng": "dolorem",
-                "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
-                "images": [
-                    "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
-                    "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
-                    "https://via.placeholder.com/640x480.png/0044ee?text=quas",
-                    "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
-                    "https://via.placeholder.com/640x480.png/002288?text=suscipit",
-                    "https://via.placeholder.com/640x480.png/00dddd?text=et",
-                    "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
-                    "https://via.placeholder.com/640x480.png/0022dd?text=rem",
-                    "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
-                    "https://via.placeholder.com/640x480.png/00ee00?text=nam"
-                ]
-            }
+            "title": "non",
+            "description": "Qui sed in modi. Eum et dicta tempora dolorem quae non. Quia ut consequatur autem ut ipsam.",
+            "created_at": "2023-09-19T16:13:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
         },
         {
             "id": 4,
-            "title": "ducimus",
-            "description": "Temporibus dolores quis veritatis excepturi possimus qui. Rem aut neque eum modi adipisci.",
-            "created_at": "2023-09-15T10:48:48.000000Z",
-            "album": {
-                "id": 1,
-                "name": "Album 1",
-                "nameEng": "iste",
-                "mainImage": null,
-                "images": [
-                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
-                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
-                    "https://via.placeholder.com/640x480.png/004455?text=est",
-                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
-                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
-                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
-                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
-                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
-                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
-                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
-                ]
-            }
+            "title": "rem",
+            "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
+            "created_at": "2023-09-19T16:14:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
         },
         {
             "id": 5,
-            "title": "voluptatem",
-            "description": "Consequatur porro porro repudiandae doloribus. Qui labore voluptates quam.",
-            "created_at": "2023-09-15T10:48:48.000000Z",
-            "album": {
-                "id": 1,
-                "name": "Album 1",
-                "nameEng": "iste",
-                "mainImage": null,
-                "images": [
-                    "https://via.placeholder.com/640x480.png/00dd00?text=laudantium",
-                    "https://via.placeholder.com/640x480.png/00ee99?text=eveniet",
-                    "https://via.placeholder.com/640x480.png/004455?text=est",
-                    "https://via.placeholder.com/640x480.png/00ee44?text=dolor",
-                    "https://via.placeholder.com/640x480.png/0022ff?text=numquam",
-                    "https://via.placeholder.com/640x480.png/00aa33?text=delectus",
-                    "https://via.placeholder.com/640x480.png/00bbaa?text=quisquam",
-                    "https://via.placeholder.com/640x480.png/0033ff?text=voluptatibus",
-                    "https://via.placeholder.com/640x480.png/0022cc?text=adipisci",
-                    "https://via.placeholder.com/640x480.png/008855?text=vitae"
-                ]
-            }
+            "title": "minima",
+            "description": "Quos odit commodi aut et ut commodi ipsa. Qui provident illum alias architecto illum explicabo.",
+            "created_at": "2023-09-19T16:15:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
         }
     ]
 }
@@ -191,29 +106,56 @@ GET /api/V0/news/{id_news}
 ```
 {
     "data": {
-        "id": 3,
-        "title": "minus",
-        "description": "Voluptates perspiciatis est voluptate libero. Quasi sit quam ratione possimus.",
-        "created_at": "2023-09-15T10:48:48.000000Z",
-        "album": {
-            "id": 2,
-            "name": "Album 2",
-            "nameEng": "dolorem",
-            "mainImage": "https://via.placeholder.com/640x480.png/002288?text=suscipit",
-            "images": [
-                "https://via.placeholder.com/640x480.png/00bbbb?text=veritatis",
-                "https://via.placeholder.com/640x480.png/0000ee?text=aspernatur",
-                "https://via.placeholder.com/640x480.png/0044ee?text=quas",
-                "https://via.placeholder.com/640x480.png/0099ee?text=culpa",
-                "https://via.placeholder.com/640x480.png/002288?text=suscipit",
-                "https://via.placeholder.com/640x480.png/00dddd?text=et",
-                "https://via.placeholder.com/640x480.png/00bbcc?text=molestiae",
-                "https://via.placeholder.com/640x480.png/0022dd?text=rem",
-                "https://via.placeholder.com/640x480.png/00dd11?text=fugiat",
-                "https://via.placeholder.com/640x480.png/00ee00?text=nam"
-            ]
-        }
+        "id": 4,
+        "title": "rem",
+        "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
+        "text": "Vero ut dolores neque deleniti repudiandae quia sit. Modi odio sunt sunt consequatur ex. Dolorum sunt officiis nobis expedita adipisci architecto et. Reiciendis magnam asperiores corporis quas id. Asperiores odio consequatur voluptatem quia nisi vel consequatur. Est necessitatibus mollitia explicabo doloribus eius voluptas rerum. Excepturi quos harum aliquam tempore. Excepturi voluptatem autem quae libero animi aliquam. Voluptatem doloremque repellat provident dolorem fugiat perferendis. Dolorem at praesentium dignissimos sint atque occaecati. Commodi magni optio ut et. Velit quo necessitatibus et consectetur libero voluptas. Quos incidunt rerum voluptatem voluptatem qui ut. Sit quae aliquid voluptas corrupti maiores. Unde illo similique earum quo autem repellendus illum. Tenetur ullam dolores id expedita. Enim voluptatem nobis et dolorem repellendus qui. Quo vel dolor non temporibus quia. Autem laudantium voluptatem eveniet maxime quia.",
+        "created_at": "2023-09-19T16:14:41.000000Z",
+        "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos",
+        "images": [
+            "https://via.placeholder.com/640x480.png/00aa44?text=eos",
+            "https://via.placeholder.com/640x480.png/00ff66?text=in",
+            "https://via.placeholder.com/640x480.png/00cc77?text=expedita",
+            "https://via.placeholder.com/640x480.png/002266?text=et",
+            "https://via.placeholder.com/640x480.png/004466?text=qui",
+            "https://via.placeholder.com/640x480.png/0055aa?text=repellendus",
+            "https://via.placeholder.com/640x480.png/00ee33?text=distinctio"
+        ],
+        "video": "https://via.placeholder.com/640x480.png/00cc88?text=soluta",
+        "source": "Aliquid qui delectus cum ipsam explicabo. Aut nostrum rem porro non."
     }
+}
+```
+### Получить три последние новости
+```http request
+GET /api/V0/news?limit=3
+```
+### Ответ
+```
+{
+    "data": [
+        {
+            "id": 5,
+            "title": "minima",
+            "description": "Quos odit commodi aut et ut commodi ipsa. Qui provident illum alias architecto illum explicabo.",
+            "created_at": "2023-09-19T16:15:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+        },
+        {
+            "id": 4,
+            "title": "rem",
+            "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
+            "created_at": "2023-09-19T16:14:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+        },
+        {
+            "id": 3,
+            "title": "non",
+            "description": "Qui sed in modi. Eum et dicta tempora dolorem quae non. Quia ut consequatur autem ut ipsam.",
+            "created_at": "2023-09-19T16:13:41.000000Z",
+            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+        }
+    ]
 }
 ```
 ### Получить расписания для всех классов

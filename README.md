@@ -133,25 +133,37 @@ GET /api/V0/news/{id_news}
 ### Ответ
 ```
 {
-    "data": {
-        "id": 4,
-        "title": "rem",
-        "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
-        "text": "Vero ut dolores neque deleniti repudiandae quia sit. Modi odio sunt sunt consequatur ex. Dolorum sunt officiis nobis expedita adipisci architecto et. Reiciendis magnam asperiores corporis quas id. Asperiores odio consequatur voluptatem quia nisi vel consequatur. Est necessitatibus mollitia explicabo doloribus eius voluptas rerum. Excepturi quos harum aliquam tempore. Excepturi voluptatem autem quae libero animi aliquam. Voluptatem doloremque repellat provident dolorem fugiat perferendis. Dolorem at praesentium dignissimos sint atque occaecati. Commodi magni optio ut et. Velit quo necessitatibus et consectetur libero voluptas. Quos incidunt rerum voluptatem voluptatem qui ut. Sit quae aliquid voluptas corrupti maiores. Unde illo similique earum quo autem repellendus illum. Tenetur ullam dolores id expedita. Enim voluptatem nobis et dolorem repellendus qui. Quo vel dolor non temporibus quia. Autem laudantium voluptatem eveniet maxime quia.",
-        "created_at": "2023-09-19T16:14:41.000000Z",
-        "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos",
-        "images": [
-            "https://via.placeholder.com/640x480.png/00aa44?text=eos",
-            "https://via.placeholder.com/640x480.png/00ff66?text=in",
-            "https://via.placeholder.com/640x480.png/00cc77?text=expedita",
-            "https://via.placeholder.com/640x480.png/002266?text=et",
-            "https://via.placeholder.com/640x480.png/004466?text=qui",
-            "https://via.placeholder.com/640x480.png/0055aa?text=repellendus",
-            "https://via.placeholder.com/640x480.png/00ee33?text=distinctio"
-        ],
-        "video": "https://via.placeholder.com/640x480.png/00cc88?text=soluta",
-        "source": "Aliquid qui delectus cum ipsam explicabo. Aut nostrum rem porro non."
-    }
+  "data": {
+    "id": 1,
+    "title": "qui",
+    "description": "Eos perspiciatis est voluptatum animi nulla. Dicta ab quia nulla iusto et.",
+    "text": "Dolorum quia nemo aut. Ut magni veritatis velit qui et magni. Suscipit ea sapiente rem minus sint officiis perspiciatis. Eius quaerat suscipit qui cum. Unde ex explicabo sed architecto veritatis cum. Iste minus debitis est reprehenderit consequatur quasi natus. Beatae sapiente omnis error harum. Quia quae error ad eaque perspiciatis non et. Nemo exercitationem maxime nemo odio qui culpa. Facilis odit blanditiis et rerum. Eos ut et quis nemo. Et eos alias ex accusamus dignissimos. Inventore quo iusto possimus qui. Facilis quod quaerat architecto nulla vitae veritatis voluptas. Quasi laboriosam cumque reiciendis aut molestiae. Eius numquam velit ut aliquid. Eligendi quae et assumenda libero quo eum maiores. Est repellendus quisquam in rerum tenetur delectus molestiae. Sed culpa dolorem aliquid blanditiis. Alias vitae cumque illo. Quo aliquam qui sit consectetur eos qui. Nisi est possimus officiis accusantium quas eaque.",
+    "created_at": "2023-09-21T19:03:02.000000Z",
+    "mainImg": "https:\/\/via.placeholder.com\/640x480.png\/009988?text=ab",
+    "images": [
+      "https:\/\/via.placeholder.com\/640x480.png\/009988?text=ab",
+      "https:\/\/via.placeholder.com\/640x480.png\/00dd88?text=dicta",
+      "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=ut",
+      "https:\/\/via.placeholder.com\/640x480.png\/004488?text=similique",
+      "https:\/\/via.placeholder.com\/640x480.png\/001111?text=dolor",
+      "https:\/\/via.placeholder.com\/640x480.png\/008899?text=vitae",
+      "https:\/\/via.placeholder.com\/640x480.png\/00aadd?text=beatae",
+      "https:\/\/via.placeholder.com\/640x480.png\/00ee00?text=voluptatem",
+      "https:\/\/via.placeholder.com\/640x480.png\/004444?text=ut",
+      "https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=voluptatem"
+    ],
+    "video": "https:\/\/via.placeholder.com\/640x480.png\/0088ff?text=dolorum",
+    "source": [
+      {
+        "url": "https:\/\/wisoky.com\/eligendi-rerum-aut-quo-sint-tempora-voluptatibus-eius.html",
+        "text": "Quasi quo ea sunt minus."
+      },
+      {
+        "url": "http:\/\/www.ernser.org\/in-iure-dicta-nobis-nihil-totam.html",
+        "text": "Ut possimus hic voluptatum."
+      }
+    ]
+  }
 }
 ```
 ### Получить три последние новости
@@ -433,7 +445,7 @@ GET /api/V0/albums
 ```
 ### Получить конкретный альбом
 ```http request
-GET /api/V0/albums/{id_album}
+GET /api/V0/albums/{nameEng}
 ```
 ### Ответ
 ```

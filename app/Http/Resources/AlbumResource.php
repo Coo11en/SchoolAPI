@@ -21,7 +21,7 @@ class AlbumResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'nameEng' => $this->nameEng,
-            'mainImage' => ($this->mainImg->first()) ? $this->mainImg->first()->img : null,
+            'mainImg' => ($this->mainImg->first()) ? $this->mainImg->first()->img : null,
             'images' => PhotoResource::collection($this->photos)->map(function ($item, $key) {
                 return $item->img;
             })

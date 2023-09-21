@@ -4,17 +4,25 @@ namespace App\Http\Controllers\Api\V0;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AlbumResource;
-use App\Http\Resources\PhotoResource;
 use App\Models\Album;
-use App\Models\Photo;
+use App\Queries\AlbumsQueryBuilder;
+use App\Queries\QueryBuilder;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class AlbumsController extends Controller
 {
+    protected QueryBuilder $albumsQueryBuilder;
+    public function __construct(
+        AlbumsQueryBuilder $albumsQueryBuilder,
+    )
+    {
+        $this->albumsQueryBuilder = $albumsQueryBuilder;
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): AnonymousResourceCollection
     {
         return AlbumResource::collection(Album::all());
     }
@@ -30,9 +38,9 @@ class AlbumsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $nameEng): AnonymousResourceCollection
     {
-        return new AlbumResource(Album::findOrFail($id));
+        return AlbumResource::collection($this->albumsQueryBuilder->getAlbumByNameEng($nameEng));
     }
 
     /**

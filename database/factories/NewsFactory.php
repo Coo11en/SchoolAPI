@@ -23,7 +23,10 @@ class NewsFactory extends Factory
             'text' => fake()->text(1000),
             'news_category_id' => News_category::factory(),
             'album_id' => Album::first()->id,
-            'source' => fake()->text(100),
+            'source' => json_encode([
+                ['url' => fake()->url(),'text' => fake()->text(30)],
+                ['url' => fake()->url(), 'text' => fake()->text(30)]
+            ]),
             'status' => NewsStatus::ACTIVE->value,
             'video' => fake()->imageUrl(),
             'created_at' => now(),

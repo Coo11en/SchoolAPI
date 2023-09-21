@@ -70,6 +70,15 @@ php artisan event:cache
 php artisan route:cache
 php artisan view:cache
 ```
+
+<h2 align="center">Для корректного применения миграций для изменений БД можно использовать: </h2>
+
+```bash
+ php artisan migrate:fresh --seed
+```
+
+Команда очищает все таблицы, применяет миграции, применяет Seed
+
 # API
 ### Получить список новостей
 ```http request

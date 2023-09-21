@@ -28,7 +28,7 @@ class NewsResource extends JsonResource
                 return $item->img;
             }),
             'video' => $this->video,
-            'source' => $this->source
+            'source' => json_decode($this->source)
 
         ];
     }

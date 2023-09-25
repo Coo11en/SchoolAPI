@@ -31,9 +31,9 @@ class News_category extends Model
     {
         return $this->belongsTo(News::class);
     }*/
-    public function news()
-    {
-        return $this->hasMany(News::class, 'news_category_id', 'id');
-    }
+//    public function news()
+//    {
+//        return $this->hasMany(News::class, 'news_category_id', 'id');
+//    }
 
 }

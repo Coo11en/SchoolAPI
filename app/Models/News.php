@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use App\Enums\NewsStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class  News extends Model
 {
+    use CrudTrait;
     use HasFactory;
 
     protected $table = 'news';
@@ -44,14 +46,15 @@ class  News extends Model
         return $this->hasMany(Likes::class);
     }
 
-    public function albums()
+    public function album() :BelongsTo
     {
-        return $this->belongsTo(Album::class, 'album_id');
+        return $this->belongsTo(Albums::class);
     }
 
-    public function newsCategories():BelongsTo
+    public function news_category() :BelongsTo
     {
-        return $this->belongsTo(News_category::class, 'news_category_id');
+//        return $this->belongsTo(News_category::class, 'news_category_id');
+        return $this->belongsTo(NewsCategory::class);
     }
 
 

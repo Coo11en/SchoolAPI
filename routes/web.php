@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+include_once 'lagoon/login.php';
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -42,15 +43,15 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 // Admin
-Route::group([
-    'prefix' => 'admin',
-    'as' => 'admin.',
-//    'middleware' => 'check.admin',
-], static function () {
-    Route::get('/', Admin\IndexController::class)
-        ->name('index');
-
-    Route::resource('/news', Admin\NewsController::class);
-    Route::resource('/schedule', Admin\ScheduleController::class);
-});
+//Route::group([
+//    'prefix' => 'admin',
+//    'as' => 'admin.',
+////    'middleware' => 'check.admin',
+//], static function () {
+//    Route::get('/', Admin\IndexController::class)
+//        ->name('index');
+//
+//    Route::resource('/news', Admin\NewsController::class);
+//    Route::resource('/schedule', Admin\ScheduleController::class);
+//});
 

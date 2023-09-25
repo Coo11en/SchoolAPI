@@ -36,6 +36,10 @@ return [
     */
 
     'guards' => [
+        'backpack' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',

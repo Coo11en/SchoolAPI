@@ -11,6 +11,7 @@ use App\Models\Call_schedule;
 use App\Models\Appeals_category;
 use App\Models\Classroom;
 use App\Models\Day;
+use App\Models\Cabinet;
 use App\Models\News;
 use App\Models\News_category;
 use App\Models\Parents;
@@ -152,8 +153,18 @@ class DatabaseSeeder extends Seeder
             ->has(Parents::factory()->count(2))
             ->create();
 
+//
+        $cabinets = [
+            'Кабинет информатики',
+            'Кабинет химии',
+            'Кабинет физики',
+        ];
+        foreach ($cabinets as $cabinet)
+            Cabinet::factory()->state([
+                'name' => $cabinet
+            ])->create();
 
-        //        \App\Models\Achievement::factory(5)->create();
+//        \App\Models\Achievement::factory(5)->create();
 
 
 //        Appeal::factory(5)

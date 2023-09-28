@@ -28,3 +28,8 @@ Route::controller(CallSchedulesController::class)->group(function () {
     Route::get('/call-schedules', 'index');
 });
 
+Route::controller(CabinetsController::class)->group(function () {
+    Route::get('/cabinets', 'index');
+    Route::get('/cabinets/{id}', 'show');
+});
+

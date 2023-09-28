@@ -521,3 +521,44 @@ GET /api/V0/call-schedules
     ]
 }
 ```
+### Получить оборудование по кабинетам
+```http request
+GET /api/V0/cabinets
+```
+### Ответ
+```
+{
+    "data": [
+        {
+            "name": "Кабинет информатики",
+            "description": "Non aut vel voluptas est occaecati. Eligendi esse non a magni quibusdam consequatur nesciunt. Ea qui ipsa quaerat eius et minima delectus.",
+            "photos": [
+                "https://via.placeholder.com/640x480.png/00ddcc?text=id",
+                "https://via.placeholder.com/640x480.png/008822?text=consectetur",
+                "https://via.placeholder.com/640x480.png/001199?text=autem",
+                "https://via.placeholder.com/640x480.png/00ffff?text=velit"
+            ]
+        },
+        {
+            "name": "Кабинет химии",
+            "description": "Non et voluptas mollitia consectetur temporibus fuga. Sed labore in id. Commodi numquam quidem eligendi.",
+            "photos": [
+                "https://via.placeholder.com/640x480.png/00aadd?text=rerum",
+                "https://via.placeholder.com/640x480.png/0066dd?text=sunt",
+                "https://via.placeholder.com/640x480.png/00aa55?text=molestias",
+                "https://via.placeholder.com/640x480.png/006699?text=voluptas"
+            ]
+        },
+        {
+            "name": "Кабинет физики",
+            "description": "Libero quaerat ad non voluptatem animi qui. Consequatur et odit quasi et. Ex dolorum accusamus et nostrum sapiente.",
+            "photos": [
+                "https://via.placeholder.com/640x480.png/00bb22?text=porro",
+                "https://via.placeholder.com/640x480.png/006644?text=voluptas",
+                "https://via.placeholder.com/640x480.png/001188?text=quia",
+                "https://via.placeholder.com/640x480.png/004433?text=placeat"
+            ]
+        }
+    ]
+}
+```

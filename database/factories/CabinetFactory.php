@@ -18,14 +18,25 @@ class CabinetFactory extends Factory
      */
     public function definition(): array
     {
+
+        $cabinets_img = [
+            'http://филипповская-школа.рф/wp-content/uploads/2020/09/ikt.jpg',
+            'http://филипповская-школа.рф/wp-content/uploads/2020/09/teh1.jpg',
+            'http://филипповская-школа.рф/wp-content/uploads/2020/09/teh2.jpg',
+            'http://филипповская-школа.рф/wp-content/uploads/2020/09/bibl1.jpg',
+            'http://филипповская-школа.рф/wp-content/uploads/2020/09/sport1.jpg',
+        ];
+
+        $cabinets_arr = [$cabinets_img[array_rand($cabinets_img)], $cabinets_img[array_rand($cabinets_img)], $cabinets_img[array_rand($cabinets_img)], $cabinets_img[array_rand($cabinets_img)]];
+
         return [
             'name' => $this->faker->text(50),
             'description'  => $this->faker->text(150),
             'images'  => json_encode([
-                fake()->imageUrl(),
-                fake()->imageUrl(),
-                fake()->imageUrl(),
-                fake()->imageUrl(),
+                $cabinets_img[array_rand($cabinets_img)],
+                $cabinets_img[array_rand($cabinets_img)],
+                $cabinets_img[array_rand($cabinets_img)],
+                $cabinets_img[array_rand($cabinets_img)],
             ]),
             'created_at' => now(),
             'updated_at' => now()

@@ -8,6 +8,8 @@ class PhotoFactory extends Factory
 {
     public function definition(): array
     {
+
+
         return [
             'img' => fake()->imageUrl(),
             'created_at' => now(),

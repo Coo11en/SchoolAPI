@@ -562,3 +562,65 @@ GET /api/V0/cabinets
     ]
 }
 ```
+
+### Получить текущее меню в столовой
+```http request
+GET /api/V0/menu
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "id": 57,
+      "menu_title": "Меню ежедневного горячего питания",
+      "name_menu": "Завтрак",
+      "price": "191",
+      "date": "2023-09-29 00:20:19",
+      "menu": [
+        {
+          "name_dish": "Et odit adipisci sit id.",
+          "dish_output": "284 гр."
+        },
+        {
+          "name_dish": "Et nisi non mollitia id.",
+          "dish_output": "147 гр."
+        },
+        {
+          "name_dish": "Ex mollitia ut aliquam.",
+          "dish_output": "295 гр."
+        },
+        {
+          "name_dish": "Laborum non fugit qui.",
+          "dish_output": "131 гр."
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "menu_title": "Меню ежедневного горячего питания",
+      "name_menu": "Обед",
+      "price": "82",
+      "date": "2023-09-29 00:20:20",
+      "menu": [
+        {
+          "name_dish": "Amet non dolorum cum.",
+          "dish_output": "242 гр."
+        },
+        {
+          "name_dish": "Ut fuga excepturi eos.",
+          "dish_output": "64 гр."
+        },
+        {
+          "name_dish": "Ea qui aut harum.",
+          "dish_output": "201 гр."
+        },
+        {
+          "name_dish": "Ad sunt accusamus omnis.",
+          "dish_output": "167 гр."
+        }
+      ]
+    }
+  ]
+}
+```

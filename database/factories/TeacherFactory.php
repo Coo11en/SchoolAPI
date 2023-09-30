@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Photo;
 use App\Models\Roles;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -20,20 +21,24 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         return [
-            'username' => $this->faker->LastName(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'user_id' => User::factory(),
+            'main_photo_id' => Photo::factory(),
             'name' => fake()->firstName(),
             'surname' => fake()->lastName(),
             'patronymic' => fake()->text(20),
-            'job_title' => fake()->text(250),
+            'job_title' => json_encode([
+                fake()->text(30),
+                fake()->text(30)],
+            ),
             'role_id' => Roles::factory(),
-            'email' => fake()->unique()->safeEmail(),
-            'phone' => $this->faker->phoneNumber,
-            'birthday' => $this->faker->date,
-            'main_photo_id' => null,
-            'token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
+            'speciality' => fake()->text(20),
+            'education' => fake()->text(40),
+            'totalExperience' => fake()->randomFloat(0, 5, 55),
+            'generalTeachingExperience' => fake()->randomFloat(0, 5, 55),
+            'qualification' => fake()->text(40),
+            'isAdministration' => fake()->randomElement([true, false]),
         ];
     }
 }

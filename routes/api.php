@@ -23,6 +23,8 @@ Route::apiResources([
     'class-schedules' => ClassSchedulesController::class,
     'albums' => AlbumsController::class,
     'menu' => MenuController::class,
+    'teachers' => TeachersController::class,
+    'questions' => QuestionsController::class,
 ]);
 
 Route::controller(CallSchedulesController::class)->group(function () {

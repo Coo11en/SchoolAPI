@@ -7,6 +7,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Teacher extends Model
@@ -18,31 +19,35 @@ class Teacher extends Model
 //    public $incrementing = false;
 
     protected $fillable = [
-        'username',
-        'password',
+        'user_id',
+        'role_id',
         'name',
         'surname',
         'patronymic',
         'job_title',
-        'role_id',
-        'email',
-        'phone',
-        'birthday',
+        'speciality',
+        'education',
+        'totalExperience',
+        'generalTeachingExperience',
+        'qualification',
+        'isAdministration',
         'main_photo_id',
-        'token',
     ];
 
     public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
-    public function photos(): HasMany
+    public function photos(): BelongsTo
     {
-        return $this->hasMany(Photo::class);
+        return $this->belongsTo(Photo::class, 'main_photo_id');
     }
     public function roles()
     {
         return $this->belongsTo(Roles::class);
     }
-
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

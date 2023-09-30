@@ -11,7 +11,7 @@ class Appeals_category  extends Model
 {
     use HasFactory;
 
-    protected  $table = 'appeal_categories';
+    protected  $table = 'appeals_categories';
 
 //    public $incrementing = false;
 

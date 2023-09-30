@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert($this->getRolesData());
 
 // Seed 2 Teachers
-        Teacher::factory(2)
+        Teacher::factory(8)
             ->state(['role_id' => Roles::where('role_name', '=', 'Учитель')->first()->id])
             ->create();
 
@@ -96,9 +96,9 @@ class DatabaseSeeder extends Seeder
             'Пятница',
             'Суббота'
         ];
-            foreach ($days as $day) {
-                Day::factory()->state(['name' => $day])->create();
-            }
+        foreach ($days as $day) {
+            Day::factory()->state(['name' => $day])->create();
+        }
 
 // Seed Call_schedules
         $call_schedules = [
@@ -112,11 +112,11 @@ class DatabaseSeeder extends Seeder
             ['call_number' => 8, 'start_time' => '16:00', 'lesson_time' => 45],
         ];
         foreach ($call_schedules as $call_schedule)
-        Call_schedule::factory()->state([
-            'call_number' => $call_schedule['call_number'],
-            'start_time' => $call_schedule['start_time'],
-            'lesson_time' => $call_schedule['lesson_time']
-        ])->create();
+            Call_schedule::factory()->state([
+                'call_number' => $call_schedule['call_number'],
+                'start_time' => $call_schedule['start_time'],
+                'lesson_time' => $call_schedule['lesson_time']
+            ])->create();
 
 // Seed Subjects
         $subjects = [
@@ -210,7 +210,13 @@ class DatabaseSeeder extends Seeder
             }
         }
 
+        Appeals_category::factory(3)->create();
 
+        for ($i = 1; $i < 11; $i++) {
+            Appeal::factory()->state([
+                'category_id' => Appeals_category::all()->random()->id,
+            ])->create();
+        }
 
 //        \App\Models\Achievement::factory(5)->create();
 
@@ -229,8 +235,8 @@ class DatabaseSeeder extends Seeder
         $uuids = [];
 
         for ($i=0; $i<3; $i++) {
-           $role = Roles::factory()->make();
-           $uuids[] = $role->id;
+            $role = Roles::factory()->make();
+            $uuids[] = $role->id;
         }
         return [
             ['id' => $uuids[0], 'role_name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],

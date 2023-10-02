@@ -27,6 +27,10 @@ Route::apiResources([
     'questions' => QuestionsController::class,
 ]);
 
+Route::controller(QuestionDirectir::class)->group(function () {
+    Route::post('/question_director', 'index');
+});
+
 Route::controller(CallSchedulesController::class)->group(function () {
     Route::get('/call-schedules', 'index');
 });

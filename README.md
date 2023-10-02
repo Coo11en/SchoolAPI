@@ -700,3 +700,446 @@ GET /api/V0/questions
   ]
 }
 ```
+
+### Получить структуру основных подразделов для Раздела "Сведения об образовательном учреждении"
+```http request
+GET /api/V0/chapter
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "сhapterId": 1,
+      "slug": "basic",
+      "chapterTitle": "Основные сведения",
+      "section": [
+        {
+          "sectionTitle": "Illo repellendus aut omnis velit.",
+          "sectionText": "<html><head><title>Cumque.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">quam<\/label><input type=\"text\" id=\"username\"><label for=\"password\">est<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"5932\"><div id=\"71926\"><table><thead><tr><th>Quasi repellendus architecto.<\/th><\/tr><\/thead><tbody><tr><td>Aperiam officiis quaerat nulla iusto optio quia et.<\/td><\/tr><\/tbody><\/table><p>Molestiae est voluptatem ea.<\/p><\/div><\/div><div id=\"23076\"><div id=\"85120\"><\/div><div class=\"et\"><\/div><\/div><div class=\"non\"><\/div><div id=\"30939\"><div class=\"molestiae\"><\/div><div id=\"94502\"><i>Ducimus velit est dolorem cumque quia in dolorem sunt culpa.<\/i><p>Quia aut recusandae omnis distinctio occaecati earum veniam et asperiores vero.<\/p>Voluptatem ut quis voluptatem quia quis iste.<\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Адам Александрович Кошелева",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0000aa?text=quisquam",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Кулагина Аполлон Львович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00bb66?text=illum",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Комиссароваа Рената Борисовна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/008822?text=rem",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "сhapterId": 2,
+      "slug": "struct",
+      "chapterTitle": "Структура и органы управления образовательной организацией",
+      "section": [
+        {
+          "sectionTitle": "Cum iusto quo sed est.",
+          "sectionText": "<html><head><title>Quo voluptas.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">eos<\/label><input type=\"text\" id=\"username\"><label for=\"password\">necessitatibus<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"95479\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Морозов Алексей Иванович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0055cc?text=quia",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Optio est aut sit ut.",
+          "sectionText": "<html><head><title>Esse ut.<\/title><\/head><body><form action=\"example.net\" method=\"POST\"><label for=\"username\">voluptatum<\/label><input type=\"text\" id=\"username\"><label for=\"password\">excepturi<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"soluta\"><\/div><div class=\"perspiciatis\"><\/div><div class=\"excepturi\"><\/div><div id=\"38708\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Эльвира Евгеньевна Смирнова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/009977?text=cupiditate",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Алина Львовна Беспалова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/000000?text=ea",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Зиновьеваа Антонина Львовна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0011ee?text=recusandae",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Blanditiis voluptas similique ratione.",
+          "sectionText": "<html><head><title>Veniam eligendi laborum ut cum dolores et aperiam eaque accusantium non.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">esse<\/label><input type=\"text\" id=\"username\"><label for=\"password\">fugit<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"89665\"><\/div><div id=\"95197\"><div class=\"ullam\"><span>Doloremque quasi provident similique in.<\/span><table><thead><tr><th>Non vero.<\/th><\/tr><\/thead><tbody><tr><td>Ipsam odit vitae adipisci ea aut voluptates vel tempore officiis magnam molestiae quisquam.<\/td><\/tr><tr><td>Explicabo facere est.<\/td><\/tr><tr><td>Sed praesentium vero aperiam nulla.<\/td><\/tr><tr><td>Ex distinctio architecto provident voluptatum expedita expedita aut vel vitae error.<\/td><\/tr><tr><td>Reprehenderit provident cum ipsa nihil.<\/td><\/tr><tr><td>Consequatur quidem dolore quia ut.<\/td><\/tr><tr><td>Magnam quia.<\/td><\/tr><\/tbody><\/table><\/div><div class=\"ut\"><\/div><div id=\"90022\"><\/div><\/div><div id=\"70571\"><\/div><div class=\"provident\"><div class=\"ea\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Ирина Евгеньевна Черноваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/002222?text=nihil",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Ирина Евгеньевна Черноваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/002222?text=nihil",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Зиновьеваа Антонина Львовна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0011ee?text=recusandae",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "сhapterId": 3,
+      "slug": "document",
+      "chapterTitle": "Документы",
+      "section": [
+        {
+          "sectionTitle": "Et maiores delectus rerum sed.",
+          "sectionText": "<html><head><title>Sed.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">magni<\/label><input type=\"text\" id=\"username\"><label for=\"password\">dolorem<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"83629\"><\/div><div class=\"facere\"><span>Voluptatem rerum.<\/span><h2>Autem sint eos corporis dignissimos et et voluptatem dolor sit sint sit quidem voluptatem.<\/h2><\/div><div class=\"et\">Expedita totam vitae magnam voluptatem molestiae provident.<table><thead><tr><th>Excepturi occaecati ipsum.<\/th><th>Minus fuga enim.<\/th><th>Ut in.<\/th><th>Nostrum molestiae.<\/th><th>Aut nam.<\/th><\/tr><\/thead><tbody><tr><td>Alias praesentium.<\/td><td>Sint voluptatem saepe.<\/td><td>Molestiae rerum repudiandae dolore et perspiciatis id amet placeat.<\/td><td>Eius.<\/td><td>Ad esse magni in.<\/td><\/tr><tr><td>Enim.<\/td><td>Est reiciendis.<\/td><td>Provident laborum.<\/td><td>Dignissimos fugiat exercitationem voluptate amet non magnam accusantium magni.<\/td><td>Blanditiis unde est dolore magni autem et consequuntur.<\/td><\/tr><tr><td>Doloremque odio cumque eum aut cum blanditiis.<\/td><td>Quis iste sit nobis.<\/td><td>Iure molestiae laboriosam.<\/td><td>Ea sit nemo molestias consectetur voluptatum non.<\/td><td>Qui.<\/td><\/tr><tr><td>Voluptatem eligendi inventore aut provident voluptatem eos voluptatibus est.<\/td><td>Qui vero corporis quibusdam itaque qui.<\/td><td>Aspernatur qui adipisci vitae dolorem itaque natus et.<\/td><td>Ea aut consequuntur.<\/td><td>Commodi quas consequatur harum quas.<\/td><\/tr><tr><td>Natus sint.<\/td><td>Sint voluptas eos dignissimos sequi placeat dolores.<\/td><td>Est doloremque in in.<\/td><td>Et fuga adipisci placeat est quia occaecati dolor.<\/td><td>Nisi odio voluptas tenetur quibusdam.<\/td><\/tr><tr><td>Laborum ab nobis cumque perspiciatis blanditiis dolorem.<\/td><td>Expedita accusamus et omnis.<\/td><td>Dolorem cumque est rerum rerum et.<\/td><td>Quia blanditiis quia doloremque.<\/td><td>Recusandae.<\/td><\/tr><\/tbody><\/table><\/div><div class=\"consequatur\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Гришина Антонин Максимович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0077aa?text=vel",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "сhapterId": 4,
+      "slug": "education",
+      "chapterTitle": "Образование",
+      "section": [
+        {
+          "sectionTitle": "Beatae impedit quae eveniet quis aut sed dolore.",
+          "sectionText": "<html><head><title>Omnis autem eos incidunt doloribus eos ea perspiciatis blanditiis amet.<\/title><\/head><body><form action=\"example.net\" method=\"POST\"><label for=\"username\">quasi<\/label><input type=\"text\" id=\"username\"><label for=\"password\">qui<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"qui\"><div id=\"9117\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Руслан Максимович Юдина",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc99?text=cupiditate",
+              "documentType": "JPG"
+            },
+            {
+              "documentName": "Киселёв Юрий Иванович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/007777?text=accusamus",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Фокинаа Анжелика Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=optio",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Ducimus cumque dolor illo ipsam corporis culpa ut iure.",
+          "sectionText": "<html><head><title>Temporibus vitae laboriosam ducimus possimus praesentium et aliquid nostrum.<\/title><\/head><body><form action=\"example.net\" method=\"POST\"><label for=\"username\">quaerat<\/label><input type=\"text\" id=\"username\"><label for=\"password\">eos<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"61882\">Officia non.<h3>Eum est inventore molestias.<\/h3><i>Occaecati quis quibusdam.<\/i><\/div><div class=\"dolores\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Изольда Сергеевна Овчинниковаа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=asperiores",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Алла Александровна Харитонова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=excepturi",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Фомина Герман Владимирович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/005522?text=architecto",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Quis sed quod sit qui accusamus culpa eligendi.",
+          "sectionText": "<html><head><title>Alias sunt et qui amet qui aspernatur aliquid nam ea ipsa aut.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">quod<\/label><input type=\"text\" id=\"username\"><label for=\"password\">et<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"22984\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Никитинаа Софья Борисовна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0055ee?text=sapiente",
+              "documentType": "JPG"
+            },
+            {
+              "documentName": "Киселёв Юрий Иванович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/007777?text=accusamus",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        }
+      ]
+    },
+    {
+      "сhapterId": 5,
+      "slug": "eduStandarts",
+      "chapterTitle": "Образовательные стандарты",
+      "section": [
+        {
+          "sectionTitle": "Tempore nulla tenetur quaerat eligendi officia facilis soluta.",
+          "sectionText": "<html><head><title>Et.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">consequatur<\/label><input type=\"text\" id=\"username\"><label for=\"password\">commodi<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"et\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Казакова Феликс Максимович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Кудряшова Людмила Алексеевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00dd11?text=dolor",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Алла Александровна Харитонова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=excepturi",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Sed expedita repellendus quo fugit unde earum nemo.",
+          "sectionText": "<html><head><title>Fuga fuga.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">occaecati<\/label><input type=\"text\" id=\"username\"><label for=\"password\">sed<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"voluptatem\"><div class=\"sed\"><\/div><div id=\"83534\"><h1>Quod ad.<\/h1><i>Incidunt quam rerum aut sint voluptatem sit minus sapiente odit ducimus deleniti cupiditate vel.<\/i><p>Ut similique in ut cupiditate voluptatum quod earum rerum aliquid qui.<\/p><p>Qui voluptatibus maxime.<\/p><\/div><div class=\"amet\"><ul><li>Qui distinctio reiciendis.<\/li><li>Rerum consequatur.<\/li><li>Eos quis voluptas dolorem ipsum.<\/li><li>Voluptas animi.<\/li><\/ul><i>Dolores dolores ut aut sunt eaque fugiat.<\/i><h1>Alias atque eaque autem ipsa facilis optio et dolores aut alias nesciunt suscipit.<\/h1><\/div><\/div><div id=\"25741\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Яна Львовна Куликова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00bb00?text=ut",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Виктория Романовна Ершоваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00eecc?text=occaecati",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "сhapterId": 6,
+      "slug": "objects",
+      "chapterTitle": "Материально-техническое обеспечение и оснащенность образовательного процесса",
+      "section": [
+        {
+          "sectionTitle": "Veritatis eum quaerat unde omnis.",
+          "sectionText": "<html><head><title>Dolor vitae aspernatur ut error recusandae optio hic.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">quae<\/label><input type=\"text\" id=\"username\"><label for=\"password\">qui<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"36611\"><div class=\"dolorem\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Изольда Сергеевна Овчинниковаа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=asperiores",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        },
+        {
+          "sectionTitle": "Reprehenderit et assumenda sint doloribus ut voluptatibus.",
+          "sectionText": "<html><head><title>Eius suscipit doloribus distinctio debitis ea iste doloribus.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">quasi<\/label><input type=\"text\" id=\"username\"><label for=\"password\">cupiditate<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"beatae\"><\/div><div id=\"82102\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Никитинаа Софья Борисовна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0055ee?text=sapiente",
+              "documentType": "JPG"
+            },
+            {
+              "documentName": "Альбина Сергеевна Соловьёваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00ff11?text=rerum",
+              "documentType": "JPG"
+            },
+            {
+              "documentName": "Яна Львовна Куликова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00bb00?text=ut",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        },
+        {
+          "sectionTitle": "Sunt veritatis mollitia expedita.",
+          "sectionText": "<html><head><title>Placeat dolore ut harum.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">eos<\/label><input type=\"text\" id=\"username\"><label for=\"password\">modi<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"quis\"><ul><li>Sequi et commodi tenetur sapiente aspernatur.<\/li><li>Nihil aliquid excepturi et quos.<\/li><li>Rerum vero et laudantium nobis dicta.<\/li><\/ul><i>Eius voluptas.<\/i><ul><li>Rem inventore dolor reprehenderit.<\/li><\/ul><\/div><div class=\"laudantium\"><\/div><div id=\"69069\"><\/div><div class=\"soluta\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Мальвина Владимировна Наумоваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/006655?text=vel",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        },
+        {
+          "sectionTitle": "Ipsum velit voluptatem aspernatur alias perspiciatis saepe quisquam.",
+          "sectionText": "<html><head><title>Qui facilis vel consequuntur sed.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">quas<\/label><input type=\"text\" id=\"username\"><label for=\"password\">in<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"81372\"><\/div><div id=\"46567\"><\/div><div class=\"ab\"><div id=\"28196\"><\/div><div id=\"29793\"><p>Ab ut et consectetur id architecto illum quia vel et iure eos.<\/p><\/div><div id=\"4976\"><\/div><div class=\"ducimus\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Фокинаа Анжелика Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=optio",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Алла Александровна Харитонова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=excepturi",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "сhapterId": 7,
+      "slug": "budget",
+      "chapterTitle": "Финансово-хозяйственная деятельность",
+      "section": [
+        {
+          "sectionTitle": "Eveniet facilis eligendi tempora incidunt placeat quisquam quisquam.",
+          "sectionText": "<html><head><title>Et consequatur tenetur amet repellendus.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">neque<\/label><input type=\"text\" id=\"username\"><label for=\"password\">cum<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"50733\"><div id=\"24906\"><\/div><div id=\"66469\"><\/div><div id=\"8160\"><\/div><div id=\"71435\"><i>Similique vel.<\/i><\/div><\/div><div class=\"aut\"><p>Consequuntur id facere corrupti voluptas.<\/p><table><thead><tr><th>Cumque ut quia et est recusandae.<\/th><th>Laborum adipisci.<\/th><th>Quisquam.<\/th><\/tr><\/thead><tbody><tr><td>Veniam sapiente dolorum magni enim quia dignissimos aut natus.<\/td><td>Et corrupti dolorem quisquam nemo corrupti cum alias aut molestiae sint et nihil dolores.<\/td><td>Earum facilis sed illo nihil est qui reprehenderit.<\/td><\/tr><tr><td>Voluptas dolore aspernatur placeat deleniti mollitia dolorem officia exercitationem ut.<\/td><td>Iusto ut quae repellat assumenda assumenda culpa totam et.<\/td><td>Eius ad molestias est corrupti quis qui.<\/td><\/tr><tr><td>Nihil velit non est ea unde et aut occaecati.<\/td><td>Libero praesentium quaerat facere tempora.<\/td><td>Corrupti repellat maiores delectus autem.<\/td><\/tr><tr><td>Et deleniti nisi.<\/td><td>Exercitationem sit pariatur nulla.<\/td><td>Quisquam ratione qui repellendus blanditiis eveniet sed.<\/td><\/tr><tr><td>Provident autem porro incidunt quaerat tempora accusamus deserunt aut nostrum delectus.<\/td><td>Facilis voluptates doloribus corporis beatae a unde.<\/td><td>Dignissimos ab molestiae et debitis asperiores.<\/td><\/tr><tr><td>Modi et.<\/td><td>Qui excepturi quo perspiciatis ea.<\/td><td>Earum nemo saepe quas qui excepturi officia dolor consequatur sed molestiae.<\/td><\/tr><\/tbody><\/table><p>Culpa pariatur excepturi ut.<\/p><b>Sequi vero quisquam sed est illum voluptate fuga suscipit.<\/b><\/div><div class=\"error\"><\/div><div class=\"fugiat\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": []
+        }
+      ]
+    },
+    {
+      "сhapterId": 8,
+      "slug": "vacant",
+      "chapterTitle": "Вакантные места для приема (перевода) по каждой образовательной программе",
+      "section": [
+        {
+          "sectionTitle": "Et rerum impedit officia est.",
+          "sectionText": "<html><head><title>Non.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">ab<\/label><input type=\"text\" id=\"username\"><label for=\"password\">quaerat<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"52925\"><div id=\"65490\"><\/div><\/div><div id=\"88925\"><div class=\"dolorem\"><\/div><div id=\"9634\"><\/div><div id=\"9617\"><p>Dolore alias cum quia at eius facere minus aliquid laborum rerum aut.<\/p><h2>Qui.<\/h2><span>Illo eum in nihil excepturi recusandae cum impedit.<\/span><\/div><div class=\"sed\"><\/div><\/div><div class=\"sapiente\"><div id=\"80106\"><\/div><\/div><div class=\"numquam\"><a href=\"example.net\">Quia inventore expedita facere dolor consequuntur vero omnis temporibus dolorem laboriosam quasi.<\/a><h1>Dolor aut.<\/h1><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Максимоваа Зоя Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/007777?text=nisi",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Фокинаа Анжелика Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=optio",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Ut nesciunt assumenda impedit ipsam assumenda vitae.",
+          "sectionText": "<html><head><title>Praesentium soluta est.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">voluptas<\/label><input type=\"text\" id=\"username\"><label for=\"password\">eveniet<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"59497\"><div id=\"32370\"><\/div><div id=\"87614\"><table><thead><tr><th>Aliquid cum voluptas voluptas soluta.<\/th><th>Recusandae neque.<\/th><\/tr><\/thead><tbody><tr><td>Rerum fugiat aut distinctio vel molestias ullam est.<\/td><td>Reprehenderit dignissimos et.<\/td><\/tr><\/tbody><\/table><i>Ea magnam sequi voluptatem error at quod.<\/i><table><thead><tr><th>Sit minus consequuntur possimus.<\/th><th>Cumque ducimus.<\/th><th>Cumque porro.<\/th><\/tr><\/thead><tbody><tr><td>Occaecati ex rerum cupiditate magnam voluptate sapiente.<\/td><td>Incidunt similique qui sunt qui perspiciatis asperiores adipisci officia.<\/td><td>Error neque qui porro.<\/td><\/tr><\/tbody><\/table><p>Et suscipit doloremque a nobis consequatur.<\/p><\/div><div class=\"modi\"><\/div><\/div><div id=\"7785\"><a href=\"example.com\">Facilis aut veniam dignissimos culpa.<\/a><\/div><div class=\"nesciunt\"><div class=\"et\"><i>Ipsam earum quidem tempore nihil qui ducimus possimus veritatis a molestias voluptatum.<\/i><table><thead><tr><th>Delectus facilis quia fugiat.<\/th><th>Similique velit dolorem.<\/th><th>Qui accusamus quia.<\/th><th>Accusamus repellat dolor.<\/th><th>Repudiandae qui.<\/th><th>Libero culpa aut eveniet.<\/th><\/tr><\/thead><tbody><tr><td>Cum perferendis at assumenda.<\/td><td>Esse autem fugit corporis harum veritatis velit ut ut dolores voluptates rerum.<\/td><td>Optio excepturi recusandae tenetur est quis eum ipsum.<\/td><td>Officia accusantium eum quo molestiae ut est.<\/td><td>Harum deleniti officiis velit officiis nostrum.<\/td><td>Aut voluptatibus.<\/td><\/tr><tr><td>Repudiandae debitis optio beatae eligendi voluptates.<\/td><td>Vel quibusdam dignissimos sequi et assumenda quo.<\/td><td>Non nam magni pariatur aliquam aut.<\/td><td>Quia placeat et qui.<\/td><td>Nostrum officia eaque corporis a voluptatum reiciendis dicta.<\/td><td>Et at eveniet vero et est.<\/td><\/tr><tr><td>Rem repellat cum incidunt et aut voluptatem qui.<\/td><td>Ratione quisquam iusto exercitationem repellendus officiis et non.<\/td><td>Quia necessitatibus libero nostrum quasi quibusdam labore repellendus et voluptatum reprehenderit.<\/td><td>Iure minus libero perspiciatis deleniti esse earum.<\/td><td>Qui maxime.<\/td><td>Qui.<\/td><\/tr><tr><td>Totam vel ullam reprehenderit autem aut.<\/td><td>Ducimus molestiae sit doloribus.<\/td><td>Quia minus perferendis voluptas tempora optio quo vel illo sit.<\/td><td>Sint qui at tempore sunt nulla esse quod provident animi eveniet dolorum cumque.<\/td><td>Vitae quae vel aliquid tempora cumque ad corporis a.<\/td><td>Molestias magni voluptates esse voluptates rem inventore est optio.<\/td><\/tr><tr><td>Nihil dolorum enim excepturi sed quam error deserunt.<\/td><td>Aut quia rerum animi iure sed quidem aut ut.<\/td><td>Voluptatem aut ducimus est aut.<\/td><td>Accusantium tenetur inventore soluta ut.<\/td><td>Facilis aut quas laudantium mollitia.<\/td><td>Quisquam doloribus similique expedita dicta rerum explicabo.<\/td><\/tr><tr><td>Voluptates voluptatem porro aliquam error vitae ut laborum libero eius.<\/td><td>Sint optio sapiente qui sed et.<\/td><td>Optio quos ratione totam architecto.<\/td><td>Et quae molestias non.<\/td><td>Rerum dolorum et quo rerum architecto voluptatem qui quia occaecati provident.<\/td><td>Sapiente corrupti non iure error aut quas rem eum.<\/td><\/tr><tr><td>Ut doloribus.<\/td><td>Atque et ad est et nobis doloremque voluptatum.<\/td><td>Quos quis voluptatem minima tenetur sint.<\/td><td>Libero harum fugiat maiores quae ab.<\/td><td>Vel velit est dolores fuga quia.<\/td><td>Magni repudiandae dicta et sint.<\/td><\/tr><\/tbody><\/table><\/div><div id=\"95174\"><\/div><div class=\"alias\"><\/div><div class=\"aut\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Адам Александрович Кошелева",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/0000aa?text=quisquam",
+              "documentType": "JPG"
+            },
+            {
+              "documentName": "Виль Александрович Кулагин",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=reiciendis",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        },
+        {
+          "sectionTitle": "Alias vero veniam id sint.",
+          "sectionText": "<html><head><title>Ipsa qui quas cum repudiandae aut facilis id dolorem.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">sit<\/label><input type=\"text\" id=\"username\"><label for=\"password\">eos<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"harum\"><div class=\"quidem\"><table><thead><tr><th>Voluptas dignissimos.<\/th><\/tr><\/thead><tbody><tr><td>Hic aspernatur cupiditate qui illum ipsum ipsam inventore a.<\/td><\/tr><tr><td>Repudiandae aut voluptatem quia.<\/td><\/tr><tr><td>Ab et laborum.<\/td><\/tr><\/tbody><\/table><b>Facere est voluptatem neque dolorem.<\/b><\/div><div class=\"asperiores\"><p>Dolorum sed culpa eius reiciendis vel non ab minima iure quaerat necessitatibus mollitia placeat.<\/p>Qui deserunt officia ut eveniet.<ul><li>Impedit modi.<\/li><li>Molestiae velit.<\/li><li>Ullam qui et animi.<\/li><\/ul><\/div><div class=\"aut\"><\/div><\/div><div id=\"73438\"><p>Praesentium fugiat est aspernatur sunt ipsa iusto.<\/p><a href=\"example.com\">Nostrum earum molestias magni mollitia quia pariatur esse temporibus vel voluptatem earum harum.<\/a><\/div><div class=\"delectus\"><div id=\"94875\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Максимоваа Зоя Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/007777?text=nisi",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Богдановаа Ника Андреевна",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00ccff?text=in",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Voluptatem non enim molestiae dolorem.",
+          "sectionText": "<html><head><title>Minus illo error nisi nobis laborum enim tempore repellendus sed ut vitae.<\/title><\/head><body><form action=\"example.org\" method=\"POST\"><label for=\"username\">occaecati<\/label><input type=\"text\" id=\"username\"><label for=\"password\">et<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"90769\"><div id=\"99901\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Руслан Максимович Юд\u0438на",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/00cc99?text=cupiditate",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": []
+        }
+      ]
+    },
+    {
+      "сhapterId": 9,
+      "slug": "dsreda",
+      "chapterTitle": "Доступная среда",
+      "section": [
+        {
+          "sectionTitle": "Amet quisquam et rerum cumque neque excepturi cupiditate.",
+          "sectionText": "<html><head><title>Rerum voluptatibus omnis eveniet eveniet fugit.<\/title><\/head><body><form action=\"example.net\" method=\"POST\"><label for=\"username\">eveniet<\/label><input type=\"text\" id=\"username\"><label for=\"password\">laborum<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"placeat\"><\/div><div class=\"fugit\"><\/div><div class=\"ullam\"><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [
+            {
+              "documentName": "Эльвира Евгеньевна Смирнова",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/009977?text=cupiditate",
+              "documentType": "JPG"
+            }
+          ],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Ирина Евгеньевна Черноваа",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/002222?text=nihil",
+              "documentType": "PDF"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

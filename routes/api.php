@@ -25,7 +25,8 @@ Route::apiResources([
     'menu' => MenuController::class,
     'teachers' => TeachersController::class,
     'questions' => QuestionsController::class,
-]);
+    'chapter' => ChapterController::class
+    ]);
 
 Route::controller(QuestionDirectir::class)->group(function () {
     Route::post('/question_director', 'index');

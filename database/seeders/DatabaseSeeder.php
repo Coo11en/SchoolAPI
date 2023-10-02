@@ -9,9 +9,14 @@ use App\Models\Album_photo;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
 use App\Models\Appeals_category;
+use App\Models\Chapter;
 use App\Models\Classroom;
 use App\Models\Day;
 use App\Models\Cabinet;
+use App\Models\Docimage;
+use App\Models\Docimage_section;
+use App\Models\Docsource;
+use App\Models\Docsource_section;
 use App\Models\Menu;
 use App\Models\Menu_basic;
 use App\Models\Menu_item;
@@ -21,6 +26,7 @@ use App\Models\Parents;
 use App\Models\Photo;
 use App\Models\Roles;
 use App\Models\Schedule;
+use App\Models\Section;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Teacher;
@@ -217,6 +223,31 @@ class DatabaseSeeder extends Seeder
                 'category_id' => Appeals_category::all()->random()->id,
             ])->create();
         }
+
+        //Заполнение секций основного раздела
+        Docimage::factory(20)->create();
+        Docsource::factory(20)->create();
+
+        $chapters = [
+            ["Основные сведения", "basic"],
+            ["Структура и органы управления образовательной организацией", "struct"],
+            ["Документы","document"],
+            ["Образование", "education"],
+            ["Образовательные стандарты","eduStandarts"],
+            ["Материально-техническое обеспечение и оснащенность образовательного процесса", "objects"],
+            ["Финансово-хозяйственная деятельность","budget"],
+            ["Вакантные места для приема (перевода) по каждой образовательной программе","vacant"],
+            ["Доступная среда","dsreda"]
+        ];
+        foreach ($chapters as $chapter) {
+            Chapter::factory()->state(['chapterTitle' => $chapter[0], 'slug' => $chapter[1]])->create();
+        }
+
+        Section::factory(20)->create();
+
+        Docimage_section::factory(20)->create();
+        Docsource_section::factory(20)->create();
+
 
 //        \App\Models\Achievement::factory(5)->create();
 

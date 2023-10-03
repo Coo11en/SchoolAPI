@@ -1139,6 +1139,38 @@ GET /api/V0/chapter
           ]
         }
       ]
+    },
+        {
+      "сhapterId": 10,
+      "slug": "ezhednevnoe-menyu",
+      "chapterTitle": "Организация питания в образовательной организации",
+      "section": [
+        {
+          "sectionTitle": "Sit aut similique perspiciatis.",
+          "sectionText": "<html><head><title>Minima neque sed nisi modi.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">eos<\/label><input type=\"text\" id=\"username\"><label for=\"password\">ipsa<\/label><input type=\"password\" id=\"password\"><\/form><div id=\"97525\"><\/div><div id=\"83587\"><\/div><div id=\"20457\"><ul><li>Sit vero.<\/li><li>Eveniet quibusdam et.<\/li><li>Sapiente nihil.<\/li><li>Consequatur impedit id.<\/li><li>Quis voluptas minus.<\/li><li>Et ut dolores sint facilis.<\/li><li>Qui voluptatem omnis nulla ad.<\/li><li>Excepturi tempore.<\/li><\/ul><b>Et qui molestiae.<\/b><ul><li>Id dolore.<\/li><li>Accusantium eos explicabo.<\/li><li>Id laudantium.<\/li><li>Fugiat.<\/li><\/ul><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": [
+            {
+              "documentName": "Захар Алексеевич Волков",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/003300?text=qui",
+              "documentType": "PDF"
+            },
+            {
+              "documentName": "Осипов Артур Александрович",
+              "documentSource": "https:\/\/via.placeholder.com\/640x480.png\/003333?text=ullam",
+              "documentType": "PDF"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Delectus ipsam quo nostrum eveniet et illum.",
+          "sectionText": "<html><head><title>Vel sequi voluptatem cum asperiores asperiores consectetur molestias non.<\/title><\/head><body><form action=\"example.com\" method=\"POST\"><label for=\"username\">omnis<\/label><input type=\"text\" id=\"username\"><label for=\"password\">quia<\/label><input type=\"password\" id=\"password\"><\/form><div class=\"vel\"><\/div><div id=\"94861\"><div class=\"expedita\"><\/div><div id=\"25110\"><\/div><div id=\"83843\"><\/div><div id=\"40170\"><\/div><\/div><\/body><\/html>\n",
+          "sequence": 500,
+          "sectionDocumentIMG": [],
+          "sectionDocumentSource": []
+        }
+      ]
     }
   ]
 }

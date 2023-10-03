@@ -1143,3 +1143,13 @@ GET /api/V0/chapter
   ]
 }
 ```
+
+### API для формы Вопрос о питании
+```http request
+POST /api/V0/question_food
+```
+
+### API для формы Вопрос руководителю
+```http request
+POST /api/V0/question_director
+```

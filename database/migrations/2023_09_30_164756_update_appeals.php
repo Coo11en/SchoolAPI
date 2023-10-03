@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('appeals', function (Blueprint $table) {
             $table->string('question', 300)->nullable()->after('email');
             $table->dropColumn('description');
-            $table->string('response', 3000)->change();
+            $table->string('response', 3000)->nullable()->change();
         });
     }
 

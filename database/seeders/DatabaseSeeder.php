@@ -216,7 +216,15 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        Appeals_category::factory(3)->create();
+        $appeals_categories = [
+            'Вопросы о питании',
+            'Вопросы директору',
+        ];
+
+        foreach ($appeals_categories as $appeals_category)
+            Appeals_category::factory()->state([
+                'name' => $appeals_category,
+            ])->create();
 
         for ($i = 1; $i < 11; $i++) {
             Appeal::factory()->state([

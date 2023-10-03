@@ -28,8 +28,11 @@ Route::apiResources([
     'chapter' => ChapterController::class
     ]);
 
-Route::controller(QuestionDirectir::class)->group(function () {
-    Route::post('/question_director', 'index');
+Route::controller(QuestionDirectirController::class)->group(function () {
+    Route::post('/question_director', 'store');
+});
+Route::controller(QuestionsFoodController::class)->group(function () {
+    Route::post('/question_food', 'store');
 });
 
 Route::controller(CallSchedulesController::class)->group(function () {

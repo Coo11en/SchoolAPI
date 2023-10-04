@@ -572,52 +572,52 @@ GET /api/V0/menu
 {
   "data": [
     {
-      "id": 57,
-      "menu_title": "Меню ежедневного горячего питания",
-      "name_menu": "Завтрак",
-      "price": "191",
-      "date": "2023-09-29 00:20:19",
+      "id": 7,
+      "menuTitle": "Меню ежедневного горячего питания",
+      "nameMenu": "Завтрак",
+      "price": "126",
+      "date": "2023-09-04",
       "menu": [
         {
-          "name_dish": "Et odit adipisci sit id.",
-          "dish_output": "284 гр."
+          "nameDish": "Et dolor a nemo eum.",
+          "dishOutput": "72 гр."
         },
         {
-          "name_dish": "Et nisi non mollitia id.",
-          "dish_output": "147 гр."
+          "nameDish": "Ea molestiae quos quas.",
+          "dishOutput": "268 гр."
         },
         {
-          "name_dish": "Ex mollitia ut aliquam.",
-          "dish_output": "295 гр."
+          "nameDish": "Aut alias impedit non.",
+          "dishOutput": "290 гр."
         },
         {
-          "name_dish": "Laborum non fugit qui.",
-          "dish_output": "131 гр."
+          "nameDish": "Aut eos et voluptatem.",
+          "dishOutput": "121 гр."
         }
       ]
     },
     {
-      "id": 58,
-      "menu_title": "Меню ежедневного горячего питания",
-      "name_menu": "Обед",
-      "price": "82",
-      "date": "2023-09-29 00:20:20",
+      "id": 8,
+      "menuTitle": "Меню ежедневного горячего питания",
+      "nameMenu": "Обед",
+      "price": "75",
+      "date": "2023-10-04",
       "menu": [
         {
-          "name_dish": "Amet non dolorum cum.",
-          "dish_output": "242 гр."
+          "nameDish": "Mollitia non itaque ut.",
+          "dishOutput": "152 гр."
         },
         {
-          "name_dish": "Ut fuga excepturi eos.",
-          "dish_output": "64 гр."
+          "nameDish": "Et et fugiat aliquid.",
+          "dishOutput": "53 гр."
         },
         {
-          "name_dish": "Ea qui aut harum.",
-          "dish_output": "201 гр."
+          "nameDish": "Amet vel neque iusto et.",
+          "dishOutput": "198 гр."
         },
         {
-          "name_dish": "Ad sunt accusamus omnis.",
-          "dish_output": "167 гр."
+          "nameDish": "Dolor quia eos ad ut.",
+          "dishOutput": "192 гр."
         }
       ]
     }
@@ -1180,15 +1180,45 @@ GET /api/V0/chapter
 ```http request
 POST /api/V0/question_food
 ```
+### Ответ при успешной валидации
+```
+{
+"message": "Ваше обращение принято."
+}
+```
+### Ответ при ошибке валидации (неправильное название параметра, ошибка валидации email)
+```
+Error 500
+```
 
 ### API для формы Вопрос руководителю
 ```http request
 POST /api/V0/question_director
 ```
+### Ответ при успешной валидации
+```
+{
+"message": "Ваше обращение принято."
+}
+```
+### Ответ при ошибке валидации (неправильное название параметра, ошибка валидации email)
+```
+{
+  "message": "The name field is required. (and 1 more error)",
+  "errors": {
+    "name": [
+      "The name field is required."
+    ],
+    "email": [
+      "The email field must be a valid email address."
+    ]
+  }
+}
+```
 
 ### API для логина
 ```http request
-POST /api/V0/login?email=alexv@mail.ru&password=12345
+POST /api/V0/login?email={EMAIL}&password=12345
 ```
 ### Ответ
 ```
@@ -1207,15 +1237,7 @@ POST /api/V0/login?email=alexv@mail.ru&password=12345
             "email": "alexv@mail.ru",
             "email_verified_at": null,
             "created_at": "2023-10-04T08:32:59.000000Z",
-            "updated_at": "2023-10-04T08:33:01.000000Z",
-            "is_blocked": "no",
-            "last_activity_at": null,
-            "avatar": null,
-            "position": null,
-            "phone": null,
-            "telegram_login": null,
-            "telegram_id": null,
-            "birthdate": null
+            "updated_at": "2023-10-04T08:33:01.000000Z"
         }
     }
 }

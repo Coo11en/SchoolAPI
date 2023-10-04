@@ -35,7 +35,11 @@ class QuestionsFoodController extends Controller
             'question'   => $request->input('question'),
             'category_id'   => 1
         ));
-        $appeal->save();    }
+        $appeal->save();
+        return response()->json([
+            'message' =>  'Ваше обращение принято.',
+        ]);
+    }
 
     /**
      * Display the specified resource.

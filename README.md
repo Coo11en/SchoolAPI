@@ -1185,3 +1185,38 @@ POST /api/V0/question_food
 ```http request
 POST /api/V0/question_director
 ```
+
+### API для логина
+```http request
+POST /api/V0/login?email=alexv@mail.ru&password=12345
+```
+### Ответ
+```
+{
+    "meta": {
+        "code": 200,
+        "status": "success",
+        "message": "Authenticated"
+    },
+    "data": {
+        "access_token": "10|srnFBvohrxinc845Ds4XWBoHQOeePMMm10rwWJneb62218a9",
+        "token_type": "Bearer",
+        "user": {
+            "id": 9,
+            "name": "Иванов Алексей Иванович",
+            "email": "alexv@mail.ru",
+            "email_verified_at": null,
+            "created_at": "2023-10-04T08:32:59.000000Z",
+            "updated_at": "2023-10-04T08:33:01.000000Z",
+            "is_blocked": "no",
+            "last_activity_at": null,
+            "avatar": null,
+            "position": null,
+            "phone": null,
+            "telegram_login": null,
+            "telegram_id": null,
+            "birthdate": null
+        }
+    }
+}
+```

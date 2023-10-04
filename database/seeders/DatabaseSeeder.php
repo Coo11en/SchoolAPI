@@ -30,6 +30,7 @@ use App\Models\Section;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Teacher;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use function Symfony\Component\HttpKernel\Log\format;
@@ -257,7 +258,17 @@ class DatabaseSeeder extends Seeder
         Docimage_section::factory(20)->create();
         Docsource_section::factory(20)->create();
 
-
+// Создание пользователей для авторизации
+        // email:admin@mail.ru password:12345
+        // email:user@mail.ru password:12345
+        User::factory()->state([
+            'email' => 'admin@mail.ru',
+            'password' => '12345'
+        ])->create();
+        User::factory()->state([
+            'email' => 'user@mail.ru',
+            'password' => '12345'
+        ])->create();
 //        \App\Models\Achievement::factory(5)->create();
 
 

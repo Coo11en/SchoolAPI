@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V0;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FormQuestion\FormQuestionDirectir;
+use App\Http\Resources\AppealResource;
 use App\Models\Appeal;
 use Illuminate\Http\Request;
 
@@ -28,8 +29,9 @@ class QuestionDirectirController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(FormQuestionDirectir $request)
     {
+        $request->validated();
         $appeal = new Appeal(array(
             'name'  => $request->input('name'),
             'email' => $request->input('email'),
@@ -37,6 +39,9 @@ class QuestionDirectirController extends Controller
             'category_id'   => 2
         ));
         $appeal->save();
+        return response()->json([
+            'message' =>  'Ваше обращение принято.',
+        ]);
     }
 
     /**

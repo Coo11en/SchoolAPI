@@ -15,8 +15,8 @@ class Menu_itemResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name_dish' => $this->name_dish,
-            'dish_output' => $this->dish_output,
+            'nameDish' => $this->name_dish,
+            'dishOutput' => $this->dish_output,
         ];
     }
 }

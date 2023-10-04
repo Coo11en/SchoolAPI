@@ -16,10 +16,10 @@ class MenuResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'menu_title' => $this->menu_title,
-            'name_menu' => $this->name_menu,
+            'menuTitle' => $this->menu_title,
+            'nameMenu' => $this->name_menu,
             'price' => $this->price,
-            'date' => $this->date,
+            'date' => date('Y-m-d', strtotime ($this->date)),
             'menu' => Menu_itemResource::collection($this->menu_item)
         ];
     }

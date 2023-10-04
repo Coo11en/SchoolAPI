@@ -24,7 +24,7 @@ class FormQuestionDirectir extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
-            'question' => 'required',
+            'question' => 'required'
         ];
     }
 }

@@ -16,9 +16,9 @@ class Menu_basicResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'menu_title' => $this->menu_title,
-            'date' => $this->date,
-            'name_menu' => $this->name_menu,
+            'menuTitle' => $this->menu_title,
+            'date' => date('Y-m-d', strtotime ($this->date)),
+            'nameMenu' => $this->name_menu,
             'price' => $this->price,
         ];
     }

@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
 
 // Seed 5 news and 1 category
         News::factory()
-            ->count(5)
+            ->count(17)
             ->for(News_category::factory()->state([
                 'name' => 'School news',
             ]), 'newsCategories')

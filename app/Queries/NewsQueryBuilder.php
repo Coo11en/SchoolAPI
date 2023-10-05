@@ -24,9 +24,9 @@ class NewsQueryBuilder extends QueryBuilder
         return $this->getModel()->active()->get();
     }
 
-    public function getAllPaginate(): LengthAwarePaginator
+    public function getActiveNewsPaginate(): LengthAwarePaginator
     {
-        return $this->getModel()->with('categories')->paginate(15);
+        return $this->getModel()->active()->orderBy('created_at', 'desc')->paginate(5);
     }
 
     public function getLastLimitNews(int $limit)

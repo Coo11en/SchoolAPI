@@ -31,11 +31,14 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection|array
     {
         $limit = $request->get('limit');
         if ($limit == null) {
-            return NewsListResource::collection($this->newsQueryBuilder->getActiveNews());
+            return [
+                'countPages' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->lastPage(),
+                'data' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->items()
+                ];
         } elseif ((int)$limit) {
             return NewsListResource::collection($this->newsQueryBuilder->getLastLimitNews((int)$limit));
         } else {

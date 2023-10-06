@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\AlbumsRequest;
+use App\Http\Requests\PhotoRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Lagoon\Reef\app\Helpers\PermissionHelper;
 
 /**
- * Class AlbumsCrudController
+ * Class PhotoCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class AlbumsCrudController extends CrudController
+class PhotoCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,10 +26,9 @@ class AlbumsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Albums::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/albums');
-        CRUD::setEntityNameStrings('albums', 'albums');
-        $this->crud = PermissionHelper::applyPermissions($this->crud, 'albums');
+        CRUD::setModel(\App\Models\Photo::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/photo');
+        CRUD::setEntityNameStrings('photo', 'photos');
     }
 
     /**
@@ -41,13 +39,7 @@ class AlbumsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('created_at');
-        CRUD::column('description');
-        CRUD::column('name');
-        CRUD::column('nameEng');
-        CRUD::column('relationship');
-        CRUD::column('status');
-        CRUD::column('updated_at');
+        CRUD::column('img');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -64,13 +56,9 @@ class AlbumsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(AlbumsRequest::class);
+        CRUD::setValidation(PhotoRequest::class);
 
-        CRUD::field('description');
-        CRUD::field('name');
-        CRUD::field('nameEng');
-        CRUD::field('relationship');
-        CRUD::field('status');
+        CRUD::field('img');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

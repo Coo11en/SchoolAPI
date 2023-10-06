@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\NewsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Lagoon\Reef\app\Helpers\PermissionHelper;
 
 /**
  * Class NewsCrudController
@@ -29,6 +30,8 @@ class NewsCrudController extends CrudController
         CRUD::setModel(\App\Models\News::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/news');
         CRUD::setEntityNameStrings('news', 'news');
+
+        $this->crud = PermissionHelper::applyPermissions($this->crud, 'news');
     }
 
     /**
@@ -75,6 +78,7 @@ class NewsCrudController extends CrudController
         CRUD::field('status');
         CRUD::field('pub_approve');
         CRUD::field('video');
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

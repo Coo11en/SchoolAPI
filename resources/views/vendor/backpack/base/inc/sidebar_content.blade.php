@@ -20,6 +20,12 @@
    @endpush
 @endonce
 
+@if(reef_can('news.list'))
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-question"></i> News</a></li>
+
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('albums') }}"><i class="nav-icon la la-question"></i> Albums</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news-category') }}"><i class="nav-icon la la-question"></i> News categories</a></li>
+@endif
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('album-photo') }}"><i class="nav-icon la la-question"></i> Album photos</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('photo') }}"><i class="nav-icon la la-question"></i> Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('teacher') }}"><i class="nav-icon la la-question"></i> Teachers</a></li>

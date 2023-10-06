@@ -19,4 +19,7 @@ Route::group([
     Route::crud('news', App\Http\Controllers\Admin\NewsCrudController::class);
     Route::crud('albums', App\Http\Controllers\Admin\AlbumsCrudController::class);
     Route::crud('news-category', App\Http\Controllers\Admin\NewsCategoryCrudController::class);
+    Route::crud('album-photo', App\Http\Controllers\Admin\AlbumPhotoCrudController::class);
+    Route::crud('photo', App\Http\Controllers\Admin\PhotoCrudController::class);
+    Route::crud('teacher', App\Http\Controllers\Admin\TeacherCrudController::class);
 }); // this should be the absolute last line of this file

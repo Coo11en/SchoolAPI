@@ -169,7 +169,7 @@ class DatabaseSeeder extends Seeder
         }
 
 
-// Seed 5 news and 1 category
+// Seed 17 news and 1 category
         News::factory()
             ->count(17)
             ->for(News_category::factory()->state([
@@ -269,6 +269,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@mail.ru',
             'password' => '12345'
         ])->create();
+
 //        \App\Models\Achievement::factory(5)->create();
 
 

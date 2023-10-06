@@ -54,6 +54,10 @@ Route::controller(CabinetsController::class)->group(function () {
     Route::get('/cabinets', 'index');
     Route::get('/cabinets/{id}', 'show');
 });
+Route::controller(AppealsController::class)->group(function () {
+    Route::get('/appeals', 'index');
+    Route::get('/appeals/{id}', 'show');
+});
 
 Route::fallback(function(){
     return response()->json([

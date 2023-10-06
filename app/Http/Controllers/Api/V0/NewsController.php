@@ -35,10 +35,11 @@ class NewsController extends Controller
     {
         $limit = $request->get('limit');
         if ($limit == null) {
-            return [
-                'countPages' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->lastPage(),
-                'data' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->items()
-                ];
+            return  NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate());
+//            return [
+//                'countPages' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->lastPage(),
+//                'data' => NewsListResource::collection($this->newsQueryBuilder->getActiveNewsPaginate())->items()
+//                ];
         } elseif ((int)$limit) {
             return NewsListResource::collection($this->newsQueryBuilder->getLastLimitNews((int)$limit));
         } else {

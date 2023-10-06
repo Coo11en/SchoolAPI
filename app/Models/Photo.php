@@ -6,6 +6,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Photo extends Model
 {
@@ -20,9 +21,9 @@ class Photo extends Model
         'img',
     ];
 
-    public function teachers()
+    public function teachers(): HasOne
     {
-        return $this->hasOne(Teacher::class);
+        return $this->hasOne(Teacher::class, 'main_photo_id');
     }
 
     public function albums()

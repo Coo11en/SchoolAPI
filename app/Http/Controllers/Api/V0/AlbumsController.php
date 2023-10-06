@@ -40,6 +40,10 @@ class AlbumsController extends Controller
      */
     public function show(string $nameEng): AnonymousResourceCollection
     {
+        if(!AlbumResource::collection($this->albumsQueryBuilder->getAlbumByNameEng($nameEng))->count()){
+            abort(404);
+        }
+
         return AlbumResource::collection($this->albumsQueryBuilder->getAlbumByNameEng($nameEng));
     }
 

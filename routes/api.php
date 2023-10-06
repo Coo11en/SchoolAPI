@@ -18,13 +18,45 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// routs for authenticated users
+//Route::middleware('auth')->group(function (){
+//
+//});
+
+
+// route for login
+Route::controller(LoginController::class)->group(function (){
+    Route::post('login', 'login');
+});
+
 Route::apiResources([
     'news' => NewsController::class,
     'class-schedules' => ClassSchedulesController::class,
     'albums' => AlbumsController::class,
-]);
+    'menu' => MenuController::class,
+    'teachers' => TeachersController::class,
+    'questions' => QuestionsController::class,
+    'chapter' => ChapterController::class
+    ]);
+
+Route::controller(QuestionDirectirController::class)->group(function () {
+    Route::post('/question_director', 'store');
+});
+Route::controller(QuestionsFoodController::class)->group(function () {
+    Route::post('/question_food', 'store');
+});
 
 Route::controller(CallSchedulesController::class)->group(function () {
     Route::get('/call-schedules', 'index');
+});
+
+Route::controller(CabinetsController::class)->group(function () {
+    Route::get('/cabinets', 'index');
+    Route::get('/cabinets/{id}', 'show');
+});
+
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact ...'], 404);
 });
 

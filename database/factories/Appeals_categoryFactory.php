@@ -16,11 +16,14 @@ class Appeals_categoryFactory extends Factory
      */
     public function definition(): array
     {
+
+        $DateUp = fake()->dateTimeBetween('-5 years', '-1 hours', null);
+
         return [
-            'name'=> fake()->text(200),
-            'description' => fake()->text(100),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'name'=> fake()->text(50),
+            'description' => fake()->text(300),
+            'created_at' => $DateUp,
+            'updated_at' => fake()->dateTimeBetween($DateUp, '-1 hours', null),
         ];
     }
 }

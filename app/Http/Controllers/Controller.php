@@ -469,7 +469,7 @@ class Controller extends BaseController
 //        }
 //    }
 //}';
-        $jsonUserData = Storage::disk('local')->get('schedule.json');
+        $jsonUserData = Storage::disk('public')->get('schedule.json');
 
         return  json_decode($jsonUserData, true);
     }

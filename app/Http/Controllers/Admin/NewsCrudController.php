@@ -71,8 +71,19 @@ class NewsCrudController extends CrudController
 
         CRUD::field('title');
         CRUD::field('author');
-        CRUD::field('description');
-        CRUD::field('text');
+        $this->crud->addFields([
+            [   // Textarea
+                'name'  => 'description',
+                'label' => 'Описание',
+                'type'  => 'textarea'
+            ],
+            [   // WYSIWYG Editor
+                'name'  => 'text',
+                'label' => 'Текст',
+                'type'  => 'wysiwyg',
+                'wrapper' => ['class' => 'form-group col-md-12'],
+            ],
+        ]);
         CRUD::field('news_category_id');
         CRUD::field('album_id');
         CRUD::field('status');

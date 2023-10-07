@@ -16,9 +16,10 @@ class Student extends Model
 //    public $incrementing = false;
 
     protected $fillable = [
-      'username',
-      'password',
-      'token',
+        'user_id',
+        'name',
+        'surname',
+        'patronymic'
     ];
 
     public function parents()

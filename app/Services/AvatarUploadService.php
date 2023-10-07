@@ -7,12 +7,12 @@ namespace App\Services;
 use App\Services\Contracts\Upload;
 use Illuminate\Http\UploadedFile;
 
-class UploadService implements Upload
+class AvatarUploadService implements Upload
 {
 
     public function create(UploadedFile $uploadedFile): string
     {
-        $path = $uploadedFile->storeAs('news_images', $uploadedFile->hashName(), 'public' );
+        $path = $uploadedFile->storeAs('images/avatars', $uploadedFile->hashName(), 'public' );
         if ($path === false) {
             throw new \Exception('File was not uploaded');
         }

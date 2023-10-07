@@ -19,14 +19,12 @@ class AppealsController extends Controller
     {
         $this->appealsQueryBuilder = $albumsQueryBuilder;
     }
-    public function index(bool $status = null,  int $appealCategory = null)
+    public function index()
     {
-        if (request()->has('status')) {
-            $status = request()->get('status');
-        }
-        if (request()->has('appealCategory')) {
-            $appealCategory = request()->get('appealCategory');
-        }
+        //проверка запроса на параметры status и appealCategory
+        $status = (request()->has('status')) ? request()->get('status'): null;
+        $appealCategory = (request()->has('appealCategory')) ? request()->get('appealCategory') : null;
+
         return AppealResource::collection($this->appealsQueryBuilder->getAppeals($status, $appealCategory));
     }
 }

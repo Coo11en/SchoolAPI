@@ -58,6 +58,10 @@ Route::controller(AppealsController::class)->group(function () {
     Route::get('/appeals', 'index');
     Route::get('/appeals/{id}', 'show');
 });
+Route::post('avatar-update','AvatarUpdateController');
+//Route::controller(AvatarUpdateController::class)->group(function () {
+//    Route::post('/avatar-update');
+//});
 
 Route::fallback(function(){
     return response()->json([

@@ -1297,3 +1297,20 @@ GET /api/V0/appeals?status=0&appealCategory=2
     ]
 }
 ```
+### API апдейт пользователя для загрузки фото
+```http request
+POST /api/V0/avatar-update?id=1&image=аплоадфайл
+```
+### Ответ
+```
+{
+    "meta":{
+        "code":200,
+        "status":"success",
+        "message":"Update Success"
+    },
+    "data":{
+        "message":"User has been updated"
+    }
+}
+```

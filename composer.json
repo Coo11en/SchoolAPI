@@ -61,6 +61,10 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
+        "post-install-cmd": [
+            "@php artisan lagoon:rain remove_stat",
+            "@php ratisan lagoon:rain add_bacpack_pro_support"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],

@@ -89,41 +89,88 @@ GET /api/V0/news
 {
     "data": [
         {
-            "id": 1,
-            "title": "qui",
-            "description": "Iste est quis quaerat. Eius nobis quam voluptates dicta veritatis quis enim amet.",
-            "created_at": "2023-09-19T16:11:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 11,
+            "title": "numquam",
+            "description": "Est dolor omnis excepturi non dicta et qui. Est recusandae temporibus tempore quae.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 2,
-            "title": "cupiditate",
-            "description": "Assumenda consequatur consectetur itaque porro aut. Beatae fugiat voluptatem aut sint.",
-            "created_at": "2023-09-19T16:12:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 13,
+            "title": "delectus",
+            "description": "Ut labore sed in consequuntur voluptatibus modi. Recusandae ex accusantium quae minima.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 3,
-            "title": "non",
-            "description": "Qui sed in modi. Eum et dicta tempora dolorem quae non. Quia ut consequatur autem ut ipsam.",
-            "created_at": "2023-09-19T16:13:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 12,
+            "title": "aut",
+            "description": "Fugit expedita enim illo. Culpa ullam suscipit dolorem aspernatur.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 4,
-            "title": "rem",
-            "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
-            "created_at": "2023-09-19T16:14:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 14,
+            "title": "at",
+            "description": "Quia maxime quisquam architecto consequatur itaque occaecati. Perspiciatis illum ut eum est.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 5,
-            "title": "minima",
-            "description": "Quos odit commodi aut et ut commodi ipsa. Qui provident illum alias architecto illum explicabo.",
-            "created_at": "2023-09-19T16:15:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 10,
+            "title": "natus",
+            "description": "In quia dolores in placeat perspiciatis ipsum id. A perspiciatis qui nostrum explicabo magni ea.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         }
-    ]
+    ],
+    "links": {
+        "first": "http://localhost:7777/api/V0/news?page=1",
+        "last": "http://localhost:7777/api/V0/news?page=4",
+        "prev": null,
+        "next": "http://localhost:7777/api/V0/news?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 4,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=3",
+                "label": "3",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=4",
+                "label": "4",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://localhost:7777/api/V0/news",
+        "per_page": 5,
+        "to": 5,
+        "total": 17
+    }
 }
 ```
 ### Получить конкретную новость

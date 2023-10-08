@@ -45,6 +45,9 @@ Route::controller(QuestionDirectirController::class)->group(function () {
 Route::controller(QuestionsFoodController::class)->group(function () {
     Route::post('/question_food', 'store');
 });
+Route::controller(AnswerQuestionController::class)->group(function () {
+    Route::post('/answer_question', 'store');
+});
 
 Route::controller(CallSchedulesController::class)->group(function () {
     Route::get('/call-schedules', 'index');
@@ -54,6 +57,14 @@ Route::controller(CabinetsController::class)->group(function () {
     Route::get('/cabinets', 'index');
     Route::get('/cabinets/{id}', 'show');
 });
+Route::controller(AppealsController::class)->group(function () {
+    Route::get('/appeals', 'index');
+    Route::get('/appeals/{id}', 'show');
+});
+Route::post('avatar-update','AvatarUpdateController');
+//Route::controller(AvatarUpdateController::class)->group(function () {
+//    Route::post('/avatar-update');
+//});
 
 Route::fallback(function(){
     return response()->json([

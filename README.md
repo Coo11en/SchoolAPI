@@ -89,41 +89,88 @@ GET /api/V0/news
 {
     "data": [
         {
-            "id": 1,
-            "title": "qui",
-            "description": "Iste est quis quaerat. Eius nobis quam voluptates dicta veritatis quis enim amet.",
-            "created_at": "2023-09-19T16:11:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 11,
+            "title": "numquam",
+            "description": "Est dolor omnis excepturi non dicta et qui. Est recusandae temporibus tempore quae.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 2,
-            "title": "cupiditate",
-            "description": "Assumenda consequatur consectetur itaque porro aut. Beatae fugiat voluptatem aut sint.",
-            "created_at": "2023-09-19T16:12:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 13,
+            "title": "delectus",
+            "description": "Ut labore sed in consequuntur voluptatibus modi. Recusandae ex accusantium quae minima.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 3,
-            "title": "non",
-            "description": "Qui sed in modi. Eum et dicta tempora dolorem quae non. Quia ut consequatur autem ut ipsam.",
-            "created_at": "2023-09-19T16:13:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 12,
+            "title": "aut",
+            "description": "Fugit expedita enim illo. Culpa ullam suscipit dolorem aspernatur.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 4,
-            "title": "rem",
-            "description": "Earum cum aut enim eos necessitatibus quas quis. Officia aut asperiores voluptatem corrupti.",
-            "created_at": "2023-09-19T16:14:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 14,
+            "title": "at",
+            "description": "Quia maxime quisquam architecto consequatur itaque occaecati. Perspiciatis illum ut eum est.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         },
         {
-            "id": 5,
-            "title": "minima",
-            "description": "Quos odit commodi aut et ut commodi ipsa. Qui provident illum alias architecto illum explicabo.",
-            "created_at": "2023-09-19T16:15:41.000000Z",
-            "mainImg": "https://via.placeholder.com/640x480.png/00aa44?text=eos"
+            "id": 10,
+            "title": "natus",
+            "description": "In quia dolores in placeat perspiciatis ipsum id. A perspiciatis qui nostrum explicabo magni ea.",
+            "created_at": "2023-10-08T12:53:14.000000Z",
+            "mainImg": "http://филипповская-школа.рф/wp-content/uploads/2023/05/1-1.jpg"
         }
-    ]
+    ],
+    "links": {
+        "first": "http://localhost:7777/api/V0/news?page=1",
+        "last": "http://localhost:7777/api/V0/news?page=4",
+        "prev": null,
+        "next": "http://localhost:7777/api/V0/news?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 4,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=3",
+                "label": "3",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=4",
+                "label": "4",
+                "active": false
+            },
+            {
+                "url": "http://localhost:7777/api/V0/news?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http://localhost:7777/api/V0/news",
+        "per_page": 5,
+        "to": 5,
+        "total": 17
+    }
 }
 ```
 ### Получить конкретную новость
@@ -1240,5 +1287,94 @@ POST /api/V0/login?email={EMAIL}&password=12345
             "updated_at": "2023-10-04T08:33:01.000000Z"
         }
     }
+}
+```
+### API  вывод перечня вопросов к руководству 
+```http request
+GET /api/V0/appeals?status=0&appealCategory=2
+```
+### Ответ
+```
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Laudantium rerum tempora ea corrupti. Ipsum nesciunt repudiandae vel dignissimos veritatis. Qui laudantium velit dolorem assumenda voluptas pariatur. Debitis quia amet aut.",
+            "email": "lapin.valerii@example.net",
+            "question": "Voluptatum consequuntur recusandae suscipit et earum quam. Sunt odio sit velit deleniti repellendus expedita aut. Qui velit delectus deleniti aut perferendis consequatur.",
+            "status": 0,
+            "response": "Voluptatum qui quibusdam earum omnis consequuntur consequuntur est. Accusamus voluptatem sint odit dolore et corporis. Et aut et ullam dolor facilis. Assumenda hic porro deserunt delectus voluptas mollitia aliquid. Quia et aliquid velit ratione perspiciatis ea voluptas. Nihil autem quisquam reiciendis ullam quo. Molestiae eaque reprehenderit aut voluptas fuga unde magnam omnis. Sit ab voluptas et facilis voluptatem nostrum. Necessitatibus eum voluptatibus ullam et odit velit. Repudiandae autem et corporis est pariatur maiores voluptas. Doloremque temporibus ab tempora est quo non. Veniam nemo laborum aperiam sapiente quia et. Facilis et accusamus id nostrum exercitationem veniam. Molestiae in necessitatibus rerum et nihil. Illo ut quia autem earum mollitia. Architecto error cum sequi iste repudiandae. Ipsa eaque repellendus sit aut facilis. Dolorem architecto rerum suscipit ea cumque ut. Blanditiis praesentium culpa sapiente magni accusamus. Tempora vitae possimus sit et voluptatem repellat et. Facilis esse qui consequatur dolore. Alias repellendus ea voluptatem inventore. Et corporis voluptatem quisquam soluta libero. Laborum illum impedit ut omnis earum enim. Ipsam quisquam et doloribus quas aliquid. Odio enim quia et dolore alias magnam fugiat. Harum ut pariatur vel ut iste. Autem nisi enim mollitia eaque. Sit et sit qui culpa doloribus doloribus. Facere et molestiae et maxime voluptatum non quasi. Quas debitis esse ipsa commodi earum illo. Laborum quibusdam ex nihil architecto odio. Aliquam eum vitae esse voluptates. Et et corporis impedit occaecati explicabo quia est. Perferendis corporis esse aliquam ipsum quas esse eos. Iusto velit quas rerum enim. Soluta nulla dolor reprehenderit ratione. Enim ea quos vero nihil nisi sit in non. Quod nihil quasi quis et accusamus beatae qui. Similique vero ut molestias rerum repellat expedita. Officiis exercitationem nobis sapiente eum. Nihil aut perferendis libero asperiores. Cum incidunt ullam consequatur sed. Cum vel doloribus excepturi quidem et adipisci in. Optio numquam quis voluptas in. Voluptatum non eum ut laborum odio libero iure. Est ea animi ea et. Est autem occaecati aut dolorem iusto porro est. Nulla est non dolor et. Amet ad id quam occaecati velit autem atque fuga. At nam commodi vel ab cumque ea possimus nam. Placeat ut facilis corrupti voluptatem placeat id. Minima vero explicabo nostrum aut qui sit expedita vero. Praesentium mollitia eum minus minus enim. Veritatis reprehenderit cumque qui ea ad tempora. Mollitia quo ut sunt culpa illo voluptatem. Omnis qui ut quas ut facilis enim perferendis. Et assumenda optio beatae molestiae odio corporis. Voluptatem temporibus qui quasi. Dolore voluptate qui inventore minima quia dolorem. Culpa ullam aliquid eaque sequi autem quaerat non. Aut sint debitis vel consequatur aliquid. Eaque adipisci officiis repudiandae ut qui doloribus. Ut temporibus dolorem non dolor aliquid nulla.",
+            "category_id": 2,
+            "top_questions": 1,
+            "date_completion": null
+        },
+        {
+            "id": 5,
+            "name": "Autem est aut et aspernatur. Et incidunt illo et. Vero dolores quo explicabo reprehenderit.",
+            "email": "valerii45@example.net",
+            "question": "In aut voluptatem tempore odit aliquid provident. Et ullam non et delectus accusantium. Commodi magni qui natus excepturi temporibus atque. A quas quia possimus sint. Suscipit sit aut nam provident deserunt. Dolores molestiae tempore alias et minima.",
+            "status": 0,
+            "response": "Sit et ut ut quam est quae deleniti. Omnis porro vel numquam eius sunt sequi. Et perferendis natus iure amet qui saepe quis. Incidunt veniam facere blanditiis est expedita. Iusto repellat id ut sed. Velit odit libero voluptate deleniti. Commodi debitis ea dolorem aut aperiam possimus ipsam. Numquam vel consequatur quos. Qui aliquam non esse quo. Quis maxime libero corrupti minima quos. Dolore neque voluptas et assumenda. Corporis totam velit rerum illum aliquid. Illum rem quibusdam nihil aut minima ea illo ipsam. Dolorem ex magni aut nam. Illo autem omnis reprehenderit ut laboriosam. Autem dignissimos ipsam expedita impedit qui modi dolorem. Architecto ducimus pariatur impedit. Nam dolore dolore et doloremque. Molestiae harum accusamus tempora doloribus. Quod provident aperiam tempore molestiae esse nihil illo. Perferendis voluptates tempora sit debitis qui totam optio. Molestiae eum doloribus voluptas consequuntur ea incidunt. Sequi sint suscipit velit. Recusandae temporibus cupiditate quod tempore aut qui. Placeat eveniet hic iure commodi. Ducimus consequatur neque nesciunt adipisci molestiae animi delectus impedit. Quam et esse est voluptas recusandae cumque corrupti voluptates. Vel dolores maxime quae ut officia. Quis soluta magni et dolor non sit et culpa. Repellendus veritatis temporibus perferendis odit ipsam fugiat eos. Impedit voluptatem delectus et. Magnam modi accusantium ea eum aut eum non. Repellat possimus ullam consequatur voluptatum cupiditate quibusdam. Qui ut explicabo unde iusto sed cum officia. Esse nihil ut qui eos. Nihil ad laborum laborum. Vitae eos non porro soluta. Dolores facere in aspernatur quia. Consequuntur nemo vel cupiditate ad. Distinctio optio corporis fuga sunt ut facilis. Molestiae omnis eum et excepturi consequatur dicta neque consectetur. Doloribus voluptas omnis id sunt. Voluptatem enim consequatur dicta cum voluptate reprehenderit. Sed corrupti voluptatem aperiam error autem omnis temporibus quo. Enim rerum quis suscipit provident incidunt eveniet rerum. Voluptas voluptatum ad adipisci occaecati in veniam voluptatem. Non id voluptates esse deleniti dolores perferendis ullam. Numquam voluptas dolor voluptatum et dolores ipsam et nobis. Et et neque quas illo velit. Nihil nemo nemo est et quas porro at cum. Quaerat fuga exercitationem corporis est enim eaque at fugiat. Assumenda nisi qui aut voluptatem. Rerum eaque sint quis sunt. Sed nihil perspiciatis doloribus minima eaque. Laborum autem et laudantium aliquid magni. Sed autem perspiciatis voluptas accusantium. Voluptatem et ab asperiores et dolores. Debitis dolor exercitationem laudantium. Nam repellat molestiae pariatur ut facere cumque saepe quisquam. Odio omnis commodi non ad. Quasi occaecati eius vel ad soluta excepturi. Voluptas quibusdam tenetur itaque architecto dicta nemo rem. Omnis doloremque voluptate sint aut facere. Aut repudiandae ut hic porro aut illum eos. Eveniet enim sequi ut neque qui.",
+            "category_id": 2,
+            "top_questions": 1,
+            "date_completion": null
+        },
+        {
+            "id": 8,
+            "name": "Voluptas vero aspernatur qui rerum facilis sed omnis. Voluptatibus ea sed aut neque dolores. Repellendus nam excepturi explicabo optio ea laudantium aut amet.",
+            "email": "dominika.pavlov@example.com",
+            "question": "Atque molestias eos perspiciatis est sit iste. Non quis accusamus ipsum nobis corrupti. Neque maiores expedita tenetur pariatur debitis eos exercitationem. Quam nemo dicta odit voluptas voluptas numquam assumenda inventore.",
+            "status": 0,
+            "response": "Fugiat id id nostrum consectetur. Possimus culpa consequatur reiciendis accusamus assumenda vel. Consequuntur voluptatem aspernatur quaerat accusamus commodi. Eum et nihil quibusdam. Beatae nemo cumque fugiat necessitatibus voluptatum. Veritatis quos harum dolore recusandae enim magni. Sed est mollitia quia est. Tempora sit perspiciatis ut aperiam id aperiam. Possimus quia dolores libero odio odio non. Et et autem reiciendis qui veritatis doloribus eum. Et aspernatur molestias id sint eligendi eos qui vitae. Voluptatem minus consequatur voluptatem quae. Eveniet accusantium cumque maiores repudiandae ipsum. Eos quibusdam sit excepturi accusamus porro quaerat ut. Est hic quia et at sint. Tempore similique ullam autem quod. Ex omnis temporibus consectetur assumenda laboriosam delectus. Deserunt asperiores enim qui autem. Sint consequatur dolorum accusantium totam quod omnis. Voluptas illo nostrum minima sed voluptate cumque corrupti. Distinctio et nobis consectetur libero expedita dolor suscipit aut. Pariatur necessitatibus et est. Voluptatem sint autem id similique. Repellendus voluptates aspernatur beatae doloremque. Iusto optio omnis et dolore aut itaque veritatis. Sit quidem et voluptas enim eum. Culpa veniam cupiditate sunt sint in nisi qui. Possimus animi fugit fugiat voluptatibus beatae ad accusantium voluptas. Officiis fugiat quia aliquam quis eaque. Eos et maxime debitis rerum. Ducimus exercitationem autem ut quasi facere quo eos. Possimus hic aperiam ut sit et assumenda. Blanditiis sequi quis maxime voluptates facilis nemo aut. Impedit ut quaerat officia eum vel quas odit illo. Maxime quisquam ut ea repellendus. Velit quo maxime culpa officia numquam ex velit. Hic sint dignissimos et delectus vero ullam. Eum et delectus porro dignissimos enim. Nulla cupiditate voluptates id et. Minima ut tempora dolorum fuga. Minima porro qui laborum enim soluta. Est neque in natus adipisci magni qui. Quia qui labore culpa iure. Accusantium ipsam qui dolorem provident natus. Qui quibusdam odit optio nihil blanditiis officia et. Cupiditate magnam veritatis illum non dolorem. Recusandae mollitia ea dolorem earum autem aut dolorum laborum. Molestiae explicabo eveniet consequuntur consequatur ut in ratione. Fugiat saepe commodi enim molestiae voluptatem reiciendis maxime consequatur. Ratione quos quidem odit cumque nostrum et. Alias reiciendis illum quisquam est sapiente in quidem molestiae. Nemo sint ipsam repellendus quod. Excepturi et est aut esse sint quia et. Magnam architecto fugiat est eaque velit quam consequatur. Quae accusamus non rem. Quae voluptatem iure tempora quia eligendi quidem error. Est praesentium voluptatem aut cumque quia rerum expedita. Iusto quo culpa quisquam quas fugiat est ea. Unde ex itaque facilis repellat hic eos vitae. Quo velit eum autem et iusto repudiandae aut. Qui sed hic excepturi voluptatem incidunt aut. Facilis facilis est voluptas quos. Similique consequatur dolores vel consequuntur nisi.",
+            "category_id": 2,
+            "top_questions": 0,
+            "date_completion": "2023-10-05 13:21:48"
+        },
+        {
+            "id": 9,
+            "name": "Sit consectetur nobis et quo doloribus rem. Corporis sit earum inventore sequi est ab incidunt. Qui aut minima harum occaecati veniam pariatur quia recusandae. Facilis commodi dolor quo maiores.",
+            "email": "gkirillov@example.org",
+            "question": "Et ad voluptas illum aut. Qui unde iure atque quia. Quas sapiente vel minus sint reprehenderit. Maiores atque quia dolor laudantium aperiam. Mollitia ut enim laboriosam ut eaque architecto ut. Consectetur quis doloremque quos et est voluptatem.",
+            "status": 0,
+            "response": "Cum occaecati accusamus voluptatem. Suscipit magnam dolor nam. Et inventore laborum alias et excepturi explicabo sunt. Sed quaerat quisquam eligendi. Qui non iure sit nemo facere. Porro eum beatae iste itaque optio. Exercitationem sunt et omnis voluptas quas ut. Tempora perferendis omnis ipsum vel. Voluptatum ex molestiae sit. Eum quidem ipsam corrupti corporis ut voluptatem incidunt. Quia aut id temporibus voluptate non facilis repudiandae. Sed tempora alias quia. Amet molestiae sequi expedita incidunt deserunt. Doloribus molestiae ipsum ab omnis voluptatem nesciunt. Est et libero eveniet velit consequatur doloremque cum. Sit est officia facilis iusto est. Doloremque cupiditate doloribus ut enim amet. Ducimus dolorem sunt laboriosam iusto quia perspiciatis reiciendis et. Non laudantium officiis provident vel. Fugiat voluptatem voluptatem id aspernatur aut. Corporis possimus fugiat molestias quas quia ipsa voluptatem nam. Totam quae dolor assumenda quia exercitationem cupiditate. Minima rerum non molestiae reprehenderit. Non repudiandae est assumenda. Animi et quasi ullam aut. Autem aut aut dicta iste aut iste eum quia. Voluptas temporibus sunt accusamus. Voluptate repellat sint repellat illum eum iusto. Ullam fugit omnis quidem porro laborum laboriosam nesciunt. Necessitatibus occaecati voluptas officia quo et. Porro est architecto et libero veniam magnam. Facere et illo eius et reprehenderit impedit voluptatem minus. Eum soluta vel molestias itaque et perspiciatis possimus. Occaecati nostrum aut delectus iusto. Quidem debitis at fuga rerum omnis. Corporis repellendus quia cumque sint in. Assumenda mollitia aut non dolorem voluptatem occaecati. Quis voluptatem quasi temporibus quaerat rem maxime ut. Mollitia sint dolores dolor animi. Commodi et temporibus dolores aut qui quas ipsum. Aliquam optio id expedita. Quia rem rerum at tempora. Sunt molestias et mollitia laboriosam voluptatibus nihil. Quod quia blanditiis omnis mollitia mollitia aliquam ipsa. Impedit sed voluptatibus nam consequatur doloremque. Rerum animi sapiente cum nihil sed est voluptates ut. Iste odio enim numquam consequuntur nihil qui ad qui. Quia quo in officia recusandae iusto. Tenetur assumenda atque autem itaque voluptate impedit rerum. Maxime autem dolor dolore id. Qui iusto aut ex vitae. Impedit quas nulla voluptas. Illo qui nobis eum architecto adipisci. Ullam sint ea vel veniam. Nesciunt velit dolorem et. Autem quia ipsum numquam quia quaerat soluta. Aut similique sed molestiae ut necessitatibus et. Et ab et asperiores illo ea ut. Recusandae ut sit omnis ab porro. Modi quis illum neque. Dolore inventore doloribus qui omnis aut. Consequatur ab itaque minus facere corrupti vel libero. Iusto eum laudantium explicabo deleniti dolore eum ducimus. Saepe quis consectetur consectetur et hic ea. Qui exercitationem molestiae impedit et ducimus. Assumenda optio qui accusamus et voluptates omnis. Et nemo a hic et porro et. Repellendus consequatur nostrum omnis quibusdam molestias.",
+            "category_id": 2,
+            "top_questions": 1,
+            "date_completion": "2023-10-05 13:21:49"
+        }
+    ]
+}
+```
+### API апдейт пользователя для загрузки фото
+```http request
+POST /api/V0/avatar-update?id=1&image=аплоадфайл
+```
+### Ответ
+```
+{
+    "meta":{
+        "code":200,
+        "status":"success",
+        "message":"Update Success"
+    },
+    "data":{
+        "message":"User has been updated"
+    }
+}
+```
+
+### API ответа на вопросы
+```http request
+POST /api/V0/answer_question
+```
+### Ответ при успешной валидации
+```
+{
+"message": "Ответ на вопрос записан."
+}
+```
+### Ответ при неправильном номере вопроса
+```
+{
+  "message": "Ошибка в номере вопроса"
 }
 ```

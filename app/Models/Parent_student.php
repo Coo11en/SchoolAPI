@@ -15,13 +15,13 @@ class Parent_student extends Model
         'student_id',
     ];
 
-    public function parents()
-    {
-        return $this->belongsTo(Parents::class);
-    }
-
-    public function students()
-    {
-        return $this->belongsTo(Student::class);
-    }
+//    public function parents()
+//    {
+//        return $this->belongsTo(Parents::class);
+//    }
+//
+//    public function students()
+//    {
+//        return $this->belongsTo(Student::class);
+//    }
 }

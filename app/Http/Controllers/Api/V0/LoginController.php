@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V0;
 
+use App\Http\Resources\UserResource;
 use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -44,7 +45,7 @@ class LoginController extends Controller
             return ResponseFormatter::success([
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
-                'user' => $user
+                'user' => new UserResource($user)
             ], 'Authenticated');
 
         } catch (Exception $error) {

@@ -17,19 +17,15 @@ class Parents extends Model
 //    public $incrementing = false;
 
     protected $fillable = [
-        'username',
-        'password',
+        'user_id',
         'name',
         'surname',
-        'patronymic',
-        'email',
-        'phone',
-        'token',
+        'patronymic'
     ];
 
     public function students()
     {
-        return $this->belongsToMany(Student::class, 'parent_student', 'parent_id', 'student_id');
+        return $this->belongsToMany(Student::class);
     }
 
 

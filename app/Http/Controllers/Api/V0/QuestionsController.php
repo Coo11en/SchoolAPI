@@ -16,7 +16,6 @@ class QuestionsController extends Controller
         foreach ($questions as $value) {
             $value->resource->id = $i++;
         }
-        //dd($q);
         return $questions;
     }
 }

@@ -27,7 +27,7 @@ class NewsQueryBuilder extends QueryBuilder
     public function getActiveNewsPaginate()
     {
         // simplePaginate не показывает количество страниц
-        return $this->getModel()->active()->orderBy('created_at', 'desc')->simplePaginate(5);
+        return $this->getModel()->active()->orderBy('created_at', 'desc')->paginate(5);
         // paginate выдает больше мата данных, включая количество страниц
 //        return $this->getModel()->active()->orderBy('created_at', 'desc')->Paginate(5);
     }

@@ -46,17 +46,26 @@ class  News extends Model
         return $this->hasMany(Likes::class);
     }
 
-    public function album() :BelongsTo
+    public function albums()
     {
-        return $this->belongsTo(Albums::class);
+        return $this->belongsTo(Album::class, 'album_id');
     }
+/////////От куда это???
+//    public function album() :BelongsTo
+//    {
+//        return $this->belongsTo(Albums::class);
+//    }
+/////////От куда это???
+//    public function news_category() :BelongsTo
+//    {
+////        return $this->belongsTo(News_category::class, 'news_category_id');
+//        return $this->belongsTo(NewsCategory::class);
+//    }
 
-    public function news_category() :BelongsTo
+    public function newsCategories():BelongsTo
     {
-//        return $this->belongsTo(News_category::class, 'news_category_id');
-        return $this->belongsTo(NewsCategory::class);
+        return $this->belongsTo(News_category::class, 'news_category_id');
     }
-
 
 //    public function sources(): BelongsToMany
 //    {

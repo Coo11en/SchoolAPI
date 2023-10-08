@@ -15,7 +15,7 @@ class Roles extends Model
 //    public $incrementing = false;
 
     protected $fillable = [
-        'role_name',
+        'name',
     ];
 
     public function teachers()

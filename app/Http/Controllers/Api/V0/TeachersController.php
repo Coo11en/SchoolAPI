@@ -13,4 +13,9 @@ class TeachersController extends Controller
     {
         return TeachersResource::collection(Teacher::all());
     }
+
+    public function show($id): TeachersResource
+    {
+        return new TeachersResource(Teacher::findOrFail($id));
+    }
 }

@@ -10,7 +10,8 @@ class RolesFactory extends Factory
     public function definition(): array
     {
         return [
-            'role_name' => fake()->randomElement(['Учащийся', 'Учитель', 'Администратор']),
+            'guard_name' => fake()->randomElement(['backpack']),
+            'name' => fake()->randomElement(['Учащийся', 'Учитель', 'Администратор']),
             'created_at' => now(),
             'updated_at' => now(),
         ];

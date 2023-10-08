@@ -34,7 +34,6 @@ Route::apiResources([
     'class-schedules' => ClassSchedulesController::class,
     'albums' => AlbumsController::class,
     'menu' => MenuController::class,
-    'teachers' => TeachersController::class,
     'questions' => QuestionsController::class,
     'chapter' => ChapterController::class
     ]);
@@ -61,6 +60,12 @@ Route::controller(AppealsController::class)->group(function () {
     Route::get('/appeals', 'index');
     Route::get('/appeals/{id}', 'show');
 });
+
+Route::controller(TeachersController::class)->group(function () {
+    Route::get('/teachers', 'index');
+    Route::get('/teachers/{id}', 'show');
+});
+
 Route::post('avatar-update','AvatarUpdateController');
 //Route::controller(AvatarUpdateController::class)->group(function () {
 //    Route::post('/avatar-update');

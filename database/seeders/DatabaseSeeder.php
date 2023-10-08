@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
 
 // Seed 2 Teachers
         Teacher::factory(8)
-            ->state(['role_id' => Roles::where('role_name', '=', 'Учитель')->first()->id])
+            ->state(['role_id' => Roles::where('name', '=', 'Учитель')->first()->id])
             ->create();
 
 // Seed 2 classrooms
@@ -259,15 +259,15 @@ class DatabaseSeeder extends Seeder
         Docsource_section::factory(20)->create();
 
 // Создание пользователей для авторизации
-        // email:admin@mail.ru password:12345
-        // email:user@mail.ru password:12345
+        // email:admin@mail.ru password:123456
+        // email:user@mail.ru password:123456
         User::factory()->state([
             'email' => 'admin@mail.ru',
-            'password' => '12345'
+            'password' => '123456'
         ])->create();
         User::factory()->state([
             'email' => 'user@mail.ru',
-            'password' => '12345'
+            'password' => '123456'
         ])->create();
 
 //        \App\Models\Achievement::factory(5)->create();
@@ -291,9 +291,9 @@ class DatabaseSeeder extends Seeder
             $uuids[] = $role->id;
         }
         return [
-            ['id' => $uuids[0], 'role_name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[1],'role_name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[2],'role_name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
+            ['id' => $uuids[0], 'guard_name' => 'backpack', 'name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => $uuids[1], 'guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => $uuids[2], 'guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
         ];
     }
 }

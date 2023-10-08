@@ -45,6 +45,9 @@ Route::controller(QuestionDirectirController::class)->group(function () {
 Route::controller(QuestionsFoodController::class)->group(function () {
     Route::post('/question_food', 'store');
 });
+Route::controller(AnswerQuestionController::class)->group(function () {
+    Route::post('/answer_question', 'store');
+});
 
 Route::controller(CallSchedulesController::class)->group(function () {
     Route::get('/call-schedules', 'index');

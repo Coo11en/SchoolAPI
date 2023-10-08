@@ -22,6 +22,7 @@ class Appeal extends Model
         'response',
         'category_id',
         'top_questions',
+        'date_completion',
     ];
 
     public function appealsCategories()

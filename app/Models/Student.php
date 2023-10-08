@@ -22,9 +22,13 @@ class Student extends Model
         'patronymic'
     ];
 
-    public function parents()
+    public function parents(): BelongsToMany
     {
-        return $this->belongsToMany(Parents::class, 'parent_student', 'student_id', 'parent_id');
+        return $this->belongsToMany(
+            Parents::class,
+            'parent_student',
+            'student_id',
+            'parent_id');
     }
 
 

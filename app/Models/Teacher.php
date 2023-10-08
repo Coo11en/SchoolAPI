@@ -50,4 +50,8 @@ class Teacher extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function classrooms()
+    {
+        return $this->hasMany(Classroom::class);
+    }
 }

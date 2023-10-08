@@ -42,6 +42,7 @@ class LoginController extends Controller
 
             // if success
             $tokenResult = $user->createToken('authToken')->plainTextToken;
+
             return ResponseFormatter::success([
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
@@ -63,7 +64,10 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $token = $request->user()->currentAccessToken()->delete();
+//        return ResponseFormatter::success([
+//            'user' => new UserResource($request->user())
+//        ], 'Authenticated');
+        $token = $request->user()->tokens()->delete();
         return ResponseFormatter::success($token, 'Token Revoked');
     }
 

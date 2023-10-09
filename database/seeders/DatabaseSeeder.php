@@ -83,7 +83,15 @@ class DatabaseSeeder extends Seeder
             ])->create();
         }
 
-        DB::table('roles')->insert($this->getRolesData());
+// Seed 3 roles
+        $roles = [
+            ['guard_name' => 'backpack', 'name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
+            ['guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
+            ['guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
+        ];
+        foreach ($roles as $role) {
+            Roles::factory()->state($role)->create();
+        }
 
 // Seed 2 Teachers
         Teacher::factory(8)
@@ -259,16 +267,30 @@ class DatabaseSeeder extends Seeder
         Docsource_section::factory(20)->create();
 
 // Создание пользователей для авторизации
-        // email:admin@mail.ru password:123456
         // email:user@mail.ru password:123456
-        User::factory()->state([
-            'email' => 'admin@mail.ru',
-            'password' => '123456'
-        ])->create();
+        // email:admin@mail.ru password:123456
         User::factory()->state([
             'email' => 'user@mail.ru',
             'password' => '123456'
         ])->create();
+        User::factory()->state([
+            'email' => 'admin@mail.ru',
+            'password' => '123456'
+        ])->create();
+
+
+//Наполняем таблицу связей между users y roles
+        for ($i = 1, $j=2 ; $i<26; $i++) {
+            if ($i>8 && $i <14) $j = 3;
+            if ($i>13) $j = 4;
+            if ($i>24) $j = 1;
+                DB::table('model_has_roles')
+                    ->insert([
+                        'role_id' => $j,
+                        'model_type' => 'App/Model/User',
+                        'model_id' => $i
+                    ]);
+            }
 
 //        \App\Models\Achievement::factory(5)->create();
 
@@ -282,18 +304,4 @@ class DatabaseSeeder extends Seeder
 //        \App\Models\Parents_connection::factory(5)->create();
     }
 
-    public function getRolesData(): array
-    {
-        $uuids = [];
-
-        for ($i=0; $i<3; $i++) {
-            $role = Roles::factory()->make();
-            $uuids[] = $role->id;
-        }
-        return [
-            ['id' => $uuids[0], 'guard_name' => 'backpack', 'name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[1], 'guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[2], 'guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
-        ];
-    }
 }

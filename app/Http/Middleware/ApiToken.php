@@ -18,12 +18,20 @@ class ApiToken
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $header = $request->header('Authorization', '');
+        if ($request->hasHeader('Authorization')) {
+            $header = $request->header('Authorization', '');
+        } else {
+            return response()->json('Header authorization has not been found');
+        }
         if (Str::startsWith($header, 'Bearer')) {
             $token = Str::substr($header, 6);
+            if ($token == 'null') {
+                return response()->json('bearer token is null');
+            }
         } else {
             return response()->json('bearer token has not been found');
         }
+
         list($id,$token) = explode('|', $token, 2);
 
         $hashedTokens = DB::table('personal_access_tokens')

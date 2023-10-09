@@ -185,10 +185,14 @@ class DatabaseSeeder extends Seeder
             ]), 'news_category')
             ->create();
 
-        Student::factory(5)
+        Student::factory(3)
             ->has(Parents::factory()->count(2))
             ->create();
-
+        Parents::factory()->state([
+            'user_id' => 1,
+            'name' => 'Фамилия',
+            'surname' => 'Имя'
+        ])->has(Student::factory(2))->create();
 //
 
         $cabinets = [
@@ -279,11 +283,13 @@ class DatabaseSeeder extends Seeder
         ])->create();
 
 
-//Наполняем таблицу связей между users y roles
-        for ($i = 1, $j=2 ; $i<26; $i++) {
-            if ($i>8 && $i <14) $j = 3;
-            if ($i>13) $j = 4;
-            if ($i>24) $j = 1;
+//Наполняем таблицу связей между users y roles 
+        for ($i = 1, $j=2 ; $i<22; $i++) {
+            if ($i>8 && $i <12) $j = 3;
+            if ($i>11 && $i<18) $j = 4;
+            if ($i>17 && $i<20) $j = 3;
+            if ($i>19 && $i<21) $j=4;
+            if ($i>20) $j=1;
                 DB::table('model_has_roles')
                     ->insert([
                         'role_id' => $j,
@@ -291,6 +297,13 @@ class DatabaseSeeder extends Seeder
                         'model_id' => $i
                     ]);
             }
+        DB::table('model_has_roles')
+            ->insert([
+                'role_id' => 4,
+                'model_type' => 'App/Model/User',
+                'model_id' => 1
+            ]);
+
 
 //        \App\Models\Achievement::factory(5)->create();
 

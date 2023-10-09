@@ -18,7 +18,7 @@ class ProfileUserResource extends JsonResource
         $result =[];
 //        dd($user->name())
         foreach ($this->roles as $role) {
-            $result = $this->getProfileByRole($role);
+            $result[] = $this->getProfileByRole($role);
         }
 //        if (!is_null($this->teachers)) {
 //            $role = 'Teacher';
@@ -62,8 +62,8 @@ class ProfileUserResource extends JsonResource
                     'role' => $roleName->name,
                     'profile' =>
 //                        (ProfileStudentResource::collection($this->parents->students)) ?
-//                            ProfileStudentResource::collection($this->parents->students)
-                    $this->parents
+                            ProfileStudentResource::collection($this->parents->students)
+//$this->parents->students
 //                            : null,
                 ];
         }

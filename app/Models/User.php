@@ -63,7 +63,7 @@ class User extends Authenticatable
     }
     public function parents(): HasOne
     {
-        return $this->HasOne(Parents::class);
+        return $this->HasOne(Parents::class, 'user_id');
     }
     public function roles(): BelongsToMany
     {

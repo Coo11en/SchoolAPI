@@ -30,5 +30,4 @@ class Photo extends Model
     {
         return $this->belongsToMany(Album::class);
     }
-
 }

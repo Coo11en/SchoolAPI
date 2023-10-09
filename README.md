@@ -4,7 +4,7 @@
 
 <h2 align="center"> Admin панель</h2>
 
-Путь к админ панели: http://127.0.0.1:8000/admin/login
+Путь к админ панели: /admin/login
 
 ЛОГИН: admin@mail.ru ПАРОЛЬ: 123456
 
@@ -1292,23 +1292,22 @@ POST /api/V0/login?email={EMAIL}&password=12345
 ### Ответ
 ```
 {
-    "meta": {
-        "code": 200,
-        "status": "success",
-        "message": "Authenticated"
-    },
-    "data": {
-        "access_token": "10|srnFBvohrxinc845Ds4XWBoHQOeePMMm10rwWJneb62218a9",
-        "token_type": "Bearer",
-        "user": {
-            "id": 9,
-            "name": "Иванов Алексей Иванович",
-            "email": "alexv@mail.ru",
-            "email_verified_at": null,
-            "created_at": "2023-10-04T08:32:59.000000Z",
-            "updated_at": "2023-10-04T08:33:01.000000Z"
-        }
+  "meta": {
+    "code": 200,
+    "status": "success",
+    "message": "Authenticated"
+  },
+  "data": {
+    "access_token": "2|AV0KOX9hBDxkJbxZNAl8rLKcPyyGMOf1hrgN29ID96a647f5",
+    "token_type": "Bearer",
+    "user": {
+      "id": 25,
+      "name": "Куликоваа Ева Александровна",
+      "email": "user@mail.ru",
+      "phone": "(35222) 52-8913",
+      "avatar": null
     }
+  }
 }
 ```
 ### API  вывод перечня вопросов к руководству 

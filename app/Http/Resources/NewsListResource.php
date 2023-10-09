@@ -22,7 +22,7 @@ class NewsListResource extends JsonResource
 //          'author' => $this->author,
           'description' => $this->description,
            'created_at' => $this->created_at,
-            'mainImg' => ($this->albums->mainImg->first()) ? $this->albums->mainImg->first()->img : null,
+            'mainImg' => ($this->album->mainImg->first()) ? $this->album->mainImg->first()->img : null,
         ];
     }
 }

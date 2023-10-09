@@ -83,7 +83,15 @@ class DatabaseSeeder extends Seeder
             ])->create();
         }
 
-        DB::table('roles')->insert($this->getRolesData());
+// Seed 3 roles
+        $roles = [
+            ['guard_name' => 'backpack', 'name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
+            ['guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
+            ['guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
+        ];
+        foreach ($roles as $role) {
+            Roles::factory()->state($role)->create();
+        }
 
 // Seed 2 Teachers
         Teacher::factory(8)
@@ -174,13 +182,17 @@ class DatabaseSeeder extends Seeder
             ->count(17)
             ->for(News_category::factory()->state([
                 'name' => 'School news',
-            ]), 'newsCategories')
+            ]), 'news_category')
             ->create();
 
-        Student::factory(5)
+        Student::factory(3)
             ->has(Parents::factory()->count(2))
             ->create();
-
+        Parents::factory()->state([
+            'user_id' => 1,
+            'name' => 'Фамилия',
+            'surname' => 'Имя'
+        ])->has(Student::factory(2))->create();
 //
 
         $cabinets = [
@@ -259,16 +271,39 @@ class DatabaseSeeder extends Seeder
         Docsource_section::factory(20)->create();
 
 // Создание пользователей для авторизации
-        // email:admin@mail.ru password:123456
         // email:user@mail.ru password:123456
-        User::factory()->state([
-            'email' => 'admin@mail.ru',
-            'password' => '123456'
-        ])->create();
+        // email:admin@mail.ru password:123456
         User::factory()->state([
             'email' => 'user@mail.ru',
             'password' => '123456'
         ])->create();
+        User::factory()->state([
+            'email' => 'admin@mail.ru',
+            'password' => '123456'
+        ])->create();
+
+
+//Наполняем таблицу связей между users y roles
+        for ($i = 1, $j=2 ; $i<22; $i++) {
+            if ($i>8 && $i <12) $j = 3;
+            if ($i>11 && $i<18) $j = 4;
+            if ($i>17 && $i<20) $j = 3;
+            if ($i>19 && $i<21) $j=4;
+            if ($i>20) $j=1;
+                DB::table('model_has_roles')
+                    ->insert([
+                        'role_id' => $j,
+                        'model_type' => 'App/Model/User',
+                        'model_id' => $i
+                    ]);
+            }
+        DB::table('model_has_roles')
+            ->insert([
+                'role_id' => 4,
+                'model_type' => 'App/Model/User',
+                'model_id' => 1
+            ]);
+
 
 //        \App\Models\Achievement::factory(5)->create();
 
@@ -282,18 +317,4 @@ class DatabaseSeeder extends Seeder
 //        \App\Models\Parents_connection::factory(5)->create();
     }
 
-    public function getRolesData(): array
-    {
-        $uuids = [];
-
-        for ($i=0; $i<3; $i++) {
-            $role = Roles::factory()->make();
-            $uuids[] = $role->id;
-        }
-        return [
-            ['id' => $uuids[0], 'guard_name' => 'backpack', 'name' => 'Учитель', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[1], 'guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => $uuids[2], 'guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
-        ];
-    }
 }

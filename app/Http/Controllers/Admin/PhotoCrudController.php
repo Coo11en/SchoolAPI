@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PhotoRequest;
+use App\Models\Album;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -40,7 +41,19 @@ class PhotoCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('img');
+        $this->crud->addColumn([
+            'label' => 'Альбом',
+            'type'  => 'select2_multiple',
+            'name'  => 'albums',
 
+            'entity' => 'albums',
+//                'model' => 'App\\Model\\Album',
+            'attribute' => 'name',
+
+            'pivot' => true,
+            //optional
+
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -59,6 +72,19 @@ class PhotoCrudController extends CrudController
         CRUD::setValidation(PhotoRequest::class);
 
         CRUD::field('img');
+        $this->crud->addField([
+                'label' => 'Альбом',
+                'type'  => 'select2_multiple',
+                'name'  => 'albums',
+
+                'entity' => 'albums',
+//                'model' => 'App\\Model\\Album',
+                'attribute' => 'name',
+
+                'pivot' => true,
+                //optional
+
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

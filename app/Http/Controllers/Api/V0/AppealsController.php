@@ -21,10 +21,11 @@ class AppealsController extends Controller
     }
     public function index()
     {
-        //проверка запроса на параметры status и appealCategory
+        //проверка запроса на параметры status и appealCategory email
         $status = (request()->has('status')) ? request()->get('status'): null;
         $appealCategory = (request()->has('appealCategory')) ? request()->get('appealCategory') : null;
+        $email = (request()->has('email')) ? request()->get('email') : null;
 
-        return AppealResource::collection($this->appealsQueryBuilder->getAppeals($status, $appealCategory));
+        return AppealResource::collection($this->appealsQueryBuilder->getAppeals($status, $appealCategory,$email));
     }
 }

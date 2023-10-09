@@ -283,7 +283,7 @@ class DatabaseSeeder extends Seeder
         ])->create();
 
 
-//Наполняем таблицу связей между users y roles 
+//Наполняем таблицу связей между users y roles
         for ($i = 1, $j=2 ; $i<22; $i++) {
             if ($i>8 && $i <12) $j = 3;
             if ($i>11 && $i<18) $j = 4;

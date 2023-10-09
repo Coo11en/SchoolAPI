@@ -21,18 +21,42 @@ class AppealsQueryBuilder extends QueryBuilder
         return $this->getModel()->get();
     }
 
-    public function getAppeals($status, $appealCategory): Collection
+    public function getAppeals($status, $appealCategory, $email): Collection
     {
-        if (!is_null($status) && !is_null($appealCategory)) {
+        if (!is_null($status) && !is_null($appealCategory) && !is_null($email)) {
+            return $this->getModel()
+                ->where('category_id', '=', $appealCategory)
+                ->where('status', '=', $status )
+                ->where('email', '=', $email)
+                ->get();
+        } elseif (!is_null($status) && !is_null($email)) {
+            return $this->getModel()
+                ->where('status', '=', $status )
+                ->where('email', '=', $email)
+                ->get();
+
+        } elseif (!is_null($appealCategory) && !is_null($email)) {
+            return $this->getModel()
+                ->where('category_id', '=', $appealCategory)
+                ->where('email', '=', $email)
+                ->get();
+        } elseif (!is_null($appealCategory) && !is_null($status)) {
             return $this->getModel()
                 ->where('category_id', '=', $appealCategory)
                 ->where('status', '=', $status )
                 ->get();
-        } elseif (!is_null($status)) {
-            return $this->getModel()->where('status', '=', $status )->get();
-
         } elseif (!is_null($appealCategory)) {
-            return $this->getModel()->where('category_id', '=', $appealCategory)->get();
+            return $this->getModel()
+                ->where('category_id', '=', $appealCategory)
+                ->get();
+        } elseif (!is_null($status)) {
+            return $this->getModel()
+                ->where('status', '=', $status)
+                ->get();
+        } elseif (!is_null($email)) {
+            return $this->getModel()
+                ->where('email', '=', $email)
+                ->get();
         }
         return $this->getModel()->get();
     }

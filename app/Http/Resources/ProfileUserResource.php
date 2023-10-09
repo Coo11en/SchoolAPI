@@ -39,7 +39,9 @@ class ProfileUserResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'name' => $this->name,
-//            'role' => $this->roles->first()->name,
+            'isParent' => RoleResource::collection($this->roles)->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Родитель'),
             'info' => $result
         ];
     }

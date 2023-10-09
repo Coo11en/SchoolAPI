@@ -27,9 +27,9 @@ class AlbumsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Albums::class);
+        CRUD::setModel(\App\Models\Album::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/albums');
-        CRUD::setEntityNameStrings('albums', 'albums');
+        CRUD::setEntityNameStrings('album', 'albums');
         $this->crud = PermissionHelper::applyPermissions($this->crud, 'albums');
     }
 

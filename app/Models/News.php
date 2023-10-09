@@ -46,9 +46,9 @@ class  News extends Model
         return $this->hasMany(Likes::class);
     }
 
-    public function albums()
+    public function album(): BelongsTo
     {
-        return $this->belongsTo(Album::class, 'album_id');
+        return $this->belongsTo(Album::class);
     }
 /////////От куда это???
 //    public function album() :BelongsTo
@@ -62,9 +62,9 @@ class  News extends Model
 //        return $this->belongsTo(NewsCategory::class);
 //    }
 
-    public function newsCategories():BelongsTo
+    public function news_category():BelongsTo
     {
-        return $this->belongsTo(News_category::class, 'news_category_id');
+        return $this->belongsTo(NewsCategory::class, 'news_category_id');
     }
 
 //    public function sources(): BelongsToMany

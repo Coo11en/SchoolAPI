@@ -62,7 +62,8 @@ class ProfileUserResource extends JsonResource
                     'role' => $roleName->name,
                     'profile' =>
 //                        (ProfileStudentResource::collection($this->parents->students)) ?
-                            ProfileStudentResource::collection($this->parents->students)
+//                            ProfileStudentResource::collection($this->parents->students)
+                    $this->parents
 //                            : null,
                 ];
         }

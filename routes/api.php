@@ -25,7 +25,7 @@ Route::middleware('api.token')->get('/user', function (Request $request) {
 // routs for authenticated users
 Route::middleware('api.token')->group(function (){
     Route::controller(LoginController::class)->group(function (){
-        Route::post('logout', 'logout');
+        Route::get('logout', 'logout');
     });
 });
 

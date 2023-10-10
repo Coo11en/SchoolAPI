@@ -1407,7 +1407,7 @@ POST /api/V0/answer_question
 }
 ```
 
-### API  вывод перечня вопросов к руководству
+### API  вывод профиля пользователя
 ```http request
 GET /api/V0/profile?id={ID}
 ```
@@ -1501,5 +1501,59 @@ GET /api/V0/profile?id={ID}
       }
     ]
   }
+}
+```
+
+### API  вывод списка банеров
+```http request
+GET /api/V0/banner
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "slug": "first_class",
+      "bannerTitle": "Запишите детей в первый класс",
+      "img": "documents\/prilozhenie-300x148.png",
+      "ref": "http:\/\/филипповская-школа.рф\/2202-2\/"
+    },
+    {
+      "slug": "point",
+      "bannerTitle": "Точка роста",
+      "img": "documents\/tochka-300x180.jpg",
+      "ref": "http:\/\/филипповская-школа.рф\/czentr-estestvenno-nauchnogo-profilya-tochka-rosta\/"
+    },
+    {
+      "slug": "",
+      "bannerTitle": "Департамент образования Владимирской области",
+      "img": "documents\/depvo.jpg",
+      "ref": "https:\/\/департамент.образование33.рф\/"
+    },
+    {
+      "slug": "",
+      "bannerTitle": "Персональные данные ДЕТИ",
+      "img": "documents\/persdeti.png",
+      "ref": "http:\/\/персональныеданные.дети\/"
+    }
+  ]
+}
+```
+
+### API  вывод одного банера
+```http request
+GET /api/V0/banner/{SLAG}
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "slug": "point",
+      "bannerTitle": "Точка роста",
+      "img": "documents\/tochka-300x180.jpg",
+      "ref": "http:\/\/филипповская-школа.рф\/czentr-estestvenno-nauchnogo-profilya-tochka-rosta\/"
+    }
+  ]
 }
 ```

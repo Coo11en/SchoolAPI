@@ -23,16 +23,25 @@ class Classroom extends Model
     ];
 
     /* Relations */
-    public function days(): BelongsToMany
-    {
-        return $this->belongsToMany(Day::class, 'schedules', 'classroom_id', 'day_id');
-    }
+//    public function days(): BelongsToMany
+//    {
+//        return $this->belongsToMany(Day::class, 'schedules', 'classroom_id', 'day_id');
+//    }
     public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
-    public function teachers(): BelongsTo
+    public function teacher(): BelongsTo
     {
         return $this->belongsTo(Teacher::class);
     }
+    public function cabinet(): BelongsTo
+    {
+        return $this->belongsTo(Cabinet::class);
+    }
+    public function students(): HasMany
+    {
+        return $this->hasMany(Student::class);
+    }
+
 }

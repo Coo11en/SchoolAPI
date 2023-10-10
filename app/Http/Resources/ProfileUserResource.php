@@ -14,34 +14,26 @@ class ProfileUserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-//        $role = '';
         $result =[];
-//        dd($user->name())
-        foreach ($this->roles as $role) {
+        $roles = $this->roles;
+        foreach ($roles as $role) {
             $result[] = $this->getProfileByRole($role);
         }
-//        if (!is_null($this->teachers)) {
-//            $role = 'Teacher';
-//            $result = [
-//                'profile' => new ProfileTeacherResource($this->teachers),
-//                'classroomsList' => ProfileClassroomResource::collection($this->teachers->classrooms)
-//            ] ;
-//        }
-//        if (!is_null($this->students)) {
-//            $role = 'Student';
-//            $result = $this->students;
-//        }
-//        if (!is_null($this->parents)) {
-//            $role = 'Parent';
-//            $result = ProfileStudentResource::collection($this->parents->students);
-//        }
+        $roles = RoleResource::collection($roles);
+
         return [
             'email' => $this->email,
             'phone' => $this->phone,
             'name' => $this->name,
-            'isParent' => RoleResource::collection($this->roles)->map(function ($item, $key) {
+            'isTeacher' => $roles->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Учитель'),
+            'isParent' => $roles->map(function ($item, $key) {
                 return $item->name;
             })->contains('Родитель'),
+            'isStudent' => $roles->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Студент'),
             'info' => $result
         ];
     }
@@ -51,21 +43,28 @@ class ProfileUserResource extends JsonResource
             case 'Учитель':
                 return [
                     'role' => $roleName->name,
-                    'profile' => new ProfileTeacherResource($this->teachers),
-                    'classroomsList' => ProfileClassroomResource::collection($this->teachers->classrooms)
+                    'profile' => new ProfileTeacherResource($this->teacher),
+                    'listClassrooms' => ProfileClassroomResource::collection($this->teacher->classrooms)
                 ];
             case 'Студент' :
                 return [
                     'role' => $roleName->name,
-                    'profile' => $this->students,
+                    'nameTeacher' => $this->student->classroom->teacher->surname.' '
+                        .$this->student->classroom->teacher->name.' '
+                        .$this->student->classroom->teacher->patronymic,
+                    'classroomNumber' => $this->student->classroom->cabinet->number,
+                    'classroomName' => $this->student->classroom->name,
+                    'listClassmates' => $this->student->classroom->students->map(function ($item, $key){
+                        return $item->surname.' '.$item->name.' '.$item->patronymic;
+                    }),
+                    'schedules' => new ProfileScheduleResource($this->student->classroom)
                 ];
             case 'Родитель' :
                 return [
                     'role' => $roleName->name,
-                    'profile' =>
+                    'listStudents' =>
 //                        (ProfileStudentResource::collection($this->parents->students)) ?
-                            ProfileStudentResource::collection($this->parents->students)
-//$this->parents->students
+                            ProfileStudentResource::collection($this->parent->students)
 //                            : null,
                 ];
         }

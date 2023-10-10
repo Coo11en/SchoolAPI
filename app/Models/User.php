@@ -53,15 +53,15 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function teachers(): HasOne
+    public function teacher(): HasOne
     {
         return $this->HasOne(Teacher::class);
     }
-    public function students(): HasOne
+    public function student(): HasOne
     {
         return $this->HasOne(Student::class);
     }
-    public function parents(): HasOne
+    public function parent(): HasOne
     {
         return $this->HasOne(Parents::class, 'user_id');
     }

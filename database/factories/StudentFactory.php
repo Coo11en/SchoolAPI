@@ -26,6 +26,7 @@ class StudentFactory extends Factory
             'name' => $this->faker->firstName(),
             'surname' => $this->faker->lastName(),
             'patronymic' => $this->faker->text(20),
+            'classroom_id' => $this->faker->numberBetween(1,2),
             'created_at' => now(),
             'updated_at' => now(),
         ];

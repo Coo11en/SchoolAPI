@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Student extends Model
@@ -31,12 +32,8 @@ class Student extends Model
             'parent_id');
     }
 
-
-    /*
-    public function parents_connection(): BelongsToMany
+    public function classroom(): BelongsTo
     {
-        return $this->belongsToMany(Parents_connection::class, 'student_has_parent',
-            'id', 'student_id');
+        return $this->belongsTo(Classroom::class);
     }
-    */
 }

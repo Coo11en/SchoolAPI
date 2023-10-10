@@ -15,7 +15,20 @@ class ProfileStudentResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->name.' '.$this->surname.' '.$this->patronymic
+            'name' => $this->name.' '.$this->surname.' '.$this->patronymic,
+            'classroom' => [
+                'className' => $this->classroom->name,
+                'classNumber' => $this->classroom->cabinet->number,
+            ],
+            'classroomTeacher' => [
+                'FIO' => $this->classroom->teacher->surname.' '
+                    .$this->classroom->teacher->name.' '
+                    .$this->classroom->teacher->patronymic,
+                'positions' => json_decode($this->classroom->teacher->job_title),
+                'tel' => $this->classroom->teacher->user->phone,
+                'email' => $this->classroom->teacher->user->email,
+            ],
+            'schedules' => new ProfileScheduleResource($this->classroom)
         ];
     }
 }

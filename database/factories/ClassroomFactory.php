@@ -23,6 +23,7 @@ class ClassroomFactory extends Factory
         return [
             'name' => fake()->name(),
             'teacher_id' => Teacher::factory(),
+            'cabinet_id' => $this->faker->numberBetween(1,3),
             'created_at' => now(),
             'updated_at' => now(),
         ];

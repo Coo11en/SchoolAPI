@@ -93,14 +93,36 @@ class DatabaseSeeder extends Seeder
             Roles::factory()->state($role)->create();
         }
 
+
+// Seed 3 cabinets
+        $cabinets = [
+            ['Кабинет информатики', '101'],
+            ['Кабинет химии', '202a'],
+            ['Кабинет физики', '303']
+        ];
+
+        foreach ($cabinets as $cabinet)
+            Cabinet::factory()->state([
+                'name' => $cabinet[0],
+                'number' => $cabinet[1]
+            ])->create();
+
+
 // Seed 2 Teachers
         Teacher::factory(8)
             ->state(['role_id' => Roles::where('name', '=', 'Учитель')->first()->id])
             ->create();
 
 // Seed 2 classrooms
-        Classroom::factory()->state(['name' => '1a', 'teacher_id' => Teacher::all()[0]->id])->create();
-        Classroom::factory()->state(['name' => '2a', 'teacher_id' => Teacher::all()[1]->id])->create();
+        Classroom::factory()->state([
+            'name' => '1a', 'teacher_id' => Teacher::all()[0]->id,
+            'cabinet_id' => Cabinet::all()[0]->id
+        ])->create();
+        Classroom::factory()->state([
+            'name' => '2a',
+            'teacher_id' => Teacher::all()[0]->id,
+            'cabinet_id' => Cabinet::all()[1]->id
+        ])->create();
 
 // Seed 6 days
         $days = [
@@ -185,28 +207,19 @@ class DatabaseSeeder extends Seeder
             ]), 'news_category')
             ->create();
 
+//Seed 3 students with 2 parents
         Student::factory(3)
             ->has(Parents::factory()->count(2))
             ->create();
+//Seed for user with id=1 two children
         Parents::factory()->state([
             'user_id' => 1,
             'name' => 'Фамилия',
             'surname' => 'Имя'
         ])->has(Student::factory(2))->create();
-//
 
-        $cabinets = [
-            'Кабинет информатики',
-            'Кабинет химии',
-            'Кабинет физики',
-        ];
 
-        foreach ($cabinets as $cabinet)
-            Cabinet::factory()->state([
-                'name' => $cabinet,
-            ])->create();
-
-        // Создаем 60 новых полей для меню
+// Создаем 60 новых полей для меню
         for ($i = 1; $i < 31; $i++) {
             Menu_basic::factory()->state([
                 'date' => date_date_set(now(), 2023, 9, $i),

@@ -12,7 +12,7 @@ class Menu_basic extends Model
 
     protected  $table = 'menu_basics';
 
-    public function menu_item(): BelongsToMany {
-        return $this->belongsToMany(Menu_item::class, 'menus');
-    }
+//    public function menu_item(): BelongsToMany {
+//        return $this->belongsToMany(Menu_item::class, 'menus');
+//    }
 }

@@ -20,7 +20,7 @@ class MenuResource extends JsonResource
             'nameMenu' => $this->name_menu,
             'price' => $this->price,
             'date' => date('Y-m-d', strtotime ($this->date)),
-            'menu' => Menu_itemResource::collection($this->menu_item)
+            'menu' => MenuItemResource::collection($this->menu_item)
         ];
     }
 }

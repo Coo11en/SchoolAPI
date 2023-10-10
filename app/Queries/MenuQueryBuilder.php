@@ -3,6 +3,7 @@
 namespace App\Queries;
 
 use App\Models\Menu_basic;
+use App\Models\MenuBasic;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -10,7 +11,7 @@ class MenuQueryBuilder extends QueryBuilder
 {
     public function getModel(): Builder
     {
-        return Menu_basic::query();
+        return MenuBasic::query();
     }
     public function getMenuByID($date): Collection
     {

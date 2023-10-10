@@ -31,6 +31,7 @@ class CabinetFactory extends Factory
 
         return [
             'name' => $this->faker->text(50),
+            'number' => $this->faker->numberBetween(100,200),
             'description'  => $this->faker->text(150),
             'images'  => json_encode([
                 $cabinets_img[array_rand($cabinets_img)],

@@ -21,17 +21,17 @@ class UserResource extends JsonResource
         switch($this->roles->first()->name) {
             case 'Учитель' :
                 (empty(Teacher::find($this->id)) == 0) ?
-                $fio = $this->teachers->first()->surname.' '.$this->teachers->first()->name
+                $fio = $this->teacher->first()->surname.' '.$this->teacher->first()->name
                 : $fio='';
                 break;
             case 'Студент' :
                 (empty(Student::find($this->id)) == 0) ?
-                $fio = $this->students->first()->surname.' '.$this->students->first()->name
+                $fio = $this->student->first()->surname.' '.$this->student->first()->name
                     : $fio='';
                 break;
             case 'Родитель' :
                 (empty(Parents::find($this->id)) == 0) ?
-                $fio = $this->parents->first()->surname.' '.$this->parents->first()->name
+                $fio = $this->parent->first()->surname.' '.$this->parent->first()->name
                   : $fio='';
                 break;
         };

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Album;
 use App\Models\Album_photo;
+use App\Models\Banner;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
 use App\Models\Appeals_category;
@@ -316,6 +317,17 @@ class DatabaseSeeder extends Seeder
                 'model_type' => 'App/Model/User',
                 'model_id' => 1
             ]);
+
+        //Banner
+        $banners = [
+            ['first_class', 'Запишите детей в первый класс', 'documents/prilozhenie-300x148.png', 'http://филипповская-школа.рф/2202-2/', ''],
+            ['point', 'Точка роста', 'documents/tochka-300x180.jpg', 'http://филипповская-школа.рф/czentr-estestvenno-nauchnogo-profilya-tochka-rosta/',''],
+            ['', 'Департамент образования Владимирской области', 'documents/depvo.jpg', 'https://департамент.образование33.рф/'],
+            ['', 'Персональные данные ДЕТИ', 'documents/persdeti.png', 'http://персональныеданные.дети/']
+        ];
+        foreach ($banners as $banner) {
+            Banner::factory()->state(['slug' => $banner[0], 'bannerTitle' => $banner[1], 'img' => $banner[2], 'ref' => $banner[3]])->create();
+        }
 
 
 //        \App\Models\Achievement::factory(5)->create();

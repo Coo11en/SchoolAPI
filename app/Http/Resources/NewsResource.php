@@ -24,7 +24,7 @@ class NewsResource extends JsonResource
             'text' => $this->text,
             'created_at' => $this->created_at,
             'mainImg' => ($this->album->mainImg->first()) ? $this->album->mainImg->first()->img : null,
-            'images' => PhotoResource::collection($this->albums->photos)->map(function ($item) {
+            'images' => PhotoResource::collection($this->album->photos)->map(function ($item) {
                 return $item->img;
             }),
             'video' => $this->video,

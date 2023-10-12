@@ -63,7 +63,7 @@
         ],
         "post-install-cmd": [
             "@php artisan lagoon:rain remove_stat",
-            "@php ratisan lagoon:rain add_bacpack_pro_support"
+            "@php artisan lagoon:rain add_backpack_pro_support"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

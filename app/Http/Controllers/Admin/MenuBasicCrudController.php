@@ -77,6 +77,18 @@ class MenuBasicCrudController extends CrudController
         //CRUD::field('date');
 //        CRUD::field('title');
         CRUD::field('name_menu')->label('Вид приема пищи');
+//        $this->crud->addFields([
+//            [
+//                'name'  => 'name_menu',
+//                'label' => 'Вид приема пищи',
+//                'type'  => 'enum',
+//                // optional, specify the enum options with custom display values
+//                'options' => [
+//                    'BREAKFAST' => 'Завтрак',
+//                    'DINNER' => 'Обед'
+//                ]
+//            ]
+//            ]);
         $this->crud->addFields([
             [
                 'label' => "Дата",

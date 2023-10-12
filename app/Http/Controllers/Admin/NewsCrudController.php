@@ -80,8 +80,24 @@ class NewsCrudController extends CrudController
             [   // WYSIWYG Editor
                 'name'  => 'text',
                 'label' => 'Текст',
-                'type'  => 'wysiwyg',
+                'type'  => 'summernote',
+                'options' => [
+                    'toolbar' => [
+                        ['font', ['bold', 'underline', 'italic']]
+                    ]
+                ],
                 'wrapper' => ['class' => 'form-group col-md-12'],
+//                'options' => [
+//                    'toolbar' => [
+//                        // [groupName, [list of button]]
+//                        ['style', ['bold', 'italic', 'underline', 'clear']],
+//                        ['font', ['strikethrough', 'superscript', 'subscript']],
+//                        ['fontsize', ['fontsize']],
+//                        ['color', ['color']],
+//                        ['para', ['ul', 'ol', 'paragraph']],
+//                        ['height', ['height']]
+//                    ]
+//                ],
             ],
         ]);
         CRUD::field('news_category_id');

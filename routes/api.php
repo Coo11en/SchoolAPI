@@ -42,7 +42,8 @@ Route::apiResources([
     'albums' => AlbumsController::class,
     'menu' => MenuController::class,
     'questions' => QuestionsController::class,
-    'chapter' => ChapterController::class
+    'chapter' => ChapterController::class,
+    'banner' => BannerController::class,
     ]);
 
 Route::controller(QuestionDirectirController::class)->group(function () {

@@ -1406,3 +1406,154 @@ POST /api/V0/answer_question
   "message": "Ошибка в номере вопроса"
 }
 ```
+
+### API  вывод профиля пользователя
+```http request
+GET /api/V0/profile?id={ID}
+```
+### Ответ
+```
+{
+  "data": {
+    "email": "aloginova@example.com",
+    "phone": "(495) 853-6642",
+    "name": "Беляковаа Клементина Владимировна",
+    "isTeacher": false,
+    "isParent": true,
+    "isStudent": false,
+    "info": [
+      {
+        "role": "Родитель",
+        "listStudents": [
+          {
+            "name": "Нелли Ситникова Temporibus quas.",
+            "classroom": {
+              "className": "2a",
+              "classNumber": "202a"
+            },
+            "classroomTeacher": {
+              "FIO": "Крюков Валерия Hic minima quas.",
+              "positions": [
+                "Suscipit et nisi qui quis.",
+                "Ex tempore atque et sed."
+              ],
+              "tel": "(495) 252-9761",
+              "email": "rodion.krasilnikova@example.net"
+            },
+            "schedules": [
+              {
+                "dayName": "Понедельник",
+                "lessons": [
+                  "Основы религиозных культур и светской этики",
+                  "Лингвистический практикум по иностранному языку",
+                  "Осмысленное чтение",
+                  "География"
+                ]
+              },
+              {
+                "dayName": "Вторник",
+                "lessons": [
+                  "Химия",
+                  "Обществознание",
+                  "Лингвистический практикум по иностранному языку",
+                  "География"
+                ]
+              },
+              {
+                "dayName": "Среда",
+                "lessons": [
+                  "Основы безопасности жизнедеятельности",
+                  "Математика",
+                  "Основы безопасности жизнедеятельности",
+                  "Немецкий язык"
+                ]
+              },
+              {
+                "dayName": "Четверг",
+                "lessons": [
+                  "Физика",
+                  "Осмысленное чтение",
+                  "Литературное чтение",
+                  "Основы духуовно-нравственных культур народов России"
+                ]
+              },
+              {
+                "dayName": "Пятница",
+                "lessons": [
+                  "Осмысленное чтение",
+                  "Технология",
+                  "Осмысленное чтение",
+                  "Химия"
+                ]
+              },
+              {
+                "dayName": "Суббота",
+                "lessons": [
+                  "География",
+                  "Технология",
+                  "Русский язык",
+                  "Изобразительное иску\u0441ство"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### API  вывод списка банеров
+```http request
+GET /api/V0/banner
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "slug": "first_class",
+      "bannerTitle": "Запишите детей в первый класс",
+      "img": "documents\/prilozhenie-300x148.png",
+      "ref": "http:\/\/филипповская-школа.рф\/2202-2\/"
+    },
+    {
+      "slug": "point",
+      "bannerTitle": "Точка роста",
+      "img": "documents\/tochka-300x180.jpg",
+      "ref": "http:\/\/филипповская-школа.рф\/czentr-estestvenno-nauchnogo-profilya-tochka-rosta\/"
+    },
+    {
+      "slug": "",
+      "bannerTitle": "Департамент образования Владимирской области",
+      "img": "documents\/depvo.jpg",
+      "ref": "https:\/\/департамент.образование33.рф\/"
+    },
+    {
+      "slug": "",
+      "bannerTitle": "Персональные данные ДЕТИ",
+      "img": "documents\/persdeti.png",
+      "ref": "http:\/\/персональныеданные.дети\/"
+    }
+  ]
+}
+```
+
+### API  вывод одного банера
+```http request
+GET /api/V0/banner/{SLAG}
+```
+### Ответ
+```
+{
+  "data": [
+    {
+      "slug": "point",
+      "bannerTitle": "Точка роста",
+      "img": "documents\/tochka-300x180.jpg",
+      "ref": "http:\/\/филипповская-школа.рф\/czentr-estestvenno-nauchnogo-profilya-tochka-rosta\/"
+    }
+  ]
+}
+```

@@ -56,4 +56,3 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('schedule') }}"><i class="nav-icon la la-list-ol"></i> Расписание уроков</a></li>
     </ul>
 </li>
-@endif

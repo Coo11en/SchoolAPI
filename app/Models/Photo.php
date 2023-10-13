@@ -53,7 +53,7 @@ class Photo extends Model
     {
         $attribute_name = "img";
         $disk = "public";
-        $destination_path = "data";
+        $destination_path = "data/photo/album";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
 

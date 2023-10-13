@@ -2,6 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Parents;
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -41,35 +44,54 @@ class ProfileUserResource extends JsonResource
     {
         switch($roleName->name) {
             case 'Учитель':
-                $teacher = $this->teacher;
-                return [
-                    'role' => $roleName->name,
-                    'profile' => new ProfileTeacherResource($teacher),
-                    'listClassrooms' => ProfileClassroomResource::collection($teacher->classrooms)
-                ];
+                $teacher = Teacher::all()
+                    ->where('user_id', '=', $roleName->pivot['model_id'])
+                    ->first();
+                if (!is_null($teacher)) {
+                    return [
+                        'role' => $roleName->name,
+                        'profile' => new ProfileTeacherResource($teacher),
+                        'listClassrooms' => ProfileClassroomResource::collection($teacher->classrooms)
+                    ];
+                }
+                return ['Пользователь не имеет профиля учителя'];
             case 'Студент' :
-                $classroom = $this->student->classroom;
-                $teacher = $classroom->teacher;
-                return [
-                    'role' => $roleName->name,
-                    'nameTeacher' => $teacher->surname.' '
-                        .$teacher->name.' '
-                        .$teacher->patronymic,
-                    'classroomNumber' => $classroom->cabinet->number,
-                    'classroomName' => $classroom->name,
-                    'listClassmates' => $classroom->students->map(function ($item, $key){
-                        return $item->surname.' '.$item->name.' '.$item->patronymic;
-                    }),
-                    'days' => new ProfileScheduleResource($classroom)
-                ];
+
+                $student = Student::all()
+                    ->where('user_id', '=', $roleName->pivot['model_id'])
+                    ->first();
+
+                if (!is_null($student)) {
+                    $classroom = $student->classroom;
+                    $teacher = $classroom->teacher;
+                    return [
+                        'role' => $roleName->name,
+                        'nameTeacher' => $teacher->surname . ' '
+                            . $teacher->name . ' '
+                            . $teacher->patronymic,
+                        'classroomNumber' => $classroom->cabinet->number,
+                        'classroomName' => $classroom->name,
+                        'listClassmates' => $classroom->students->map(function ($item, $key) {
+                            return $item->surname . ' ' . $item->name . ' ' . $item->patronymic;
+                        }),
+                        'days' => new ProfileScheduleResource($classroom)
+                    ];
+                }
+                return ['Пользователь не имеет профиля студент'];
             case 'Родитель' :
-                return [
-                    'role' => $roleName->name,
-                    'listStudents' =>
+                $parent = Parents::all()
+                    ->where('user_id', '=', $roleName->pivot['model_id'])
+                    ->first();
+                if (!is_null($parent)) {
+                    return [
+                        'role' => $roleName->name,
+                        'listStudents' =>
 //                        (ProfileStudentResource::collection($this->parents->students)) ?
-                            ProfileStudentResource::collection($this->parent->students)
+                            ProfileStudentResource::collection($parent->students)
 //                            : null,
-                ];
+                    ];
+                }
+                return ['Пользователь не имеет профиля родитель'];
         }
     }
 }

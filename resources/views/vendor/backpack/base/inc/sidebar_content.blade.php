@@ -5,6 +5,7 @@
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/users') }}"><i class="nav-icon la la-user"></i> <span>Пользователи</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/roles') }}"><i class="nav-icon la la-group"></i> <span>Роли</span></a></li>
+{{--        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/rights') }}"><i class="nav-icon la la-user"></i> <span>Разрешения</span></a></li>--}}
     </ul>
 </li>
 

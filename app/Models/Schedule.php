@@ -28,7 +28,7 @@ class Schedule extends Model
     /* Relations */
     public function days(): BelongsTo
     {
-        return $this->belongsTo(Day::class);
+        return $this->belongsTo(Day::class, 'day_id');
     }
 
     public function classrooms(): BelongsTo

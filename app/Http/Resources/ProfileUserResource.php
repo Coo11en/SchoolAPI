@@ -41,23 +41,26 @@ class ProfileUserResource extends JsonResource
     {
         switch($roleName->name) {
             case 'Учитель':
+                $teacher = $this->teacher;
                 return [
                     'role' => $roleName->name,
-                    'profile' => new ProfileTeacherResource($this->teacher),
-                    'listClassrooms' => ProfileClassroomResource::collection($this->teacher->classrooms)
+                    'profile' => new ProfileTeacherResource($teacher),
+                    'listClassrooms' => ProfileClassroomResource::collection($teacher->classrooms)
                 ];
             case 'Студент' :
+                $classroom = $this->student->classroom;
+                $teacher = $classroom->teacher;
                 return [
                     'role' => $roleName->name,
-                    'nameTeacher' => $this->student->classroom->teacher->surname.' '
-                        .$this->student->classroom->teacher->name.' '
-                        .$this->student->classroom->teacher->patronymic,
-                    'classroomNumber' => $this->student->classroom->cabinet->number,
-                    'classroomName' => $this->student->classroom->name,
-                    'listClassmates' => $this->student->classroom->students->map(function ($item, $key){
+                    'nameTeacher' => $teacher->surname.' '
+                        .$teacher->name.' '
+                        .$teacher->patronymic,
+                    'classroomNumber' => $classroom->cabinet->number,
+                    'classroomName' => $classroom->name,
+                    'listClassmates' => $classroom->students->map(function ($item, $key){
                         return $item->surname.' '.$item->name.' '.$item->patronymic;
                     }),
-                    'schedules' => new ProfileScheduleResource($this->student->classroom)
+                    'schedules' => new ProfileScheduleResource($classroom)
                 ];
             case 'Родитель' :
                 return [

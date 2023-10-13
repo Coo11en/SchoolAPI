@@ -14,21 +14,24 @@ class ProfileStudentResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $classroom = $this->classroom;
+        $teacher = $classroom->teacher;
+        $user = $teacher->user;
         return [
-            'name' => $this->name.' '.$this->surname.' '.$this->patronymic,
+            'name' => $this->surname.' '.$this->name.' '.$this->patronymic,
             'classroom' => [
-                'className' => $this->classroom->name,
-                'classNumber' => $this->classroom->cabinet->number,
+                'className' => $classroom->name,
+                'classNumber' => $classroom->cabinet->number,
             ],
             'classroomTeacher' => [
-                'FIO' => $this->classroom->teacher->surname.' '
-                    .$this->classroom->teacher->name.' '
-                    .$this->classroom->teacher->patronymic,
-                'positions' => json_decode($this->classroom->teacher->job_title),
-                'tel' => $this->classroom->teacher->user->phone,
-                'email' => $this->classroom->teacher->user->email,
+                'FIO' => $teacher->surname.' '
+                    .$teacher->name.' '
+                    .$teacher->patronymic,
+                'positions' => json_decode($teacher->job_title),
+                'tel' => $user->phone,
+                'email' => $user->email,
             ],
-            'schedules' => new ProfileScheduleResource($this->classroom)
+            'schedules' => new ProfileScheduleResource($classroom)
         ];
     }
 }

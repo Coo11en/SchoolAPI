@@ -29,7 +29,7 @@ class AlbumsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Album::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/albums');
-        CRUD::setEntityNameStrings('album', 'albums');
+        CRUD::setEntityNameStrings('альбом', 'альбомы');
         $this->crud = PermissionHelper::applyPermissions($this->crud, 'albums');
     }
 
@@ -41,13 +41,13 @@ class AlbumsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('created_at');
-        CRUD::column('description');
-        CRUD::column('name');
-        CRUD::column('nameEng');
-        CRUD::column('relationship');
-        CRUD::column('status');
-        CRUD::column('updated_at');
+        CRUD::column('name')->label('Название');
+        CRUD::column('description')->label('Описание');
+        CRUD::column('nameEng')->label('Путь на сайте');
+        CRUD::column('relationship')->label('Зависимый');
+        CRUD::column('status')->label('Статус');
+        CRUD::column('created_at')->label('Дата создания');
+        CRUD::column('updated_at')->label('Дата обновления');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -66,11 +66,10 @@ class AlbumsCrudController extends CrudController
     {
         CRUD::setValidation(AlbumsRequest::class);
 
-        CRUD::field('description');
-        CRUD::field('name');
-        CRUD::field('nameEng');
-        CRUD::field('relationship');
-        CRUD::field('status');
+        CRUD::field('name')->label('Название');
+        CRUD::field('description')->label('Описание');
+        CRUD::field('nameEng')->label('Путь на сайте');
+        CRUD::field('relationship')->label('Зависимый');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

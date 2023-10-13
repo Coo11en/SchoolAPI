@@ -37,24 +37,38 @@ class UserResource extends JsonResource
 
         if ($this->roles->isNotEmpty()) {
 
-            switch ($this->roles->first()->name) {
+            $role = $this->roles->first();
+//                return [$role];
+            switch ($role->name) {
                 case 'Учитель' :
-                    $teacher = Teacher::all()->where('user_id', '=', $this->id);
-                    $result['FIO'] = (!is_null($teacher)) ?
-                    $result['FIO'] = $teacher->first()->surname . ' ' . $teacher->first()->name
-                        :'';
+                    $teacher = Teacher::all()
+                        ->where('user_id', '=', $role->pivot['model_id'])
+                        ->first();
+                    if (!is_null($teacher)){
+                    $result['FIO'] = $teacher->first()->surname . ' ' . $teacher->first()->name;
+                    } else {
+                        $result['FIO'] = 'Пользователь не имеет профил учитель';
+                    }
                     break;
                 case 'Студент' :
-                    $student = Student::all()->where('user_id', '=', $this->id);
-                    (!is_null($student)) ?
-                        $result['FIO'] = $student->first()->surname . ' ' . $student->first()->name
-                        : $result['FIO'] = '';
+                    $student = Student::all()
+                        ->where('user_id', '=', $role->pivot['model_id'])
+                        ->first();
+                    if (!is_null($student)) {
+                        $result['FIO'] = $student->first()->surname . ' ' . $student->first()->name;
+                    } else {
+                        $result['FIO'] = 'Пользователь не имеет профиля студент';
+                    }
                     break;
                 case 'Родитель' :
-                    $parent = Parents::all()->where('user_id', '=', $this->id);
-                    (!is_null($parent)) ?
-                        $result['FIO'] = $parent->first()->surname . ' ' . $parent->first()->name
-                        : $result['FIO'] = '';
+                    $parent = Parents::all()
+                        ->where('user_id', '=', $role->pivot['model_id'])
+                        ->first();
+                    if (!is_null($parent)) {
+                        $result['FIO'] = $parent->first()->surname . ' ' . $parent->first()->name;
+                     } else {
+                        $result['FIO'] = 'Пользователь не имеет профиля родитель';
+                    }
                     break;
                 case 'admin' :
                         $result['FIO'] = $this->name;

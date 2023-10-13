@@ -32,10 +32,10 @@ Route::controller(NewsController::class)->group(function () {
         ->name('news.show');
 });
 
-Route::controller(ScheduleController::class)->group(function () {
-    Route::get('/schedule', 'index')
-        ->name('schedule.index');
-});
+//Route::controller(ScheduleController::class)->group(function () {
+//    Route::get('/schedule', 'index')
+//        ->name('schedule.index');
+//});
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')

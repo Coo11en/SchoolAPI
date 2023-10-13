@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Call_schedule;
+use App\Models\CallSchedule;
 use App\Models\Classroom;
 use App\Models\Day;
 use App\Models\Subject;
@@ -26,7 +26,7 @@ class ScheduleFactory extends Factory
             'teacher_id' => Teacher::factory(),
             'week_day_name' => $this->faker->dayOfWeek,
             'classroom_id' => Classroom::factory(),
-            'call_schedule_id' => Call_schedule::factory(),
+            'call_schedule_id' => CallSchedule::factory(),
             'day_id' => Day::factory(),
             'created_at' => now(),
             'updated_at' => now(),

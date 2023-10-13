@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -16,13 +17,17 @@ Route::group([
     ),
     'namespace'  => null,
 ], function () { // custom admin routes
-    Route::crud('news', App\Http\Controllers\Admin\NewsCrudController::class);
-    Route::crud('albums', App\Http\Controllers\Admin\AlbumsCrudController::class);
-    Route::crud('news-category', App\Http\Controllers\Admin\NewsCategoryCrudController::class);
-    Route::crud('photo', App\Http\Controllers\Admin\PhotoCrudController::class);
-    Route::crud('teacher', App\Http\Controllers\Admin\TeacherCrudController::class);
-    Route::crud('menu-basic', App\Http\Controllers\Admin\MenuBasicCrudController::class);
-    Route::crud('menu-item', App\Http\Controllers\Admin\MenuItemCrudController::class);
-    Route::crud('appeal', App\Http\Controllers\Admin\AppealCrudController::class);
-    Route::crud('appeal-category', App\Http\Controllers\Admin\AppealCategoryCrudController::class);
+    Route::crud('news', NewsCrudController::class);
+    Route::crud('albums', AlbumsCrudController::class);
+    Route::crud('news-category', NewsCategoryCrudController::class);
+    Route::crud('photo', PhotoCrudController::class);
+    Route::crud('teacher', TeacherCrudController::class);
+    Route::crud('menu-basic', MenuBasicCrudController::class);
+    Route::crud('menu-item', MenuItemCrudController::class);
+    Route::crud('call-schedule', CallScheduleCrudController::class);
+    Route::crud('subject', SubjectCrudController::class);
+    Route::crud('day', DayCrudController::class);
+    Route::crud('schedule', ScheduleCrudController::class);
+    Route::crud('appeal', AppealCrudController::class);
+    Route::crud('appeal-category', AppealCategoryCrudController::class);
 }); // this should be the absolute last line of this file

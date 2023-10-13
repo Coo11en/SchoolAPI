@@ -72,7 +72,7 @@ class User extends Authenticatable
             Role::class,
             'model_has_roles',
             'model_id',
-            'role_id');
+            'role_id'
+        );
     }
-
 }

@@ -5,6 +5,7 @@
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/users') }}"><i class="nav-icon la la-user"></i> <span>Пользователи</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/roles') }}"><i class="nav-icon la la-group"></i> <span>Роли</span></a></li>
+{{--        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/rights') }}"><i class="nav-icon la la-user"></i> <span>Разрешения</span></a></li>--}}
     </ul>
 </li>
 
@@ -40,9 +41,19 @@
     </ul>
 </li>
 <li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la la-weixin"></i> Управление вопросами организации</a>
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-weixin"></i> Управление вопросами организации</a>
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('appeal') }}"><i class="nav-icon la la-question"></i> Вопросы</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('appeal-category') }}"><i class="nav-icon la la la-list-ul"></i> Категории вопросов</a></li>
     </ul>
 </li>
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-mortar-board"></i> Управление расписанием</a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('call-schedule') }}"><i class="nav-icon la la-bell-o"></i> Расписание звонков</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('subject') }}"><i class="nav-icon la la-flask"></i> Предметы</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('day') }}"><i class="nav-icon la la-calendar-o"></i> Дни недели</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('schedule') }}"><i class="nav-icon la la-list-ol"></i> Расписание уроков</a></li>
+    </ul>
+</li>
+@endif

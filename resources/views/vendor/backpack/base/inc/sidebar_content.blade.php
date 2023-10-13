@@ -23,6 +23,7 @@
 @if(reef_can('news.list'))
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-question"></i> News</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news-category') }}"><i class="nav-icon la la-question"></i> News categories</a></li>
+@endif
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('teacher') }}"><i class="nav-icon la la-question"></i> Teachers</a></li>
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Управление фотографиями</a>
@@ -38,4 +39,10 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-basic') }}"><i class="nav-icon la la-book"></i> Меню</a></li>
     </ul>
 </li>
-@endif
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la la-weixin"></i> Управление вопросами организации</a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('appeal') }}"><i class="nav-icon la la-question"></i> Вопросы</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('appeal-category') }}"><i class="nav-icon la la la-list-ul"></i> Категории вопросов</a></li>
+    </ul>
+</li>

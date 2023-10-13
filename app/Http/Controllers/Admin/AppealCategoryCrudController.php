@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\MenuBasicRequest;
-use App\Models\MenuItem;
+use App\Http\Requests\AppealCategoryRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MenuBasicCrudController
+ * Class AppealCategoryCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MenuBasicCrudController extends CrudController
+class AppealCategoryCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,9 +26,9 @@ class MenuBasicCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\MenuBasic::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/menu-basic');
-        CRUD::setEntityNameStrings('Меню', 'Список всех меню');
+        CRUD::setModel(\App\Models\AppealCategory::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/appeal-category');
+        CRUD::setEntityNameStrings('категорию вопросов', 'категории вопросов');
     }
 
     /**
@@ -40,17 +39,10 @@ class MenuBasicCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('date')->label('Дата реализации меню');
-        //CRUD::column('menu_title')->label('Наменование заголовка на сайте');
-        $this->crud->addColumn([
-            'name'      => 'menu_item', // name of relationship method in the model
-            'type'      => 'relationship',
-            'label'     => 'Состав блюд на прием пищи', // Table column heading
-            'attribute' => 'name_dish', // foreign key attribute that is shown to user
-            'model'     => MenuItem::class, // foreign key model
-        ]);
-        CRUD::column('name_menu')->label('Вид приема пищи');
-        CRUD::column('price')->label('Стоимость приема пищи');
+        CRUD::column('name')->label('Наименование категории');
+        CRUD::column('description')->label('Описание категории');
+        CRUD::column('updated_at')->label('Дата последнего обновления');
+
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -70,28 +62,8 @@ class MenuBasicCrudController extends CrudController
             // 'name' => 'required|min:2',
         ]);
 
-        //CRUD::field('date');
-//        CRUD::field('title');
-        CRUD::field('name_menu')->label('Вид приема пищи');
-        $this->crud->addFields([
-            [
-                'label' => "Дата",
-                'type' => 'date',
-                'name' => 'date',
-            ],
-            [
-                'label' => "Блюда меню",
-                'type' => 'select2_multiple',
-                'name' => 'menu_item',
-                'entity' => 'menu_item',
-                'attribute' => 'name_dish',
-                //'attributes' => 'dish_output',
-                'pivot' => true,
-                'model' => 'App\Models\MenuItem',
-            ],
-        ]);
-        CRUD::field('menu_title')->label('Наименование меню')->default('Меню ежедневного горячего питания');
-        CRUD::field('price')->label('Стоимость одного блюда');
+        CRUD::field('name')->label('Наименование категории');
+        CRUD::field('description')->label('Описание категории');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -9,7 +9,7 @@ use App\Models\Album_photo;
 use App\Models\Banner;
 use App\Models\Appeal;
 use App\Models\Call_schedule;
-use App\Models\Appeals_category;
+use App\Models\AppealCategory;
 use App\Models\Chapter;
 use App\Models\Classroom;
 use App\Models\Day;
@@ -19,19 +19,19 @@ use App\Models\Docimage_section;
 use App\Models\Docsource;
 use App\Models\Docsource_section;
 use App\Models\Menu;
-use App\Models\Menu_basic;
-use App\Models\Menu_item;
+use App\Models\MenuBasic;
+use App\Models\MenuItem;
 use App\Models\News;
 use App\Models\News_category;
 use App\Models\Parents;
 use App\Models\Photo;
-use App\Models\Roles;
 use App\Models\Schedule;
 use App\Models\Section;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\User;
+use Backpack\PermissionManager\app\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use function Symfony\Component\HttpKernel\Log\format;
@@ -90,9 +90,9 @@ class DatabaseSeeder extends Seeder
             ['guard_name' => 'backpack', 'name' => 'Студент', 'created_at' => now(), 'updated_at' => now()],
             ['guard_name' => 'backpack', 'name' => 'Родитель', 'created_at' => now(), 'updated_at' => now()]
         ];
-        foreach ($roles as $role) {
-            Roles::factory()->state($role)->create();
-        }
+//        foreach ($roles as $role) {
+//            Roles::factory()->state($role)->create();
+//        }
 
 
 // Seed 3 cabinets
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
 
 // Seed 2 Teachers
         Teacher::factory(8)
-            ->state(['role_id' => Roles::where('name', '=', 'Учитель')->first()->id])
+            ->state(['role_id' => Role::where('name', '=', 'Учитель')->first()->id])
             ->create();
 
 // Seed 2 classrooms
@@ -222,23 +222,23 @@ class DatabaseSeeder extends Seeder
 
 // Создаем 60 новых полей для меню
         for ($i = 1; $i < 31; $i++) {
-            Menu_basic::factory()->state([
+            MenuBasic::factory()->state([
                 'date' => date_date_set(now(), 2023, 9, $i),
                 'name_menu' => 'Завтрак'
             ])->create();
-            Menu_basic::factory()->state([
+            MenuBasic::factory()->state([
                 'date' => date_date_set(now(), (int)date('Y'), (int)date('m'), $i),
                 'name_menu' => 'Обед'
             ])->create();
         }
         // Создаем 50 блюд
-        Menu_item::factory(50)->create();
+        MenuItem::factory(50)->create();
         // Создаем 60 меню
         for ($i = 1; $i < 61; $i++){
             for ($j = 1; $j < 5; $j++) {
                 Menu::factory()->state([
-                    'menu_basic_id' => Menu_basic::find($i)->id,
-                    'menu_item_id' => Menu_item::all()->random()->id,
+                    'menu_basic_id' => MenuBasic::find($i)->id,
+                    'menu_item_id' => MenuItem::all()->random()->id,
                 ])->create();
             }
         }
@@ -249,13 +249,13 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($appeals_categories as $appeals_category)
-            Appeals_category::factory()->state([
+            AppealCategory::factory()->state([
                 'name' => $appeals_category,
             ])->create();
 
         for ($i = 1; $i < 11; $i++) {
             Appeal::factory()->state([
-                'category_id' => Appeals_category::all()->random()->id,
+                'category_id' => AppealCategory::all()->random()->id,
             ])->create();
         }
 

@@ -1,25 +1,30 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Roles extends Model
+class AppealCategory  extends Model
 {
+    use CrudTrait;
     use HasFactory;
 
-    protected $table = 'roles';
+    protected  $table = 'appeals_categories';
 
 //    public $incrementing = false;
 
     protected $fillable = [
         'name',
+        'description',
     ];
 
-    public function teachers()
+    public function appeals()
     {
-        return $this->hasOne(Teacher::class);
-    }
+        return $this->hasMany(Appeal::class);
+}
+
 }

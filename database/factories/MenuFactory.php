@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Menu_basic;
-use App\Models\Menu_item;
+use App\Models\MenuBasic;
+use App\Models\MenuItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,8 +19,8 @@ class MenuFactory extends Factory
     public function definition(): array
     {
         return [
-            'menu_basic_id' => Menu_basic::factory(),
-            'menu_item_id' => Menu_item::factory(),
+            'menu_basic_id' => MenuBasic::factory(),
+            'menu_item_id' => MenuItem::factory(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

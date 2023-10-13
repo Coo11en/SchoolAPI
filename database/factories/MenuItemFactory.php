@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Menu_basic>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MenuItem>
  */
-class Menu_basicFactory extends Factory
+class MenuItemFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,10 +19,8 @@ class Menu_basicFactory extends Factory
         $DateUp = fake()->dateTimeBetween('-5 years', '-1 hours', null);
 
         return [
-            'menu_title' => 'Меню ежедневного горячего питания',
-            'date' => now(),
-            'name_menu' => fake()->randomElement(['Завтрак', 'Обед']),
-            'price' => fake()->randomFloat(0, 10, 200),
+            'name_dish' => fake()->text(25),
+            'dish_output' => fake()->randomFloat(0, 30, 300).' гр.',
             'created_at' => $DateUp,
             'updated_at' => fake()->dateTimeBetween($DateUp, '-1 hours', null),
         ];

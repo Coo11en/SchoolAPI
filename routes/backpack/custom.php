@@ -23,4 +23,6 @@ Route::group([
     Route::crud('teacher', App\Http\Controllers\Admin\TeacherCrudController::class);
     Route::crud('menu-basic', App\Http\Controllers\Admin\MenuBasicCrudController::class);
     Route::crud('menu-item', App\Http\Controllers\Admin\MenuItemCrudController::class);
+    Route::crud('appeal', App\Http\Controllers\Admin\AppealCrudController::class);
+    Route::crud('appeal-category', App\Http\Controllers\Admin\AppealCategoryCrudController::class);
 }); // this should be the absolute last line of this file

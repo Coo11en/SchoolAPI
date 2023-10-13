@@ -60,7 +60,7 @@ class ProfileUserResource extends JsonResource
                     'listClassmates' => $classroom->students->map(function ($item, $key){
                         return $item->surname.' '.$item->name.' '.$item->patronymic;
                     }),
-                    'schedules' => new ProfileScheduleResource($classroom)
+                    'days' => new ProfileScheduleResource($classroom)
                 ];
             case 'Родитель' :
                 return [

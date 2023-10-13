@@ -39,8 +39,27 @@ class ScheduleCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        CRUD::filter('classroom_id')
+            ->type('integer')
+            ->label('Класс')
+            ->whenActive(function($value) {
+                CRUD::addClause('where', 'name', 'LIKE', '%'.$value.'%');
+            })->else(function() {
+                // nada
+            });
+
 //        CRUD::column('classroom_id');
-        CRUD::addColumn([
+        CRUD::addColumn(
+//            [
+//                // 1-n relationship
+//                'label'     => 'Класс', // Table column heading
+//                'type'      => 'select_grouped',
+//                'name'      => 'classroom_id', // the column that contains the ID of that connected entity;
+//                'entity'    => 'classroom', // the method that defines the relationship in your Model
+//                'attribute' => 'name', // foreign key attribute that is shown to user
+//                'model'     => "App\Models\Classroom", // foreign key model
+//            ],
+            [
             'label' => "Класс",
             'type' => 'relationship',
             // метод, который определяет отношения в модели
@@ -49,9 +68,26 @@ class ScheduleCrudController extends CrudController
             'entity' => 'classroom',
             // атрибут внешнего ключа, который отображается пользователю
             'attribute' =>'name',
-        ]);
+        ]
+        );
         CRUD::column('week_day_name');
-        CRUD::column('callSchedule_id');
+//        CRUD::column('callSchedule_id')->orderable('desc');
+//        CRUD::addColumn([
+//            [
+//                // 1-n relationship
+//                'label'     => 'Номер урока', // Table column heading
+//                'type'      => 'select',
+//                'name'      => 'call_schedule_id', // the column that contains the ID of that connected entity;
+//                'entity'    => 'callSchedule', // the method that defines the relationship in your Model
+//                'attribute' => 'call_number', // foreign key attribute that is shown to user
+//                'model'     => "App\Models\CallSchedule", // foreign key model
+//            ],
+//        ]);
+        CRUD::column('call_schedule_id')
+            ->type('select')
+            ->model('App\Models\CallSchedule')
+            ->attribute('call_number')
+            ->entity('callSchedule')->sortBy('desc');
         CRUD::addColumn([
             'label' => "Предмет",
             'type' => 'relationship',
@@ -79,6 +115,9 @@ class ScheduleCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
+        if (! $this->crud->getRequest()->has('order')){
+            $this->crud->orderBy('day_id', 'asc');
+        }
     }
 
     /**

@@ -31,7 +31,7 @@ class ProfileStudentResource extends JsonResource
                 'tel' => $user->phone,
                 'email' => $user->email,
             ],
-            'schedules' => new ProfileScheduleResource($classroom)
+            'days' => new ProfileScheduleResource($classroom)
         ];
     }
 }

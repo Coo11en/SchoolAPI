@@ -35,3 +35,7 @@
     </ul>
 </li>
 @endif
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Students</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('classroom') }}"><i class="nav-icon la la-question"></i> Classrooms</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('cabinet') }}"><i class="nav-icon la la-question"></i> Cabinets</a></li>

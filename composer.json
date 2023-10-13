@@ -2,28 +2,35 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
-    "repositories":
-    [
-        {
+    "repositories": {
+        "backpack": {
+            "type": "composer",
+            "url": "https://repo.backpackforlaravel.com/"
+        },
+        "0": {
             "type": "vcs",
             "url": "https://lagoon:UVnQG6a7Q__1cijnVEVC@lab.alfmaster.ru/lagoon/rain.git"
         },
-        {
+        "1": {
             "type": "vcs",
             "url": "https://lagoon:sfoVsDdWGrCos_yYJvxG@lab.alfmaster.ru/lagoon/sand.git"
         },
-        {
+        "2": {
             "type": "vcs",
             "url": "https://lagoon:1sA6w2rXrRFcQSDw1qLG@lab.alfmaster.ru/lagoon/reef.git"
-        }
-    ],
+        },
+    },
     "require": {
         "php": "^8.1",
         "backpack/crud": "^5.6",
         "backpack/permissionmanager": "^6.0",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
         "lagoon/rain": "^1.1",
         "lagoon/reef": "^1.10",
         "lagoon/sand": "^1.6",

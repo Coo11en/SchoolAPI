@@ -19,7 +19,8 @@ return new class extends Migration
             $table->foreignId('user_id')
                 ->after('id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');;
             $table->string('name', 20)->after('user_id');
             $table->string('surname', 20)->after('name');
             $table->string('patronymic', 20)->after('surname')->nullable();

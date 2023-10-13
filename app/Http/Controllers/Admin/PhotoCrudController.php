@@ -29,7 +29,7 @@ class PhotoCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Photo::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/photo');
-        CRUD::setEntityNameStrings('photo', 'photos');
+        CRUD::setEntityNameStrings('фотографию', 'фотографии');
     }
 
     /**
@@ -40,20 +40,27 @@ class PhotoCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('img');
+
+        CRUD::column('img')->label('Путь до фото')->key(1);
+
         $this->crud->addColumn([
-            'label' => 'Альбом',
-            'type'  => 'select2_multiple',
-            'name'  => 'albums',
-
-            'entity' => 'albums',
-//                'model' => 'App\\Model\\Album',
-            'attribute' => 'name',
-
-            'pivot' => true,
-            //optional
-
+            'name'      => 'img', // name of relationship method in the model
+            'type'      => 'view',
+            'label'     => 'Фото', // Table column heading
+            'view'      => 'partials/image',
         ]);
+        $this->crud->addColumn([
+            'name'      => 'albums', // name of relationship method in the model
+            'type'      => 'relationship',
+            'label'     => 'Альбом', // Table column heading
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model'     => Album::class, // foreign key model
+            'key'       => 2
+        ]);
+
+        CRUD::column('created_at')->label('Дата создания');
+
+
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -71,19 +78,20 @@ class PhotoCrudController extends CrudController
     {
         CRUD::setValidation(PhotoRequest::class);
 
-        CRUD::field('img');
+        $this->crud->addField([   // Upload
+            'name'      => 'img',
+            'label'     => 'Фото',
+            'type'      => 'upload',
+            'upload'    => true,
+        ]);
+
         $this->crud->addField([
                 'label' => 'Альбом',
                 'type'  => 'select2_multiple',
                 'name'  => 'albums',
-
                 'entity' => 'albums',
-//                'model' => 'App\\Model\\Album',
                 'attribute' => 'name',
-
                 'pivot' => true,
-                //optional
-
         ]);
 
         /**

@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Api\V0;
 
 use App\Http\Controllers\Controller;
-use App\Models\Call_schedule;
+use App\Models\CallSchedule;
 use Carbon\Carbon;
 use JetBrains\PhpStorm\ArrayShape;
-
-//use Illuminate\Http\Request;
-//use function App\Enums\all;
 
 class CallSchedulesController extends Controller
 {
@@ -18,7 +15,7 @@ class CallSchedulesController extends Controller
     #[ArrayShape(['callSchedules' => "array"])]
     public function index(): array
     {
-        return ['callSchedules' =>   Call_schedule::all()->sortBy('call_number')->map(function ($item){
+        return ['callSchedules' =>   CallSchedule::all()->sortBy('call_number')->map(function ($item){
             return (object)[
                 'number' => $item->call_number,
                 'start' => Carbon::parse($item->start_time)->format('H:i'),

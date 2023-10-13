@@ -23,7 +23,7 @@
         "2": {
             "type": "vcs",
             "url": "https://lagoon:1sA6w2rXrRFcQSDw1qLG@lab.alfmaster.ru/lagoon/reef.git"
-        },
+        }
     },
     "require": {
         "php": "^8.1",

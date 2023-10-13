@@ -16,9 +16,9 @@ class ScheduleResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $call_schedule = new Call_scheduleResource($this->callSchedules);
+        $call_schedule = new Call_scheduleResource($this->callSchedule);
         return [
-            'nameSubject' => new SubjectResource($this->subjects),
+            'nameSubject' => new SubjectResource($this->subject),
             'callNumber' => $call_schedule->call_number
 
         ];

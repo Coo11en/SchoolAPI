@@ -9,7 +9,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProfileScheduleResource extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -20,9 +19,9 @@ class ProfileScheduleResource extends JsonResource
 // подготовка итогового массыва расписаний
         $schedules = $this->schedules->map(function ($item){
             return (object)[
-                'week_day' => $item->days->name,
+                'week_day' => $item->day->name,
                 'call_schedule_id' =>$item->call_schedule_id,
-                'name_subject' => $item->subjects->name_subject
+                'name_subject' => $item->subject->name_subject
             ];
         });
  //приведение массива расписаний к виду, заявленному фронтом

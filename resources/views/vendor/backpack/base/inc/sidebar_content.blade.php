@@ -39,3 +39,8 @@
     </ul>
 </li>
 @endif
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('call-schedule') }}"><i class="nav-icon la la-question"></i> Call schedules</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('subject') }}"><i class="nav-icon la la-question"></i> Subjects</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('day') }}"><i class="nav-icon la la-question"></i> Days</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('schedule') }}"><i class="nav-icon la la-question"></i> Schedules</a></li>

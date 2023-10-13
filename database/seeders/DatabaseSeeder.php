@@ -8,7 +8,7 @@ use App\Models\Album;
 use App\Models\Album_photo;
 use App\Models\Banner;
 use App\Models\Appeal;
-use App\Models\Call_schedule;
+use App\Models\CallSchedule;
 use App\Models\Appeals_category;
 use App\Models\Chapter;
 use App\Models\Classroom;
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
             ['call_number' => 8, 'start_time' => '16:00', 'lesson_time' => 45],
         ];
         foreach ($call_schedules as $call_schedule)
-            Call_schedule::factory()->state([
+            CallSchedule::factory()->state([
                 'call_number' => $call_schedule['call_number'],
                 'start_time' => $call_schedule['start_time'],
                 'lesson_time' => $call_schedule['lesson_time']
@@ -192,7 +192,7 @@ class DatabaseSeeder extends Seeder
                         'teacher_id' => Teacher::all()[$i]->id,
                         'week_day_name' => Day::find($k)->name,
                         'classroom_id' => Classroom::all()[$i]->id,
-                        'call_schedule_id' => Call_schedule::where('call_number', '=', $j)->first()->id,
+                        'call_schedule_id' => CallSchedule::where('call_number', '=', $j)->first()->id,
                         'day_id' => $k
                     ])->create();
                 }

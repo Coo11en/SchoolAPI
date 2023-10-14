@@ -81,7 +81,7 @@ class ScheduleCrudController extends CrudController
             // метод, который определяет отношения в модели
             'entity' => 'teacher',
             // атрибут внешнего ключа, который отображается пользователю
-            'attribute' =>'surname',
+            'attribute' =>'full_name',
         ]);
 //        CRUD::column('day_id');
 

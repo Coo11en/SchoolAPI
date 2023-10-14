@@ -22,7 +22,7 @@ class ProfileClassroomResource extends JsonResource
                     'studentName' => $item->surname.' '.$item->name.' '.$item->patronymic,
                     'parents' => $item->parents->map(function ($item, $key){
                         return (object)[
-                            'parentNmame' => $item->surname.' '.$item->name.' '.$item->patronymic,
+                            'parentName' => $item->surname.' '.$item->name.' '.$item->patronymic,
                             'parentPhone' => $item->user->phone
                         ];
                     })

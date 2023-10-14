@@ -36,4 +36,8 @@ class Student extends Model
     {
         return $this->belongsTo(Classroom::class);
     }
+    public function avatar(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

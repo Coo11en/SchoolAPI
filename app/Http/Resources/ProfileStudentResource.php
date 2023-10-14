@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileStudentResource extends JsonResource
 {
@@ -19,6 +20,7 @@ class ProfileStudentResource extends JsonResource
         $user = $teacher->user;
         return [
             'name' => $this->surname.' '.$this->name.' '.$this->patronymic,
+            'imgSrc' => Storage::url($this->avatar),
             'classroom' => [
                 'className' => $classroom->name,
                 'classNumber' => $classroom->cabinet->number,

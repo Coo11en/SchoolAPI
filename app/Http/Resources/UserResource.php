@@ -35,10 +35,19 @@ class UserResource extends JsonResource
             $result['avatar'] = Storage::url($avatar)
             : $result['avatar'] = '';
 
-        if ($this->roles->isNotEmpty()) {
+        $roles = $this->roles;
+        if ($roles->isNotEmpty()) {
+            $result['isTeacher'] = $roles->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Учитель');
+            $result['isParent'] = $roles->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Родитель');
+            $result['isStudent'] = $roles->map(function ($item, $key) {
+                return $item->name;
+            })->contains('Студент');
 
             $role = $this->roles->first();
-//                return [$role];
             switch ($role->name) {
                 case 'Учитель' :
                     $teacher = Teacher::all()

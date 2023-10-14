@@ -40,20 +40,26 @@ class ScheduleCrudController extends CrudController
     protected function setupListOperation()
     {
 
-
+        $this->crud->with(['classroom']);
 //        CRUD::column('classroom_id');
-        CRUD::addColumn(
-            [
-            'label' => "Класс",
-            'type' => 'relationship',
-            // метод, который определяет отношения в модели
-            'name' => 'classroom',
-            // метод, который определяет отношения в модели
-            'entity' => 'classroom',
-            // атрибут внешнего ключа, который отображается пользователю
-            'attribute' =>'name',
-        ]
+        $this->crud->addColumn(
+                [
+                    'label' => 'Класс',
+                    'name' => 'classroom.name', // relation.column_name
+                ]
         );
+//        CRUD::addColumn(
+//            [
+//            'label' => "Класс",
+//            'type' => 'relationship',
+//            // метод, который определяет отношения в модели
+//            'name' => 'classroom',
+//            // метод, который определяет отношения в модели
+//            'entity' => 'classroom',
+//            // атрибут внешнего ключа, который отображается пользователю
+//            'attribute' =>'name',
+//        ]
+//        );
         CRUD::column('week_day_name');
         CRUD::column('callSchedule_id');
 

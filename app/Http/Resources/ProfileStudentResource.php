@@ -20,7 +20,8 @@ class ProfileStudentResource extends JsonResource
         $user = $teacher->user;
         return [
             'name' => $this->surname.' '.$this->name.' '.$this->patronymic,
-            'imgSrc' => Storage::url($this->avatar),
+            'imgSrc' => Storage::url($this->user->avatar),
+
             'classroom' => [
                 'className' => $classroom->name,
                 'classNumber' => $classroom->cabinet->number,

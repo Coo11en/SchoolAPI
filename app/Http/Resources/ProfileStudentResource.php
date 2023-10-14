@@ -18,9 +18,13 @@ class ProfileStudentResource extends JsonResource
         $classroom = $this->classroom;
         $teacher = $classroom->teacher;
         $user = $teacher->user;
+        $avatar = $this->user->avatar;
         return [
             'name' => $this->surname.' '.$this->name.' '.$this->patronymic,
-            'imgSrc' => Storage::url($this->user->avatar),
+
+            'imgSrc' => (!empty($avatar))
+                        ? Storage::url($avatar)
+                        : false,
 
             'classroom' => [
                 'className' => $classroom->name,

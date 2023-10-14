@@ -44,6 +44,14 @@ class AlbumsCrudController extends CrudController
         CRUD::column('name')->label('Название');
         CRUD::column('description')->label('Описание');
         CRUD::column('nameEng')->label('Путь на сайте');
+        $this->crud->addColumn([
+            'label'     => "Главная фотонрафия",
+            'type'      => 'select',
+            'name'      => 'mainImg', // the method that defines the relationship in your Model
+            'entity'    => 'mainImg', // the method that defines the relationship in your Model
+            'model'     => "App\Models\Photo", // foreign key model
+            'attribute' => 'img',
+        ]);
         CRUD::column('relationship')->label('Зависимый');
         CRUD::column('status')->label('Статус');
         CRUD::column('created_at')->label('Дата создания');

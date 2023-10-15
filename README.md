@@ -6,7 +6,7 @@
 Для работы загрузки фотографий и документов через админ панель необходимо раскоментировать строки в моделях находящихся по пути app/Models/ Banner.php, Docimage.php, Docsource.php, Photo.php
 
 ```bash
-//    public function setImgAttribute($value)
+//    public function set{NAME}Attribute($value)
 //    {
         .....
 //    }

@@ -7,6 +7,7 @@ use App\Models\Album;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Lagoon\Reef\app\Helpers\PermissionHelper;
 
 /**
@@ -80,6 +81,7 @@ class AlbumsCrudController extends CrudController
         CRUD::field('name')->label('Название');
         CRUD::field('description')->label('Описание');
         CRUD::field('nameEng')->label('Путь на сайте');
+//        CRUD::field('mainImg')->on('saving', function ($item) {Storage::disk('public')->put('item.json',json_encode($item));});
         $this->crud->addField([
             'label' => 'Главная фотография',
             'type' => 'select2_multiple',
@@ -87,14 +89,19 @@ class AlbumsCrudController extends CrudController
             'entity' => 'mainImg', // the relationship name in your Model
             'attribute' => 'img', // attribute on Article that is shown to admin
             'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
-//            'pivotFields' => ['main_img'=>'main_img'],
+            'pivotFields' => ['mainImg'=>'main_img'],
+            'events' => [
+                'saving' => function ($entry) {
+                    Storage::disk('public')->put('item.json',json_encode($entry->pivot));
+                },
+            ]
         ]);
 //        $this->crud->addField([
 //            'label' => 'Flag',
 //            'type' => 'pivot',
 //            'name' => 'mainImg', // the relationship name in your Model
 //            'entity' => 'mainImg', // the relationship name in your Model
-//            'attribute' => 'pivot.mainImg', // attribute on Article that is shown to admin
+//            'attribute' => 'pivot', // attribute on Article that is shown to admin
 //            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
 //            'pivotFields' => ['mainImg'=>'main_img'],
 //        ]);
@@ -117,7 +124,6 @@ class AlbumsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-
     }
 
 }

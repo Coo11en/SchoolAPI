@@ -28,7 +28,7 @@ class Photo extends Model
         'photos' => 'array'
     ];
 
-    public function teachers(): HasOne
+    public function teacher(): HasOne
     {
         return $this->hasOne(Teacher::class, 'main_photo_id');
     }

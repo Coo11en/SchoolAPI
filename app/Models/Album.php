@@ -39,7 +39,7 @@ class Album extends Model
 
     public function mainImg(): BelongsToMany
     {
-        return $this->belongsToMany(Photo::class)->withPivot('main_img')->wherePivot('main_img', 1);
+        return $this->belongsToMany(Photo::class)->wherePivot('main_img', 1);
     }
 
     public function updateMainImg(): BelongsToMany

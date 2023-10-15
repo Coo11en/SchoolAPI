@@ -5,6 +5,12 @@
 <h2 align="center"> ВНИМАНИЕ !!!! </h2>
 Для работы загрузки фотографий и документов через админ панель необходимо раскоментировать строки в моделях находящихся по пути app/Models/ Banner.php, Docimage.php, Docsource.php, Photo.php
 
+```bash
+//    public function setImgAttribute($value)
+//    {
+        .....
+//    }
+```
 <h2 align="center"> Admin панель</h2>
 
 Путь к админ панели: /admin/login

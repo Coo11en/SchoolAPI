@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Backpack\PermissionManager\app\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,6 +28,7 @@ class TeacherFactory extends Factory
                 fake()->text(30),
                 fake()->text(30)],
             ),
+            //'role_id' => Role::factory(),
             'role_id' => fake()->randomNumber(1,3),
             'created_at' => now(),
             'updated_at' => now(),

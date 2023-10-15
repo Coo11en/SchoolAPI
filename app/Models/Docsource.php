@@ -32,15 +32,15 @@ class Docsource extends Model
         });
     }
 
-    public function setdocumentSourceAttribute($value)
-    {
-        $attribute_name = "documentSource";
-        $disk = "public";
-        $destination_path = "data/documents";
-
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-
-        $this->attributes[$attribute_name] = 'storage/' . $this->attributes[$attribute_name];
-    }
+//    public function setdocumentSourceAttribute($value)
+//    {
+//        $attribute_name = "documentSource";
+//        $disk = "public";
+//        $destination_path = "data/documents";
+//
+//        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+//
+//        $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
+//    }
 }
 

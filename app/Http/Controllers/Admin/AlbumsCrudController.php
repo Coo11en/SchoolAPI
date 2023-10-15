@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\AlbumsRequest;
-use App\Models\Album;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Lagoon\Reef\app\Helpers\PermissionHelper;
 
 /**
@@ -48,14 +45,7 @@ class AlbumsCrudController extends CrudController
         CRUD::column('name')->label('Название');
         CRUD::column('description')->label('Описание');
         CRUD::column('nameEng')->label('Путь на сайте');
-        $this->crud->addColumn([
-            'label'     => "Главная фотография",
-            'type'      => 'select',
-            'name'      => 'mainImg', // the method that defines the relationship in your Model
-            'entity'    => 'mainImg', // the method that defines the relationship in your Model
-            'model'     => "App\Models\Photo", // foreign key model
-            'attribute' => 'img',
-        ]);
+        CRUD::column('mainImg')->label('Главное фото');
         CRUD::column('relationship')->label('Зависимый');
         CRUD::column('status')->label('Статус');
         CRUD::column('created_at')->label('Дата создания');
@@ -81,30 +71,10 @@ class AlbumsCrudController extends CrudController
         CRUD::field('name')->label('Название');
         CRUD::field('description')->label('Описание');
         CRUD::field('nameEng')->label('Путь на сайте');
-//        CRUD::field('mainImg')->on('saving', function ($item) {Storage::disk('public')->put('item.json',json_encode($item));});
-        $this->crud->addField([
-            'label' => 'Главная фотография',
-            'type' => 'select2_multiple',
-            'name' => 'mainImg', // the relationship name in your Model
-            'entity' => 'mainImg', // the relationship name in your Model
-            'attribute' => 'img', // attribute on Article that is shown to admin
-            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
-            'pivotFields' => ['mainImg'=>'main_img'],
-            'events' => [
-                'saving' => function ($entry) {
-                    Storage::disk('public')->put('item.json',json_encode($entry->pivot));
-                },
-            ]
+        CRUD::field('mainImg')->label('Главное фото')->subfields([
+            ['name' => 'main_img'],
+//            ['name' => 'some_other_field']
         ]);
-//        $this->crud->addField([
-//            'label' => 'Flag',
-//            'type' => 'pivot',
-//            'name' => 'mainImg', // the relationship name in your Model
-//            'entity' => 'mainImg', // the relationship name in your Model
-//            'attribute' => 'pivot', // attribute on Article that is shown to admin
-//            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
-//            'pivotFields' => ['mainImg'=>'main_img'],
-//        ]);
 
         CRUD::field('relationship')->label('Зависимый');
 

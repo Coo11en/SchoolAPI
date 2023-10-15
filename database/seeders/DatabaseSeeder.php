@@ -108,10 +108,12 @@ class DatabaseSeeder extends Seeder
                 'number' => $cabinet[1]
             ])->create();
 
-
+        Role::create(['name' => 'Teacher']);
+        Role::create(['name' => 'Student']);
+        Role::create(['name' => 'Parent']);
 // Seed 2 Teachers
         Teacher::factory(8)
-            ->state(['role_id' => Role::where('name', '=', 'Учитель')->first()->id])
+            //->state(['role_id' => Role::where('name', '=', 'Учитель')->first()->id])
             ->create();
 
 // Seed 2 classrooms

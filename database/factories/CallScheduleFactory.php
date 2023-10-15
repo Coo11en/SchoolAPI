@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory
  */
-class Call_scheduleFactory extends Factory
+class CallScheduleFactory extends Factory
 {
     /**
      * Define the model's default state.

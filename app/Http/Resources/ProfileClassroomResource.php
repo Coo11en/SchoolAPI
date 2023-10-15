@@ -19,11 +19,11 @@ class ProfileClassroomResource extends JsonResource
             'classNumber' => $this->cabinet->number,
             'listStudents' => $this->students->map(function ($item, $key) {
                 return [
-                    $item->surname.' '.$item->name.' '.$item->patronymic,
-                    $item->parents->map(function ($item, $key){
-                        return [
-                            $item->surname.' '.$item->name.' '.$item->patronymic,
-                            $item->user->phone
+                    'studentName' => $item->surname.' '.$item->name.' '.$item->patronymic,
+                    'parents' => $item->parents->map(function ($item, $key){
+                        return (object)[
+                            'parentName' => $item->surname.' '.$item->name.' '.$item->patronymic,
+                            'parentPhone' => $item->user->phone
                         ];
                     })
                 ];

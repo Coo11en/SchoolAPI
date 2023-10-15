@@ -5,7 +5,6 @@
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/users') }}"><i class="nav-icon la la-user"></i> <span>Пользователи</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/roles') }}"><i class="nav-icon la la-group"></i> <span>Роли</span></a></li>
-{{--        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/rights') }}"><i class="nav-icon la la-user"></i> <span>Разрешения</span></a></li>--}}
     </ul>
 </li>
 
@@ -56,3 +55,24 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('schedule') }}"><i class="nav-icon la la-list-ol"></i> Расписание уроков</a></li>
     </ul>
 </li>
+
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Родители / Ученики</a>
+    <ul class="nav-dropdown-items">
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('parents') }}"><i class="nav-icon la la-question"></i> Родители / Parents</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Ученики / Students</a></li>
+    </ul>
+</li>
+
+
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Сведения об образовательной организации</a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('chapter') }}"><i class="nav-icon la la-question"></i> Главы / Chapters</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('section') }}"><i class="nav-icon la la-question"></i> Секции / Sections</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docsource') }}"><i class="nav-icon la la-question"></i> Секция документарная / Docsources</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docimage') }}"><i class="nav-icon la la-question"></i> Секция с изображениями / Docimages</a></li>
+    </ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('banner') }}"><i class="nav-icon la la-question"></i> Баннеры / Banners</a></li>
+

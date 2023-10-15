@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,20 +11,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Student extends Model
 {
+    use CrudTrait;
     use HasFactory;
 
     protected $table = 'students';
+    //protected $guarded = ['id'];
 
-//    public $incrementing = false;
+    protected $appends = ['full_name'];
 
     protected $fillable = [
         'user_id',
         'name',
         'surname',
-        'patronymic'
+        'patronymic',
+        'classroom_id'
     ];
 
-    public function parents(): BelongsToMany
+    public function getFullNameAttribute()
+    {
+        return $this->surname . ' ' . $this->name . ' ' . $this->patronymic;
+    }
+
+    public function parent(): BelongsToMany
     {
         return $this->belongsToMany(
             Parents::class,
@@ -36,8 +45,9 @@ class Student extends Model
     {
         return $this->belongsTo(Classroom::class);
     }
+
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 }

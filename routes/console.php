@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
+Artisan::command('test2', function () {
+    $cabinet = \App\Models\Cabinet::find(5);
+    dd($cabinet->toArray());
 })->purpose('Display an inspiring quote');
 
 Artisan::command('test', function () {

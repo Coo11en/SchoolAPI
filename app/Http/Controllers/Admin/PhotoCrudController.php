@@ -41,13 +41,13 @@ class PhotoCrudController extends CrudController
     protected function setupListOperation()
     {
 
-        CRUD::column('img')->label('Путь до фото')->key(1);
 
         $this->crud->addColumn([
             'name'      => 'img', // name of relationship method in the model
-            'type'      => 'view',
+            'type'      => 'image',
             'label'     => 'Фото', // Table column heading
-            'view'      => 'partials/image',
+            'disk' => 'public',
+            'height' => '100px'
         ]);
         $this->crud->addColumn([
             'name'      => 'albums', // name of relationship method in the model
@@ -68,6 +68,34 @@ class PhotoCrudController extends CrudController
          */
     }
 
+    protected function setupShowOperation()
+    {
+
+        $this->crud->addColumn([
+            'name'      => 'img', // name of relationship method in the model
+            'type'      => 'image',
+            'label'     => 'Фото', // Table column heading
+            'disk' => 'public',
+            'height' => '100px'
+        ]);
+        $this->crud->addColumn([
+            'name'      => 'albums', // name of relationship method in the model
+            'type'      => 'relationship',
+            'label'     => 'Альбом', // Table column heading
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model'     => Album::class, // foreign key model
+            'key'       => 2
+        ]);
+
+        CRUD::column('created_at')->label('Дата создания');
+
+
+        /**
+         * Columns can be defined using the fluent syntax or array syntax:
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
+         */
+    }
     /**
      * Define what happens when the Create operation is loaded.
      *
@@ -78,11 +106,13 @@ class PhotoCrudController extends CrudController
     {
         CRUD::setValidation(PhotoRequest::class);
 
-        $this->crud->addField([   // Upload
+        $this->crud->addField([
             'name'      => 'img',
             'label'     => 'Фото',
-            'type'      => 'upload',
-            'upload'    => true,
+            'type'      => 'image',
+            'crop'    => true,
+            'aspect_ratio' => 1,
+            'disk' => 'public',
         ]);
 
         $this->crud->addField([

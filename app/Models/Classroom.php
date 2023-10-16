@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Backpack\CRUD\app\Models\Traits\HasIdentifiableAttribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -22,8 +21,8 @@ class Classroom extends Model
 
     protected $fillable = [
         'name',
-        'teachers_id',
-        'cabinet_id'
+        'teacher_id',
+        'cabinet_id',
     ];
 
     /* Relations */

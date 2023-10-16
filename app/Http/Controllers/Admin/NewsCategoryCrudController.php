@@ -28,7 +28,7 @@ class NewsCategoryCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\NewsCategory::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/news-category');
-        CRUD::setEntityNameStrings('news category', 'news categories');
+        CRUD::setEntityNameStrings('', 'Категории');
     }
 
     /**
@@ -41,7 +41,14 @@ class NewsCategoryCrudController extends CrudController
     {
         CRUD::column('created_at')->label('Создана');
         CRUD::column('description')->label('Описание');
-        CRUD::column('image')->label('Изображение');
+//        CRUD::column('image')->label('Изображение');
+        $this->crud->addColumn([
+            'name'      => 'image', // name of relationship method in the model
+            'type'      => 'image',
+            'label'     => 'Фото', // Table column heading
+            'disk' => 'public',
+            'height' => '100px'
+        ]);
         CRUD::column('name')->label('Название');
         CRUD::column('updated_at')->label('Обновлена');
 
@@ -63,7 +70,14 @@ class NewsCategoryCrudController extends CrudController
         CRUD::setValidation(NewsCategoryRequest::class);
 
         CRUD::field('description')->label('Описание');
-        CRUD::field('image')->label('Изображение');
+        $this->crud->addField([
+            'name'      => 'image',
+            'label'     => 'Фото',
+            'type'      => 'image',
+            'crop'    => true,
+            'aspect_ratio' => 1,
+            'disk' => 'public',
+        ]);
         CRUD::field('name')->label('Название');
 
         /**

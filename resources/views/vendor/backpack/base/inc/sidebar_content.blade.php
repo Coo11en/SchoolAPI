@@ -84,3 +84,5 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('cabinet') }}"><i class="nav-icon la la-sign-in"></i> Кабинеты</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('achievement') }}"><i class="nav-icon la la-trophy"></i> Достижения</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>

@@ -98,7 +98,10 @@ class NewsCrudController extends CrudController
         $this->crud->addField([
         'name'  => 'status',
         'label' => 'Статус',
-//        'type'  => 'enum'
+        'type' => 'select_from_array',
+        'options'     => ['draft' => 'Подготовка', 'active' => 'Опубликованно', 'blocked' => 'Заблокировано'],
+        'allows_null' => false,
+        'default'     => 'one',
     ]);
         CRUD::field('pub_approve')->label('Дата новости');
         CRUD::field('video')->label('Видео');

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
+use Lagoon\Sand\app\Helpers\UploadHelper;
 
 class Photo extends Model
 {
@@ -24,9 +25,7 @@ class Photo extends Model
         'img',
     ];
 
-    protected $casts = [
-        'photos' => 'array'
-    ];
+
 
     public function teacher(): HasOne
     {
@@ -45,18 +44,18 @@ class Photo extends Model
     {
         parent::boot();
         static::deleted(function($obj) {
-            \Storage::disk('public_folder')->delete($obj->image);
+            Storage::disk('public')->delete($obj->img);
         });
     }
 
-//    public function setImgAttribute($value)
-//    {
-//        $attribute_name = "img";
-//        $disk = "public";
-//        $destination_path = "data/photo/album";
-//
-//        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-//
-//        $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
-//    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | MUTATORS
+    |--------------------------------------------------------------------------
+    */
+    public function setImgAttribute($value){
+        $fieldName = UploadHelper::getAttribute(__FUNCTION__);
+        $this->attributes[$fieldName] = UploadHelper::uploadImage($value, $this->attributes[$fieldName] ?? null, 'public', 'photos', '1200');
+    }
 }

@@ -7,6 +7,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Lagoon\Sand\app\Casts\Json;
 
 class Cabinet extends Model
 {
@@ -22,4 +23,7 @@ class Cabinet extends Model
         'images'
     ];
 
+    protected $casts = [
+        'images' => Json::class
+    ];
 }

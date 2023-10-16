@@ -5,6 +5,8 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Lagoon\Sand\app\Helpers\UploadHelper;
 
 class NewsCategory extends Model
 {
@@ -18,18 +20,29 @@ class NewsCategory extends Model
     */
 
     protected $table = 'news_categories';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
+    protected $primaryKey = 'id';
+    public $timestamps = true;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'description',
+        'image',
+    ];
     // protected $hidden = [];
-    // protected $dates = [];
+
 
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public static function boot()
+    {
+        parent::boot();
+        static::deleted(function($obj) {
+            Storage::disk('public')->delete($obj->image);
+        });
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -54,4 +67,8 @@ class NewsCategory extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+    public function setImageAttribute($value){
+        $fieldName = UploadHelper::getAttribute(__FUNCTION__);
+        $this->attributes[$fieldName] = UploadHelper::uploadImage($value, $this->attributes[$fieldName] ?? null, 'public', 'news_categories', '500');
+    }
 }

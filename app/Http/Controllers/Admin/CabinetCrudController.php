@@ -64,7 +64,28 @@ class CabinetCrudController extends CrudController
         CRUD::field('name')->label('Наименование');
         CRUD::field('number')->label('Номер кабинета');
         CRUD::field('description')->label('Описание');
-        CRUD::field('images')->label('Изображения');
+//        CRUD::field('images')->label('Изображения');
+        $this->crud->addField([   // repeatable
+            'name'  => 'images',
+            'label' => 'Картинки',
+            'type'  => 'repeatable',
+            'subfields' => [ // also works as: "fields"
+                [   // Browse
+                    'name'  => 'value',
+                    'label' => 'Картинка',
+                    'type'  => 'browse'
+                ],
+            ],
+
+            // optional
+            'new_item_label'  => 'Добавить фото', // customize the text of the button
+            'init_rows' => 0, // number of empty rows to be initialized, by default 1
+            'min_rows' => 0, // minimum rows allowed, when reached the "delete" buttons will be hidden
+            'max_rows' => 10, // maximum rows allowed, when reached the "new item" button will be hidden
+            'reorder' => true, // show up&down arrows next to each row
+
+        ]);
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

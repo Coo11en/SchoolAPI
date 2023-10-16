@@ -17,6 +17,7 @@ class Cabinet extends Model
 
     protected $fillable = [
         'name',
+        'number',
         'description',
         'images'
     ];

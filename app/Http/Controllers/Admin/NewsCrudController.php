@@ -95,7 +95,7 @@ class NewsCrudController extends CrudController
         CRUD::field('news_category_id')->label('Категория новости');
         CRUD::field('album_id')->label('Альбом');
 //        CRUD::field('status');
-        ;$this->crud->addField([
+        $this->crud->addField([
         'name'  => 'status',
         'label' => 'Статус',
 //        'type'  => 'enum'

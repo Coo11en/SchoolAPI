@@ -40,6 +40,7 @@ class CabinetCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('name')->label('Наименование');
+        CRUD::column('number')->label('Номер кабинета');
         CRUD::column('description')->label('Описание');
         CRUD::column('images')->label('Изображения');
 
@@ -61,6 +62,7 @@ class CabinetCrudController extends CrudController
         CRUD::setValidation(CabinetRequest::class);
 
         CRUD::field('name')->label('Наименование');
+        CRUD::field('number')->label('Номер кабинета');
         CRUD::field('description')->label('Описание');
         CRUD::field('images')->label('Изображения');
 

@@ -42,15 +42,23 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title');
-        CRUD::column('author');
-        CRUD::column('description');
-        CRUD::column('text');
-        CRUD::column('news_category_id');
-        CRUD::column('album_id');
-        CRUD::column('status');
-        CRUD::column('pub_approve');
-        CRUD::column('video');
+        CRUD::column('title')->label('Описание');
+        CRUD::column('author')->label('Автор');
+        CRUD::column('description')->label('Описание');
+        CRUD::column('text')->label('Текст');
+        CRUD::column('news_category_id')->label('Категория');
+        CRUD::column('album_id')->label('Альбом');
+        CRUD::column('status')->wrapper([
+            'class' => function ($crud, $column, $entry) {
+            return match ($entry->status) {
+                'active' => 'badge bg-success',
+                'draft' => 'badge bg-warning',
+                'blocked' => 'badge bg-danger',
+                };
+            },
+        ])->label('Статус');
+        CRUD::column('pub_approve')->label('Дата публикации');
+        CRUD::column('video')->label('Видео');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -69,8 +77,8 @@ class NewsCrudController extends CrudController
     {
         CRUD::setValidation(NewsRequest::class);
 
-        CRUD::field('title');
-        CRUD::field('author');
+        CRUD::field('title')->label('Описание');
+        CRUD::field('author')->label('Автор');
         $this->crud->addFields([
             [   // Textarea
                 'name'  => 'description',
@@ -84,11 +92,19 @@ class NewsCrudController extends CrudController
                 'wrapper' => ['class' => 'form-group col-md-12'],
             ],
         ]);
-        CRUD::field('news_category_id');
-        CRUD::field('album_id');
-        CRUD::field('status');
-        CRUD::field('pub_approve');
-        CRUD::field('video');
+        CRUD::field('news_category_id')->label('Категория новости');
+        CRUD::field('album_id')->label('Альбом');
+//        CRUD::field('status');
+        $this->crud->addField([
+        'name'  => 'status',
+        'label' => 'Статус',
+        'type' => 'select_from_array',
+        'options'     => ['draft' => 'Подготовка', 'active' => 'Опубликованно', 'blocked' => 'Заблокировано'],
+        'allows_null' => false,
+        'default'     => 'one',
+    ]);
+        CRUD::field('pub_approve')->label('Дата новости');
+        CRUD::field('video')->label('Видео');
 
 
         /**

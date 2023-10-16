@@ -86,12 +86,12 @@ class PhotoCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-                'label' => 'Альбом',
-                'type'  => 'select2_multiple',
-                'name'  => 'albums',
-                'entity' => 'albums',
-                'attribute' => 'name',
-                'pivot' => true,
+            'label' => 'Альбом',
+            'type'  => 'select2_multiple',
+            'name'  => 'albums',
+            'entity' => 'albums',
+            'attribute' => 'name',
+            'pivot' => true,
         ]);
 
         /**

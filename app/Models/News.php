@@ -80,14 +80,15 @@ class  News extends Model
     {
         $query->where('status', NewsStatus::ACTIVE->value);
     }
+//    protected $casts = ['status' => \App\Enums\NewsStatus::class];
 //
-//    public function scopeDraft(Builder $query): void
-//    {
-//        $query->where('status', NewsStatus::DRAFT->value);
-//    }
-//
-//    public function scopeBlocked(Builder $query): void
-//    {
-//        $query->where('status', NewsStatus::BLOCKED->value);
-//    }
+    public function scopeDraft(Builder $query): void
+    {
+        $query->where('status', NewsStatus::DRAFT->value);
+    }
+////
+    public function scopeBlocked(Builder $query): void
+    {
+        $query->where('status', NewsStatus::BLOCKED->value);
+    }
 }

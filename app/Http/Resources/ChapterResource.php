@@ -14,12 +14,13 @@ class ChapterResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
         //return parent::toArray($request);
         return [
             'сhapterId' => $this->id,
             'slug' => $this->slug,
             'chapterTitle' => $this->chapterTitle,
-            'section' => SectionResource::collection($this->sections),
+            'section' => SectionResource::collection($this->section),
         ];
     }
 }

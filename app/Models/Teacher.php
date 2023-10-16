@@ -17,6 +17,11 @@ class Teacher extends Model
 
     protected $table = 'teachers';
 
+    protected $appends = [
+        'full_name',
+        'positions'
+    ];
+
 //    public $incrementing = false;
 
     protected $fillable = [
@@ -34,6 +39,15 @@ class Teacher extends Model
         'isAdministration',
         'main_photo_id',
     ];
+
+    public function getFullNameAttribute()
+    {
+        return $this->surname.' '.$this->name.' '.$this->patronymic;
+    }
+    public function getPositionsAttribute()
+    {
+        return (string)(json_decode($this->job_title, true));
+    }
 
     public function schedules(): HasMany
     {

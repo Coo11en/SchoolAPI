@@ -38,7 +38,7 @@ class MenuBasic extends Model
     |--------------------------------------------------------------------------
     */
     public function menu_item(): BelongsToMany {
-        return $this->belongsToMany(Menu_item::class,'menus');
+        return $this->belongsToMany(MenuItem::class,'menus');
     }
     /*
     |--------------------------------------------------------------------------

@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Appeals_category;
-use \Database\Factories\Appeals_categoryFactory;
+use App\Models\AppealCategory;
+use \Database\Factories\AppealCategoryFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,7 +27,7 @@ class AppealFactory extends Factory
             'question' => fake()->text(300),
             'status' => false,
             'response' => fake()->text(3000),
-            'category_id' => Appeals_category::factory(),
+            'category_id' => AppealCategory::factory(),
             'top_questions' => fake()->randomElement([true, false]),
             'date_completion' => fake()->randomElement([now(), null]),
             'created_at' => $DateUp,

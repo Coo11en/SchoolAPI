@@ -40,10 +40,12 @@ class TeacherCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('user_id');
-        CRUD::column('name');
-        CRUD::column('surname');
-        CRUD::column('patronymic');
+        CRUD::column('full_name');
+//        CRUD::column('name');
+//        CRUD::column('surname');
+//        CRUD::column('patronymic');
         CRUD::column('job_title');
+//        CRUD::column('positions');
         CRUD::column('role_id');
         CRUD::column('main_photo_id');
         CRUD::column('speciality');
@@ -72,6 +74,7 @@ class TeacherCrudController extends CrudController
         CRUD::field('surname');
         CRUD::field('patronymic');
         CRUD::field('job_title');
+//        CRUD::field('positions');
         CRUD::field('role_id');
         CRUD::field('main_photo_id');
         CRUD::field('speciality');

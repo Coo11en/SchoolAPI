@@ -20,7 +20,7 @@ class ChapterResource extends JsonResource
             'сhapterId' => $this->id,
             'slug' => $this->slug,
             'chapterTitle' => $this->chapterTitle,
-            'section' => SectionResource::collection($this->sections),
+            'section' => SectionResource::collection($this->section),
         ];
     }
 }

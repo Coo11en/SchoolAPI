@@ -13,6 +13,7 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
  */
 class StudentCrudController extends CrudController
 {
+
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
@@ -28,7 +29,7 @@ class StudentCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Student::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/student');
-        CRUD::setEntityNameStrings('student', 'students');
+        CRUD::setEntityNameStrings('Ученика', 'Ученики');
     }
 
     /**
@@ -39,11 +40,18 @@ class StudentCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('user_id');
-        CRUD::column('name');
-        CRUD::column('surname');
-        CRUD::column('patronymic');
-        CRUD::column('classroom_id');
+        CRUD::column('user_id')->label('USER');
+        CRUD::column('full_name')->label('Ученик');
+        CRUD::column('classroom_id')->label('Класс');
+        CRUD::addColumn([
+            'name'      => 'parent',
+            'type'      => 'relationship',
+            'label'     => 'Родители',
+            //'entity'    => 'parent', //метод, определяющий связь в модели
+            //'model'     => Student::class, //модель внешнего ключа
+            'attribute' => 'full_name', //свойство модели, отображаемое пользователю
+            'pivot'     => true,
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -63,10 +71,19 @@ class StudentCrudController extends CrudController
         CRUD::setValidation(StudentRequest::class);
 
         CRUD::field('user_id');
-        CRUD::field('name');
-        CRUD::field('surname');
-        CRUD::field('patronymic');
-        CRUD::field('classroom_id');
+        CRUD::field('surname')->label('Фамилия');
+        CRUD::field('name')->label('Имя');
+        CRUD::field('patronymic')->label('Отчество');
+        CRUD::field('classroom_id')->label('Класс');
+        CRUD::addFields([[
+            'name'      => 'parent',
+            'type'      => 'select2_multiple',
+            'label'     => 'Родители',
+            //'entity'    => 'parent', //метод, определяющий связь в модели
+            //'model'     => Parents::class, //модель внешнего ключа
+            'attribute' => 'full_name', //свойство модели, отображаемое пользователю
+            'pivot'     => true,
+        ]]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Parent_student extends Model
 {
+    use CrudTrait;
     use HasFactory;
+
     protected  $table = 'parent_student';
-    protected $fillable = [
-        'parent_id',
-        'student_id',
-    ];
+    //protected $fillable = [
+    //'parent_id',
+    //'student_id',
+    //];
 
 //    public function parents()
 //    {

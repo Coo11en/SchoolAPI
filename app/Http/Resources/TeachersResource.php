@@ -13,8 +13,9 @@ class TeachersResource extends JsonResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    {
+    {//dd(new PhotoResource($this->photos));
         $photos = new PhotoResource($this->photos->first());
+
         $users = new UserResource($this->users);
 
         return [

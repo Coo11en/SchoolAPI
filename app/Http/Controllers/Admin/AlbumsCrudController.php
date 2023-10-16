@@ -29,8 +29,9 @@ class AlbumsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Album::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/albums');
-        CRUD::setEntityNameStrings('album', 'albums');
+        CRUD::setEntityNameStrings('альбом', 'альбомы');
         $this->crud = PermissionHelper::applyPermissions($this->crud, 'albums');
+
     }
 
     /**
@@ -41,12 +42,13 @@ class AlbumsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('created_at')->label('Когда создан');
-        CRUD::column('description')->label('Описание');
         CRUD::column('name')->label('Название');
-        CRUD::column('nameEng')->label('Название на английском');
-        CRUD::column('relationship')->label('Взаимосвзяь');
+        CRUD::column('description')->label('Описание');
+        CRUD::column('nameEng')->label('Путь на сайте');
+        CRUD::column('mainImg')->label('Главное фото');
+        CRUD::column('relationship')->label('Зависимый');
         CRUD::column('status')->label('Статус');
+        CRUD::column('created_at')->label('Дата создания');
         CRUD::column('updated_at')->label('Дата обновления');
 
         /**
@@ -66,11 +68,15 @@ class AlbumsCrudController extends CrudController
     {
         CRUD::setValidation(AlbumsRequest::class);
 
-        CRUD::field('description')->label('Описание');
         CRUD::field('name')->label('Название');
-        CRUD::field('nameEng')->label('Название на английском');
-        CRUD::field('relationship')->label('Взаимосвязь');
-        CRUD::field('status')->label('Статус');
+        CRUD::field('description')->label('Описание');
+        CRUD::field('nameEng')->label('Путь на сайте');
+        CRUD::field('mainImg')->label('Главное фото')->subfields([
+            ['name' => 'main_img'],
+//            ['name' => 'some_other_field']
+        ]);
+
+        CRUD::field('relationship')->label('Зависимый');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -89,4 +95,5 @@ class AlbumsCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
 }

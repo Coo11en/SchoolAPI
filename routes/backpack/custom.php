@@ -16,6 +16,26 @@ Route::group([
     ),
     'namespace'  => null,
 ], function () { // custom admin routes
+    Route::crud('news', NewsCrudController::class);
+    Route::crud('albums', AlbumsCrudController::class);
+    Route::crud('news-category', NewsCategoryCrudController::class);
+    Route::crud('photo', PhotoCrudController::class);
+    Route::crud('teacher', TeacherCrudController::class);
+    Route::crud('menu-basic', MenuBasicCrudController::class);
+    Route::crud('menu-item', MenuItemCrudController::class);
+    Route::crud('call-schedule', CallScheduleCrudController::class);
+    Route::crud('subject', SubjectCrudController::class);
+    Route::crud('day', DayCrudController::class);
+    Route::crud('schedule', ScheduleCrudController::class);
+    Route::crud('appeal', AppealCrudController::class);
+    Route::crud('appeal-category', AppealCategoryCrudController::class);
+    Route::crud('banner', BannerCrudCrudController::class);
+    Route::crud('chapter', ChapterCrudController::class);
+    Route::crud('docimage', DocimageCrudController::class);
+    Route::crud('docsource', DocsourceCrudController::class);
+    Route::crud('parents', ParentsCrudController::class);
+    Route::crud('section', SectionCrudController::class);
+    Route::crud('student', StudentCrudController::class);
     Route::crud('news', App\Http\Controllers\Admin\NewsCrudController::class);
     Route::crud('albums', App\Http\Controllers\Admin\AlbumsCrudController::class);
     Route::crud('news-category', App\Http\Controllers\Admin\NewsCategoryCrudController::class);

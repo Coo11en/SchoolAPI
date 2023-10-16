@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory
  */
-class Call_scheduleFactory extends Factory
+class CallScheduleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,6 @@ class Call_scheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            //'id' => $this->faker->id(),
             'call_number' => $this->faker->numberBetween(1,8),
             'start_time' => fake()->time,
             'lesson_time' => '45',

@@ -29,7 +29,7 @@ class Album extends Model
         return $this->belongsToMany(
             Photo::class,
             'album_photo',
-        );
+        )->withPivot('main_img');
     }
 
     public function news(): HasOne
@@ -39,6 +39,11 @@ class Album extends Model
 
     public function mainImg(): BelongsToMany
     {
-        return $this->belongsToMany(Photo::class)->wherePivot('main_img', 1);
+        return $this->belongsToMany(Photo::class,'album_photo')->withPivot('main_img')->wherePivot('main_img', 1);
+    }
+
+    public function updateMainImg(): BelongsToMany
+    {
+        return $this->belongsToMany(Photo::class, 'album_photo')->withPivot('main_img');
     }
 }

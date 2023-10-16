@@ -46,15 +46,11 @@ class MenuBasicCrudController extends CrudController
             'name'      => 'menu_item', // name of relationship method in the model
             'type'      => 'relationship',
             'label'     => 'Состав блюд на прием пищи', // Table column heading
-            //'suffix'    => ' /br', // to show "123 tags" instead of "123"
-            // OPTIONAL
-            // 'entity'    => 'tags', // the method that defines the relationship in your Model
             'attribute' => 'name_dish', // foreign key attribute that is shown to user
             'model'     => MenuItem::class, // foreign key model
         ]);
         CRUD::column('name_menu')->label('Вид приема пищи');
         CRUD::column('price')->label('Стоимость приема пищи');
-
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -91,7 +87,7 @@ class MenuBasicCrudController extends CrudController
                 'attribute' => 'name_dish',
                 //'attributes' => 'dish_output',
                 'pivot' => true,
-                'model' => 'App\Models\Menu_item',
+                'model' => 'App\Models\MenuItem',
             ],
         ]);
         CRUD::field('menu_title')->label('Наименование меню')->default('Меню ежедневного горячего питания');

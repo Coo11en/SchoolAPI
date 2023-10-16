@@ -15,18 +15,24 @@ class Student extends Model
     use HasFactory;
 
     protected $table = 'students';
+    //protected $guarded = ['id'];
 
-//    public $incrementing = false;
+    protected $appends = ['full_name'];
 
     protected $fillable = [
         'user_id',
         'name',
         'surname',
         'patronymic',
-        'classroom_id',
+        'classroom_id'
     ];
 
-    public function parents(): BelongsToMany
+    public function getFullNameAttribute()
+    {
+        return $this->surname . ' ' . $this->name . ' ' . $this->patronymic;
+    }
+
+    public function parent(): BelongsToMany
     {
         return $this->belongsToMany(
             Parents::class,
@@ -38,5 +44,10 @@ class Student extends Model
     public function classroom(): BelongsTo
     {
         return $this->belongsTo(Classroom::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

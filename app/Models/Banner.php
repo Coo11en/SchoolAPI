@@ -29,12 +29,12 @@ class Banner extends Model
         });
     }
 
-//    public function setImgAttribute($value)
-//    {
-//        $attribute_name = "img";
-//        $disk = "public";
-//        $destination_path = "data/documents";
-//        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-//        $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
-//    }
+    public function setImgAttribute($value)
+    {
+        $attribute_name = "img";
+        $disk = "public";
+        $destination_path = "data/documents";
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+        $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
+    }
 }

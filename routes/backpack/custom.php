@@ -30,4 +30,11 @@ Route::group([
     Route::crud('schedule', ScheduleCrudController::class);
     Route::crud('appeal', AppealCrudController::class);
     Route::crud('appeal-category', AppealCategoryCrudController::class);
+    Route::crud('banner', BannerCrudCrudController::class);
+    Route::crud('chapter', ChapterCrudController::class);
+    Route::crud('docimage', DocimageCrudController::class);
+    Route::crud('docsource', DocsourceCrudController::class);
+    Route::crud('parents', ParentsCrudController::class);
+    Route::crud('section', SectionCrudController::class);
+    Route::crud('student', StudentCrudController::class);
 }); // this should be the absolute last line of this file

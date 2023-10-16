@@ -70,10 +70,10 @@ class DatabaseSeeder extends Seeder
 
         //Banner
         $banners = [
-            ['first_class', 'Запишите детей в первый класс', 'documents/prilozhenie-300x148.png', 'http://филипповская-школа.рф/2202-2/', ''],
-            ['point', 'Точка роста', 'documents/tochka-300x180.jpg', 'http://филипповская-школа.рф/czentr-estestvenno-nauchnogo-profilya-tochka-rosta/',''],
-            ['', 'Департамент образования Владимирской области', 'documents/depvo.jpg', 'https://департамент.образование33.рф/'],
-            ['', 'Персональные данные ДЕТИ', 'documents/persdeti.png', 'http://персональныеданные.дети/']
+            ['first_class', 'Запишите детей в первый класс', 'http://localhost:7777/storage/data/documents/1137d628dad460bf1ed97d010af483f1.png', 'http://филипповская-школа.рф/2202-2/', ''],
+            ['point', 'Точка роста', 'http://localhost:7777/storage/data/documents/32b4a11f1ac2039c98bd9bdb3e840138.jpg', 'http://филипповская-школа.рф/czentr-estestvenno-nauchnogo-profilya-tochka-rosta/',''],
+            ['', 'Департамент образования Владимирской области', 'http://localhost:7777/storage/data/documents/2ed3334398a7c336fac29fe201d9364f.jpg', 'https://департамент.образование33.рф/'],
+            ['', 'Персональные данные ДЕТИ', 'http://localhost:7777/storage/data/documents/7ca4331b458e07987a5da87c4ccc17ce.png', 'http://персональныеданные.дети/']
         ];
         foreach ($banners as $banner) {
             Banner::factory()->state(['slug' => $banner[0], 'bannerTitle' => $banner[1], 'img' => $banner[2], 'ref' => $banner[3]])->create();

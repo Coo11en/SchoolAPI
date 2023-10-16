@@ -41,13 +41,13 @@ class AlbumsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('created_at');
-        CRUD::column('description');
-        CRUD::column('name');
-        CRUD::column('nameEng');
-        CRUD::column('relationship');
-        CRUD::column('status');
-        CRUD::column('updated_at');
+        CRUD::column('created_at')->label('Когда создан');
+        CRUD::column('description')->label('Описание');
+        CRUD::column('name')->label('Название');
+        CRUD::column('nameEng')->label('Название на английском');
+        CRUD::column('relationship')->label('Взаимосвзяь');
+        CRUD::column('status')->label('Статус');
+        CRUD::column('updated_at')->label('Дата обновления');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -66,11 +66,11 @@ class AlbumsCrudController extends CrudController
     {
         CRUD::setValidation(AlbumsRequest::class);
 
-        CRUD::field('description');
-        CRUD::field('name');
-        CRUD::field('nameEng');
-        CRUD::field('relationship');
-        CRUD::field('status');
+        CRUD::field('description')->label('Описание');
+        CRUD::field('name')->label('Название');
+        CRUD::field('nameEng')->label('Название на английском');
+        CRUD::field('relationship')->label('Взаимосвязь');
+        CRUD::field('status')->label('Статус');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

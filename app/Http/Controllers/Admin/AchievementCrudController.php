@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ClassroomRequest;
-use App\Models\MenuItem;
-use App\Models\Teacher;
+use App\Http\Requests\AchievementRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ClassroomCrudController
+ * Class AchievementCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ClassroomCrudController extends CrudController
+class AchievementCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -28,9 +26,9 @@ class ClassroomCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Classroom::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/classroom');
-        CRUD::setEntityNameStrings('classroom', 'classrooms');
+        CRUD::setModel(\App\Models\Achievement::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/achievement');
+        CRUD::setEntityNameStrings('achievement', 'achievements');
     }
 
     /**
@@ -41,14 +39,8 @@ class ClassroomCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        $this->crud->addColumn([
-            'name'      => 'teacher', // name of relationship method in the model
-            'type'      => 'relationship',
-            'label'     => 'Учитель', // Table column heading
-            'model'     => Teacher::class, // foreign key model
-        ]);
-        CRUD::column('cabinet_id')->label('Кабинет');
+        CRUD::column('name')->label('Наименование');
+        CRUD::column('value')->label('Значение');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -65,25 +57,10 @@ class ClassroomCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ClassroomRequest::class);
+        CRUD::setValidation(AchievementRequest::class);
 
-        $this->crud->addFields([
-            [   // Textarea
-                'name'  => 'name',
-                'label' => 'Наименование класса',
-            ],
-            [
-                'name'  => 'teacher_id',
-                'label' => 'Учитель',
-                'type' => 'select2',
-                'attribute' => 'surname',
-                'default' => '-',
-            ]
-        ]);
-        //CRUD::field('name');
-        CRUD::field('teacher_id')->label('Учитель');
-        CRUD::field('cabinet_id')->label('Кабинет');
-
+        CRUD::field('name')->label('Наименование');
+        CRUD::field('value')->label('Значение');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -26,4 +26,5 @@ Route::group([
     Route::crud('student', App\Http\Controllers\Admin\StudentCrudController::class);
     Route::crud('classroom', App\Http\Controllers\Admin\ClassroomCrudController::class);
     Route::crud('cabinet', App\Http\Controllers\Admin\CabinetCrudController::class);
+    Route::crud('achievement', App\Http\Controllers\Admin\AchievementCrudController::class);
 }); // this should be the absolute last line of this file

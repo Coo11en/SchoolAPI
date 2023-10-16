@@ -36,7 +36,8 @@
         "lagoon/sand": "^1.6",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "ziming/json-field-for-backpack": "^1.2"
     },
     "require-dev": {
         "backpack/generators": "^3.3",

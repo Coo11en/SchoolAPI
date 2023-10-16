@@ -5,6 +5,9 @@
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/users') }}"><i class="nav-icon la la-user"></i> <span>Пользователи</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/roles') }}"><i class="nav-icon la la-group"></i> <span>Роли</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('parents') }}"><i class="nav-icon la la-question"></i> Родители / Parents</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Ученики / Students</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('teacher') }}"><i class="nav-icon la la-graduation-cap"></i> Учителя</a></li>
     </ul>
 </li>
 
@@ -20,12 +23,15 @@
    @endpush
 @endonce
 
-@if(reef_can('news.list'))
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-file-text"></i> Новости</a></li>
-@endif
-
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('news-category') }}"><i class="nav-icon la la-question"></i> Категории новостей</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('teacher') }}"><i class="nav-icon la la-graduation-cap"></i> Учителя</a></li>
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Управление фотографиями</a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news-category') }}"><i class="nav-icon la la-question"></i> Категории новостей</a></li>
+        @if(reef_can('news.list'))
+            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-file-text"></i> Новости</a></li>
+        @endif
+    </ul>
+</li>
 
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Управление фотографиями</a>
@@ -61,15 +67,6 @@
 </li>
 
 <li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Родители / Ученики</a>
-    <ul class="nav-dropdown-items">
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('parents') }}"><i class="nav-icon la la-question"></i> Родители / Parents</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Ученики / Students</a></li>
-    </ul>
-</li>
-
-
-<li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Сведения об образовательной организации</a>
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('chapter') }}"><i class="nav-icon la la-question"></i> Главы / Chapters</a></li>
@@ -84,5 +81,4 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('cabinet') }}"><i class="nav-icon la la-sign-in"></i> Кабинеты</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('achievement') }}"><i class="nav-icon la la-trophy"></i> Достижения</a></li>
-
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>

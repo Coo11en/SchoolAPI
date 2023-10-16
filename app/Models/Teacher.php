@@ -46,7 +46,7 @@ class Teacher extends Model
     }
     public function getPositionsAttribute()
     {
-        return (string)(json_decode($this->job_title, true));
+        return implode(',', json_decode($this->job_title, true));
     }
 
     public function schedules(): HasMany

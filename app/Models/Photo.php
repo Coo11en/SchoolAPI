@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
+use Lagoon\Sand\app\Helpers\UploadHelper;
 
 class Photo extends Model
 {
@@ -45,7 +46,7 @@ class Photo extends Model
     {
         parent::boot();
         static::deleted(function($obj) {
-            \Storage::disk('public_folder')->delete($obj->image);
+            Storage::disk('public_folder')->delete($obj->img);
         });
     }
 

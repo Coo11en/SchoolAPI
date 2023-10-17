@@ -42,7 +42,7 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title')->label('Описание');
+        CRUD::column('title')->label('Заголовок');
         CRUD::column('author')->label('Автор');
         CRUD::column('description')->label('Описание');
         CRUD::column('text')->label('Текст');
@@ -77,7 +77,7 @@ class NewsCrudController extends CrudController
     {
         CRUD::setValidation(NewsRequest::class);
 
-        CRUD::field('title')->label('Описание');
+        CRUD::field('title')->label('Заголовок');
         CRUD::field('author')->label('Автор');
         $this->crud->addFields([
             [   // Textarea

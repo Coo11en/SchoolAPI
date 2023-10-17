@@ -5,9 +5,9 @@
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/users') }}"><i class="nav-icon la la-user"></i> <span>Пользователи</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('/system/roles') }}"><i class="nav-icon la la-group"></i> <span>Роли</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('parents') }}"><i class="nav-icon la la-question"></i> Родители / Parents</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Ученики / Students</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('teacher') }}"><i class="nav-icon la la-graduation-cap"></i> Учителя</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('parents') }}"><i class="nav-icon la la-question"></i> Родители</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('student') }}"><i class="nav-icon la la-question"></i> Ученики</a></li>
     </ul>
 </li>
 
@@ -24,7 +24,7 @@
 @endonce
 
 <li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Управление фотографиями</a>
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Управление новостями</a>
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news-category') }}"><i class="nav-icon la la-question"></i> Категории новостей</a></li>
         @if(reef_can('news.list'))
@@ -63,22 +63,22 @@
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('subject') }}"><i class="nav-icon la la-flask"></i> Предметы</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('day') }}"><i class="nav-icon la la-calendar-o"></i> Дни недели</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('schedule') }}"><i class="nav-icon la la-list-ol"></i> Расписание уроков</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('classroom') }}"><i class="nav-icon la la-users"></i> Классы</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('cabinet') }}"><i class="nav-icon la la-sign-in"></i> Кабинеты</a></li>
     </ul>
 </li>
 
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-archive"></i> Сведения об образовательной организации</a>
     <ul class="nav-dropdown-items">
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('chapter') }}"><i class="nav-icon la la-question"></i> Главы / Chapters</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('section') }}"><i class="nav-icon la la-question"></i> Секции / Sections</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docsource') }}"><i class="nav-icon la la-question"></i> Секция документарная / Docsources</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docimage') }}"><i class="nav-icon la la-question"></i> Секция с изображениями / Docimages</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('chapter') }}"><i class="nav-icon la la-question"></i> Разделы</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('section') }}"><i class="nav-icon la la-question"></i> Секции разделов</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docsource') }}"><i class="nav-icon la la-question"></i> Документы файлами</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('docimage') }}"><i class="nav-icon la la-question"></i> Документы изображениями</a></li>
     </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('banner') }}"><i class="nav-icon la la-question"></i> Баннеры / Banners</a></li>
 
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('classroom') }}"><i class="nav-icon la la-users"></i> Классы</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('cabinet') }}"><i class="nav-icon la la-sign-in"></i> Кабинеты</a></li>
 
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('achievement') }}"><i class="nav-icon la la-trophy"></i> Достижения</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>
+{{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('achievement') }}"><i class="nav-icon la la-trophy"></i> Достижения</a></li>--}}
+{{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>--}}

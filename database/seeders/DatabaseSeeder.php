@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             StudentParentSeeder::class,
             MenuSeeder::class,
             AppealSeeder::class,
-            ChapterDocSeeder::class,
+//            ChapterDocSeeder::class,
         ]);
 
 // Создание пользователей для авторизации

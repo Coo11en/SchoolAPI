@@ -45,7 +45,7 @@ class CabinetCrudController extends CrudController
 //<<<<<<< HEAD
 //        CRUD::column('images')->label('Изображения');
 //=======
-        CRUD::column('view_img')->label('Изображения');
+        CRUD::column('images')->label('Изображения');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

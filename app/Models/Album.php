@@ -22,6 +22,7 @@ class Album extends Model
     protected $fillable = [
         'name',
         'description',
+        'nameEng'
     ];
 
     public function photos(): BelongsToMany

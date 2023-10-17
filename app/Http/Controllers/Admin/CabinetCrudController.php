@@ -28,7 +28,7 @@ class CabinetCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Cabinet::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/cabinet');
-        CRUD::setEntityNameStrings('cabinet', 'cabinets');
+        CRUD::setEntityNameStrings('Кабинет', 'Кабинеты');
     }
 
     /**

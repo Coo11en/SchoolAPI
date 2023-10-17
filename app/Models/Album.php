@@ -23,14 +23,17 @@ class Album extends Model
         'name',
         'description',
         'nameEng',
+        'relationship',
     ];
 
     public function photos(): BelongsToMany
     {
         return $this->belongsToMany(
             Photo::class,
-            'album_photo',
-        )->withPivot('main_img');
+            'album_photo'
+        )
+        //->withPivot('main_img')
+        ;
     }
 
     public function news(): HasOne

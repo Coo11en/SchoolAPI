@@ -16,6 +16,7 @@ class NewsListResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        //dd($this->album);
         return [
           'id' => $this->id,
           'title' => $this->title,

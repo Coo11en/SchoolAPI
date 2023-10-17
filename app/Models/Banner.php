@@ -6,6 +6,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Banner extends Model
 {
@@ -15,11 +16,16 @@ class Banner extends Model
     protected $table = 'banners';
 
     protected $fillable = [
-        'slug',
+        'chapter_id',
         'bannerTitle',
         'img',
         'ref'
     ];
+
+    public function chapter()
+    {
+        return $this->belongsTo(Chapter::class, 'chapter_id');
+    }
 
     public static function boot()
     {
@@ -34,7 +40,9 @@ class Banner extends Model
         $attribute_name = "img";
         $disk = "public";
         $destination_path = "data/documents";
+
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
         $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
     }
 }

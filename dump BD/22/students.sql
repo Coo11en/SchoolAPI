@@ -1,0 +1,5 @@
+INSERT INTO SAPI.students (id, user_id, name, surname, patronymic, classroom_id, created_at, updated_at) VALUES (1, 9, 'Майя', 'Миронова', 'Repellat.', 2, '2023-10-17 01:43:41', '2023-10-17 01:43:41');
+INSERT INTO SAPI.students (id, user_id, name, surname, patronymic, classroom_id, created_at, updated_at) VALUES (2, 10, 'Вячеслав', 'Мишина', 'Est quis occaecati.', 2, '2023-10-17 01:43:41', '2023-10-17 01:43:41');
+INSERT INTO SAPI.students (id, user_id, name, surname, patronymic, classroom_id, created_at, updated_at) VALUES (3, 11, 'Алиса', 'Евсеева', 'Hic dicta minus.', 2, '2023-10-17 01:43:41', '2023-10-17 01:43:41');
+INSERT INTO SAPI.students (id, user_id, name, surname, patronymic, classroom_id, created_at, updated_at) VALUES (4, 18, 'Искра', 'Медведева', 'Molestiae rem.', 2, '2023-10-17 01:43:43', '2023-10-17 01:43:43');
+INSERT INTO SAPI.students (id, user_id, name, surname, patronymic, classroom_id, created_at, updated_at) VALUES (5, 19, 'Вероника', 'Сафонова', 'Suscipit.', 1, '2023-10-17 01:43:43', '2023-10-17 01:43:43');

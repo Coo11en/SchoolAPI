@@ -18,7 +18,7 @@ class BannerFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => Chapter::inRandomOrder()->first()->id,
+            'chapter_id' => Chapter::inRandomOrder()->first()->id,
             'bannerTitle' => $this->faker->word(),
             'img' => $this->faker->image(),
             'ref' => $this->faker->url(),

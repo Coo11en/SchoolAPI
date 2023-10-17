@@ -1,0 +1,2 @@
+INSERT INTO SAPI.docimages (id, documentName, documentSource, documentType, created_at, updated_at) VALUES (1, 'Приложение №1', 'storage/data/documents/aa795f24e32677f7e1623e31f9d5b9d7.jpg', 'JPG', '2023-10-14 14:10:20', '2023-10-15 20:43:56');
+INSERT INTO SAPI.docimages (id, documentName, documentSource, documentType, created_at, updated_at) VALUES (2, 'Свидетельство', 'storage/data/documents/d80530a9670ddcba5062806adcb306d5.jpg', 'JPG', '2023-10-14 14:10:20', '2023-10-15 14:21:01');

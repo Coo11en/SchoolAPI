@@ -1,0 +1,12 @@
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (1, 'common', 'Основные сведения', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (2, 'struct', 'Структура и органы управления образовательной организацией', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (3, 'document', 'Документы', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (4, 'education', 'Образование', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (5, 'eduStandarts', 'Образовательные стандарты и требования', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (6, 'objects', 'Материально-техническое обеспечение и оснащенность образовательного процесса', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (7, 'budget', 'Финансово-хозяйственная деятельность', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (8, 'vacant', 'Вакантные места для приема (перевода) обучающихся', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (9, 'dsreda', 'Доступная среда', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (10, 'ezhednevnoe-menyu', 'Организация питания в образовательной организации', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (11, 'first_class', 'Электронная запись в первый класс', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');
+INSERT INTO SAPI.chapters (id, slug, chapterTitle, status, created_at, updated_at) VALUES (12, 'point', 'Точка роста', 'active', '2023-10-14 14:10:19', '2023-10-14 14:10:19');

@@ -11,7 +11,7 @@ class PhotoFactory extends Factory
 
 
         return [
-            'img' => json_encode(fake()->imageUrl()),
+            'img' => fake()->imageUrl(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

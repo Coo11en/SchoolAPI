@@ -94,6 +94,7 @@ class NewsCrudController extends CrudController
         ]);
         CRUD::field('news_category_id')->label('Категория новости');
         CRUD::field('album_id')->label('Альбом');
+        CRUD::field('source')->type('json')->label('Источники новостей');
 //        CRUD::field('status');
         $this->crud->addField([
         'name'  => 'status',

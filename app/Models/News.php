@@ -34,6 +34,7 @@ class  News extends Model
         'text',
         'news_category_id',
         'album_id',
+        'source',
         'status',
         'pub_approve',
         'video'

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Backpack\PermissionManager\app\Models\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -59,7 +60,7 @@ class Teacher extends Model
     }
     public function roles()
     {
-        return $this->belongsTo(Roles::class);
+        return $this->belongsTo(Role::class);
     }
     public function users(): BelongsTo
     {

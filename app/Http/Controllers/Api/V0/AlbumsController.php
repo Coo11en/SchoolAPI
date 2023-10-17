@@ -24,7 +24,7 @@ class AlbumsController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return AlbumResource::collection(Album::all());
+        return AlbumResource::collection($this->albumsQueryBuilder->getAlbumsByStatus());
     }
 
     /**

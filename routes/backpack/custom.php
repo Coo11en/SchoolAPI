@@ -1,5 +1,28 @@
 <?php
 
+use App\Http\Controllers\Admin\AchievementCrudController;
+use App\Http\Controllers\Admin\AlbumsCrudController;
+use App\Http\Controllers\Admin\AppealCategoryCrudController;
+use App\Http\Controllers\Admin\AppealCrudController;
+use App\Http\Controllers\Admin\BannerCrudController;
+use App\Http\Controllers\Admin\CabinetCrudController;
+use App\Http\Controllers\Admin\CallScheduleCrudController;
+use App\Http\Controllers\Admin\ChapterCrudController;
+use App\Http\Controllers\Admin\ClassroomCrudController;
+use App\Http\Controllers\Admin\DayCrudController;
+use App\Http\Controllers\Admin\DocimageCrudController;
+use App\Http\Controllers\Admin\DocsourceCrudController;
+use App\Http\Controllers\Admin\MenuBasicCrudController;
+use App\Http\Controllers\Admin\MenuItemCrudController;
+use App\Http\Controllers\Admin\NewsCategoryCrudController;
+use App\Http\Controllers\Admin\NewsCrudController;
+use App\Http\Controllers\Admin\ParentsCrudController;
+use App\Http\Controllers\Admin\PhotoCrudController;
+use App\Http\Controllers\Admin\ScheduleCrudController;
+use App\Http\Controllers\Admin\SectionCrudController;
+use App\Http\Controllers\Admin\StudentCrudController;
+use App\Http\Controllers\Admin\SubjectCrudController;
+use App\Http\Controllers\Admin\TeacherCrudController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -16,27 +39,29 @@ Route::group([
     ),
     'namespace'  => null,
 ], function () { // custom admin routes
-    Route::crud('news', App\Http\Controllers\Admin\NewsCrudController::class);
-    Route::crud('albums', App\Http\Controllers\Admin\AlbumsCrudController::class);
-    Route::crud('news-category', App\Http\Controllers\Admin\NewsCategoryCrudController::class);
-    Route::crud('photo', App\Http\Controllers\Admin\PhotoCrudController::class);
-    Route::crud('menu-basic', App\Http\Controllers\Admin\MenuBasicCrudController::class);
-    Route::crud('menu-item', App\Http\Controllers\Admin\MenuItemCrudController::class);
-    Route::crud('call-schedule', App\Http\Controllers\Admin\CallScheduleCrudController::class);
-    Route::crud('subject', App\Http\Controllers\Admin\SubjectCrudController::class);
-    Route::crud('day', App\Http\Controllers\Admin\DayCrudController::class);
-    Route::crud('schedule', App\Http\Controllers\Admin\ScheduleCrudController::class);
-    Route::crud('appeal', App\Http\Controllers\Admin\AppealCrudController::class);
-    Route::crud('appeal-category', App\Http\Controllers\Admin\AppealCategoryCrudController::class);
-    Route::crud('banner', App\Http\Controllers\Admin\BannerCrudCrudController::class);
-    Route::crud('chapter', App\Http\Controllers\Admin\ChapterCrudController::class);
-    Route::crud('docimage', App\Http\Controllers\Admin\DocimageCrudController::class);
-    Route::crud('docsource', App\Http\Controllers\Admin\DocsourceCrudController::class);
-    Route::crud('parents', App\Http\Controllers\Admin\ParentsCrudController::class);
-    Route::crud('section', App\Http\Controllers\Admin\SectionCrudController::class);
-    Route::crud('teacher', App\Http\Controllers\Admin\TeacherCrudController::class);
-    Route::crud('student', App\Http\Controllers\Admin\StudentCrudController::class);
-    Route::crud('classroom', App\Http\Controllers\Admin\ClassroomCrudController::class);
-    Route::crud('cabinet', App\Http\Controllers\Admin\CabinetCrudController::class);
-    Route::crud('achievement', App\Http\Controllers\Admin\AchievementCrudController::class);
+
+    Route::crud('news', NewsCrudController::class);
+    Route::crud('albums', AlbumsCrudController::class);
+    Route::crud('news-category', NewsCategoryCrudController::class);
+    Route::crud('photo', PhotoCrudController::class);
+    Route::crud('teacher', TeacherCrudController::class);
+    Route::crud('menu-basic', MenuBasicCrudController::class);
+    Route::crud('menu-item', MenuItemCrudController::class);
+    Route::crud('call-schedule', CallScheduleCrudController::class);
+    Route::crud('subject', SubjectCrudController::class);
+    Route::crud('day', DayCrudController::class);
+    Route::crud('schedule', ScheduleCrudController::class);
+    Route::crud('appeal', AppealCrudController::class);
+    Route::crud('appeal-category', AppealCategoryCrudController::class);
+    Route::crud('banner', BannerCrudController::class);
+    Route::crud('chapter', ChapterCrudController::class);
+    Route::crud('docimage', DocimageCrudController::class);
+    Route::crud('docsource', DocsourceCrudController::class);
+    Route::crud('parents', ParentsCrudController::class);
+    Route::crud('section', SectionCrudController::class);
+    Route::crud('student', StudentCrudController::class);
+    Route::crud('cabinet', CabinetCrudController::class);
+    Route::crud('classroom', ClassroomCrudController::class);
+    Route::crud('achievement', AchievementCrudController::class);
+
 }); // this should be the absolute last line of this file

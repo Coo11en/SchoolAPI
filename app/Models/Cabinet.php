@@ -16,6 +16,10 @@ class Cabinet extends Model
 
     protected $table = 'cabinets';
 
+    protected $appends = [
+        'view_img'
+    ];
+
     protected $fillable = [
         'name',
         'number',
@@ -26,4 +30,10 @@ class Cabinet extends Model
     protected $casts = [
         'images' => Json::class
     ];
+
+    public function getViewImgAttribute()
+    {
+        return implode(',', json_decode($this->images));
+    }
+
 }

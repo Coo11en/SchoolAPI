@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ScheduleRequest;
+use App\Models\Classroom;
+use App\Models\Day;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -39,30 +41,33 @@ class ScheduleCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        // select2 filter
+        $this->crud->addFilter([
+            'name'  => 'classroom',
+            'type'  => 'select2',
+            'label' => 'Класс'
+        ], function () {
+            return Classroom::all()->keyBy('id')->pluck('name', 'id')->toArray();
+        }, function ($value) { // if the filter is active
+             $this->crud->addClause('where', 'classroom_id', $value);
+        });
+        $this->crud->addFilter([
+            'name'  => 'day',
+            'type'  => 'select2',
+            'label' => 'День недели'
+        ], function () {
+            return Day::all()->keyBy('id')->pluck('name', 'id')->toArray();
+        }, function ($value) { // if the filter is active
+             $this->crud->addClause('where', 'day_id', $value);
+        });
 
-        $this->crud->with(['classroom']);
-//        CRUD::column('classroom_id');
-        $this->crud->addColumn(
-                [
-                    'label' => 'Класс',
-                    'name' => 'classroom.name', // relation.column_name
-                ]
-        );
-//        CRUD::addColumn(
-//            [
-//            'label' => "Класс",
-//            'type' => 'relationship',
-//            // метод, который определяет отношения в модели
-//            'name' => 'classroom',
-//            // метод, который определяет отношения в модели
-//            'entity' => 'classroom',
-//            // атрибут внешнего ключа, который отображается пользователю
-//            'attribute' =>'name',
-//        ]
-//        );
-        CRUD::column('week_day_name');
-        CRUD::column('callSchedule_id');
 
+        CRUD::column('classroom.name')
+            ->label('Класс');
+        CRUD::column('day.name')
+            ->label('День недели');
+        CRUD::column('call_schedule_id')
+            ->label('Звонок');
         CRUD::addColumn([
             'label' => "Предмет",
             'type' => 'relationship',
@@ -83,16 +88,12 @@ class ScheduleCrudController extends CrudController
             // атрибут внешнего ключа, который отображается пользователю
             'attribute' =>'full_name',
         ]);
-//        CRUD::column('day_id');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
-//        if (! $this->crud->getRequest()->has('order')){
-//            $this->crud->orderBy('day_id', 'asc');
-//        }
     }
 
     /**

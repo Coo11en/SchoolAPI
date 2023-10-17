@@ -39,17 +39,18 @@ class TeacherCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('user_id');
-        CRUD::column('full_name');
+        CRUD::column('user_id')->label('Учетная запись');
+        CRUD::column('full_name')->label('Полное имя');
 //        CRUD::column('name');
 //        CRUD::column('surname');
 //        CRUD::column('patronymic');
-        CRUD::column('job_title');
-//        CRUD::column('positions');
-        CRUD::column('role_id');
-        CRUD::column('main_photo_id');
-        CRUD::column('speciality');
-        CRUD::column('education');
+//        CRUD::column('job_title')->type('json');
+        CRUD::column('positions')
+            ->label('Должность');
+//        CRUD::column('role_id');
+        CRUD::column('main_photo_id')->label('Фото');
+        CRUD::column('speciality')->label('Специальность');
+        CRUD::column('education')->label('Образование');
 
 
         /**
@@ -69,16 +70,16 @@ class TeacherCrudController extends CrudController
     {
         CRUD::setValidation(TeacherRequest::class);
 
-        CRUD::field('user_id');
-        CRUD::field('name');
-        CRUD::field('surname');
-        CRUD::field('patronymic');
-        CRUD::field('job_title');
-//        CRUD::field('positions');
-        CRUD::field('role_id');
-        CRUD::field('main_photo_id');
-        CRUD::field('speciality');
-        CRUD::field('education');
+        CRUD::field('user_id')->label('Учетная запись');
+        CRUD::field('name')->label('Имя');
+        CRUD::field('surname')->label('Фамилия');
+        CRUD::field('patronymic')->label('Отчество');
+        CRUD::field('job_title')
+            ->type('json')->label('Должность');
+//        CRUD::field('role_id');
+        CRUD::field('photos')->label('Фото');
+        CRUD::field('speciality')->label('Специальность');
+        CRUD::field('education')->label('Образование');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

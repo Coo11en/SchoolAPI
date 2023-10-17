@@ -1,2 +1,6 @@
 *
+!data/
+!data/documents/
+!data/photo/
+!data/photo/album/
 !.gitignore

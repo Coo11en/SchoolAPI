@@ -72,11 +72,12 @@ class AlbumsCrudController extends CrudController
         CRUD::field('description')->label('Описание');
         CRUD::field('nameEng')->label('Путь на сайте');
         CRUD::field('mainImg')->label('Главное фото')->subfields([
-            ['name' => 'main_img'],
+            ['name' => 'main_img', 'type' => 'checkbox'],
 //            ['name' => 'some_other_field']
         ]);
-
         CRUD::field('relationship')->label('Зависимый');
+        CRUD::column('status')->label('Статус');
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

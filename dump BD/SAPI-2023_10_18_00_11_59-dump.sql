@@ -24,8 +24,8 @@ DROP TABLE IF EXISTS `achievements`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `achievements` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `value` varchar(3000) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `value` varchar(3000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -67,7 +67,7 @@ CREATE TABLE `album_photo` (
 
 LOCK TABLES `album_photo` WRITE;
 /*!40000 ALTER TABLE `album_photo` DISABLE KEYS */;
-INSERT INTO `album_photo` VALUES (1,0,1,NULL,NULL),(2,0,1,NULL,NULL),(3,0,1,NULL,NULL),(4,0,1,NULL,NULL),(5,0,1,NULL,NULL),(6,0,1,NULL,NULL),(7,0,1,NULL,NULL),(8,0,1,NULL,NULL),(9,0,2,NULL,NULL),(10,0,2,NULL,NULL),(11,0,2,NULL,NULL),(12,0,2,NULL,NULL),(13,0,2,NULL,NULL),(14,0,3,NULL,NULL),(15,0,3,NULL,NULL),(16,0,3,NULL,NULL),(17,0,3,NULL,NULL),(18,0,3,NULL,NULL),(19,0,3,NULL,NULL),(20,0,3,NULL,NULL),(21,0,3,NULL,NULL),(22,0,4,NULL,NULL),(23,0,4,NULL,NULL),(24,0,4,NULL,NULL),(25,0,4,NULL,NULL),(26,0,4,NULL,NULL),(27,0,4,NULL,NULL),(28,0,4,NULL,NULL),(29,0,4,NULL,NULL),(30,0,4,NULL,NULL),(31,0,4,NULL,NULL),(32,0,5,NULL,NULL),(33,0,5,NULL,NULL),(34,0,5,NULL,NULL),(35,0,5,NULL,NULL),(36,0,5,NULL,NULL),(37,0,5,NULL,NULL),(38,0,5,NULL,NULL),(39,0,5,NULL,NULL),(40,0,5,NULL,NULL),(41,0,6,NULL,NULL),(42,0,6,NULL,NULL),(45,0,6,NULL,NULL),(46,0,6,NULL,NULL),(47,0,6,NULL,NULL),(48,0,6,NULL,NULL),(49,0,6,NULL,NULL),(50,0,6,NULL,NULL),(51,0,6,NULL,NULL),(52,0,6,NULL,NULL),(52,1,6,NULL,NULL),(40,1,5,NULL,NULL),(31,1,4,NULL,NULL),(21,1,3,NULL,NULL),(13,1,2,NULL,NULL),(8,1,1,NULL,NULL),(53,0,7,NULL,NULL),(53,1,7,NULL,NULL),(54,1,8,NULL,NULL),(55,1,9,NULL,NULL),(56,0,9,NULL,NULL),(57,0,9,NULL,NULL),(58,0,10,NULL,NULL),(58,0,10,NULL,NULL),(58,1,10,NULL,NULL),(59,0,10,NULL,NULL);
+INSERT INTO `album_photo` VALUES (1,0,1,NULL,NULL),(2,0,1,NULL,NULL),(3,0,1,NULL,NULL),(4,0,1,NULL,NULL),(5,0,1,NULL,NULL),(6,0,1,NULL,NULL),(7,0,1,NULL,NULL),(8,0,1,NULL,NULL),(9,0,2,NULL,NULL),(10,0,2,NULL,NULL),(11,0,2,NULL,NULL),(12,0,2,NULL,NULL),(13,0,2,NULL,NULL),(14,0,3,NULL,NULL),(15,0,3,NULL,NULL),(16,0,3,NULL,NULL),(17,0,3,NULL,NULL),(18,0,3,NULL,NULL),(19,0,3,NULL,NULL),(20,0,3,NULL,NULL),(21,0,3,NULL,NULL),(22,0,4,NULL,NULL),(23,0,4,NULL,NULL),(24,0,4,NULL,NULL),(25,0,4,NULL,NULL),(26,0,4,NULL,NULL),(27,0,4,NULL,NULL),(28,0,4,NULL,NULL),(29,0,4,NULL,NULL),(30,0,4,NULL,NULL),(31,0,4,NULL,NULL),(32,0,5,NULL,NULL),(33,0,5,NULL,NULL),(34,0,5,NULL,NULL),(35,0,5,NULL,NULL),(36,0,5,NULL,NULL),(37,0,5,NULL,NULL),(38,0,5,NULL,NULL),(39,0,5,NULL,NULL),(40,0,5,NULL,NULL),(41,0,6,NULL,NULL),(42,0,6,NULL,NULL),(45,0,6,NULL,NULL),(46,0,6,NULL,NULL),(47,0,6,NULL,NULL),(48,0,6,NULL,NULL),(49,0,6,NULL,NULL),(50,0,6,NULL,NULL),(51,0,6,NULL,NULL),(52,0,6,NULL,NULL),(52,1,6,NULL,NULL),(40,1,5,NULL,NULL),(31,1,4,NULL,NULL),(21,1,3,NULL,NULL),(13,1,2,NULL,NULL),(8,1,1,NULL,NULL),(53,1,7,NULL,NULL),(53,1,7,NULL,NULL),(54,1,8,NULL,NULL),(55,1,9,NULL,NULL),(56,0,9,NULL,NULL),(57,0,9,NULL,NULL),(58,1,10,NULL,NULL),(58,1,10,NULL,NULL),(58,1,10,NULL,NULL),(59,0,10,NULL,NULL);
 /*!40000 ALTER TABLE `album_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,9 +80,9 @@ DROP TABLE IF EXISTS `albums`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `albums` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `nameEng` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `nameEng` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `relationship` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE `albums` (
 
 LOCK TABLES `albums` WRITE;
 /*!40000 ALTER TABLE `albums` DISABLE KEYS */;
-INSERT INTO `albums` VALUES (1,'Президентские состязания',NULL,'prezidentskie_sostyazaniz',1,NULL,'2023-10-16 20:36:09','2023-10-16 20:36:09'),(2,'Интеллектуальный квиз «Где логика?»','Проводили сотрудники МКУ Зареченский ДК по Пушкинской карте','gde_logika',1,NULL,'2023-10-16 20:37:33','2023-10-16 20:37:33'),(3,'Разговоры о важном тема: «О взаимоотношениях в коллективе»','У младшего школьника добрые отношения и соперничество переплетены друг с другом: с одной стороны, ребёнок хочет «быть как все», с другой — «быть лучше всех».','razgovori_o_vazhnom_vzaimootnosheniya',1,NULL,'2023-10-16 20:39:32','2023-10-16 20:40:02'),(4,'Разговоры о важном \"По ту сторону экрана. 115 лет кино в России\"','Кино, наряду с литературой и театром, позволяет человеку увидеть себя, как в «зеркале», соотнести свои поступки с поступками героев, учит анализировать и рефлексировать/','razgovori_o_vazhnom_kino',1,NULL,'2023-10-16 20:42:08','2023-10-16 20:42:08'),(5,'День самоуправления','5 октября 2023 года в школе традиционно прошел день самоуправления, где ребята смогли попробовать себя в роли учителя.','den_samoupravleniya',1,NULL,'2023-10-16 20:43:24','2023-10-16 20:43:24'),(6,'День учителя','День учителя - замечательный праздник, когда можно выразить свою благодарность педагогам за их непростой и благородный труд, за внимание и терпение, за желание видеть своих учеников успешными и счастливыми.','den_uchitelya',1,NULL,'2023-10-16 20:44:20','2023-10-16 20:44:20'),(7,'NEWS флешмоб «Поздравь учителя!»',NULL,NULL,1,NULL,'2023-10-16 23:10:42','2023-10-16 23:14:11'),(8,'NEWS Онлайн конкурс \"Родные места\"',NULL,NULL,1,NULL,'2023-10-16 23:30:03','2023-10-16 23:30:03'),(9,'NEWS III Форум классных руководителей',NULL,NULL,1,NULL,'2023-10-16 23:33:07','2023-10-16 23:33:07'),(10,'Заглушка',NULL,NULL,1,NULL,'2023-10-17 00:02:52','2023-10-17 00:02:52');
+INSERT INTO `albums` VALUES (1,'Президентские состязания',NULL,'prezidentskie_sostyazaniz',1,NULL,'2023-10-16 20:36:09','2023-10-16 20:36:09'),(2,'Интеллектуальный квиз «Где логика?»','Проводили сотрудники МКУ Зареченский ДК по Пушкинской карте','gde_logika',1,NULL,'2023-10-16 20:37:33','2023-10-16 20:37:33'),(3,'Разговоры о важном тема: «О взаимоотношениях в коллективе»','У младшего школьника добрые отношения и соперничество переплетены друг с другом: с одной стороны, ребёнок хочет «быть как все», с другой — «быть лучше всех».','razgovori_o_vazhnom_vzaimootnosheniya',1,NULL,'2023-10-16 20:39:32','2023-10-16 20:40:02'),(4,'Разговоры о важном \"По ту сторону экрана. 115 лет кино в России\"','Кино, наряду с литературой и театром, позволяет человеку увидеть себя, как в «зеркале», соотнести свои поступки с поступками героев, учит анализировать и рефлексировать/','razgovori_o_vazhnom_kino',1,NULL,'2023-10-16 20:42:08','2023-10-16 20:42:08'),(5,'День самоуправления','5 октября 2023 года в школе традиционно прошел день самоуправления, где ребята смогли попробовать себя в роли учителя.','den_samoupravleniya',1,NULL,'2023-10-16 20:43:24','2023-10-16 20:43:24'),(6,'День учителя','День учителя - замечательный праздник, когда можно выразить свою благодарность педагогам за их непростой и благородный труд, за внимание и терпение, за желание видеть своих учеников успешными и счастливыми.','den_uchitelya',1,NULL,'2023-10-16 20:44:20','2023-10-16 20:44:20'),(7,'NEWS флешмоб «Поздравь учителя!»',NULL,'pozdrov_uchitelya',0,0,'2023-10-16 23:10:42','2023-10-17 20:55:02'),(8,'NEWS Онлайн конкурс \"Родные места\"',NULL,'rodnie_mesta',0,0,'2023-10-16 23:30:03','2023-10-17 20:54:34'),(9,'NEWS III Форум классных руководителей',NULL,'3_forum_klassnih_rukovoditelei',0,0,'2023-10-16 23:33:07','2023-10-17 20:54:12'),(10,'Заглушка',NULL,'no_photo',0,0,'2023-10-17 00:02:52','2023-10-17 20:53:38');
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,11 +110,11 @@ DROP TABLE IF EXISTS `appeals`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `appeals` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `question` varchar(300) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `question` varchar(300) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
-  `response` varchar(3000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `response` varchar(3000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `category_id` bigint unsigned NOT NULL,
   `top_questions` tinyint(1) NOT NULL DEFAULT '0',
   `date_completion` datetime DEFAULT NULL,
@@ -145,8 +145,8 @@ DROP TABLE IF EXISTS `appeals_categories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `appeals_categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(3000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` varchar(3000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -188,7 +188,7 @@ CREATE TABLE `banners` (
 
 LOCK TABLES `banners` WRITE;
 /*!40000 ALTER TABLE `banners` DISABLE KEYS */;
-INSERT INTO `banners` VALUES (1,'first_class','Запишите детей в первый класс','storage/data/documents/67ed7b290a016d33a9d3af8862c8eecd.png',NULL,'2023-10-14 11:10:20','2023-10-15 08:54:33'),(2,'point','Точка роста','storage/data/documents/7442b8d4e053d7bdfc37e2a06d336538.jpg',NULL,'2023-10-14 11:10:21','2023-10-15 08:54:11'),(3,NULL,'Департамент образования Владимирской области','storage/data/documents/802e2bb80f2bf74874520581e10e5871.jpg','https://департамент.образование33.рф/','2023-10-14 11:10:22','2023-10-15 08:53:58'),(4,NULL,'Персональные данные ДЕТИ','storage/data/documents/d2a92fe868e864306f70ee519215f44f.png','http://персональныеданные.дети/','2023-10-14 11:10:22','2023-10-15 08:53:38');
+INSERT INTO `banners` VALUES (1,'first_class','Запишите детей в первый класс','http://localhost:7777/storage/data/documents/67ed7b290a016d33a9d3af8862c8eecd.png',NULL,'2023-10-14 11:10:20','2023-10-15 08:54:33'),(2,'point','Точка роста','http://localhost:7777/storage/data/documents/7442b8d4e053d7bdfc37e2a06d336538.jpg',NULL,'2023-10-14 11:10:21','2023-10-15 08:54:11'),(3,NULL,'Департамент образования Владимирской области','http://localhost:7777/storage/data/documents/06d205bb4bb8ada4a01e4551b801fb86.jpg','https://департамент.образование33.рф/','2023-10-14 11:10:22','2023-10-15 08:53:58'),(4,NULL,'Персональные данные ДЕТИ','http://localhost:7777/storage/data/documents/5b6f91f4f95f03b96553f648f5b1e2c3.png','http://персональныеданные.дети/','2023-10-14 11:10:22','2023-10-15 08:53:38');
 /*!40000 ALTER TABLE `banners` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,9 +201,9 @@ DROP TABLE IF EXISTS `cabinets`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cabinets` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `number` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `number` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `images` json NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -288,7 +288,7 @@ DROP TABLE IF EXISTS `classrooms`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `classrooms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `teacher_id` bigint unsigned NOT NULL,
   `cabinet_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -320,7 +320,7 @@ DROP TABLE IF EXISTS `days`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `days` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -468,10 +468,10 @@ DROP TABLE IF EXISTS `failed_jobs`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `connection` text COLLATE utf8mb3_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb3_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -526,10 +526,10 @@ DROP TABLE IF EXISTS `menu_basics`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu_basics` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `menu_title` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `menu_title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `date` timestamp NOT NULL,
-  `name_menu` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `price` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name_menu` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `price` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -555,8 +555,8 @@ DROP TABLE IF EXISTS `menu_items`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu_items` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name_dish` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `dish_output` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name_dish` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `dish_output` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -614,7 +614,7 @@ DROP TABLE IF EXISTS `migrations`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -639,7 +639,7 @@ DROP TABLE IF EXISTS `model_has_permissions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `model_has_permissions` (
   `permission_id` bigint unsigned NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `model_type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `model_id` bigint unsigned NOT NULL,
   PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
   KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`),
@@ -665,7 +665,7 @@ DROP TABLE IF EXISTS `model_has_roles`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `model_has_roles` (
   `role_id` bigint unsigned NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `model_type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `model_id` bigint unsigned NOT NULL,
   PRIMARY KEY (`role_id`,`model_id`,`model_type`),
   KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`),
@@ -692,16 +692,16 @@ DROP TABLE IF EXISTS `news`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `news` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(3000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `text` varchar(10000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `author` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'Admin',
+  `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` varchar(3000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `text` varchar(10000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `author` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'Admin',
   `news_category_id` bigint unsigned NOT NULL,
   `album_id` bigint unsigned DEFAULT NULL,
   `source` json DEFAULT NULL,
-  `status` varchar(7) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `status` varchar(7) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `pub_approve` datetime DEFAULT NULL,
-  `video` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `video` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -718,7 +718,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'Флешмоб «Поздравь учителя!»',NULL,'<h2>В Киржачском районе проходит флешмоб &laquo;Поздравь учителя!&raquo;</h2>\r\n\r\n<p>Флешмоб на День учителя давно уже стал одним из неординарных видов поздравления любимых педагогов с их профессиональным праздником. С одной стороны спонтанная и неожиданная, а с другой &ndash; хорошо подготовленная акция, в которой задействованы ученики одного или нескольких классов, отлично поднимает настроение всем и является прекрасным подарком для учителей.<br />\r\n&laquo;5 октября &mdash; самое время поздравить своих педагогов, выразить им слова благодарности за их благородный труд.</p>\r\n\r\n<p>Предлагаем принять участие во Флешмобе &laquo;Поздравь учителя!&raquo;</p>\r\n\r\n<p>Варианты Флешмоба:</p>\r\n\r\n<p>Флешмоб &laquo;Видео с поздравлением&raquo;</p>\r\n\r\n<ol>\r\n	<li>Сними короткий видеоролик со своим поздравлением: представься, поздравь любимого учителя с праздником, запусти эстафетный самолетик своим друзьям.</li>\r\n	<li>Выложи свое видео в любую социальную сеть с хэштегами акции: #поздравьучителя #деньучителя #киржачскийрайон</li>\r\n	<li>Под видео напиши поздравление любимому учителю. Укажи ссылки на друзей, которым ты передаешь эстафетный самолетик.</li>\r\n</ol>\r\n\r\n<p>Подробнее об акции можно узнать в официальной группе управления образования</p>\r\n\r\n<p><a href=\"https://clck.ru/35szM9\">Официальная группа образования</a></p>','Директор',1,7,NULL,'active','2023-10-01 00:00:00',NULL,'2023-10-16 23:08:48','2023-10-16 23:45:38'),(2,'Посадка Сада памяти',NULL,'<p>В селе Филипповское высадили Сад памяти в честь героев СВО</p>','Директор',1,10,NULL,'active','2023-10-02 00:00:00','https://youtu.be/vHVCWP7-TQ4','2023-10-16 23:16:20','2023-10-16 23:16:45'),(3,'Онлайн конкурс \"Родные места\"',NULL,'<p>Юных художников зовут поучаствовать в онлайн-конкурсе</p>\r\n\r\n<p>Ребятам предлагают нарисовать любимые и дорогие сердцу места родного края в любой живописной технике.</p>\r\n\r\n<p>Конкурсную работу необходимо прислать на электронную почту: <a href=\"http://ddn.33@yandex.ru\">ddn.33@yandex.ru</a> (с пометкой &laquo;Родные места&raquo;).</p>\r\n\r\n<p>Победителей и призеров наградят памятными призами и дипломами. А лучшие работы войдут в коллекцию &laquo;Дома дружбы народов&raquo;.</p>\r\n\r\n<p><strong>Конкурс продлится до 10 ноября</strong>. Узнать подробности можно в группе &laquo;Дома дружбы народов&raquo; или по телефону - <strong>8 (4922) 45-17-40</strong>.</p>','Директор',2,8,NULL,'active','2023-10-03 00:00:00',NULL,'2023-10-16 23:19:18','2023-10-16 23:44:22'),(4,'Проверьте свою дорожную грамотность!',NULL,'<p>В рамках нацпроекта &laquo;Безопасные качественные дороги&raquo; стартовала Всероссийская олимпиада &laquo;Безопасные дороги&raquo;. Участвовать в ней могут ученики 1&ndash;9 классов.</p>\r\n\r\n<p>Онлайн-соревнование поможет школьникам оценить, насколько хорошо они знают ПДД, разобраться, как правильно вести себя пешеходу, пассажиру, как безопасно управлять самокатом и велосипедом.</p>\r\n\r\n<p>Олимпиада проходит на онлайн-платформе <a href=\"https://vk.cc/cqZYPe\">учи.ру</a>.<br />\r\nВсех участников ждут награды. Соревнование продлится до 15 октября</p>\r\n\r\n<p><br />\r\n<a href=\"https://vk.com/video-185852839_456239795\">ссылка на ВК</a></p>','Директор',1,10,NULL,'active','2023-10-10 00:00:00',NULL,'2023-10-16 23:23:32','2023-10-16 23:23:32'),(5,'III Форум классных руководителей',NULL,'<p>23 педагога Владимирской области в нынешнем году прошли серьезный экспертный отбор и отправились на III Форум классных руководителей. Всего на это знаковое событие Года педагога и наставника было подано более 60 000 заявок со всей страны!</p>\r\n\r\n<p>Форум проводится Министерством Просвещения России по поручению Президента России. Стратегический партнер - АНО &laquo;Диалог Регионы&raquo;, головная организация Центров управления регионами.</p>\r\n\r\n<p>Площадки форума объединят более 3 000 учителей и кураторов СПО. Вместе с известными спикерами они обсудят важные для современного образования темы.</p>\r\n\r\n<p>Следить за трансляциями можно и в онлайн-режиме - в официальном сообществе ФКР и на сайте:<br />\r\n<a href=\"https://vfkr.ru/\">https://vfkr.ru/</a></p>','Директор',1,9,NULL,'active','2023-10-12 00:00:00',NULL,'2023-10-16 23:24:50','2023-10-16 23:45:17'),(6,'Поддержим Марину Владимировну Булгакову',NULL,'<p>Поддержим Марину Владимировну Булгакову, учителя английского языка школы №9 из Вязников, в конкурсе &laquo;Учитель года России &ndash; 2023&raquo;!</p>\r\n\r\n<p>Минпросвещения открывает специальный чат-бот, в котором можно будет поддержать педагогов-участников. Отдать свой голос можно только за одного претендента. 33 регион представляет Марина Булгакова.</p>\r\n\r\n<h2>Сделать это можно здесь <a href=\"https://vk.com/write-30558759\">https://vk.com/write-30558759</a></h2>\r\n\r\n<p>Онлайн-голосование завершится 3 октября в 12:00 по московскому времени. Организаторами проекта выступают Минпросвещения России и Центр компетенций в сфере интернет-коммуникаций &laquo;Диалог&raquo; при поддержке коммуникационного сервиса &laquo;Сферум&raquo;.</p>\r\n\r\n<p>Итоги голосования будут подведены на торжественной церемонии закрытия второго тура заключительного этапа Всероссийского конкурса &laquo;Учитель года России &ndash; 2023&raquo; в Московской области.</p>\r\n\r\n<p>&nbsp;</p>','Директор',1,10,NULL,'active','2023-09-27 00:00:00','https://vk.com/video-179950459_456239726','2023-10-16 23:28:01','2023-10-16 23:28:01');
+INSERT INTO `news` VALUES (1,'Флешмоб «Поздравь учителя!»',NULL,'<h2>В Киржачском районе проходит флешмоб &laquo;Поздравь учителя!&raquo;</h2>\r\n\r\n<p>Флешмоб на День учителя давно уже стал одним из неординарных видов поздравления любимых педагогов с их профессиональным праздником. С одной стороны спонтанная и неожиданная, а с другой &ndash; хорошо подготовленная акция, в которой задействованы ученики одного или нескольких классов, отлично поднимает настроение всем и является прекрасным подарком для учителей.<br />\r\n&laquo;5 октября &mdash; самое время поздравить своих педагогов, выразить им слова благодарности за их благородный труд.</p>\r\n\r\n<p>Предлагаем принять участие во Флешмобе &laquo;Поздравь учителя!&raquo;</p>\r\n\r\n<p>Варианты Флешмоба:</p>\r\n\r\n<p>Флешмоб &laquo;Видео с поздравлением&raquo;</p>\r\n\r\n<ol>\r\n	<li>Сними короткий видеоролик со своим поздравлением: представься, поздравь любимого учителя с праздником, запусти эстафетный самолетик своим друзьям.</li>\r\n	<li>Выложи свое видео в любую социальную сеть с хэштегами акции: #поздравьучителя #деньучителя #киржачскийрайон</li>\r\n	<li>Под видео напиши поздравление любимому учителю. Укажи ссылки на друзей, которым ты передаешь эстафетный самолетик.</li>\r\n</ol>\r\n\r\n<p>Подробнее об акции можно узнать в официальной группе управления образования</p>\r\n\r\n<p><a href=\"https://clck.ru/35szM9\">Официальная группа образования</a></p>','Директор',1,7,'{}','active','2023-10-01 00:00:00',NULL,'2023-10-16 23:08:48','2023-10-16 23:45:38'),(2,'Посадка Сада памяти',NULL,'<p>В селе Филипповское высадили Сад памяти в честь героев СВО</p>','Директор',1,10,'{}','active','2023-10-02 00:00:00','https://youtu.be/vHVCWP7-TQ4','2023-10-16 23:16:20','2023-10-16 23:16:45'),(3,'Онлайн конкурс \"Родные места\"',NULL,'<p>Юных художников зовут поучаствовать в онлайн-конкурсе</p>\r\n\r\n<p>Ребятам предлагают нарисовать любимые и дорогие сердцу места родного края в любой живописной технике.</p>\r\n\r\n<p>Конкурсную работу необходимо прислать на электронную почту: <a href=\"http://ddn.33@yandex.ru\">ddn.33@yandex.ru</a> (с пометкой &laquo;Родные места&raquo;).</p>\r\n\r\n<p>Победителей и призеров наградят памятными призами и дипломами. А лучшие работы войдут в коллекцию &laquo;Дома дружбы народов&raquo;.</p>\r\n\r\n<p><strong>Конкурс продлится до 10 ноября</strong>. Узнать подробности можно в группе &laquo;Дома дружбы народов&raquo; или по телефону - <strong>8 (4922) 45-17-40</strong>.</p>','Директор',2,8,'{}','active','2023-10-03 00:00:00',NULL,'2023-10-16 23:19:18','2023-10-16 23:44:22'),(4,'Проверьте свою дорожную грамотность!',NULL,'<p>В рамках нацпроекта &laquo;Безопасные качественные дороги&raquo; стартовала Всероссийская олимпиада &laquo;Безопасные дороги&raquo;. Участвовать в ней могут ученики 1&ndash;9 классов.</p>\r\n\r\n<p>Онлайн-соревнование поможет школьникам оценить, насколько хорошо они знают ПДД, разобраться, как правильно вести себя пешеходу, пассажиру, как безопасно управлять самокатом и велосипедом.</p>\r\n\r\n<p>Олимпиада проходит на онлайн-платформе <a href=\"https://vk.cc/cqZYPe\">учи.ру</a>.<br />\r\nВсех участников ждут награды. Соревнование продлится до 15 октября</p>\r\n\r\n<p><br />\r\n<a href=\"https://vk.com/video-185852839_456239795\">ссылка на ВК</a></p>','Директор',1,10,'{}','active','2023-10-10 00:00:00',NULL,'2023-10-16 23:23:32','2023-10-16 23:23:32'),(5,'III Форум классных руководителей',NULL,'<p>23 педагога Владимирской области в нынешнем году прошли серьезный экспертный отбор и отправились на III Форум классных руководителей. Всего на это знаковое событие Года педагога и наставника было подано более 60 000 заявок со всей страны!</p>\r\n\r\n<p>Форум проводится Министерством Просвещения России по поручению Президента России. Стратегический партнер - АНО &laquo;Диалог Регионы&raquo;, головная организация Центров управления регионами.</p>\r\n\r\n<p>Площадки форума объединят более 3 000 учителей и кураторов СПО. Вместе с известными спикерами они обсудят важные для современного образования темы.</p>\r\n\r\n<p>Следить за трансляциями можно и в онлайн-режиме - в официальном сообществе ФКР и на сайте:<br />\r\n<a href=\"https://vfkr.ru/\">https://vfkr.ru/</a></p>','Директор',1,9,'{}','active','2023-10-12 00:00:00',NULL,'2023-10-16 23:24:50','2023-10-16 23:45:17'),(6,'Поддержим Марину Владимировну Булгакову',NULL,'<p>Поддержим Марину Владимировну Булгакову, учителя английского языка школы №9 из Вязников, в конкурсе &laquo;Учитель года России &ndash; 2023&raquo;!</p>\r\n\r\n<p>Минпросвещения открывает специальный чат-бот, в котором можно будет поддержать педагогов-участников. Отдать свой голос можно только за одного претендента. 33 регион представляет Марина Булгакова.</p>\r\n\r\n<h2>Сделать это можно здесь <a href=\"https://vk.com/write-30558759\">https://vk.com/write-30558759</a></h2>\r\n\r\n<p>Онлайн-голосование завершится 3 октября в 12:00 по московскому времени. Организаторами проекта выступают Минпросвещения России и Центр компетенций в сфере интернет-коммуникаций &laquo;Диалог&raquo; при поддержке коммуникационного сервиса &laquo;Сферум&raquo;.</p>\r\n\r\n<p>Итоги голосования будут подведены на торжественной церемонии закрытия второго тура заключительного этапа Всероссийского конкурса &laquo;Учитель года России &ndash; 2023&raquo; в Московской области.</p>\r\n\r\n<p>&nbsp;</p>','Директор',1,10,'{}','active','2023-09-27 00:00:00','https://vk.com/video-179950459_456239726','2023-10-16 23:28:01','2023-10-17 20:56:05');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -731,13 +731,13 @@ DROP TABLE IF EXISTS `news_categories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `news_categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(3000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` varchar(3000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -789,9 +789,9 @@ DROP TABLE IF EXISTS `parents`;
 CREATE TABLE `parents` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
-  `name` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `surname` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `patronymic` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `surname` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `patronymic` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -818,8 +818,8 @@ DROP TABLE IF EXISTS `password_reset_tokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -843,8 +843,8 @@ DROP TABLE IF EXISTS `permissions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `permissions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `guard_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -871,11 +871,11 @@ DROP TABLE IF EXISTS `personal_access_tokens`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `tokenable_type` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `tokenable_id` bigint unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb3_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -904,7 +904,7 @@ DROP TABLE IF EXISTS `photos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `photos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `img` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -957,8 +957,8 @@ DROP TABLE IF EXISTS `roles`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `guard_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -987,7 +987,7 @@ CREATE TABLE `schedules` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `subject_id` bigint unsigned NOT NULL,
   `teacher_id` bigint unsigned NOT NULL,
-  `week_day_name` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `week_day_name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `classroom_id` bigint unsigned NOT NULL,
   `call_schedule_id` bigint unsigned NOT NULL,
   `day_id` bigint unsigned NOT NULL,
@@ -1060,9 +1060,9 @@ DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
-  `name` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `surname` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `patronymic` varchar(20) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `surname` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `patronymic` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `classroom_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1093,7 +1093,7 @@ DROP TABLE IF EXISTS `subjects`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `subjects` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name_subject` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name_subject` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1120,19 +1120,19 @@ DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE `teachers` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
-  `name` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `surname` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `patronymic` varchar(30) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `surname` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `patronymic` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `job_title` json DEFAULT NULL,
   `role_id` bigint unsigned NOT NULL,
   `main_photo_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `speciality` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `education` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `speciality` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `education` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `totalExperience` int DEFAULT NULL,
   `generalTeachingExperience` int DEFAULT NULL,
-  `qualification` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `qualification` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `isAdministration` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `teachers_role_id_foreign` (`role_id`),
@@ -1163,20 +1163,20 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `is_blocked` varchar(3) COLLATE utf8mb3_unicode_ci DEFAULT 'no',
+  `is_blocked` varchar(3) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT 'no',
   `last_activity_at` datetime DEFAULT NULL,
-  `avatar` varchar(150) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `position` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `phone` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `telegram_login` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `telegram_id` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `avatar` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `phone` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `telegram_login` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `telegram_id` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `birthdate` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
@@ -1202,4 +1202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-17  3:16:25
+-- Dump completed on 2023-10-18  0:09:23

@@ -43,17 +43,6 @@ class BannerController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $slug): AnonymousResourceCollection
-    {
-        if(!BannerResource::collection($this->bannerQueryBuilder->getBannerBySlug($slug))->count()){
-            abort(404);
-        }
-        return BannerResource::collection($this->bannerQueryBuilder->getBannerBySlug($slug));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

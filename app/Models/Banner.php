@@ -6,6 +6,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Banner extends Model
@@ -22,10 +23,11 @@ class Banner extends Model
         'ref'
     ];
 
-    public function chapter()
+    public function chapter(): BelongsTo
     {
-        return $this->belongsTo(Chapter::class, 'chapter_id');
+        return $this->belongsTo(Chapter::class);
     }
+
 
     public static function boot()
     {
@@ -34,7 +36,6 @@ class Banner extends Model
             \Storage::disk('public_folder')->delete($obj->image);
         });
     }
-
     public function setImgAttribute($value)
     {
         $attribute_name = "img";
@@ -42,7 +43,6 @@ class Banner extends Model
         $destination_path = "data/documents";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-
         $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
     }
 }

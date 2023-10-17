@@ -42,13 +42,12 @@ class NewsCategoryCrudController extends CrudController
         CRUD::column('created_at')->label('Создана');
         CRUD::column('description')->label('Описание');
 //        CRUD::column('image')->label('Изображение');
-        $this->crud->addColumn([
-            'name'      => 'image', // name of relationship method in the model
-            'type'      => 'image',
-            'label'     => 'Фото', // Table column heading
-            'disk' => 'public',
-            'height' => '100px'
-        ]);
+//        $this->crud->addColumn([
+//            'name'      => 'image', // name of relationship method in the model
+//            'type'      => 'upload',
+//            'label'     => 'Фото', // Table column heading
+//            'upload'    => true,
+//        ]);
         CRUD::column('name')->label('Название');
         CRUD::column('updated_at')->label('Обновлена');
 
@@ -71,12 +70,10 @@ class NewsCategoryCrudController extends CrudController
 
         CRUD::field('description')->label('Описание');
         $this->crud->addField([
-            'name'      => 'image',
-            'label'     => 'Фото',
-            'type'      => 'image',
-            'crop'    => true,
-            'aspect_ratio' => 1,
-            'disk' => 'public',
+            'name'      => 'image', // name of relationship method in the model
+            'type'      => 'upload',
+            'label'     => 'Фото', // Table column heading
+            'upload'    => true,
         ]);
         CRUD::field('name')->label('Название');
 

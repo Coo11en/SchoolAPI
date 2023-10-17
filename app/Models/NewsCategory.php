@@ -67,8 +67,14 @@ class NewsCategory extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-    public function setImageAttribute($value){
-        $fieldName = UploadHelper::getAttribute(__FUNCTION__);
-        $this->attributes[$fieldName] = UploadHelper::uploadImage($value, $this->attributes[$fieldName] ?? null, 'public', 'news_categories', '500');
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "image";
+        $disk = "public";
+        $destination_path = "data/photo/imgcategory";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+        $this->attributes[$attribute_name] = $_SERVER['APP_URL'] . '/' . 'storage/' . $this->attributes[$attribute_name];
     }
 }

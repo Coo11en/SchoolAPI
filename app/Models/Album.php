@@ -24,6 +24,7 @@ class Album extends Model
         'description',
         'nameEng',
         'relationship',
+        'status',
     ];
 
     public function photos(): BelongsToMany

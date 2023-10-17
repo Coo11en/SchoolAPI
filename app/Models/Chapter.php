@@ -29,6 +29,6 @@ class Chapter extends Model
 
     public function banner(): HasOne
     {
-        return $this->hasOne(Banner::class);
+        return $this->hasOne(Banner::class, 'chapter_id');
     }
 }

@@ -76,7 +76,7 @@ class AlbumsCrudController extends CrudController
 //            ['name' => 'some_other_field']
         ]);
         CRUD::field('relationship')->label('Зависимый');
-        CRUD::column('status')->label('Статус');
+        CRUD::field('status')->label('Статус');
 
 
         /**

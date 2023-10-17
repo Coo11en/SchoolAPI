@@ -14,8 +14,9 @@ class BannerResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $slug = $this->chapter->slug ?? null;
         return [
-            'slug' => $this->slug, //ChapterResource::collection($this->slug),
+            'slug' => $slug,
             'bannerTitle' => $this->bannerTitle,
             'img' => $this->img,
             'ref' => $this->ref

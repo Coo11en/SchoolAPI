@@ -30,7 +30,9 @@ class Album extends Model
         return $this->belongsToMany(
             Photo::class,
             'album_photo',
-        )->withPivot('main_img');
+        )
+//            ->withPivot('main_img')
+            ;
     }
 
     public function news(): HasOne

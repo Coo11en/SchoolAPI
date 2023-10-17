@@ -71,7 +71,7 @@ class AlbumsCrudController extends CrudController
         CRUD::field('name')->label('Название');
         CRUD::field('description')->label('Описание');
         CRUD::field('nameEng')->label('Путь на сайте');
-        CRUD::field('mainImg')->label('Главное фото')->subfields([
+        CRUD::field('updateMainImg')->label('Главное фото')->subfields([
             ['name' => 'main_img', 'type' => 'checkbox'],
 //            ['name' => 'some_other_field']
         ]);

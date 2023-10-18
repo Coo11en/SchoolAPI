@@ -46,20 +46,29 @@ class ProfileUserResource extends JsonResource
             case 'Учитель':
                 $teacher = Teacher::all()
                     ->where('user_id', '=', $roleName->pivot['model_id'])
-                    ->first();
+                    ->first()
+                ;
                 if (!is_null($teacher)) {
+                    $classrooms = $teacher->classrooms;
+                    if (empty($classrooms)) {
+                        $classrooms = '';
+                    } else {
+                        $classrooms = ProfileClassroomResource::collection($classrooms);
+                    }
                     return [
                         'role' => $roleName->name,
                         'profile' => new ProfileTeacherResource($teacher),
-                        'listClassrooms' => ProfileClassroomResource::collection($teacher->classrooms)
+                        'listClassrooms' => $classrooms
                     ];
                 }
                 return ['Пользователь не имеет профиля учителя'];
+
             case 'Студент' :
 
                 $student = Student::all()
                     ->where('user_id', '=', $roleName->pivot['model_id'])
-                    ->first();
+                    ->first()
+                ;
 
                 if (!is_null($student)) {
                     $classroom = $student->classroom;
@@ -81,13 +90,14 @@ class ProfileUserResource extends JsonResource
             case 'Родитель' :
                 $parent = Parents::all()
                     ->where('user_id', '=', $roleName->pivot['model_id'])
-                    ->first();
+                    ->first()
+                ;
                 if (!is_null($parent)) {
                     return [
                         'role' => $roleName->name,
                         'listStudents' =>
-//                        (ProfileStudentResource::collection($this->parents->students)) ?
-                            ProfileStudentResource::collection($parent->students)
+//                        (ProfileStudentResource::collection($this->parents->student)) ?
+                            ProfileStudentResource::collection($parent->student)
 //                            : null,
                     ];
                 }

@@ -3,4 +3,5 @@
 !data/documents/
 !data/photo/
 !data/photo/album/
+!data/photo/album/*.*
 !.gitignore

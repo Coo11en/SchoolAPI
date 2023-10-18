@@ -54,7 +54,8 @@ class UserResource extends JsonResource
                         ->where('user_id', '=', $role->pivot['model_id'])
                         ->first();
                     if (!is_null($teacher)){
-                    $result['FIO'] = $teacher->first()->surname . ' ' . $teacher->first()->name;
+                    //$result['FIO'] = $teacher->first()->surname . ' ' . $teacher->first()->name;
+                    $result['FIO'] = $teacher->surname . ' ' . $teacher->first()->name;
                     } else {
                         $result['FIO'] = 'Пользователь не имеет профил учитель';
                     }
@@ -64,7 +65,8 @@ class UserResource extends JsonResource
                         ->where('user_id', '=', $role->pivot['model_id'])
                         ->first();
                     if (!is_null($student)) {
-                        $result['FIO'] = $student->first()->surname . ' ' . $student->first()->name;
+                        //$result['FIO'] = $student->first()->surname . ' ' . $student->first()->name;
+                        $result['FIO'] = $student->surname . ' ' . $student->first()->name;
                     } else {
                         $result['FIO'] = 'Пользователь не имеет профиля студент';
                     }
@@ -74,7 +76,8 @@ class UserResource extends JsonResource
                         ->where('user_id', '=', $role->pivot['model_id'])
                         ->first();
                     if (!is_null($parent)) {
-                        $result['FIO'] = $parent->first()->surname . ' ' . $parent->first()->name;
+                        //$result['FIO'] = $parent->first()->surname . ' ' . $parent->first()->name;
+                        $result['FIO'] = $parent->surname . ' ' . $parent->first()->name;
                      } else {
                         $result['FIO'] = 'Пользователь не имеет профиля родитель';
                     }
